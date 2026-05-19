@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import projectsData from '../data/projects.json';
+
+const projects = projectsData
+  .filter((p) => p.featured)
+  .sort((a, b) => a.order - b.order);
+---
+
+<Base
+  title="Brandon Behring — Applied Mathematician"
+  description="Applied Mathematician who builds and learns. Foundations in probability, statistics, risk, and business problem-solving. Currently building AI safety evaluation tools, LLM systems, and applied causal inference."
+>
+  <section class="hero">
+    <h1>Brandon Behring</h1>
+    <p class="headline">Applied Mathematician — I build and learn.</p>
+    <p class="subhead">
+      Foundations in probability, statistics, risk, and business problem-solving
+      (CFA, FRM, SOA coursework). Currently building AI safety evaluation tools,
+      LLM systems, and applied causal inference.
+    </p>
+  </section>
+
+  <section class="bio">
+    <h2>About</h2>
+    <p>
+      I'm an applied mathematician who builds and learns. My current work
+      focuses on AI safety evaluation, LLM systems, and applied causal
+      inference — work that needs methodological care and clear, testable specs.
+    </p>
+    <p>
+      My foundations come from extensive coursework toward the CFA and FRM
+      credentials and SOA actuarial exams: disciplines that emphasize
+      probability, statistics, risk modeling, and rigorous business
+      problem-solving. I'm drawn to problems where mathematical structure
+      isn't optional.
+    </p>
+  </section>
+
+  <section class="projects">
+    <h2>Selected work</h2>
+    {projects.map((p) => <ProjectCard project={p} />)}
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li><strong>Email:</strong> <a href="mailto:brandon.m.behring@gmail.com">brandon.m.behring@gmail.com</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/brandon-behring">@brandon-behring</a></li>
+      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/brandonbehring/">/in/brandonbehring</a></li>
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .hero { margin-bottom: 3rem; }
+  .hero h1 { margin-bottom: 0.5rem; }
+  .headline { font-size: 1.25rem; font-family: var(--font-sans); font-weight: 500; margin: 0.5rem 0; }
+  .subhead { color: var(--color-text-muted); margin-top: 0.5rem; }
+  .bio { margin-bottom: 3rem; }
+  .projects { margin-bottom: 3rem; }
+  .contact-list { list-style: none; padding-left: 0; font-family: var(--font-sans); }
+  .contact-list li { margin: 0.5rem 0; }
+</style>

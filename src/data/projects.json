@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "prompt-injection-detector",
+    "title": "Prompt Injection Detector",
+    "category": "AI safety / evaluation methodology",
+    "summary": "PoC for detecting prompt-injection attacks against LLMs. Rigorous evaluation methodology with bootstrap CI on lift over baseline.",
+    "metrics": [
+      "DeBERTa−LR lift on test_id: Δ = +0.097 [+0.020, +0.199]",
+      "DeBERTa−LR lift on ood_indirect_probe: Δ = +0.128 [+0.024, +0.236]"
+    ],
+    "stack": ["PyTorch", "DeBERTa-v3", "LoRA / PEFT", "scikit-learn", "PR-AUC + bootstrap CI"],
+    "repo_url": "https://github.com/brandon-behring/prompt_injection_detector",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "slug": "dlai-study-notes",
+    "title": "DLAI Study Notes Corpus",
+    "category": "Applied AI / build-and-learn",
+    "summary": "Online book corpus synthesized from deeplearning.ai short courses. Per-book .tex → MDX conversion as audit-during-conversion content quality pass. Searchable, math-rendered, with Anki flashcards.",
+    "metrics": [
+      "~10-20 Gold-tier DLAI courses targeted",
+      "Astro + MDX + KaTeX + BibTeX + Pagefind stack",
+      "CC-BY-NC-4.0 prose, MIT code; DLAI policy compliance"
+    ],
+    "stack": ["Astro 6", "MDX", "TypeScript", "Pandoc", "KaTeX", "Cloudflare Pages"],
+    "repo_url": "https://github.com/brandon-behring/dlai-study-notes",
+    "site_url": "https://study-notes.brandon-behring.dev",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "slug": "causal-inference-mastery",
+    "title": "Applied Causal Inference",
+    "category": "Methodology / statistics",
+    "summary": "Working through the causal inference literature with implementations in Julia and Python. Double-ML, time-series causal models, instrumental variables.",
+    "metrics": [],
+    "stack": ["Julia", "Python", "DoubleML", "CausalImpact"],
+    "repo_url": "https://github.com/brandon-behring/causal_inference_mastery",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "slug": "bayesian-cold-start",
+    "title": "Bayesian Cold-Start",
+    "category": "Probabilistic modeling",
+    "summary": "Bayesian approaches to the cold-start problem in recommendation systems. Hierarchical priors for low-data regimes.",
+    "metrics": [],
+    "stack": ["Julia", "Turing.jl", "PyMC"],
+    "repo_url": "https://github.com/brandon-behring/bayesian-cold-start",
+    "featured": true,
+    "order": 4
+  }
+]

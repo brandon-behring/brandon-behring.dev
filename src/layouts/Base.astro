@@ -1,0 +1,71 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = "Brandon Behring — Applied Mathematician. I build and learn." } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="author" content="Brandon Behring" />
+  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <main>
+    <slot />
+  </main>
+  <footer>
+    <p>
+      © 2026 Brandon Behring · <a href="mailto:brandon.m.behring@gmail.com">brandon.m.behring@gmail.com</a> ·
+      <a href="https://github.com/brandon-behring">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/brandonbehring/">LinkedIn</a>
+    </p>
+  </footer>
+</body>
+</html>
+
+<style is:global>
+  :root {
+    --color-text: #1a1a1a;
+    --color-text-muted: #555;
+    --color-bg: #fafafa;
+    --color-accent: #4477AA;
+    --color-border: #ddd;
+    --max-width: 65ch;
+    --font-prose: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-text: #f0f0f0;
+      --color-text-muted: #aaa;
+      --color-bg: #1a1a1a;
+      --color-border: #333;
+    }
+  }
+  html { font-family: var(--font-prose); color: var(--color-text); background: var(--color-bg); line-height: 1.6; }
+  body { margin: 0; padding: 0; }
+  main { max-width: var(--max-width); margin: 4rem auto 2rem auto; padding: 0 1.5rem; }
+  footer { max-width: var(--max-width); margin: 4rem auto 2rem auto; padding: 1.5rem; border-top: 1px solid var(--color-border); color: var(--color-text-muted); font-size: 0.9em; font-family: var(--font-sans); }
+  h1, h2, h3 { font-family: var(--font-sans); font-weight: 600; line-height: 1.2; }
+  h1 { font-size: 2.25rem; margin-top: 0; }
+  h2 { font-size: 1.5rem; margin-top: 2.5rem; }
+  h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+  a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  code { font-family: var(--font-mono); font-size: 0.9em; background: rgba(0,0,0,0.05); padding: 0.1em 0.3em; border-radius: 3px; }
+  @media (prefers-color-scheme: dark) {
+    code { background: rgba(255,255,255,0.1); }
+  }
+</style>
