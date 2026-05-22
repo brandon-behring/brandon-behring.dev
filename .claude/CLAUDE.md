@@ -1,28 +1,88 @@
 # brandon-behring.dev
 
-Personal portfolio site. Live at https://brandon-behring.dev.
+Personal portfolio site. Live at <https://brandon-behring.dev> (Cloudflare
+Workers Static Assets).
+
+## Where to start (if you're picking this up fresh)
+
+1. **[`docs/roadmap.md`](../docs/roadmap.md)** — current state + Next 1–3
+   items + Tracks A/B/C. This is the "where are we, what's next" doc.
+2. **[`docs/website-decision-map.md`](../docs/website-decision-map.md)** —
+   authoritative strategy memo (identity framings, cluster audit, scoring
+   rubric). All Track A (Identity & Content) decisions defer here.
+3. **[`docs/sessions/`](../docs/sessions/)** — historical decision logs.
+   Most recent: `2026-05-22--phase-1.md` (Q1–Q17 + gotchas).
+4. **[`deploy-workflows/README.md`](https://github.com/brandon-behring/deploy-workflows#phase-2-roadmap)**
+   (separate repo) — authoritative infra plan. All Track B (Infrastructure)
+   decisions defer here.
 
 ## Stack
+
 - Astro 6 (`astro` + `@astrojs/mdx`)
 - Node ≥22.12 (see `package.json:engines`)
 - TypeScript 5.7
+- Wrangler 4.x (devDep, for IDE schema autocomplete + local CF runtime preview)
 
 ## Layout
-- `src/` — site source (pages, layouts, components, content)
+
+- `src/` — pages, layouts, components, data
 - `public/` — static assets served at root
-- `dist/` — build output (gitignored)
+- `dist/` — Astro build output (gitignored)
 - `.astro/` — Astro cache (gitignored)
-- `.github/workflows/` — GitHub Actions deploy pipeline
+- `.wrangler/` — wrangler local state (gitignored)
+- `.github/workflows/deploy.yml` — 10-line caller of the reusable workflow
+- `wrangler.jsonc` — Cloudflare Worker config (Static Assets)
+- `docs/` — strategy (`website-decision-map.md`), roadmap (`roadmap.md`),
+  Cloudflare setup walkthrough (`cloudflare-setup.md`), session logs
+  (`sessions/`)
 
 ## Common commands
-- `npm run dev` — local dev server with HMR
+
+- `npm run dev` — Astro dev server (Vite, HMR)
 - `npm run build` — production build to `dist/`
-- `npm run preview` — preview the built site locally
+- `npm run preview` — preview built site locally (Vite preview)
+- `npm run dev:cf` — local preview using the actual Cloudflare Workers
+  runtime (`wrangler dev`)
+- `npm run deploy` — manual one-off deploy (needs `CLOUDFLARE_API_TOKEN`
+  / `CLOUDFLARE_ACCOUNT_ID` in env; CI handles this normally)
 
 ## Deploy
-Pushing to `main` triggers `.github/workflows/` to build and deploy. No manual deploy step.
+
+Pushes to `main` trigger `.github/workflows/deploy.yml`, which calls the
+reusable workflow at
+[`brandon-behring/deploy-workflows`](https://github.com/brandon-behring/deploy-workflows)
+with `secrets: inherit`. That workflow runs `npm ci` + `npm run build` +
+`wrangler deploy`. No manual step.
+
+- Worker name: `brandon-behring`
+- Workers.dev preview URL: <https://brandon-behring.brandon-m-behring.workers.dev>
+- Production: <https://brandon-behring.dev> (custom domain bound in CF dashboard)
+- Account subdomain: `brandon-m-behring` (note middle initial)
 
 ## Conventions
-- Content is the primary work product — keep build/config minimal
-- Prefer Astro components over MDX unless mixing prose + components
-- No backend; everything is static at build time
+
+- Content is the primary work product — keep build/config minimal.
+- Prefer Astro components over MDX unless mixing prose + components.
+- No backend; everything is static at build time.
+- Worker naming convention: **person-prefixed flat** (this Worker is
+  `brandon-behring`; future sibling Workers under this account follow
+  `brandon-behring-<site>`).
+
+## Known foot-guns
+
+- **`gh secret set NAME`** — the secret value goes to stdin at the
+  interactive prompt; the argument after `gh secret set` is the *name*,
+  not the value. Pasting the value where the name belongs creates a
+  secret whose name leaks the credential.
+- **Cross-repo reusable-workflow callers need an explicit `permissions:`
+  block.** The default `GITHUB_TOKEN` permissions can be too narrow to
+  satisfy the reusable workflow's declared minimums, producing
+  `startup_failure` with the unhelpful message "This run likely failed
+  because of a workflow file issue." See the existing
+  `.github/workflows/deploy.yml` for the required block.
+- **Astro 6 strips HTML comments** at build time. Use hidden elements
+  with `data-*` attributes if you need a marker that survives to the
+  rendered HTML.
+- **Cloudflare's Workers Builds wizard** in the dashboard is a different
+  paradigm (CF-owned builds) from our Actions-owned-build setup. Don't
+  click "Deploy" in that wizard — it would create a competing pipeline.
