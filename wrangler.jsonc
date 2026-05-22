@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "brandon-behring",
+  "compatibility_date": "2026-05-21",
+  "assets": {
+    "directory": "./dist"
+  }
+}
