@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import CitationGraph from '../../components/CitationGraph.astro';
+import graphData from '../../data/rl_citation_graph.json';
+---
+
+<Base
+  title="RL + Control Citation Graph — Brandon Behring"
+  description="Interactive citation graph of ~135 papers on reinforcement learning and optimal control, from the rl_and_control reading list. Built on research-kb."
+  headerVariant="minimal"
+  fullBleed={true}
+  hideFooter={true}
+>
+  <CitationGraph graphData={graphData} />
+</Base>

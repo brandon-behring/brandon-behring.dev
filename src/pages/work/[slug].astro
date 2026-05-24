@@ -1,0 +1,99 @@
+---
+import Base from '../../layouts/Base.astro';
+import ClusterNav from '../../components/ClusterNav.astro';
+import ProjectSection from '../../components/ProjectSection.astro';
+import clustersData from '../../data/clusters.json';
+import projectsData from '../../data/projects.json';
+
+export function getStaticPaths() {
+  return clustersData
+    .filter((c) => c.section === 'now')
+    .map((cluster) => ({
+      params: { slug: cluster.slug },
+      props: { cluster },
+    }));
+}
+
+interface ClusterShape {
+  slug: string;
+  name: string;
+  description: string;
+  projects: string[];
+  expanding?: boolean;
+}
+
+const { cluster } = Astro.props as { cluster: ClusterShape };
+
+const projects = projectsData
+  .filter((p) => p.cluster === cluster.slug)
+  .sort((a, b) => a.order - b.order);
+---
+
+<Base
+  title={`${cluster.name} — Brandon Behring`}
+  description={cluster.description}
+>
+  <div class="prose">
+    <ClusterNav currentSlug={cluster.slug} />
+
+    <header class="cluster-page-header">
+      <h1>{cluster.name}</h1>
+      <p class="cluster-intro">{cluster.description}</p>
+    </header>
+
+    {projects.map((project) => (
+      <ProjectSection project={project} />
+    ))}
+
+    {cluster.expanding && (
+      <section class="more-coming">
+        <h2>More coming</h2>
+        <p>
+          {cluster.name} is an active and expanding cluster. More
+          course-derived notes from other technical sources are lined up
+          (Bertsekas RL + control, post-transformers chapters, and others).
+        </p>
+      </section>
+    )}
+
+    <p class="back-link">
+      <a href="/">← Home</a>
+    </p>
+  </div>
+</Base>
+
+<style>
+  .cluster-page-header {
+    margin: 1rem 0 2rem 0;
+  }
+  .cluster-page-header h1 {
+    margin-bottom: 0.5rem;
+  }
+  .cluster-intro {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .more-coming {
+    margin: 3rem 0;
+    padding: 1.5rem;
+    border: 1px dashed var(--color-border);
+    border-radius: 4px;
+  }
+  .more-coming h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .more-coming p {
+    margin-bottom: 0;
+  }
+  .back-link {
+    margin-top: 3rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+  }
+</style>

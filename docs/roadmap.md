@@ -7,7 +7,7 @@
 > [`deploy-workflows/README.md`](https://github.com/brandon-behring/deploy-workflows#phase-2-roadmap)
 > for infra Phase 2 detail.
 
-Last refined: 2026-05-22.
+Last refined: 2026-05-23 (Phase 2 lead-identity + homepage restructure).
 
 ## What just shipped (Phase 1, May 2026)
 
@@ -16,46 +16,86 @@ Last refined: 2026-05-22.
 - Portfolio's deploy is a 10-line caller of the reusable workflow.
 - Setup walkthrough captured in `docs/cloudflare-setup.md` (local working note).
 
+## What just shipped (Phase 2, May 2026)
+
+- **Lead identity locked**: Framing 4 (Learning systems / research-infrastructure
+  builder), broadened to absorb AI Evaluation. Spine: *build-to-learn*.
+- **Homepage restructured**: hero + 3 cluster cards (Causal Methods,
+  AI Evaluation, Course Notes) + Future direction section + multi-thread
+  About paragraph. No past background on homepage.
+- **Route structure**: `/work/{slug}` for 3 cluster pages (resolves A5).
+  Each cluster page uses per-project sections with description, status,
+  links, "what's next," and external references.
+- **Header nav** added (Home / Work / About / Contact); cluster pages
+  cross-link to siblings.
+- **Technical specs locked**: WCAG 2.2 AA target, Cloudflare Web Analytics
+  (token to add post-deploy), one static OG image (asset pending),
+  3 → 2 → 1 column responsive cluster grid.
+
 ## Next 1–3 (pick one to start, in order)
 
-1. **Score the lead-identity rubric** (decision-heavy, ~1 hr).
-   - Walk the rubric in `docs/website-decision-map.md` §"Lead Story Scoring
-     Rubric" against the 5 candidate framings. Lock the winner.
-   - Unblocks: route structure, visual approach, demo selection, homepage
-     hero rewrite. The most upstream open decision.
-2. **Migrate `post_transformers/guides/web` to the reusable workflow**
-   (mechanical, ~30 min).
-   - Add `.github/workflows/deploy.yml` (10-line caller), set its two
-     secrets, rename Worker to `brandon-behring-post-transformers-guide`,
-     bind `post-transformers-guide.brandon-behring.dev`.
-   - Why second: validates `deploy-workflows` with a 2nd consumer. Once
-     two consumers exist, the Phase 1 plan's deferred tag-pinning (`@v1`
-     instead of `@main`) becomes warranted — small follow-up commit.
-3. **Pick the first demo** (depends on item 1's identity outcome).
-   - From `docs/website-decision-map.md` §"Demo Pattern Matrix" — choose
-     one cluster's demo to build, scoped to one weekend.
+1. **A4 first demo: RL + control citation graph via research-kb** (~4–6 hr, **multi-session**, spans 2 projects).
+   - **Data source picked**: `rl_and_control/references/paper_index.md` — 135 papers, 18 thematic sections, status-tracked, with key findings per paper. Plus 12 method-family dossiers.
+   - **Pattern picked**: Path C — extend research-kb with a `graph export` CLI subcommand; ingest the ~50 already-downloaded papers; export Cytoscape JSON; render in `/lab/research-graph/` on brandon-behring.dev as a Cytoscape.js Astro island.
+   - **research-kb work** (~2–3 hr): new `graph export` subcommand in `packages/cli/src/research_kb_cli/commands/graph.py`; JSON formatter in `packages/storage/src/research_kb_storage/graph_queries.py`; ingest `[downloaded]`-status papers; tests.
+   - **brandon-behring.dev work** (~2–3 hr): new `/lab/research-graph/` route (informally answers `/lab` route question); Cytoscape.js island; thematic coloring; click-to-detail; mobile + reduced-motion.
+   - Why first: validates the research-kb → brandon-behring.dev data pipeline. Reusable for future graphs (causal DAG, post-transformer operator-family map).
+2. **Provide visual assets** (~30–60 min, no code).
+   - Capture per-project screenshots (see `public/ASSETS-NEEDED.md`).
+   - Generate the OG image (1200 × 630 PNG).
+   - Add the Cloudflare Web Analytics token to `src/layouts/Base.astro`.
+   - Why second: lower priority than demo but closes Phase 2's intent.
+3. **Migrate `post_transformers/guides/web` to the reusable workflow (B1)**
+   (mechanical, ~30 min). Validates `deploy-workflows` with a 2nd consumer;
+   unlocks `@v1` tag pinning.
 
 Skip ahead, mix, or replace any of these — they're the *most-leveraged*
 next moves, not a forced sequence.
+
+## Decisions Locked (Phase 2)
+
+| # | Decision | Choice |
+|---|---|---|
+| A1 | Lead identity | Framing 4 broadened — *build-to-learn engineer*, 3 visible clusters (Causal Methods, AI Evaluation, Course Notes) + Future direction. |
+| A5 | Route structure | `/work/{slug}` for cluster pages. |
+| — | Time horizon ordering | Now > Future > Past. Past not on homepage. |
+| — | Cluster card density | Rich text + Visual (badges + screenshots + icons) + Link to /work/{slug}. **No metric callouts.** |
+| — | Cluster pages | Per-project sections (description, visual, status badge, links, "what's next", external references). |
+| — | Accessibility | WCAG 2.2 AA target. |
+| — | Analytics | Cloudflare Web Analytics (token-driven; placeholder in code). |
+| — | OG image | Single static PNG (asset pending; meta tags in place). |
+| — | Responsive grid | 3 cols ≥1024px → 2 cols ≥768px → 1 col mobile. |
+| — | Header nav | Home / Work / About / Contact on every page; cluster sibling links on each `/work/{slug}`. |
+
+See `~/.claude/plans/i-want-to-think-wobbly-stroustrup.md` for the full
+27-decision history of this session.
 
 ## Track A — Identity & Content (drives Tracks B & C)
 
 Per `docs/website-decision-map.md` §"Open Decisions For Later". Listed in
 dependency order:
 
-- [ ] **A1. Lead-identity scoring.** Run the 5 candidate framings
-  through the 8-criterion rubric. Pick a winner. *(See `Next` #1.)*
-- [ ] **A2. `post_transformers` positioning.** Lead story, flagship
-  project, or research-direction section?
-- [ ] **A3. Homepage balance.** How much future-facing vs past proof.
-- [ ] **A4. First demo to build.** Embedded mini-tool, case study, or
-  artifact gallery. Depends on A1.
-- [ ] **A5. Route structure.** Add `/work`, `/research`, `/notes`,
-  `/lab` — yes/no/which. Depends on A1.
+- [x] **A1. Lead-identity scoring.** ✅ Locked Phase 2: Framing 4
+  broadened — *build-to-learn engineer* with 3 visible clusters.
+  Rubric replaced by preference-driven exploration.
+- [~] **A2. `post_transformers` positioning.** Partially resolved:
+  lives in the homepage Future direction section. Open question: dedicated
+  /research page eventually?
+- [~] **A3. Homepage balance.** Partially resolved: Now-clusters dominate,
+  Future section follows, Past removed from homepage entirely.
+- [~] **A4. First demo to build.** Phase 1 shipped 2026-05-24: live at
+  `/lab/research-graph/` — interactive citation graph of 135 RL+control
+  papers via Cytoscape.js + fcose, fed by new `research-kb graph export`
+  CLI + `rl_and_control/scripts/build_graph_export.py` merge pipeline.
+  Edges currently sparse (pending full citation extraction; backfill of
+  `arxiv_id` metadata done 2026-05-24); structural pipeline working.
+- [x] **A5. Route structure.** ✅ Locked Phase 2: `/work/{slug}` for
+  3 cluster pages. `/research`, `/notes`, `/lab` deferred until needed.
 - [ ] **A6. Content collections migration.** Move `src/data/projects.json`
   to Astro content collections. Independent; cheap; do anytime.
-- [ ] **A7. Visual approach.** Editorial dossier / lab notebook / etc.
-  Depends on A1.
+- [~] **A7. Visual approach.** Partially resolved: minimal editorial
+  with status badges + planned screenshots + responsive grid. Full
+  visual identity (dossier vs lab notebook etc.) still open.
 
 Content-related open issue:
 - [`brandon-behring.dev#1`](https://github.com/brandon-behring/brandon-behring.dev/issues/1)

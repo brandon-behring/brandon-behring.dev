@@ -1,0 +1,560 @@
+---
+/**
+ * Interactive citation-graph viewer.
+ *
+ * Consumes the merged generic-node-link JSON emitted by
+ * `rl_and_control/scripts/build_graph_export.py` (schema_version 1.0).
+ *
+ * Renders with Cytoscape.js + cytoscape-fcose as a full-bleed island.
+ * Filter UI: section-toggle pills + debounced text search.
+ * Click node → floating detail panel (right on desktop, bottom sheet on mobile).
+ * Respects prefers-reduced-motion (disables physics animation).
+ *
+ * Node colors: distributed HSL hues over sections. Status legend
+ * distinguishes `[ingested]` (full color) from `[not_ingested]`
+ * (greyed-out with dashed border).
+ *
+ * No metric callouts per Brandon's show-don't-tell preference.
+ */
+
+interface Node {
+  id: string;
+  type: string;
+  label: string;
+  data: Record<string, unknown>;
+}
+interface Edge {
+  id: string;
+  source: string;
+  target: string;
+  type: string;
+  data: Record<string, unknown>;
+}
+interface GraphData {
+  schema_version: string;
+  graph_type: string;
+  metadata: {
+    topic?: string;
+    sections?: string[];
+    node_count?: number;
+    edge_count?: number;
+    [k: string]: unknown;
+  };
+  nodes: Node[];
+  edges: Edge[];
+}
+
+interface Props {
+  graphData: GraphData;
+}
+
+const { graphData } = Astro.props;
+
+const sections: string[] = Array.isArray(graphData.metadata?.sections)
+  ? graphData.metadata.sections
+  : [];
+---
+
+<div class="citation-graph-root">
+  <div class="overlay-top-left">
+    <details class="filter-disclosure" open>
+      <summary>
+        <span class="filter-label">Sections</span>
+        <span class="filter-count">({sections.length})</span>
+      </summary>
+      <div class="section-pills" role="group" aria-label="Section filter">
+        <button type="button" class="pill pill-all active" data-section="__all__">All</button>
+        {sections.map((s) => (
+          <button type="button" class="pill" data-section={s}>{s}</button>
+        ))}
+      </div>
+    </details>
+  </div>
+
+  <div class="overlay-top-right">
+    <label class="search-label">
+      <span class="visually-hidden">Search paper titles</span>
+      <input
+        type="search"
+        id="paper-search"
+        placeholder="Search papers…"
+        autocomplete="off"
+      />
+    </label>
+  </div>
+
+  <div id="cy" role="application" aria-label="Citation graph (interactive)"></div>
+
+  <aside id="detail-panel" hidden aria-live="polite">
+    <button
+      type="button"
+      id="detail-close"
+      class="detail-close"
+      aria-label="Close detail panel"
+    >×</button>
+    <div id="detail-content"></div>
+  </aside>
+
+  <script
+    type="application/json"
+    id="citation-graph-data"
+    set:html={JSON.stringify(graphData)}
+  />
+</div>
+
+<script>
+  import cytoscape from 'cytoscape';
+  import fcose from 'cytoscape-fcose';
+
+  cytoscape.use(fcose);
+
+  type GraphNode = { id: string; type: string; label: string; data: Record<string, any> };
+  type GraphEdge = { id: string; source: string; target: string; type: string; data: Record<string, any> };
+  type GraphData = {
+    schema_version: string;
+    graph_type: string;
+    metadata: Record<string, any>;
+    nodes: GraphNode[];
+    edges: GraphEdge[];
+  };
+
+  function hslColor(index: number, total: number): string {
+    if (total <= 0) return 'hsl(210 50% 55%)';
+    const hue = Math.round((index / total) * 360);
+    return `hsl(${hue} 60% 55%)`;
+  }
+
+  function init() {
+    const dataElem = document.getElementById('citation-graph-data');
+    if (!dataElem) return;
+    const graphData = JSON.parse(dataElem.textContent || '{}') as GraphData;
+    const sections: string[] = Array.isArray(graphData.metadata?.sections)
+      ? graphData.metadata.sections
+      : [];
+    const sectionColor = new Map<string, string>(
+      sections.map((s, i) => [s, hslColor(i, sections.length)])
+    );
+    const fallbackColor = 'hsl(210 30% 60%)';
+
+    const cyEls = [
+      ...graphData.nodes.map((n) => ({
+        data: {
+          ...n.data,
+          id: n.id,
+          label: n.label,
+          _section: n.data.section ?? '',
+          _ingested: n.data.kb_status === 'ingested' ? 1 : 0,
+        },
+      })),
+      ...graphData.edges.map((e) => ({
+        data: {
+          id: e.id,
+          source: e.source,
+          target: e.target,
+          _type: e.type,
+        },
+      })),
+    ];
+
+    const prefersReducedMotion =
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const cy = cytoscape({
+      container: document.getElementById('cy'),
+      elements: cyEls,
+      style: [
+        {
+          selector: 'node',
+          style: {
+            'background-color': (ele: any) => {
+              const sec = ele.data('_section') as string;
+              return sec && sectionColor.has(sec) ? sectionColor.get(sec)! : fallbackColor;
+            },
+            'background-opacity': (ele: any) => (ele.data('_ingested') ? 1 : 0.45),
+            'border-width': 1,
+            'border-style': (ele: any) => (ele.data('_ingested') ? 'solid' : 'dashed'),
+            'border-color': '#fff',
+            width: 18,
+            height: 18,
+            label: 'data(label)',
+            'font-family': 'system-ui, -apple-system, sans-serif',
+            'font-size': 10,
+            'text-valign': 'center',
+            'text-halign': 'right',
+            'text-margin-x': 4,
+            color: '#1a1a1a',
+            'text-opacity': 0,
+            'min-zoomed-font-size': 12,
+          } as any,
+        },
+        {
+          selector: 'node.dim',
+          style: {
+            'background-opacity': 0.1,
+            'border-opacity': 0.1,
+            'text-opacity': 0,
+          } as any,
+        },
+        {
+          selector: 'node.highlight',
+          style: {
+            'border-color': '#4477AA',
+            'border-width': 3,
+            'background-opacity': 1,
+            'text-opacity': 1,
+          } as any,
+        },
+        {
+          selector: 'edge',
+          style: {
+            width: 1,
+            'line-color': '#bbb',
+            'curve-style': 'bezier',
+            'target-arrow-shape': 'triangle',
+            'target-arrow-color': '#bbb',
+            'arrow-scale': 0.7,
+            opacity: 0.6,
+          } as any,
+        },
+        {
+          selector: 'edge.dim',
+          style: { opacity: 0.08 } as any,
+        },
+      ],
+      layout: {
+        name: 'fcose',
+        animate: !prefersReducedMotion,
+        randomize: true,
+        nodeRepulsion: 6000,
+        idealEdgeLength: 80,
+      } as any,
+      wheelSensitivity: 0.2,
+      minZoom: 0.2,
+      maxZoom: 4,
+    });
+
+    // -------- Click → detail panel --------
+    const panel = document.getElementById('detail-panel') as HTMLElement;
+    const panelContent = document.getElementById('detail-content') as HTMLElement;
+    const closeBtn = document.getElementById('detail-close') as HTMLButtonElement;
+
+    function renderDetail(n: any) {
+      const d = n.data();
+      const authors = Array.isArray(d.authors) && d.authors.length > 0 ? d.authors.join(', ') : '';
+      const arxiv = d.arxiv_id;
+      const arxivLink = arxiv ? `https://arxiv.org/abs/${arxiv}` : null;
+      const kbBadge =
+        d.kb_status === 'ingested'
+          ? '<span class="badge badge-ingested">ingested</span>'
+          : '<span class="badge badge-pending">not yet ingested</span>';
+      panelContent.innerHTML = `
+        <h2>${escapeHtml(d.label || d.title || arxiv || 'Paper')}</h2>
+        <p class="meta">${kbBadge} ${d.year ? `· ${d.year}` : ''} ${d.section ? `· ${escapeHtml(d.section)}` : ''}</p>
+        ${authors ? `<p class="authors">${escapeHtml(authors)}</p>` : ''}
+        ${d.key_finding ? `<p class="finding"><strong>Key finding:</strong> ${escapeHtml(d.key_finding)}</p>` : ''}
+        ${arxivLink ? `<p class="link"><a href="${arxivLink}" target="_blank" rel="noopener">arXiv:${arxiv} →</a></p>` : ''}
+      `;
+      panel.hidden = false;
+    }
+
+    function escapeHtml(s: string): string {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    cy.on('tap', 'node', (evt: any) => renderDetail(evt.target));
+    cy.on('tap', (evt: any) => {
+      if (evt.target === cy) panel.hidden = true;
+    });
+    closeBtn.addEventListener('click', () => {
+      panel.hidden = true;
+    });
+
+    // -------- Section pills --------
+    const pillBtns = document.querySelectorAll<HTMLButtonElement>('.section-pills .pill');
+    pillBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const sec = btn.dataset.section!;
+        pillBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (sec === '__all__') {
+          cy.nodes().removeClass('dim').removeClass('highlight');
+          cy.edges().removeClass('dim');
+        } else {
+          cy.nodes().forEach((n: any) => {
+            const ns = n.data('_section');
+            if (ns === sec) n.removeClass('dim').addClass('highlight');
+            else n.addClass('dim').removeClass('highlight');
+          });
+          cy.edges().forEach((e: any) => {
+            const src = e.source().data('_section');
+            const tgt = e.target().data('_section');
+            if (src === sec && tgt === sec) e.removeClass('dim');
+            else e.addClass('dim');
+          });
+        }
+      });
+    });
+
+    // -------- Search box --------
+    const searchInput = document.getElementById('paper-search') as HTMLInputElement;
+    let searchTimer: number | undefined;
+    searchInput.addEventListener('input', () => {
+      window.clearTimeout(searchTimer);
+      searchTimer = window.setTimeout(() => {
+        const q = searchInput.value.trim().toLowerCase();
+        cy.nodes().removeClass('highlight').removeClass('dim');
+        cy.edges().removeClass('dim');
+        if (!q) return;
+        const matches = cy.nodes().filter((n: any) => {
+          const label = String(n.data('label') || '').toLowerCase();
+          const title = String(n.data('title') || '').toLowerCase();
+          const aid = String(n.data('arxiv_id') || '').toLowerCase();
+          return label.includes(q) || title.includes(q) || aid.includes(q);
+        });
+        cy.nodes().forEach((n: any) => {
+          if (matches.contains(n)) n.addClass('highlight');
+          else n.addClass('dim');
+        });
+        cy.edges().addClass('dim');
+        if (matches.length > 0) {
+          cy.animate(
+            { fit: { eles: matches, padding: 80 } },
+            { duration: prefersReducedMotion ? 0 : 300 }
+          );
+        }
+      }, 200);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+</script>
+
+<style>
+  .citation-graph-root {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 4.5rem); /* viewport minus minimal header */
+    background: var(--color-bg);
+  }
+  #cy {
+    width: 100%;
+    height: 100%;
+  }
+  .overlay-top-left {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+    background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    max-width: min(90vw, 460px);
+    max-height: 60vh;
+    overflow-y: auto;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    backdrop-filter: blur(6px);
+  }
+  .filter-disclosure summary {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  .filter-disclosure summary::-webkit-details-marker {
+    display: none;
+  }
+  .filter-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    color: var(--color-text);
+  }
+  .filter-count {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+  }
+  .section-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+  }
+  .pill {
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.1s ease, color 0.1s ease, border-color 0.1s ease;
+  }
+  .pill:hover,
+  .pill:focus-visible {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    outline: none;
+  }
+  .pill.active {
+    background: var(--color-accent);
+    color: #fff;
+    border-color: var(--color-accent);
+  }
+
+  .overlay-top-right {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    backdrop-filter: blur(6px);
+  }
+  .search-label {
+    display: flex;
+    align-items: center;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  #paper-search {
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    outline: none;
+    width: 14rem;
+    max-width: 50vw;
+  }
+  #paper-search::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  #detail-panel {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 20;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.25rem 1.25rem 1rem 1.25rem;
+    width: min(420px, calc(100vw - 2rem));
+    max-height: 60vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    font-family: var(--font-sans);
+  }
+  #detail-panel[hidden] {
+    display: none;
+  }
+  #detail-panel h2 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    font-family: var(--font-sans);
+  }
+  #detail-panel .meta {
+    margin: 0 0 0.75rem 0;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+  }
+  #detail-panel .authors {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+  #detail-panel .finding {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    font-family: var(--font-prose);
+  }
+  #detail-panel .link {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  .detail-close {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    background: transparent;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+  }
+  .detail-close:hover {
+    color: var(--color-accent);
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    text-transform: lowercase;
+    letter-spacing: 0.03em;
+  }
+  .badge-ingested {
+    background: rgba(50, 150, 80, 0.15);
+    color: #1f6433;
+    border: 1px solid rgba(50, 150, 80, 0.4);
+  }
+  .badge-pending {
+    background: rgba(180, 130, 30, 0.15);
+    color: #7a5a18;
+    border: 1px solid rgba(180, 130, 30, 0.4);
+  }
+
+  @media (max-width: 640px) {
+    .overlay-top-left,
+    .overlay-top-right {
+      top: 0.5rem;
+    }
+    .overlay-top-left {
+      left: 0.5rem;
+      max-width: calc(100vw - 1rem);
+    }
+    .overlay-top-right {
+      right: 0.5rem;
+    }
+    #paper-search {
+      width: 10rem;
+    }
+    #detail-panel {
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: auto;
+      border-radius: 8px 8px 0 0;
+      max-height: 50vh;
+    }
+  }
+</style>

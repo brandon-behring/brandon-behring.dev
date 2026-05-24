@@ -1,9 +1,33 @@
 ---
+import Header from '../components/Header.astro';
+
+type HeaderVariant = "full" | "minimal";
+
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  headerVariant?: HeaderVariant;
+  /**
+   * If true, omits the `<main>` max-width wrapper so the page can use
+   * full-bleed layouts (e.g., /lab/research-graph/'s Cytoscape viewport).
+   * Default false → editorial max-width 1200px applies.
+   */
+  fullBleed?: boolean;
+  /** If true, hides the site footer (for full-bleed lab pages). Default false. */
+  hideFooter?: boolean;
 }
-const { title, description = "Brandon Behring — Applied Mathematician. I build and learn." } = Astro.props;
+const {
+  title,
+  description = "Brandon Behring builds applied causal methods, AI evaluation tooling, and a study notes corpus.",
+  ogImage = "/og-image.png",
+  headerVariant = "full",
+  fullBleed = false,
+  hideFooter = false,
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImageUrl = new URL(ogImage, Astro.site);
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -13,24 +37,52 @@ const { title, description = "Brandon Behring — Applied Mathematician. I build
   <title>{title}</title>
   <meta name="description" content={description} />
   <meta name="author" content="Brandon Behring" />
-  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph / social previews -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Cloudflare Web Analytics (TODO: replace TOKEN_PLACEHOLDER with actual token from CF dashboard) -->
+  <script
+    defer
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "TOKEN_PLACEHOLDER"}'
+  ></script>
 </head>
 <body>
-  <main>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <Header variant={headerVariant} />
+
+  <main id="main" class:list={[{ 'full-bleed': fullBleed }]}>
     <slot />
   </main>
-  <footer>
-    <p>
-      © 2026 Brandon Behring · <a href="mailto:brandon.m.behring@gmail.com">brandon.m.behring@gmail.com</a> ·
-      <a href="https://github.com/brandon-behring">GitHub</a> ·
-      <a href="https://www.linkedin.com/in/brandonbehring/">LinkedIn</a>
-    </p>
-  </footer>
+
+  {!hideFooter && (
+    <footer>
+      <div class="footer-inner">
+        <p>
+          © 2026 Brandon Behring · <a href="mailto:brandon.m.behring@gmail.com">brandon.m.behring@gmail.com</a> ·
+          <a href="https://github.com/brandon-behring">GitHub</a> ·
+          <a href="https://www.linkedin.com/in/brandonbehring/">LinkedIn</a>
+        </p>
+      </div>
+    </footer>
+  )}
 </body>
 </html>
 
@@ -41,7 +93,8 @@ const { title, description = "Brandon Behring — Applied Mathematician. I build
     --color-bg: #fafafa;
     --color-accent: #4477AA;
     --color-border: #ddd;
-    --max-width: 65ch;
+    --max-width-prose: 65ch;
+    --max-width-wide: 1200px;
     --font-prose: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
     --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
@@ -56,16 +109,67 @@ const { title, description = "Brandon Behring — Applied Mathematician. I build
   }
   html { font-family: var(--font-prose); color: var(--color-text); background: var(--color-bg); line-height: 1.6; }
   body { margin: 0; padding: 0; }
-  main { max-width: var(--max-width); margin: 4rem auto 2rem auto; padding: 0 1.5rem; }
-  footer { max-width: var(--max-width); margin: 4rem auto 2rem auto; padding: 1.5rem; border-top: 1px solid var(--color-border); color: var(--color-text-muted); font-size: 0.9em; font-family: var(--font-sans); }
+  main {
+    max-width: var(--max-width-wide);
+    margin: 2rem auto 2rem auto;
+    padding: 0 1.5rem;
+  }
+  main.full-bleed {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+  /* Utility: editorial-width text within a wider main */
+  .prose {
+    max-width: var(--max-width-prose);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  footer {
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.9em;
+    font-family: var(--font-sans);
+    margin-top: 4rem;
+  }
+  .footer-inner {
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
   h1, h2, h3 { font-family: var(--font-sans); font-weight: 600; line-height: 1.2; }
   h1 { font-size: 2.25rem; margin-top: 0; }
   h2 { font-size: 1.5rem; margin-top: 2.5rem; }
   h3 { font-size: 1.15rem; margin-top: 1.5rem; }
   a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
   a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: 2px; }
   code { font-family: var(--font-mono); font-size: 0.9em; background: rgba(0,0,0,0.05); padding: 0.1em 0.3em; border-radius: 3px; }
   @media (prefers-color-scheme: dark) {
     code { background: rgba(255,255,255,0.1); }
+  }
+
+  /* Skip-to-content link for keyboard / screen-reader users */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--color-accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+    text-decoration: none;
+  }
+  .skip-link:focus {
+    left: 0;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 </style>

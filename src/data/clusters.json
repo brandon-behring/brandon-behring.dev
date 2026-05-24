@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "causal-methods",
+    "name": "Causal Methods",
+    "section": "now",
+    "order": 1,
+    "description": "Time-series causal inference and statistical validation methods.",
+    "projects": ["causal-inference-mastery", "double-ml-time-series", "temporal-validation"]
+  },
+  {
+    "slug": "ai-evaluation",
+    "name": "AI Evaluation",
+    "section": "now",
+    "order": 2,
+    "description": "Methodology-led AI safety evaluation: real evals, calibration, anti-overclaim discipline.",
+    "projects": ["prompt-injection-detector", "eval-toolkit", "prompt-injection-portfolio"]
+  },
+  {
+    "slug": "course-notes",
+    "name": "Course Notes",
+    "section": "now",
+    "order": 3,
+    "description": "Long-form study notes synthesized from technical courses. DLAI is the first; more course-derived notes lined up.",
+    "projects": ["dlai-study-notes"],
+    "expanding": true
+  },
+  {
+    "slug": "future",
+    "name": "Where this is going",
+    "section": "future",
+    "order": 4,
+    "description": "Currently building out.",
+    "projects": ["post-transformers", "rl-and-control"]
+  }
+]

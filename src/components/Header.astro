@@ -1,0 +1,124 @@
+---
+type HeaderVariant = "full" | "minimal";
+
+interface Props {
+  variant?: HeaderVariant;
+}
+
+const { variant = "full" } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: "/", label: "Home", match: "exact" as const },
+  { href: "/work/", label: "Work", match: "prefix" as const },
+  { href: "/#about", label: "About", match: "none" as const },
+  { href: "/#contact", label: "Contact", match: "none" as const },
+];
+
+function isActive(item: { href: string; match: string }): boolean {
+  if (item.match === "exact") return currentPath === item.href;
+  if (item.match === "prefix") return currentPath.startsWith(item.href);
+  return false;
+}
+---
+
+<header class="site-header" data-variant={variant}>
+  <div class="site-header-inner">
+    <a href="/" class="brand">Brandon Behring</a>
+    {variant === "full" ? (
+      <nav aria-label="Site navigation">
+        <ul>
+          {navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[{ active: isActive(item) }]}
+                aria-current={isActive(item) ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    ) : (
+      <a href="/" class="back-home" aria-label="Back to homepage">
+        <span aria-hidden="true">&larr;</span> Home
+      </a>
+    )}
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+  }
+  .site-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .brand:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+  }
+  nav a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  nav a:hover,
+  nav a:focus-visible {
+    color: var(--color-accent);
+  }
+  nav a.active {
+    color: var(--color-text);
+    border-bottom-color: var(--color-accent);
+  }
+  .back-home {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .back-home:hover,
+  .back-home:focus-visible {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    nav a,
+    .back-home {
+      transition: none;
+    }
+  }
+</style>

@@ -1,0 +1,74 @@
+---
+import clustersData from '../data/clusters.json';
+
+interface Props {
+  currentSlug: string;
+}
+const { currentSlug } = Astro.props;
+
+const nowClusters = clustersData
+  .filter((c) => c.section === 'now')
+  .sort((a, b) => a.order - b.order);
+---
+
+<nav class="cluster-nav" aria-label="Cluster navigation">
+  <span class="label">Clusters:</span>
+  <ul>
+    {nowClusters.map((cluster) => (
+      <li>
+        <a
+          href={`/work/${cluster.slug}/`}
+          class:list={[{ current: cluster.slug === currentSlug }]}
+          aria-current={cluster.slug === currentSlug ? "page" : undefined}
+        >
+          {cluster.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .cluster-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    margin: 0 0 2rem 0;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .label {
+    color: var(--color-text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: 0.15rem 0;
+    border-bottom: 2px solid transparent;
+  }
+  a:hover,
+  a:focus-visible {
+    color: var(--color-accent);
+  }
+  a.current {
+    color: var(--color-text);
+    border-bottom-color: var(--color-accent);
+    font-weight: 500;
+  }
+</style>

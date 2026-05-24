@@ -1,0 +1,67 @@
+---
+import Base from '../../layouts/Base.astro';
+import ClusterCard from '../../components/ClusterCard.astro';
+import clustersData from '../../data/clusters.json';
+import projectsData from '../../data/projects.json';
+
+const nowClusters = clustersData
+  .filter((c) => c.section === 'now')
+  .sort((a, b) => a.order - b.order);
+
+function projectsForCluster(slug: string) {
+  return projectsData
+    .filter((p) => p.cluster === slug)
+    .sort((a, b) => a.order - b.order);
+}
+---
+
+<Base
+  title="Work — Brandon Behring"
+  description="Projects in applied causal methods, AI evaluation, and course-derived study notes."
+>
+  <section class="work-intro prose">
+    <h1>Work</h1>
+    <p>
+      Three clusters of current work. Each links to a deeper page with
+      per-project detail.
+    </p>
+  </section>
+
+  <section class="clusters" aria-label="Cluster cards">
+    <div class="cluster-grid">
+      {nowClusters.map((cluster) => (
+        <ClusterCard
+          cluster={cluster}
+          projects={projectsForCluster(cluster.slug)}
+        />
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .work-intro {
+    margin: 2rem auto 3rem auto;
+  }
+  .work-intro h1 {
+    margin-bottom: 0.5rem;
+  }
+  .clusters {
+    margin: 3rem 0;
+  }
+  .cluster-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .cluster-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .cluster-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

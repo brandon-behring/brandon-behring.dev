@@ -1,0 +1,203 @@
+---
+import StatusBadge from './StatusBadge.astro';
+
+interface ExternalContext {
+  label: string;
+  url: string;
+}
+
+interface Project {
+  slug: string;
+  title: string;
+  status: string;
+  description_long: string;
+  whats_next: string;
+  stack?: string[];
+  repo_url?: string;
+  site_url?: string;
+  external_context?: ExternalContext[];
+  visual?: string;
+}
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const stackText = project.stack && project.stack.length > 0 ? project.stack.join(' · ') : null;
+const hasExternal = project.external_context && project.external_context.length > 0;
+---
+
+<section class="project-section" id={project.slug}>
+  <header class="project-header">
+    <h2>{project.title}</h2>
+    <StatusBadge status={project.status} />
+  </header>
+
+  {project.visual && (
+    <div class="project-visual" aria-hidden="true">
+      <img src={project.visual} alt="" loading="lazy" />
+    </div>
+  )}
+
+  <div class="project-body">
+    <p class="project-description">{project.description_long}</p>
+
+    {stackText && (
+      <p class="project-stack">
+        <span class="stack-label">Stack:</span> {stackText}
+      </p>
+    )}
+
+    <div class="project-links">
+      {project.repo_url && (
+        <a href={project.repo_url} class="project-link" rel="noopener">Repo →</a>
+      )}
+      {project.site_url && (
+        <a href={project.site_url} class="project-link" rel="noopener">Live site →</a>
+      )}
+    </div>
+
+    {project.whats_next && (
+      <div class="whats-next">
+        <h3>What's next</h3>
+        <p>{project.whats_next}</p>
+      </div>
+    )}
+
+    {hasExternal && (
+      <div class="related">
+        <h3>Related</h3>
+        <ul>
+          {project.external_context!.map((ref) => (
+            <li>
+              {ref.url ? (
+                <a href={ref.url} rel="noopener">{ref.label}</a>
+              ) : (
+                <span>{ref.label}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .project-section {
+    margin: 3rem 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .project-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .project-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .project-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
+  .project-visual {
+    margin: 1rem 0;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .project-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .project-body p {
+    line-height: 1.7;
+  }
+
+  .project-description {
+    margin: 1rem 0;
+  }
+
+  .project-stack {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0.5rem 0;
+  }
+
+  .stack-label {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    margin-right: 0.25rem;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+  }
+
+  .project-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+  }
+
+  .project-link:hover,
+  .project-link:focus-visible {
+    border-bottom-color: var(--color-accent);
+  }
+
+  .whats-next,
+  .related {
+    margin-top: 1.5rem;
+  }
+
+  .whats-next h3,
+  .related h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin: 0 0 0.5rem 0;
+    font-family: var(--font-sans);
+  }
+
+  .whats-next p {
+    margin: 0;
+  }
+
+  .related ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+  }
+
+  .related li {
+    margin: 0.25rem 0;
+  }
+
+  .related a {
+    color: var(--color-accent);
+  }
+</style>

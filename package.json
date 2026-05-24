@@ -16,7 +16,9 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",
-    "astro": "^6.1.7"
+    "astro": "^6.1.7",
+    "cytoscape": "^3.33.4",
+    "cytoscape-fcose": "^2.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

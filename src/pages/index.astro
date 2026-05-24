@@ -1,50 +1,83 @@
 ---
 import Base from '../layouts/Base.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import ClusterCard from '../components/ClusterCard.astro';
+import clustersData from '../data/clusters.json';
 import projectsData from '../data/projects.json';
 
-const projects = projectsData
-  .filter((p) => p.featured)
+const nowClusters = clustersData
+  .filter((c) => c.section === 'now')
   .sort((a, b) => a.order - b.order);
+
+const futureProjects = projectsData
+  .filter((p) => p.cluster === 'future')
+  .sort((a, b) => a.order - b.order);
+
+function projectsForCluster(slug: string) {
+  return projectsData
+    .filter((p) => p.cluster === slug)
+    .sort((a, b) => a.order - b.order);
+}
 ---
 
 <Base
-  title="Brandon Behring — Applied Mathematician"
-  description="Applied Mathematician who builds and learns. Foundations in probability, statistics, risk, and business problem-solving. Currently building AI safety evaluation tools, LLM systems, and applied causal inference."
+  title="Brandon Behring — Applied Causal Methods + AI Evaluation"
+  description="Brandon Behring builds applied causal methods, AI evaluation tooling, and a study notes corpus."
 >
-  <section class="hero">
+  <section class="hero prose">
     <h1>Brandon Behring</h1>
-    <p class="headline">Applied Mathematician — I build and learn.</p>
-    <p class="subhead">
-      Foundations in probability, statistics, risk, and business problem-solving
-      (CFA, FRM, SOA coursework). Currently building AI safety evaluation tools,
-      LLM systems, and applied causal inference.
+    <p class="hero-tagline">
+      Building applied causal methods, AI evaluation tooling, and a study notes corpus.
     </p>
   </section>
 
-  <section class="bio">
-    <h2>About</h2>
+  <section class="clusters" aria-labelledby="now-heading">
+    <h2 id="now-heading" class="prose section-heading">What I'm building now</h2>
+    <div class="cluster-grid">
+      {nowClusters.map((cluster) => (
+        <ClusterCard
+          cluster={cluster}
+          projects={projectsForCluster(cluster.slug)}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="future prose" aria-labelledby="future-heading">
+    <h2 id="future-heading">Where this is going</h2>
+    <ul class="future-list">
+      {futureProjects.map((p) => (
+        <li>
+          <strong>{p.title}</strong> — {p.summary}
+          {p.site_url && (
+            <>
+              {' '}
+              <a href={p.site_url} rel="noopener">live</a>
+            </>
+          )}
+        </li>
+      ))}
+      <li>
+        <strong>Live: <a href="/lab/research-graph/">RL + Control citation graph</a></strong>
+        — interactive citation network of the 135-paper RL+control reading list,
+        rendered from research-kb. First lab demo.
+      </li>
+    </ul>
+  </section>
+
+  <section id="about" class="bio prose" aria-labelledby="about-heading">
+    <h2 id="about-heading">About</h2>
     <p>
-      I'm an applied mathematician who builds and learns. My current work
-      focuses on AI safety evaluation, LLM systems, and applied causal
-      inference — work that needs methodological care and clear, testable specs.
-    </p>
-    <p>
-      My foundations come from extensive coursework toward the CFA and FRM
-      credentials and SOA actuarial exams: disciplines that emphasize
-      probability, statistics, risk modeling, and rigorous business
-      problem-solving. I'm drawn to problems where mathematical structure
-      isn't optional.
+      Currently working through post-transformer sequence model
+      architectures (SSMs, Mamba, Hyena, DeltaNet) and reinforcement
+      learning + optimal control. Expanding the course-derived study notes
+      pattern beyond DLAI. Direction: research engineering on next-generation
+      AI architectures, with applied causal methods and rigorous evaluation
+      as the methodology spine.
     </p>
   </section>
 
-  <section class="projects">
-    <h2>Selected work</h2>
-    {projects.map((p) => <ProjectCard project={p} />)}
-  </section>
-
-  <section class="contact">
-    <h2>Contact</h2>
+  <section id="contact" class="contact prose" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact</h2>
     <ul class="contact-list">
       <li><strong>Email:</strong> <a href="mailto:brandon.m.behring@gmail.com">brandon.m.behring@gmail.com</a></li>
       <li><strong>GitHub:</strong> <a href="https://github.com/brandon-behring">@brandon-behring</a></li>
@@ -54,12 +87,77 @@ const projects = projectsData
 </Base>
 
 <style>
-  .hero { margin-bottom: 3rem; }
-  .hero h1 { margin-bottom: 0.5rem; }
-  .headline { font-size: 1.25rem; font-family: var(--font-sans); font-weight: 500; margin: 0.5rem 0; }
-  .subhead { color: var(--color-text-muted); margin-top: 0.5rem; }
-  .bio { margin-bottom: 3rem; }
-  .projects { margin-bottom: 3rem; }
-  .contact-list { list-style: none; padding-left: 0; font-family: var(--font-sans); }
-  .contact-list li { margin: 0.5rem 0; }
+  .hero {
+    margin: 2rem auto 3rem auto;
+  }
+  .hero h1 {
+    margin-bottom: 0.75rem;
+  }
+  .hero-tagline {
+    font-size: 1.25rem;
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .clusters {
+    margin: 3rem 0;
+  }
+  .section-heading {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .cluster-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .cluster-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .cluster-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .future {
+    margin: 3rem auto;
+  }
+  .future-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .future-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .future-list li:last-child {
+    border-bottom: none;
+  }
+
+  .bio,
+  .contact {
+    margin: 3rem auto;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding-left: 0;
+    font-family: var(--font-sans);
+  }
+  .contact-list li {
+    margin: 0.5rem 0;
+  }
 </style>
