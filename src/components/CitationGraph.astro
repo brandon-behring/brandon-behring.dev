@@ -118,10 +118,27 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
     edges: GraphEdge[];
   };
 
-  function hslColor(index: number, total: number): string {
-    if (total <= 0) return 'hsl(210 50% 55%)';
+  /**
+   * HSL → #rrggbb. Inline because Cytoscape's style API rejects
+   * `hsl(H S% L%)` strings (it accepts hex or `rgb(...)` only — see the
+   * 2026-05-24 deploy verification log, follow-up F2).
+   */
+  function hslToHex(h: number, s: number, l: number): string {
+    s /= 100;
+    l /= 100;
+    const k = (n: number) => (n + h / 30) % 12;
+    const a = s * Math.min(l, 1 - l);
+    const f = (n: number) => {
+      const c = l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+      return Math.round(c * 255).toString(16).padStart(2, '0');
+    };
+    return `#${f(0)}${f(8)}${f(4)}`;
+  }
+
+  function sectionPalette(index: number, total: number): string {
+    if (total <= 0) return hslToHex(210, 50, 55);
     const hue = Math.round((index / total) * 360);
-    return `hsl(${hue} 60% 55%)`;
+    return hslToHex(hue, 60, 55);
   }
 
   function init() {
@@ -132,9 +149,9 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
       ? graphData.metadata.sections
       : [];
     const sectionColor = new Map<string, string>(
-      sections.map((s, i) => [s, hslColor(i, sections.length)])
+      sections.map((s, i) => [s, sectionPalette(i, sections.length)])
     );
-    const fallbackColor = 'hsl(210 30% 60%)';
+    const fallbackColor = hslToHex(210, 30, 60);
 
     const cyEls = [
       ...graphData.nodes.map((n) => ({
