@@ -54,7 +54,7 @@
     "description_long": "DeBERTa-v3 with LoRA, evaluated against a baseline ladder (heuristic → logistic regression → frozen encoder → fine-tuned) on locked holdout splits with bootstrap confidence intervals on lift. Calibration via temperature scaling; reliability and ECE reported on a model card. Framed explicitly as methodology proof-of-concept, not a production detector.",
     "whats_next": "V2 methodology complete; finalizing DECISIONS.md (D1-D29 recorded). Next: archive the PoC and migrate methodology patterns into the eval-toolkit harness.",
     "stack": ["PyTorch", "DeBERTa-v3", "LoRA / PEFT", "scikit-learn", "PR-AUC + bootstrap CI"],
-    "repo_url": "https://github.com/brandon-behring/prompt_injection_detector",
+    "repo_url": "https://github.com/brandon-behring/prompt-injection-detector",
     "metrics": [
       "DeBERTa−LR lift on test_id: Δ = +0.097 [+0.020, +0.199]",
       "DeBERTa−LR lift on ood_indirect_probe: Δ = +0.128 [+0.024, +0.236]"
@@ -98,13 +98,13 @@
     "title": "DLAI Study Notes",
     "cluster": "course-notes",
     "order": 1,
-    "status": "live",
+    "status": "in-progress",
     "summary": "Online book corpus synthesized from deeplearning.ai short courses. Per-course .tex → MDX conversion with audit-during-conversion content quality pass. Searchable, math-rendered, with Anki flashcards.",
-    "description_long": "Live corpus of study notes synthesized from DeepLearning.AI short courses. Each course is converted from LaTeX source through a quality-audit MDX conversion into a searchable, math-rendered, citation-tracked online book. Includes BibTeX bibliography integration, Pagefind search, KaTeX math, and Anki .apkg deck export. Built on book-scaffold-astro.",
-    "whats_next": "PoC for a broader pattern: 10-20 Gold-tier DLAI courses targeted; additional course-derived note projects from other sources (e.g., Bertsekas RL+Control, ssm-foundations chapters) lined up.",
+    "description_long": "In-progress corpus of study notes synthesized from DeepLearning.AI short courses. Each course is converted from LaTeX source through a quality-audit MDX conversion into a searchable, math-rendered, citation-tracked online book. Includes BibTeX bibliography integration, Pagefind search, KaTeX math, and Anki .apkg deck export. Built on book-scaffold-astro. Currently local-only — publishing surface pending.",
+    "whats_next": "PoC for a broader pattern: 10-20 Gold-tier DLAI courses targeted; additional course-derived note projects from other sources (e.g., Bertsekas RL+Control, ssm-foundations chapters) lined up. Deploy to a public URL is the immediate-next step.",
     "stack": ["Astro 6", "MDX", "TypeScript", "Pandoc", "KaTeX", "Pagefind", "Cloudflare Pages"],
-    "repo_url": "https://github.com/brandon-behring/dlai-study-notes",
-    "site_url": "https://study-notes.brandon-behring.dev",
+    "repo_url": "",
+    "site_url": "",
     "external_context": [],
     "visual": null,
     "featured": true
@@ -124,7 +124,7 @@
       { "label": "Bertsekas — Reinforcement Learning and Optimal Control (2019)", "url": "" },
       { "label": "Companion: ssm-foundations", "url": "https://ssm-foundations.brandon-behring.dev" }
     ],
-    "visual": null,
+    "visual": "/screenshots/rl-and-control.png",
     "featured": false
   },
   {
@@ -142,7 +142,7 @@
     "external_context": [
       { "label": "Source: post-transformers research repo", "url": "https://github.com/brandon-behring/post_transformers" }
     ],
-    "visual": null,
+    "visual": "/screenshots/ssm-foundations.png",
     "featured": true
   }
 ]
