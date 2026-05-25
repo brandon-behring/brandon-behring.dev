@@ -264,12 +264,31 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
         d.kb_status === 'ingested'
           ? '<span class="badge badge-ingested">ingested</span>'
           : '<span class="badge badge-pending">not yet ingested</span>';
+      // Source-type / kind badge for non-arxiv anchors (book / thesis).
+      let typeBadge = '';
+      if (d.kind === 'thesis') {
+        typeBadge = '<span class="badge badge-thesis">thesis</span>';
+      } else if (d.source_type === 'textbook' || d.type === 'textbook') {
+        typeBadge = '<span class="badge badge-book">book</span>';
+      }
+      // Link priority: arxiv → doi → url → isbn (WorldCat).
+      let linkHtml = '';
+      if (arxivLink) {
+        linkHtml = `<a href="${arxivLink}" target="_blank" rel="noopener">arXiv:${escapeHtml(arxiv)} →</a>`;
+      } else if (d.doi) {
+        linkHtml = `<a href="https://doi.org/${encodeURIComponent(d.doi)}" target="_blank" rel="noopener">DOI:${escapeHtml(d.doi)} →</a>`;
+      } else if (d.url) {
+        linkHtml = `<a href="${escapeHtml(d.url)}" target="_blank" rel="noopener">${escapeHtml(d.url)} →</a>`;
+      } else if (d.isbn) {
+        const isbnClean = String(d.isbn).replace(/[^0-9Xx]/g, '');
+        linkHtml = `<a href="https://www.worldcat.org/isbn/${encodeURIComponent(isbnClean)}" target="_blank" rel="noopener">ISBN:${escapeHtml(d.isbn)} →</a>`;
+      }
       panelContent.innerHTML = `
         <h2>${escapeHtml(d.label || d.title || arxiv || 'Paper')}</h2>
-        <p class="meta">${kbBadge} ${d.year ? `· ${d.year}` : ''} ${d.section ? `· ${escapeHtml(d.section)}` : ''}</p>
+        <p class="meta">${kbBadge}${typeBadge} ${d.year ? `· ${d.year}` : ''} ${d.section ? `· ${escapeHtml(d.section)}` : ''}</p>
         ${authors ? `<p class="authors">${escapeHtml(authors)}</p>` : ''}
         ${d.key_finding ? `<p class="finding"><strong>Key finding:</strong> ${escapeHtml(d.key_finding)}</p>` : ''}
-        ${arxivLink ? `<p class="link"><a href="${arxivLink}" target="_blank" rel="noopener">arXiv:${arxiv} →</a></p>` : ''}
+        ${linkHtml ? `<p class="link">${linkHtml}</p>` : ''}
       `;
       panel.hidden = false;
     }
@@ -548,6 +567,18 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
     background: rgba(180, 130, 30, 0.15);
     color: #7a5a18;
     border: 1px solid rgba(180, 130, 30, 0.4);
+  }
+  .badge-book {
+    background: rgba(80, 110, 160, 0.15);
+    color: #2a4570;
+    border: 1px solid rgba(80, 110, 160, 0.4);
+    margin-left: 0.25rem;
+  }
+  .badge-thesis {
+    background: rgba(140, 90, 160, 0.15);
+    color: #5a2a70;
+    border: 1px solid rgba(140, 90, 160, 0.4);
+    margin-left: 0.25rem;
   }
 
   @media (max-width: 640px) {

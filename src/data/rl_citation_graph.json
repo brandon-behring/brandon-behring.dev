@@ -4,10 +4,10 @@
   "metadata": {
     "topic": "RL and optimal control",
     "source": "research-kb",
-    "generated_at": "2026-05-24T15:54:59.157468+00:00",
-    "node_count": 84,
-    "edge_count": 3,
-    "ingested_count": 84,
+    "generated_at": "2026-05-25T21:13:32.466572+00:00",
+    "node_count": 97,
+    "edge_count": 50,
+    "ingested_count": 97,
     "not_ingested_count": 0,
     "node_types": [
       "source"
@@ -15,6 +15,10 @@
     "edge_types": [
       "cites"
     ],
+    "selectors": {
+      "arxiv_ids_count": 84,
+      "role": "anchor.rl_optimal_control"
+    },
     "overlay_source": "rl_and_control/references/paper_index.md",
     "overlay_node_count": 84,
     "overlay_added_not_ingested": 0,
@@ -1651,11 +1655,686 @@
         "paper_index_status": "downloaded",
         "paper_index_year": 2026
       }
+    },
+    {
+      "id": "source:uuid:2272bf89-b5cd-4c55-8e23-fb8a72dbcd82",
+      "type": "source",
+      "label": "Dynamic Programming and Markov Processes",
+      "data": {
+        "title": "Dynamic Programming and Markov Processes",
+        "year": 1960,
+        "authors": [
+          "Ronald A. Howard"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "2272bf89-b5cd-4c55-8e23-fb8a72dbcd82",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "textbook"
+      }
+    },
+    {
+      "id": "source:uuid:1be28bd5-858b-4ecf-99e5-f9e2688c987c",
+      "type": "source",
+      "label": "The Mathematical Theory of Optimal Processes",
+      "data": {
+        "title": "The Mathematical Theory of Optimal Processes",
+        "year": 1962,
+        "authors": [
+          "L. S. Pontryagin",
+          "V. G. Boltyanskii",
+          "R. V. Gamkrelidze",
+          "E. F. Mishchenko"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "1be28bd5-858b-4ecf-99e5-f9e2688c987c",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "textbook"
+      }
+    },
+    {
+      "id": "source:uuid:9d8aa8b7-6e6f-491e-95b6-6a76afe80f8f",
+      "type": "source",
+      "label": "Dynamic Programming",
+      "data": {
+        "title": "Dynamic Programming",
+        "year": 1957,
+        "authors": [
+          "Richard Bellman"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "9d8aa8b7-6e6f-491e-95b6-6a76afe80f8f",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "textbook"
+      }
+    },
+    {
+      "id": "source:uuid:3ca669b2-2c2e-487a-a601-213b3487a9cd",
+      "type": "source",
+      "label": "A Course in Reinforcement Learning, 2nd Edition",
+      "data": {
+        "title": "A Course in Reinforcement Learning, 2nd Edition",
+        "year": 2025,
+        "authors": [
+          "Dimitri P. Bertsekas"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "3ca669b2-2c2e-487a-a601-213b3487a9cd",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "textbook"
+      }
+    },
+    {
+      "id": "source:uuid:350bc42b-735c-438c-b1ea-63abad1fbc59",
+      "type": "source",
+      "label": "Abstract Dynamic Programming, 3rd Edition",
+      "data": {
+        "title": "Abstract Dynamic Programming, 3rd Edition",
+        "year": 2022,
+        "authors": [
+          "Dimitri P. Bertsekas"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "350bc42b-735c-438c-b1ea-63abad1fbc59",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "textbook"
+      }
+    },
+    {
+      "id": "source:uuid:9ff4349b-11de-47b4-a3b7-19adc04d0970",
+      "type": "source",
+      "label": "Kalman Filtering 1960",
+      "data": {
+        "title": "Kalman Filtering 1960",
+        "year": 1960,
+        "authors": [],
+        "arxiv_id": null,
+        "doi": "10.1115/1.3662552",
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "9ff4349b-11de-47b4-a3b7-19adc04d0970",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:036ec0aa-4a4f-498a-ba75-b3c24f2255ea",
+      "type": "source",
+      "label": "Kalman Optimal Control 1960",
+      "data": {
+        "title": "Kalman Optimal Control 1960",
+        "year": 1960,
+        "authors": [],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "036ec0aa-4a4f-498a-ba75-b3c24f2255ea",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "source",
+      "label": "Watkins Qlearning 1992",
+      "data": {
+        "title": "Watkins Qlearning 1992",
+        "year": 1992,
+        "authors": [],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "source",
+      "label": "Sutton Pg 1999",
+      "data": {
+        "title": "Sutton Pg 1999",
+        "year": 2000,
+        "authors": [],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
+      "type": "source",
+      "label": "Reinforcement Learning and Optimal Control",
+      "data": {
+        "title": "Reinforcement Learning and Optimal Control",
+        "year": 2019,
+        "authors": [],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": "978-1-886529-39-7",
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "textbook"
+      }
+    },
+    {
+      "id": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "source",
+      "label": "Reinforcement Learning An Introduction 2nd ed",
+      "data": {
+        "title": "Reinforcement Learning An Introduction 2nd ed",
+        "year": 1998,
+        "authors": [
+          "Richard S. Sutton"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "textbook"
+      }
+    },
+    {
+      "id": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "source",
+      "label": "Dynamic programming and optimal control. Vol.1",
+      "data": {
+        "title": "Dynamic programming and optimal control. Vol.1",
+        "year": null,
+        "authors": [
+          "Dimitri P. Bertsekas"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "fd904023-8bdf-4112-97e1-2d22eb087254",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "textbook"
+      }
+    },
+    {
+      "id": "source:uuid:e596dd54-006c-460e-9d7a-2411abff11f2",
+      "type": "source",
+      "label": "MIT6_253S12_lec_comp",
+      "data": {
+        "title": "MIT6_253S12_lec_comp",
+        "year": null,
+        "authors": [
+          "Bertsekas",
+          "Dimitri"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "e596dd54-006c-460e-9d7a-2411abff11f2",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "textbook"
+      }
     }
   ],
   "edges": [
     {
       "id": "e:1",
+      "source": "source:arxiv:1312.5602",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:2",
+      "source": "source:arxiv:1312.5602",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:3",
+      "source": "source:arxiv:1502.05477",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:4",
+      "source": "source:arxiv:1506.02438",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:5",
+      "source": "source:arxiv:1506.02438",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:6",
+      "source": "source:arxiv:1506.02438",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:7",
+      "source": "source:arxiv:1509.02971",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:8",
+      "source": "source:arxiv:1509.06461",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:9",
+      "source": "source:arxiv:1511.05952",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:10",
+      "source": "source:arxiv:1511.06581",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:11",
+      "source": "source:arxiv:1511.06581",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:12",
+      "source": "source:arxiv:1602.01783",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:13",
+      "source": "source:arxiv:1609.05140",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:14",
+      "source": "source:arxiv:1706.02275",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:15",
+      "source": "source:arxiv:1706.02275",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:16",
+      "source": "source:arxiv:1709.06560",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:17",
+      "source": "source:arxiv:1710.02298",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:18",
+      "source": "source:arxiv:1710.06537",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:19",
+      "source": "source:arxiv:1801.01290",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:20",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:21",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:22",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:uuid:9d8aa8b7-6e6f-491e-95b6-6a76afe80f8f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:23",
+      "source": "source:arxiv:1803.10122",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:24",
+      "source": "source:arxiv:1804.02717",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:25",
+      "source": "source:arxiv:1805.00909",
+      "target": "source:uuid:9ff4349b-11de-47b4-a3b7-19adc04d0970",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:26",
+      "source": "source:arxiv:1806.09460",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:27",
+      "source": "source:arxiv:1806.09460",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:28",
+      "source": "source:arxiv:1806.09460",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:29",
+      "source": "source:arxiv:1811.00168",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:30",
+      "source": "source:arxiv:1811.00168",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:31",
+      "source": "source:arxiv:1812.05905",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:32",
+      "source": "source:arxiv:1912.06680",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:33",
+      "source": "source:arxiv:2002.04523",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:34",
+      "source": "source:arxiv:2004.04136",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:35",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:36",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:37",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:38",
+      "source": "source:arxiv:2006.07869",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:39",
+      "source": "source:arxiv:2107.09645",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:40",
+      "source": "source:arxiv:2204.01464",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:41",
+      "source": "source:arxiv:2205.10330",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:42",
       "source": "source:arxiv:2404.08471",
       "target": "source:arxiv:2301.08243",
       "type": "cites",
@@ -1664,18 +2343,72 @@
       }
     },
     {
-      "id": "e:2",
-      "source": "source:arxiv:2408.03539",
-      "target": "source:arxiv:2303.03381",
+      "id": "e:43",
+      "source": "source:arxiv:2406.00592",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
         "weight": 1.0
       }
     },
     {
-      "id": "e:3",
+      "id": "e:44",
+      "source": "source:arxiv:2406.00592",
+      "target": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:45",
+      "source": "source:arxiv:2406.00592",
+      "target": "source:uuid:350bc42b-735c-438c-b1ea-63abad1fbc59",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:46",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:47",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:48",
+      "source": "source:arxiv:2506.09985",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:49",
       "source": "source:arxiv:2506.09985",
       "target": "source:arxiv:2301.08243",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:50",
+      "source": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
         "weight": 1.0
