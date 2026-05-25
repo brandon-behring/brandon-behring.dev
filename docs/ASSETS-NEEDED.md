@@ -23,7 +23,7 @@ images would be. Provide these to complete the visual design.
 | Project slug | Capture from |
 |---|---|
 | `dlai-study-notes` | <https://study-notes.brandon-behring.dev> (homepage or one notes page) |
-| `post-transformers` | <https://post-transformers-guide.brandon-m-behring.workers.dev> |
+| `ssm-foundations` | <https://ssm-foundations.brandon-behring.dev> |
 | `prompt-injection-detector` | repo README figure or eval results plot |
 | `eval-toolkit` | repo README or test output |
 | `prompt-injection-portfolio` | repo README or field-log page |

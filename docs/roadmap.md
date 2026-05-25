@@ -41,7 +41,7 @@ Last refined: 2026-05-23 (Phase 2 lead-identity + homepage restructure).
    - **brandon-behring.dev work** (~2–3 hr): new `/lab/research-graph/` route (informally answers `/lab` route question); Cytoscape.js island; thematic coloring; click-to-detail; mobile + reduced-motion.
    - Why first: validates the research-kb → brandon-behring.dev data pipeline. Reusable for future graphs (causal DAG, post-transformer operator-family map).
 2. **Provide visual assets** (~30–60 min, no code).
-   - Capture per-project screenshots (see `public/ASSETS-NEEDED.md`).
+   - Capture per-project screenshots (see `docs/ASSETS-NEEDED.md`).
    - Generate the OG image (1200 × 630 PNG).
    - Add the Cloudflare Web Analytics token to `src/layouts/Base.astro`.
    - Why second: lower priority than demo but closes Phase 2's intent.
