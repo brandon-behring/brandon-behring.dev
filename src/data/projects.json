@@ -101,7 +101,7 @@
     "status": "live",
     "summary": "Online book corpus synthesized from deeplearning.ai short courses. Per-course .tex → MDX conversion with audit-during-conversion content quality pass. Searchable, math-rendered, with Anki flashcards.",
     "description_long": "Live corpus of study notes synthesized from DeepLearning.AI short courses. Each course is converted from LaTeX source through a quality-audit MDX conversion into a searchable, math-rendered, citation-tracked online book. Includes BibTeX bibliography integration, Pagefind search, KaTeX math, and Anki .apkg deck export. Built on book-scaffold-astro.",
-    "whats_next": "PoC for a broader pattern: 10-20 Gold-tier DLAI courses targeted; additional course-derived note projects from other sources (e.g., Bertsekas RL+Control, post-transformers chapters) lined up.",
+    "whats_next": "PoC for a broader pattern: 10-20 Gold-tier DLAI courses targeted; additional course-derived note projects from other sources (e.g., Bertsekas RL+Control, ssm-foundations chapters) lined up.",
     "stack": ["Astro 6", "MDX", "TypeScript", "Pandoc", "KaTeX", "Pagefind", "Cloudflare Pages"],
     "repo_url": "https://github.com/brandon-behring/dlai-study-notes",
     "site_url": "https://study-notes.brandon-behring.dev",
@@ -110,35 +110,19 @@
     "featured": true
   },
   {
-    "slug": "post-transformers",
-    "title": "post-transformers guide",
-    "cluster": "future",
-    "order": 1,
-    "status": "in-progress",
-    "summary": "21-week guide translating numerical analysis and dynamical systems into post-transformer sequence model architectures (SSMs, Mamba, Hyena, DeltaNet, …). 6 of 21 chapters live.",
-    "description_long": "In-progress technical guide bridging applied math (numerical analysis, dynamical systems, stability theory) to post-transformer sequence model architectures. Covers state-space models, Mamba, Hyena, DeltaNet-style online learning, structured operators, and hybrids. Includes JAX/Flax notebooks, SVG figures, Julia tests for stability, and a research dossier.",
-    "whats_next": "6 of 21 chapters live. Next: continue the chapter sequence and eventually publish a consolidated PDF (currently 147 pages locally).",
-    "stack": ["Astro", "MDX", "JAX", "Flax", "Julia", "KaTeX", "Cloudflare Workers"],
-    "repo_url": "https://github.com/brandon-behring/post_transformers",
-    "site_url": "https://post-transformers-guide.brandon-m-behring.workers.dev",
-    "external_context": [],
-    "visual": null,
-    "featured": false
-  },
-  {
     "slug": "rl-and-control",
     "title": "rl_and_control — RL + Control Theory guide",
     "cluster": "future",
     "order": 2,
     "status": "in-progress",
-    "summary": "RL + Control Theory from fundamentals to convergence. 28-week structured syllabus, Python/JAX/Julia experiments, 135-paper indexed bibliography, 12 method-family dossiers. Companion to post-transformers.",
+    "summary": "RL + Control Theory from fundamentals to convergence. 28-week structured syllabus, Python/JAX/Julia experiments, 135-paper indexed bibliography, 12 method-family dossiers. Companion to ssm-foundations.",
     "description_long": "In-progress authored guide bridging classical optimal control (Bellman, DP, MPC, LQR/LQG) with modern reinforcement learning (policy gradient, actor-critic, model-based, MPC-RL hybrids). 28-week syllabus organized into 3 parts: RL Foundations (10 weeks) -> Control Theory (8 weeks) -> Convergence (10 weeks). Includes Python (PyTorch/Gymnasium/SB3), JAX (Brax, differentiable MPC), and Julia (ControlSystems.jl, JuMP MPC) experiment tracks. Bibliography: 135 papers indexed across 18 thematic sections with status tracking and 12 method-family dossiers.",
-    "whats_next": "Local-only; publishing surface (Astro/MDX web guide) planned, matching post-transformers pattern. Bibliography (rl_and_control/references/paper_index.md) is the planned data source for the /lab/research-graph/ demo.",
+    "whats_next": "Local-only; publishing surface (Astro/MDX web guide) planned, matching the ssm-foundations book-scaffold-astro pattern. Bibliography (rl_and_control/references/paper_index.md) is the data source for the /lab/research-graph/ demo (shipped 2026-05-24, densified 2026-05-25).",
     "stack": ["Astro", "MDX", "Python", "PyTorch", "JAX", "Julia", "Gymnasium", "SB3", "ControlSystems.jl"],
     "repo_url": "",
     "external_context": [
       { "label": "Bertsekas — Reinforcement Learning and Optimal Control (2019)", "url": "" },
-      { "label": "Companion: post-transformers guide", "url": "https://post-transformers-guide.brandon-m-behring.workers.dev" }
+      { "label": "Companion: ssm-foundations", "url": "https://ssm-foundations.brandon-behring.dev" }
     ],
     "visual": null,
     "featured": false
@@ -149,8 +133,8 @@
     "cluster": "future",
     "order": 3,
     "status": "in-progress",
-    "summary": "17-chapter lens-led foundations book bridging numerical analysis and dynamical systems to post-transformer sequence model architectures. Ch 1–6 shipped (linear ODEs, stability, linear algebra, discretization, stability regions, symplectic).",
-    "description_long": "Public foundations book derived from the post-transformers research repo. 17 chapters organized lens-first: continuous-time dynamics → discretization → stability theory → structured SSMs → selective scans → hybrids. Each chapter pairs prose with JAX and Julia companions plus reproducible figures. Built on book-scaffold-astro v4 academic preset; deployed via Cloudflare Workers + Static Assets.",
+    "summary": "17-chapter lens-led foundations book bridging numerical analysis and dynamical systems to modern sequence-model architectures (SSMs, Mamba, S4, Hyena, DeltaNet). Successor to a 21-week research-guide effort. Ch 1–6 shipped (linear ODEs, stability, linear algebra, discretization, stability regions, symplectic integration).",
+    "description_long": "Public foundations book derived from the post-transformers research repo. 17 chapters organized lens-first: continuous-time dynamics → discretization → stability theory → structured state-space models → selective scans (Mamba, S4, S4D) → hybrids. Each chapter pairs prose with JAX and Julia companions, reproducible figures, and Julia stability tests. Built on book-scaffold-astro v4 academic preset; deployed via Cloudflare Workers + Static Assets.",
     "whats_next": "6 of 17 chapters implemented (foundations layer complete). Next: Ch 7 (HiPPO theory) and the structured-SSM layer (S4, S4D, Mamba-1/2/3).",
     "stack": ["Astro 6", "MDX", "JAX", "Julia", "DifferentialEquations.jl", "KaTeX", "Cloudflare Workers"],
     "repo_url": "https://github.com/brandon-behring/ssm-foundations",
