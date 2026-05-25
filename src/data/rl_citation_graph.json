@@ -4,10 +4,10 @@
   "metadata": {
     "topic": "RL and optimal control",
     "source": "research-kb",
-    "generated_at": "2026-05-25T21:13:32.466572+00:00",
-    "node_count": 97,
-    "edge_count": 50,
-    "ingested_count": 97,
+    "generated_at": "2026-05-25T22:20:44.385545+00:00",
+    "node_count": 95,
+    "edge_count": 51,
+    "ingested_count": 95,
     "not_ingested_count": 0,
     "node_types": [
       "source"
@@ -1732,30 +1732,6 @@
       }
     },
     {
-      "id": "source:uuid:3ca669b2-2c2e-487a-a601-213b3487a9cd",
-      "type": "source",
-      "label": "A Course in Reinforcement Learning, 2nd Edition",
-      "data": {
-        "title": "A Course in Reinforcement Learning, 2nd Edition",
-        "year": 2025,
-        "authors": [
-          "Dimitri P. Bertsekas"
-        ],
-        "arxiv_id": null,
-        "doi": null,
-        "isbn": null,
-        "url": null,
-        "kind": null,
-        "roles": [
-          "anchor.rl_optimal_control"
-        ],
-        "source_id": "3ca669b2-2c2e-487a-a601-213b3487a9cd",
-        "kb_status": "ingested",
-        "citation_authority": null,
-        "source_type": "textbook"
-      }
-    },
-    {
       "id": "source:uuid:350bc42b-735c-438c-b1ea-63abad1fbc59",
       "type": "source",
       "label": "Abstract Dynamic Programming, 3rd Edition",
@@ -1932,31 +1908,6 @@
           "anchor.rl_optimal_control"
         ],
         "source_id": "fd904023-8bdf-4112-97e1-2d22eb087254",
-        "kb_status": "ingested",
-        "citation_authority": null,
-        "source_type": "textbook"
-      }
-    },
-    {
-      "id": "source:uuid:e596dd54-006c-460e-9d7a-2411abff11f2",
-      "type": "source",
-      "label": "MIT6_253S12_lec_comp",
-      "data": {
-        "title": "MIT6_253S12_lec_comp",
-        "year": null,
-        "authors": [
-          "Bertsekas",
-          "Dimitri"
-        ],
-        "arxiv_id": null,
-        "doi": null,
-        "isbn": null,
-        "url": null,
-        "kind": null,
-        "roles": [
-          "anchor.rl_optimal_control"
-        ],
-        "source_id": "e596dd54-006c-460e-9d7a-2411abff11f2",
         "kb_status": "ingested",
         "citation_authority": null,
         "source_type": "textbook"
@@ -2236,6 +2187,15 @@
     },
     {
       "id": "e:31",
+      "source": "source:arxiv:1811.00168",
+      "target": "source:uuid:036ec0aa-4a4f-498a-ba75-b3c24f2255ea",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:32",
       "source": "source:arxiv:1812.05905",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
@@ -2244,7 +2204,7 @@
       }
     },
     {
-      "id": "e:32",
+      "id": "e:33",
       "source": "source:arxiv:1912.06680",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2253,7 +2213,7 @@
       }
     },
     {
-      "id": "e:33",
+      "id": "e:34",
       "source": "source:arxiv:2002.04523",
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
@@ -2262,17 +2222,8 @@
       }
     },
     {
-      "id": "e:34",
-      "source": "source:arxiv:2004.04136",
-      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
-      "type": "cites",
-      "data": {
-        "weight": 1.0
-      }
-    },
-    {
       "id": "e:35",
-      "source": "source:arxiv:2005.01643",
+      "source": "source:arxiv:2004.04136",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
@@ -2282,7 +2233,7 @@
     {
       "id": "e:36",
       "source": "source:arxiv:2005.01643",
-      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2291,7 +2242,7 @@
     {
       "id": "e:37",
       "source": "source:arxiv:2005.01643",
-      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2299,6 +2250,15 @@
     },
     {
       "id": "e:38",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:39",
       "source": "source:arxiv:2006.07869",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2307,7 +2267,7 @@
       }
     },
     {
-      "id": "e:39",
+      "id": "e:40",
       "source": "source:arxiv:2107.09645",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2316,7 +2276,7 @@
       }
     },
     {
-      "id": "e:40",
+      "id": "e:41",
       "source": "source:arxiv:2204.01464",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2325,7 +2285,7 @@
       }
     },
     {
-      "id": "e:41",
+      "id": "e:42",
       "source": "source:arxiv:2205.10330",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2334,7 +2294,7 @@
       }
     },
     {
-      "id": "e:42",
+      "id": "e:43",
       "source": "source:arxiv:2404.08471",
       "target": "source:arxiv:2301.08243",
       "type": "cites",
@@ -2343,7 +2303,7 @@
       }
     },
     {
-      "id": "e:43",
+      "id": "e:44",
       "source": "source:arxiv:2406.00592",
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
@@ -2352,7 +2312,7 @@
       }
     },
     {
-      "id": "e:44",
+      "id": "e:45",
       "source": "source:arxiv:2406.00592",
       "target": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
       "type": "cites",
@@ -2361,7 +2321,7 @@
       }
     },
     {
-      "id": "e:45",
+      "id": "e:46",
       "source": "source:arxiv:2406.00592",
       "target": "source:uuid:350bc42b-735c-438c-b1ea-63abad1fbc59",
       "type": "cites",
@@ -2370,7 +2330,7 @@
       }
     },
     {
-      "id": "e:46",
+      "id": "e:47",
       "source": "source:arxiv:2502.02133",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2379,7 +2339,7 @@
       }
     },
     {
-      "id": "e:47",
+      "id": "e:48",
       "source": "source:arxiv:2502.02133",
       "target": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
       "type": "cites",
@@ -2388,7 +2348,7 @@
       }
     },
     {
-      "id": "e:48",
+      "id": "e:49",
       "source": "source:arxiv:2506.09985",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
@@ -2397,7 +2357,7 @@
       }
     },
     {
-      "id": "e:49",
+      "id": "e:50",
       "source": "source:arxiv:2506.09985",
       "target": "source:arxiv:2301.08243",
       "type": "cites",
@@ -2406,7 +2366,7 @@
       }
     },
     {
-      "id": "e:50",
+      "id": "e:51",
       "source": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
