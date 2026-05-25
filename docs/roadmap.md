@@ -89,6 +89,10 @@ dependency order:
   CLI + `rl_and_control/scripts/build_graph_export.py` merge pipeline.
   Edges currently sparse (pending full citation extraction; backfill of
   `arxiv_id` metadata done 2026-05-24); structural pipeline working.
+  Deploy verified live 2026-05-24 (see
+  `docs/sessions/2026-05-24--deploy-verification.md`); two cosmetic
+  follow-ups surfaced: F1 `/favicon.svg` 404 and F2 Cytoscape `hsl()`
+  color rejection (per-domain node colors silently fall back to default).
 - [x] **A5. Route structure.** ✅ Locked Phase 2: `/work/{slug}` for
   3 cluster pages. `/research`, `/notes`, `/lab` deferred until needed.
 - [ ] **A6. Content collections migration.** Move `src/data/projects.json`
