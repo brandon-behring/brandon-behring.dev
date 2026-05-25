@@ -31,9 +31,49 @@ GitHub Actions workflow auto-deploys to Cloudflare Pages on push to `main`. Requ
 - `CLOUDFLARE_API_TOKEN`
 - `CLOUDFLARE_ACCOUNT_ID`
 
-## Subdomains (future)
+## Subdomain convention
 
-This repo only owns the root `brandon-behring.dev`. Other properties live at subdomains in separate repos:
+This repo owns the root `brandon-behring.dev` (this portfolio site). Every other deployed project lives at its own subdomain under the same root.
 
-- `study-notes.brandon-behring.dev` → `brandon-behring/dlai-study-notes`
-- (future) `<book-slug>-notes.brandon-behring.dev` → separate book repos
+```
+brandon-behring.dev                       → this portfolio (root / apex)
+<project-slug>.brandon-behring.dev        → each deployed project
+```
+
+This section is the **canonical source of truth** for the convention; other repos cross-reference it. Last revised 2026-05-25.
+
+### Slug-naming rule
+
+1. **Default (mechanical)**: the slug is the repo name normalized to kebab-case. Underscores become hyphens; otherwise no transformation.
+   - `ssm-foundations` → `ssm-foundations.brandon-behring.dev`
+   - `book-template-astro` → `book-template-astro.brandon-behring.dev`
+   - `post_transformers` → would be `post-transformers.brandon-behring.dev` (if ever deployed as such)
+2. **Exception (semantic suffix)**: when a repo holds multiple deployable artifacts and the mechanical slug would be ambiguous, append a hyphenated artifact-type suffix.
+   - `post_transformers` repo holds both research code and a book → the book deploys to `post-transformers-guide.brandon-behring.dev`. The research site, if separately deployed, would be `post-transformers.brandon-behring.dev`.
+   - Suffix vocabulary: `-guide`, `-docs`, `-book`, `-demo` as needed.
+
+### Cloudflare wiring (per subdomain)
+
+For each new project that already has a Cloudflare Workers / Pages deploy:
+
+1. Dashboard → **Workers & Pages** → select the project → **Settings** → **Domains**.
+2. Click **Add** → **Custom Domain**.
+3. Enter `<slug>.brandon-behring.dev` — **not** the bare apex `brandon-behring.dev`. The apex is owned by this portfolio.
+4. Cloudflare auto-creates the DNS record (the zone is already owned by this account) and provisions TLS (~1 minute).
+
+**Conflict gotcha**: if the dashboard returns `"Hostname 'brandon-behring.dev' already in use by other custom domain"`, you tried to attach the bare apex. Use a subdomain instead — see the slug rule above.
+
+### Registry
+
+| Slug | Repo | Deploy product | Status |
+|---|---|---|---|
+| `brandon-behring.dev` (root) | `brandon-behring.dev` | Cloudflare Pages | live (apex) |
+| `study-notes` | `dlai-study-notes` | Cloudflare Pages | live |
+| `ssm-foundations` | `ssm-foundations` | Workers + Static Assets | attached |
+| `post-transformers-guide` | `post_transformers` | Workers + Static Assets | preview-only (`workers.dev`); subdomain attach pending |
+
+Update this table when adding a new subdomain.
+
+### Subdomain vs subpath
+
+Default to **subdomain** per project. Subpaths under `brandon-behring.dev/` are reserved for the portfolio's own pages; sharing the root with project artifacts would require Worker routing logic and is avoided.

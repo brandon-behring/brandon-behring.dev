@@ -142,5 +142,23 @@
     ],
     "visual": null,
     "featured": false
+  },
+  {
+    "slug": "ssm-foundations",
+    "title": "ssm-foundations",
+    "cluster": "future",
+    "order": 3,
+    "status": "in-progress",
+    "summary": "17-chapter lens-led foundations book bridging numerical analysis and dynamical systems to post-transformer sequence model architectures. Ch 1–6 shipped (linear ODEs, stability, linear algebra, discretization, stability regions, symplectic).",
+    "description_long": "Public foundations book derived from the post-transformers research repo. 17 chapters organized lens-first: continuous-time dynamics → discretization → stability theory → structured SSMs → selective scans → hybrids. Each chapter pairs prose with JAX and Julia companions plus reproducible figures. Built on book-scaffold-astro v4 academic preset; deployed via Cloudflare Workers + Static Assets.",
+    "whats_next": "6 of 17 chapters implemented (foundations layer complete). Next: Ch 7 (HiPPO theory) and the structured-SSM layer (S4, S4D, Mamba-1/2/3).",
+    "stack": ["Astro 6", "MDX", "JAX", "Julia", "DifferentialEquations.jl", "KaTeX", "Cloudflare Workers"],
+    "repo_url": "https://github.com/brandon-behring/ssm-foundations",
+    "site_url": "https://ssm-foundations.brandon-behring.dev",
+    "external_context": [
+      { "label": "Source: post-transformers research repo", "url": "https://github.com/brandon-behring/post_transformers" }
+    ],
+    "visual": null,
+    "featured": false
   }
 ]
