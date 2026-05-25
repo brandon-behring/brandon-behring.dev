@@ -159,6 +159,6 @@
       { "label": "Source: post-transformers research repo", "url": "https://github.com/brandon-behring/post_transformers" }
     ],
     "visual": null,
-    "featured": false
+    "featured": true
   }
 ]
