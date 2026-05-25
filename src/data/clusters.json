@@ -30,6 +30,6 @@
     "section": "future",
     "order": 4,
     "description": "Currently building out.",
-    "projects": ["post-transformers", "rl-and-control"]
+    "projects": ["ssm-foundations", "rl-and-control"]
   }
 ]
