@@ -38,11 +38,20 @@ images would be. Provide these to complete the visual design.
 - **Recommended source**: [Simple Icons](https://simpleicons.org/) for tech logos (Julia, Python, TypeScript, JAX, PyTorch, Astro), or custom SVGs for per-repo identity.
 - **Where they'd plug in**: `<ClusterCard>` artifact bullets — currently uses a small "▪" bullet; can be swapped for an icon component.
 
-## 4. Cloudflare Web Analytics token
+## 4. Cloudflare Web Analytics — done (2026-05-25)
 
-- **Where**: `src/layouts/Base.astro` — `data-cf-beacon='{"token": "TOKEN_PLACEHOLDER"}'`.
-- **How to get it**: Cloudflare dashboard → Analytics & Logs → Web Analytics → Add a site → copy the token from the beacon snippet.
-- **Replace**: `TOKEN_PLACEHOLDER` with the real token.
+- **Status**: resolved. Wired via Cloudflare's automatic edge injection — no
+  in-source beacon needed.
+- **What changed**: `src/layouts/Base.astro` previously had an inline
+  `<script ... data-cf-beacon='{"token": "TOKEN_PLACEHOLDER"}'>` block.
+  Removed. The production domain (`brandon-behring.dev`) is CF-proxied, so
+  CF injects its own beacon at the edge when the site is registered in
+  Web Analytics (it is).
+- **Trade-off**: workers.dev preview gets no analytics. Acceptable — it's
+  not the public surface.
+- **If you ever want manual beacon control** (e.g., to track the
+  workers.dev preview too): re-add the inline `<script>` block with a real
+  token from CF dashboard → Web Analytics → site settings → JS snippet.
 
 ## Notes
 
