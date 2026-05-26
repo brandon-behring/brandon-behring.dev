@@ -1,0 +1,231 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="How this was made — Brandon Behring"
+  description="The discipline, artifacts, and audit trail behind AI-assisted research and writing on brandon-behring.dev. Includes the bisection workflow and voluntary EU AI Act Art 50 alignment."
+>
+  <article class="prose">
+    <h1>How this was made</h1>
+
+    <p class="lead">
+      Work on this site is produced with substantial AI assistance.
+      This page documents the discipline that keeps it auditable, the
+      artifacts that record what was done, and the workflow that lets
+      any specific claim be traced to its source.
+    </p>
+
+    <h2 id="the-discipline">The discipline</h2>
+
+    <p>Four constraints shape how research artifacts get produced here.</p>
+
+    <ol>
+      <li>
+        <strong>No fabricated citations.</strong> Every cited source
+        must resolve to a real paper present in <code>research-kb</code>,
+        the local citation graph. Claims naming a source the KB has not
+        ingested do not ship.
+      </li>
+      <li>
+        <strong>Decisions are written down.</strong> Each substantive
+        project carries a <code>DECISIONS.md</code> file recording
+        non-obvious choices — why this approach over that one, what was
+        tried and rejected, what constraint forced the call.
+      </li>
+      <li>
+        <strong>Periodic independent audits.</strong> Projects get an
+        <code>AUDIT_&lt;date&gt;.md</code> file when audited, with
+        <code>_INDEPENDENT</code> suffix when the audit is run by a
+        fresh agent without prior conversation context. Independent
+        audits catch claims that seemed obvious from inside the work
+        but do not hold up cold-read.
+      </li>
+      <li>
+        <strong>The audit prompt is reusable.</strong>
+        <code>audit-templates</code> contains the standard prompt,
+        applied identically across projects. Cross-project drift in
+        audit quality is suppressed by sharing the prompt.
+      </li>
+    </ol>
+
+    <h2 id="the-artifacts">The artifacts</h2>
+
+    <h3><code>DECISIONS.md</code></h3>
+    <p>
+      Per-project file at the repo root. Captures decision-of-record
+      entries with date, context, alternatives considered, and reasoning.
+      Examples in the public record:
+      <a href="https://github.com/brandon-behring/prompt_injection_detector/blob/main/DECISIONS.md"
+        ><code>prompt_injection_detector</code></a>,
+      <a href="https://github.com/brandon-behring/annuity-knowledge-base/blob/main/DECISIONS.md"
+        ><code>annuity-knowledge-base</code></a>.
+    </p>
+
+    <h3><code>AUDIT_&lt;date&gt;.md</code></h3>
+    <p>
+      Audit artifacts. Filename pattern
+      <code>AUDIT_YYYY-MM-DD.md</code>, with <code>_INDEPENDENT</code>
+      suffix for fresh-agent runs. A project accumulates several over
+      time — for example,
+      <a href="https://github.com/brandon-behring/causal_inference_mastery/tree/main/docs"
+        ><code>causal_inference_mastery</code></a>
+      carries <code>AUDIT_2025-12-31.md</code>,
+      <code>AUDIT_2026-01-01_INDEPENDENT.md</code>, and
+      <code>AUDIT_RESULTS.md</code>.
+    </p>
+
+    <h3>Cadence</h3>
+    <p>
+      No fixed schedule. An audit is triggered when substantive content
+      lands, when a project is about to be shipped or shared, when a
+      peer flags a possible issue, or when a quarter has passed. The
+      independence dimension matters more than the cadence: a fresh
+      agent without prior context catches what a familiar one will not.
+    </p>
+
+    <h2 id="ai-disclosure">AI disclosure</h2>
+
+    <p>
+      Content on this site is produced collaboratively with AI tools —
+      principally
+      <a href="https://www.anthropic.com/claude-code">Claude Code</a>.
+      The split varies by artifact: some pages are AI-drafted and
+      human-audited; others are AI-assisted research synthesis with
+      human framing; a few are mostly human writing reviewed by AI for
+      clarity. The four constraints above apply identically across
+      categories.
+    </p>
+
+    <p>
+      This site voluntarily aligns with the disclosure principles of
+      <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">EU AI
+      Act Article 50</a> (effective 2026-08-02), though the apex domain
+      is US-operated and not legally bound. The discipline exists;
+      making it visible is the cost-free part.
+    </p>
+
+    <h2 id="bisection">Bisection — claim to source</h2>
+
+    <p>
+      Given a suspect claim in any chapter or article, the path from
+      claim to source is four steps. A Provenance component, rolling out
+      across the book-scaffold-astro consumers, will surface most of this
+      inline on chapter pages; today the workflow is manual.
+    </p>
+
+    <ol>
+      <li>
+        <strong>Read the page frontmatter (when present).</strong> Each
+        substantive chapter has a <code>provenance:</code> block naming
+        the AI tools used, decisions-log anchor, and audit history.
+      </li>
+      <li>
+        <strong>Follow the decisions log.</strong> The
+        <code>decisions_log</code> entry is an anchor into the project's
+        <code>DECISIONS.md</code>. That entry records why the claim is
+        framed the way it is and what alternatives were considered.
+      </li>
+      <li>
+        <strong>Check the audit history.</strong> Each
+        <code>AUDIT_&lt;date&gt;.md</code> referenced in the audit
+        history was a moment of "is this still right?" — both routine and
+        independent.
+      </li>
+      <li>
+        <strong>Resolve to research-kb.</strong> Claims tied to a cited
+        source resolve to a research-kb entry holding the paper,
+        citation metadata, and its position in the citation graph. From
+        there, confirm against the source itself.
+      </li>
+    </ol>
+
+    <h3>Worked example (illustrative)</h3>
+
+    <p>
+      Suppose a chapter on numerical discretization of state-space
+      models claims the bilinear transform preserves stability
+      properties under large step sizes, and cites a foundational
+      control-theory paper. Bisection:
+    </p>
+
+    <ol>
+      <li>
+        Open the chapter. Frontmatter shows
+        <code>citation_backstop: research-kb</code> and a
+        <code>decisions_log</code> anchor pointing into the project's
+        <code>DECISIONS.md</code>.
+      </li>
+      <li>
+        Open the decisions log entry. It explains why bilinear was
+        chosen over forward Euler (numerical stability for large step
+        sizes) and references the cited paper for the stability
+        argument.
+      </li>
+      <li>
+        Check the most recent <code>AUDIT_&lt;date&gt;.md</code> for the
+        project. Confirm the cited paper is named and that the stability
+        claim was checked against the actual source during the audit.
+      </li>
+      <li>
+        Resolve the cited paper through research-kb. Open the actual PDF
+        held in the local library. Confirm the cited result matches the
+        source's actual statement, including any qualifying conditions
+        the chapter may have abridged.
+      </li>
+    </ol>
+
+    <p>
+      If any step fails — frontmatter missing, decision not recorded,
+      audit silent on the claim, research-kb missing the source —
+      that is a real flaw, not a stylistic one.
+      <a href="mailto:brandon.m.behring@gmail.com">Email me</a> and it
+      gets fixed.
+    </p>
+
+    <h2 id="see-also">See also</h2>
+
+    <ul>
+      <li>
+        <strong>Provenance component</strong> (rolling out). Per-chapter
+        UI for the audit history above; renders the frontmatter into a
+        collapsible "How this was made" block on every chapter page.
+      </li>
+      <li>
+        <strong><code>research-kb</code></strong>: citation graph
+        backstop. Hybrid BM25 + vector + graph search over the local
+        corpus.
+      </li>
+      <li>
+        <strong><code>audit-templates</code></strong>: the standard
+        audit prompt applied across projects.
+      </li>
+      <li>
+        <a href="/#about">Back to About</a>
+      </li>
+    </ul>
+  </article>
+</Base>
+
+<style>
+  .lead {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    margin: 1.5rem 0 2.5rem 0;
+    line-height: 1.5;
+  }
+  article h2 {
+    margin-top: 3rem;
+  }
+  article h3 {
+    margin-top: 2rem;
+  }
+  article ol li,
+  article ul li {
+    margin: 0.6rem 0;
+    line-height: 1.55;
+  }
+  article code {
+    font-size: 0.95em;
+  }
+</style>
