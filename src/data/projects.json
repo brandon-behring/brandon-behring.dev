@@ -135,7 +135,7 @@
     "status": "in-progress",
     "summary": "17-chapter lens-led foundations book bridging numerical analysis and dynamical systems to modern sequence-model architectures (SSMs, Mamba, S4, Hyena, DeltaNet). Successor to a 21-week research-guide effort. Ch 1–6 shipped (linear ODEs, stability, linear algebra, discretization, stability regions, symplectic integration).",
     "description_long": "Public foundations book derived from the post-transformers research repo. 17 chapters organized lens-first: continuous-time dynamics → discretization → stability theory → structured state-space models → selective scans (Mamba, S4, S4D) → hybrids. Each chapter pairs prose with JAX and Julia companions, reproducible figures, and Julia stability tests. Built on book-scaffold-astro v4 academic preset; deployed via Cloudflare Workers + Static Assets.",
-    "whats_next": "6 of 17 chapters implemented (foundations layer complete). Next: Ch 7 (HiPPO theory) and the structured-SSM layer (S4, S4D, Mamba-1/2/3).",
+    "whats_next": "Deployed 2026-05-26 at https://ssm-foundations.brandon-behring.dev (Phase 1c first-deploy). 6 of 17 chapters implemented (foundations layer complete). Next: Ch 7 (HiPPO theory) and the structured-SSM layer (S4, S4D, Mamba-1/2/3).",
     "stack": ["Astro 6", "MDX", "JAX", "Julia", "DifferentialEquations.jl", "KaTeX", "Cloudflare Workers"],
     "repo_url": "https://github.com/brandon-behring/ssm-foundations",
     "site_url": "https://ssm-foundations.brandon-behring.dev",
