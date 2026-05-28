@@ -19,36 +19,46 @@ interface Cluster {
 interface Props {
   cluster: Cluster;
   projects: Project[];
+  /**
+   * Compact variant for the homepage "More work" tier strip: omits the
+   * artifact list + screenshot placeholder, keeping just the header and
+   * the "More →" link so tier tiles read as clearly secondary.
+   */
+  compact?: boolean;
 }
 
-const { cluster, projects } = Astro.props;
+const { cluster, projects, compact = false } = Astro.props;
 ---
 
-<article class="cluster-card">
+<article class:list={["cluster-card", { compact }]}>
   <header>
     <h3>{cluster.name}</h3>
     <p class="cluster-description">{cluster.description}</p>
   </header>
 
-  <ul class="artifact-list">
-    {projects.map((p) => (
-      <li class="artifact">
-        <span class="artifact-bullet" aria-hidden="true">▪</span>
-        <span class="artifact-title">{p.title}</span>
-        <StatusBadge status={p.status} />
-      </li>
-    ))}
-    {cluster.expanding && (
-      <li class="expanding-hint">
-        <span class="artifact-bullet" aria-hidden="true">▫</span>
-        <em>More course-derived notes lined up</em>
-      </li>
-    )}
-  </ul>
+  {!compact && (
+    <ul class="artifact-list">
+      {projects.map((p) => (
+        <li class="artifact">
+          <span class="artifact-bullet" aria-hidden="true">▪</span>
+          <span class="artifact-title">{p.title}</span>
+          <StatusBadge status={p.status} />
+        </li>
+      ))}
+      {cluster.expanding && (
+        <li class="expanding-hint">
+          <span class="artifact-bullet" aria-hidden="true">▫</span>
+          <em>More course-derived notes lined up</em>
+        </li>
+      )}
+    </ul>
+  )}
 
-  <div class="visual-placeholder" aria-hidden="true">
-    <span>Screenshot</span>
-  </div>
+  {!compact && (
+    <div class="visual-placeholder" aria-hidden="true">
+      <span>Screenshot</span>
+    </div>
+  )}
 
   <a href={`/work/${cluster.slug}/`} class="more-link">
     More <span aria-hidden="true">→</span>
@@ -66,6 +76,19 @@ const { cluster, projects } = Astro.props;
     border-radius: 8px;
     background: var(--color-bg);
     height: 100%;
+  }
+
+  .cluster-card.compact {
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .cluster-card.compact h3 {
+    font-size: 1rem;
+  }
+
+  .cluster-card.compact .cluster-description {
+    font-size: 0.85rem;
   }
 
   .cluster-card h3 {

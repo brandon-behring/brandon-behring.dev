@@ -7,7 +7,7 @@ import projectsData from '../../data/projects.json';
 
 export function getStaticPaths() {
   return clustersData
-    .filter((c) => c.section === 'now')
+    .filter((c) => c.section === 'now' || c.section === 'tier')
     .map((cluster) => ({
       params: { slug: cluster.slug },
       props: { cluster },

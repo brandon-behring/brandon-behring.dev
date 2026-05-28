@@ -27,5 +27,33 @@
     "section": "future",
     "order": 4,
     "description": "Currently building out."
+  },
+  {
+    "slug": "published-research",
+    "name": "Published Research",
+    "section": "tier",
+    "order": 1,
+    "description": "Shipped guides and long-form books: interview-prep guides, an agentic-coding book, and formal Definition–Theorem–Proof mathematical guides."
+  },
+  {
+    "slug": "research-infrastructure",
+    "name": "Research Infrastructure",
+    "section": "tier",
+    "order": 2,
+    "description": "The search, memory, and agent tooling I built to accelerate my own research and learning — it powers the citation-graph demo and the study-notes pipeline."
+  },
+  {
+    "slug": "publishing-infrastructure",
+    "name": "Publishing Infrastructure",
+    "section": "tier",
+    "order": 3,
+    "description": "The reusable scaffold and deploy pipeline behind every book and guide here: npm-published, dogfooded across projects."
+  },
+  {
+    "slug": "pricing-decision-systems",
+    "name": "Pricing Decision Systems",
+    "section": "tier",
+    "order": 4,
+    "description": "Annuity pricing and insurance-risk valuation — a Python pricing library and an AI/ML actuarial toolkit, with a companion Julia stack. Earlier domain work, intentionally not the lead."
   }
 ]

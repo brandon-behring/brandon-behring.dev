@@ -8,6 +8,10 @@ const nowClusters = clustersData
   .filter((c) => c.section === 'now')
   .sort((a, b) => a.order - b.order);
 
+const tierClusters = clustersData
+  .filter((c) => c.section === 'tier')
+  .sort((a, b) => a.order - b.order);
+
 const futureProjects = projectsData
   .filter((p) => p.cluster === 'future')
   .sort((a, b) => a.order - b.order);
@@ -42,6 +46,19 @@ function projectsForCluster(slug: string) {
     </div>
   </section>
 
+  <section class="more-work" aria-labelledby="more-heading">
+    <h2 id="more-heading" class="prose section-heading">More work</h2>
+    <div class="tier-grid">
+      {tierClusters.map((cluster) => (
+        <ClusterCard
+          cluster={cluster}
+          projects={projectsForCluster(cluster.slug)}
+          compact
+        />
+      ))}
+    </div>
+  </section>
+
   <section class="future prose" aria-labelledby="future-heading">
     <h2 id="future-heading">Where this is going</h2>
     <ul class="future-list">
@@ -71,8 +88,8 @@ function projectsForCluster(slug: string) {
       architectures (SSMs, Mamba, Hyena, DeltaNet) and reinforcement
       learning + optimal control. Expanding the course-derived study notes
       pattern beyond DLAI. Direction: research engineering on next-generation
-      AI architectures, with applied causal methods and rigorous evaluation
-      as the methodology spine.
+      AI architectures, with applied causal methods, risk analysis,
+      and rigorous evaluation as the methodology spine.
     </p>
     <p class="about-methodology">
       Methodology, AI disclosure, and audit trail:
@@ -129,6 +146,25 @@ function projectsForCluster(slug: string) {
   @media (min-width: 1024px) {
     .cluster-grid {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .more-work {
+    margin: 3rem 0;
+  }
+  .tier-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 768px) {
+    .tier-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .tier-grid {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 

@@ -9,23 +9,46 @@ const { currentSlug } = Astro.props;
 const nowClusters = clustersData
   .filter((c) => c.section === 'now')
   .sort((a, b) => a.order - b.order);
+
+const tierClusters = clustersData
+  .filter((c) => c.section === 'tier')
+  .sort((a, b) => a.order - b.order);
 ---
 
 <nav class="cluster-nav" aria-label="Cluster navigation">
-  <span class="label">Clusters:</span>
-  <ul>
-    {nowClusters.map((cluster) => (
-      <li>
-        <a
-          href={`/work/${cluster.slug}/`}
-          class:list={[{ current: cluster.slug === currentSlug }]}
-          aria-current={cluster.slug === currentSlug ? "page" : undefined}
-        >
-          {cluster.name}
-        </a>
-      </li>
-    ))}
-  </ul>
+  <div class="nav-group">
+    <span class="label">Now:</span>
+    <ul>
+      {nowClusters.map((cluster) => (
+        <li>
+          <a
+            href={`/work/${cluster.slug}/`}
+            class:list={[{ current: cluster.slug === currentSlug }]}
+            aria-current={cluster.slug === currentSlug ? "page" : undefined}
+          >
+            {cluster.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="nav-group">
+    <span class="label">More:</span>
+    <ul>
+      {tierClusters.map((cluster) => (
+        <li>
+          <a
+            href={`/work/${cluster.slug}/`}
+            class:list={[{ current: cluster.slug === currentSlug }]}
+            aria-current={cluster.slug === currentSlug ? "page" : undefined}
+          >
+            {cluster.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
 </nav>
 
 <style>
@@ -33,13 +56,19 @@ const nowClusters = clustersData
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0.75rem;
+    gap: 0.75rem 2rem;
     font-family: var(--font-sans);
     font-size: 0.9rem;
     margin: 0 0 2rem 0;
     padding: 0.75rem 0;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
+  }
+  .nav-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.75rem;
   }
   .label {
     color: var(--color-text-muted);

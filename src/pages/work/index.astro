@@ -8,6 +8,10 @@ const nowClusters = clustersData
   .filter((c) => c.section === 'now')
   .sort((a, b) => a.order - b.order);
 
+const tierClusters = clustersData
+  .filter((c) => c.section === 'tier')
+  .sort((a, b) => a.order - b.order);
+
 function projectsForCluster(slug: string) {
   return projectsData
     .filter((p) => p.cluster === slug)
@@ -22,14 +26,27 @@ function projectsForCluster(slug: string) {
   <section class="work-intro prose">
     <h1>Work</h1>
     <p>
-      Three clusters of current work. Each links to a deeper page with
-      per-project detail.
+      Current work plus the infrastructure, research, and pricing systems
+      behind it. Each links to a deeper page with per-project detail.
     </p>
   </section>
 
-  <section class="clusters" aria-label="Cluster cards">
+  <section class="clusters" aria-labelledby="work-now-heading">
+    <h2 id="work-now-heading" class="prose section-heading">Current work</h2>
     <div class="cluster-grid">
       {nowClusters.map((cluster) => (
+        <ClusterCard
+          cluster={cluster}
+          projects={projectsForCluster(cluster.slug)}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="clusters" aria-labelledby="work-more-heading">
+    <h2 id="work-more-heading" class="prose section-heading">More work</h2>
+    <div class="cluster-grid">
+      {tierClusters.map((cluster) => (
         <ClusterCard
           cluster={cluster}
           projects={projectsForCluster(cluster.slug)}
@@ -48,6 +65,13 @@ function projectsForCluster(slug: string) {
   }
   .clusters {
     margin: 3rem 0;
+  }
+  .section-heading {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
   }
   .cluster-grid {
     display: grid;
