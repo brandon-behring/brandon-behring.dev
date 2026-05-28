@@ -49,9 +49,10 @@ Last refined: 2026-05-28 (backlog audit + portfolio candidates discovery + ambig
   out-of-scaffold-scope and queued in "Quick wins backlog" below.
 - **Subdomain consumers live**: `dml.brandon-behring.dev` (DML),
   `ssm-foundations.brandon-behring.dev` (ssm-foundations).
-- **Non-blocking cosmetic regressions still open**: F1 `/favicon.svg`
-  404, F2 Cytoscape `hsl()` color rejection (logged, own commit per
-  2026-05-28 audit Q3 — see "Quick wins backlog").
+- **Cosmetic regressions resolved (2026-05-28, Phase 5)**: F1
+  `/favicon.ico` 404 fixed (multi-size `.ico` added); F2 Cytoscape
+  `hsl()` rejection was already fixed in a prior session
+  (`CitationGraph.astro` `hslToHex`) — verified, no change needed.
 - **Ambiguity-resolution session** (2026-05-28): 4 of 6 strategic
   ambiguities locked via 4 sequenced `/exploring-options` rounds.
   See `docs/sessions/2026-05-28--ambiguity-resolution.md`. Locked:
@@ -83,19 +84,17 @@ chain.
    (commit `6fcf97f`, issue #14 closed). ~4–6 hr multi-session.
    **Pre-flight risk**: `research-kb#16` (`--full-rebuild` not
    transactional) — handle before running full rebuild.
-3. **Phase 5 — Portfolio cluster additions.** Four new tier-strip
-   cluster tiles on `brandon-behring.dev` homepage: `tools`,
-   `books-and-guides`, `pricing-decision-systems`,
-   `research-infrastructure`. ~1–2 hr. **Open question to flag
-   inline**: `tools` cluster name is generic (per
-   `~/.claude/plans/i-want-to-look-streamed-pebble.md` open question
-   N7) — rename gate before going live. **Cluster shape locked**
-   2026-05-28 ambiguity-resolution Q1: 3 lead cards preserved
-   (causal-methods / ai-evaluation / course-notes) + 4 tier tiles in
-   Future strip. **`mathematical-guides` family** lands as a
-   sub-entry under `books-and-guides` cluster page (locked Q2);
-   deployment to `mathematical.brandon-behring.dev` proceeds
-   independently via existing `wrangler.toml`.
+3. ~~Phase 5 — Portfolio cluster additions.~~ **✓ SHIPPED 2026-05-28.**
+   Four tier clusters added (final names, post rename-gate):
+   `published-research`, `research-infrastructure`,
+   `publishing-infrastructure`, `pricing-decision-systems` — rendered as
+   a compact "More work" strip under the 3 preserved lead cards. +14
+   projects (private repos link-less; Julia stack prose-only; ir-eval
+   deferred). Bundled quick wins shipped: sitemap, RSS, favicon (F1);
+   F2 already fixed. `mathematical-guides` family = one link-less
+   sub-entry under `published-research` (deploy to
+   `mathematical.brandon-behring.dev` still independent). See
+   `docs/sessions/2026-05-28--phase-5-prep.md` (Execution section).
 
 **Parked candidate** (slot #4 if a slot opens): SSM flagship demo —
 "Why discretization matters for sequence models" explainer (framing
