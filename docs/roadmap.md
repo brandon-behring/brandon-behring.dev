@@ -7,7 +7,7 @@
 > [`deploy-workflows/README.md`](https://github.com/brandon-behring/deploy-workflows#phase-2-roadmap)
 > for infra Phase 2 detail.
 
-Last refined: 2026-05-23 (Phase 2 lead-identity + homepage restructure).
+Last refined: 2026-05-28 (backlog audit; ranking refreshed to strategic-impact / craft-signal lens).
 
 ## What just shipped (Phase 1, May 2026)
 
@@ -32,25 +32,160 @@ Last refined: 2026-05-23 (Phase 2 lead-identity + homepage restructure).
   (token to add post-deploy), one static OG image (asset pending),
   3 → 2 → 1 column responsive cluster grid.
 
-## Next 1–3 (pick one to start, in order)
+## What just shipped (Phase 2 follow-on, May 24–27, 2026)
 
-1. **A4 first demo: RL + control citation graph via research-kb** (~4–6 hr, **multi-session**, spans 2 projects).
-   - **Data source picked**: `rl_and_control/references/paper_index.md` — 135 papers, 18 thematic sections, status-tracked, with key findings per paper. Plus 12 method-family dossiers.
-   - **Pattern picked**: Path C — extend research-kb with a `graph export` CLI subcommand; ingest the ~50 already-downloaded papers; export Cytoscape JSON; render in `/lab/research-graph/` on brandon-behring.dev as a Cytoscape.js Astro island.
-   - **research-kb work** (~2–3 hr): new `graph export` subcommand in `packages/cli/src/research_kb_cli/commands/graph.py`; JSON formatter in `packages/storage/src/research_kb_storage/graph_queries.py`; ingest `[downloaded]`-status papers; tests.
-   - **brandon-behring.dev work** (~2–3 hr): new `/lab/research-graph/` route (informally answers `/lab` route question); Cytoscape.js island; thematic coloring; click-to-detail; mobile + reduced-motion.
-   - Why first: validates the research-kb → brandon-behring.dev data pipeline. Reusable for future graphs (causal DAG, post-transformer operator-family map).
-2. **Provide visual assets** (~30–60 min, no code).
-   - Capture per-project screenshots (see `docs/ASSETS-NEEDED.md`).
-   - Generate the OG image (1200 × 630 PNG).
-   - Add the Cloudflare Web Analytics token to `src/layouts/Base.astro`.
-   - Why second: lower priority than demo but closes Phase 2's intent.
-3. **Migrate `post_transformers/guides/web` to the reusable workflow (B1)**
-   (mechanical, ~30 min). Validates `deploy-workflows` with a 2nd consumer;
-   unlocks `@v1` tag pinning.
+- **A4 first demo live** (2026-05-24): `/lab/research-graph/` —
+  135 RL+control papers via new `research-kb graph export` CLI +
+  Cytoscape.js + fcose. Graph currently sparse (3 edges across 84
+  nodes); densification is Next-1-3 item #2 below. See
+  `docs/sessions/2026-05-24--deploy-verification.md`.
+- **`deploy-workflows@v1` + `@v2` tagged** (2026-05-26): 3 consumers
+  pinned to `@v1` (brandon-behring.dev, DML, ssm-foundations); DML
+  adopted `@v2` with `enable-pr-previews: true`.
+- **v4.6 dogfood sprint complete** (2026-05-27):
+  `book-scaffold-astro` v4.6.0 published to npm; DML + ssm bumped +
+  migrated `ci:validate` → `prevalidate` (recipe 19); scaffold issues
+  #76 (SEO parity) + #77 (validator UX) closed. Apex sitemap gap is
+  out-of-scaffold-scope and queued in "Quick wins backlog" below.
+- **Subdomain consumers live**: `dml.brandon-behring.dev` (DML),
+  `ssm-foundations.brandon-behring.dev` (ssm-foundations).
+- **Non-blocking cosmetic regressions still open**: F1 `/favicon.svg`
+  404, F2 Cytoscape `hsl()` color rejection (logged, own commit per
+  2026-05-28 audit Q3 — see "Quick wins backlog").
 
-Skip ahead, mix, or replace any of these — they're the *most-leveraged*
-next moves, not a forced sequence.
+## Next 1–3 (pick one to start, in order — strategic-impact / craft-signal lens)
+
+Ranking lens picked in 2026-05-28 audit Q1: *craft signal* —
+process-as-artifact pattern visible across consumer chapters. See
+`docs/sessions/2026-05-28--backlog-audit.md` for the full decision
+chain.
+
+1. **Phase 6a — `book-scaffold-astro` v5 Provenance + Audit component.**
+   Reusable Astro component reading provenance frontmatter (`ai_tools`,
+   `prompts_archive`, `decisions_log`, `audit_history`,
+   `citation_backstop`). Surfaces process-as-artifact on every chapter
+   of every consumer book (DML, ssm, dlai, guides, claude-books).
+   Spec: `~/.claude/plans/i-want-to-look-streamed-pebble.md:391-424`.
+   **Sequencing gate**: Phase 4 (guides paradigm migration) Steps 2-5
+   cannot advance until 6a ships + verifies on one consumer.
+2. **A4 graph densification.** Densify `/lab/research-graph/` with
+   pre-arXiv classics + textbooks; reuses Cytoscape + fcose
+   infrastructure. research-kb matcher unblock landed 2026-05-25
+   (commit `6fcf97f`, issue #14 closed). ~4–6 hr multi-session.
+   **Pre-flight risk**: `research-kb#16` (`--full-rebuild` not
+   transactional) — handle before running full rebuild.
+3. **Phase 5 — Portfolio cluster additions.** Three new cluster cards
+   on `brandon-behring.dev` homepage: `tools`, `books-and-guides`,
+   `pricing-decision-systems`. ~1–2 hr. **Open question to flag
+   inline**: `tools` cluster name is generic (per
+   `~/.claude/plans/i-want-to-look-streamed-pebble.md` open question
+   N7) — rename gate before going live. **Note**: `mathematical-guides`
+   family explicitly NOT added as a link entry pending placement
+   decision (see "Strategic decisions still open" below).
+
+**Parked candidate** (slot #4 if a slot opens): SSM stability flagship
+demo. Blocked on its own framing question (stability regions /
+symplectic / discretization-matters per
+`docs/visual-design-options-report.md:492`) — would benefit from its
+own `/exploring-options` round before committing.
+
+Skip ahead, mix, or replace — the ranking is strategic-impact by
+craft-signal lens, not a forced sequence.
+
+## Quick wins backlog (parallel-track fill for short open sessions)
+
+- **Apex sitemap** via `@astrojs/sitemap` (~15 min; closes the apex row
+  of the issue #76 grep table — see pickup memory)
+- **RSS feed** via `@astrojs/rss` (~30 min)
+- **CITATION.cff burst** across academic repos (ssm, dlai, eval-toolkit,
+  ...; ~5 min/repo)
+- **OG image authoring** for DML + ssm (Option D from pickup memory;
+  ~10–30 min each)
+- **B1 — `post_transformers/guides/web` reusable-workflow migration**
+  (~30 min; was Next-1-3 #3 pre-audit)
+- **Visual assets** — per-project screenshots + OG image for portfolio
+  homepage (~30–60 min; was Next-1-3 #2 pre-audit; see
+  `docs/ASSETS-NEEDED.md`)
+- **Phase 4 (guides) paradigm migration Step 1 only** (~1–2 hr; Steps
+  2–5 blocked on Phase 6a)
+- **F1 favicon 404 + F2 Cytoscape `hsl()` color rejection fixes**
+  (~30 min combined; **own commit** per 2026-05-28 audit Q3)
+
+## Cross-repo coordination (state as of 2026-05-28)
+
+| Repo | Current state | Notes |
+|---|---|---|
+| `book-scaffold-astro` | v4.6.0 shipped | v5 (Phase 6a Provenance) is next major; see Next-1-3 #1 |
+| `deploy-workflows` | `@v1` + `@v2` tagged | OIDC migration on future-track (cloudflare/wrangler-action#402) → `@v3` |
+| `double_ml_time_series` (DML) | Live at `dml.brandon-behring.dev`; on `@v2` | OG image pending (Option D) |
+| `ssm-foundations` | Live at `ssm-foundations.brandon-behring.dev`; on `@v2` | OG image pending; **5 new audit-burst issues from 2026-05-27** (#1, #3, #4, #5, #6) labeled in 2026-05-28 audit |
+| `dlai-study-notes` | Phase 3 deploy candidate | `site_url` unset until shipped |
+| `guides` | Phase 4 paradigm migration ready | Provenance opt-in gated on Phase 6a + cross-consumer verify; stale scaffold-bump issue `#2` references pre-v4.6 |
+| `claude-books` | Workspace with 4 planned members; handbook in Phase 0 | Stale scaffold-bump issues `#2`–`#4` reference pre-v4.6 |
+| `post_transformers` | GitHub-only upstream research | `#51` BREAKING blocker labeled P2 in 2026-05-28 audit |
+| `research-kb` | Matcher unblock landed 2026-05-25 | `#16` (`--full-rebuild` data-loss risk) labeled P2 in 2026-05-28 audit |
+| `mathematical-guides` family | **NEW** (discovered 2026-05-28) — hub + transformers sibling + RL sibling | All private; all pushed 2026-05-28; hub has `wrangler.toml` (deploy-intent); placement open (see "Strategic decisions still open") |
+
+## Strategic decisions still open
+
+Consolidates unresolved questions from `docs/website-decision-map.md`
+"Open Decisions For Later" + `docs/visual-design-options-report.md`
+Q&A. Top 4 flagged; rest live in those source documents.
+
+1. **`mathematical-guides` family placement** (NEW 2026-05-28). Options
+   surfaced by 2026-05-28 audit Q4: supplement under existing `guides`
+   (Option 1), own subdomain like `math.brandon-behring.dev`
+   (Option 2), own portfolio cluster (Option 3), defer everything
+   (Option 4). Leaning Option 1 per the family's own README
+   ("supplements (does not replace) the practical `guides` family") but
+   not committed.
+2. **SSM flagship-demo framing** — stability regions / symplectic
+   integration / "why discretization matters for sequence models"
+   (per `docs/visual-design-options-report.md:492`). Gates Phase 5+
+   SSM-demo work; parked Next-1-3 slot #4 candidate.
+3. **Long-term hub structure** — `/research`, `/lab`, `/notes`, or
+   hybrid? `/work/{slug}` and `/lab` both exist with one entry each
+   (per `docs/visual-design-options-report.md:500`).
+4. **Applied insurance/stats positioning** — homepage proof strip, or
+   only on deeper pages? (per
+   `docs/visual-design-options-report.md:498`)
+
+See `docs/website-decision-map.md` §"Open Decisions For Later" and
+`docs/visual-design-options-report.md` Q&A § for the full list.
+
+## Discovered work surfaced 2026-05-28
+
+Items not currently tracked in the right places; half handled by
+2026-05-28 audit hygiene actions, half deferred.
+
+- **`mathematical-guides` family** (3 repos, ~400KB combined source,
+  all active 2026-05-28) — NOT in
+  `~/.claude/plans/i-want-to-look-streamed-pebble.md`. Placement open
+  per "Strategic decisions still open" #1.
+- **8+ stale scaffold-bump adoption issues** on `guides` +
+  `claude-books` (`guides#2` v4.0 BREAKING; `claude-books#2/#3/#4`
+  v4.0/v4.1/v4.3 adoption) all pre-v4.6 — **triage decision (2026-05-28
+  audit)**: leave for the natural next-bump cycle on those consumers;
+  not part of this audit pass.
+- **`post_transformers#51`** BREAKING blocker (`eval-toolkit`
+  `mde_from_ci(paired=...)` → `(ci=...)` rename) — labeled P2 by audit
+  hygiene; gates ssm pin bump.
+- **`research-kb#16`** (`--full-rebuild` not transactional →
+  crash-mid-rebuild = data loss) — labeled P2 by audit hygiene;
+  pre-flight for Next-1-3 #2.
+- **Work Tracker (#1) stale items**: `eval-toolkit#71` +
+  `eval-toolkit#73` showed "In Progress" but closed 2026-05-26 —
+  reconciliation attempted by audit hygiene (see session log for
+  outcome).
+- **`ssm-foundations` audit burst** (#1, #3, #4, #5, #6 from 2026-05-27
+  standards audit) — labeled `audit-followup` by audit hygiene; further
+  triage on Brandon's judgment.
+- **`brandonmbehring-dev` secondary remote** on DML — noted in memory;
+  resolve before pre-Phase-9 transfer window (per
+  `[[brandonmbehring-dev-second-account]]` memory).
+- **Distributed ML Patterns** (surfaced via Related-Books hook):
+  investigated, no portfolio repo, almost certainly a research-kb
+  reference. **Treated as noise**, no action.
 
 ## Decisions Locked (Phase 2)
 
