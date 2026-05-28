@@ -353,7 +353,7 @@
     "repo_url": "https://github.com/brandon-behring/prompt-injection-detection-prototype",
     "site_url": "https://brandon-behring.github.io/prompt-injection-detection-prototype/",
     "external_context": [],
-    "visual": null,
+    "visual": "/screenshots/prompt-injection-detection-prototype.png",
     "featured": false
   }
 ]
