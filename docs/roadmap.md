@@ -186,6 +186,18 @@ Items not currently tracked in the right places; half handled by
 - **Distributed ML Patterns** (surfaced via Related-Books hook):
   investigated, no portfolio repo, almost certainly a research-kb
   reference. **Treated as noise**, no action.
+- **Portfolio-candidate inventory + clone gap** (2026-05-28, separate
+  follow-on after the backlog audit): cross-account GitHub + local-only
+  work survey produced cluster-placement recommendations for Phase 5
+  plus a proposed 4th cluster (`research-infrastructure` anchoring
+  `research-kb` + `research-agent`). 8 missing-from-local repos cloned
+  to `~/Claude/<name>/`. 4 ambiguities flagged in the prior audit's
+  session log now resolved with local-repo evidence (notably:
+  `prompt-injection-detection-prototype` is a SIBLING of, not a
+  replacement for, the featured `prompt-injection-detector`; and
+  `claude-books/handbook` puts `claude-best-practices` on a defined
+  sunset path rather than orphan-legacy). See
+  `docs/sessions/2026-05-28--portfolio-candidates.md`.
 
 ## Decisions Locked (Phase 2)
 
