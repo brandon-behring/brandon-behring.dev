@@ -54,7 +54,6 @@
     "description_long": "DeBERTa-v3 with LoRA, evaluated against a baseline ladder (heuristic → logistic regression → frozen encoder → fine-tuned) on locked holdout splits with bootstrap confidence intervals on lift. Calibration via temperature scaling; reliability and ECE reported on a model card. Framed explicitly as methodology proof-of-concept, not a production detector.",
     "whats_next": "V2 methodology complete; finalizing DECISIONS.md (D1-D29 recorded). Next: archive the PoC and migrate methodology patterns into the eval-toolkit harness.",
     "stack": ["PyTorch", "DeBERTa-v3", "LoRA / PEFT", "scikit-learn", "PR-AUC + bootstrap CI"],
-    "repo_url": "https://github.com/brandon-behring/prompt-injection-detector",
     "metrics": [
       "DeBERTa−LR lift on test_id: Δ = +0.097 [+0.020, +0.199]",
       "DeBERTa−LR lift on ood_indirect_probe: Δ = +0.128 [+0.024, +0.236]"
