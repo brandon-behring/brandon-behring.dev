@@ -7,7 +7,7 @@
 > [`deploy-workflows/README.md`](https://github.com/brandon-behring/deploy-workflows#phase-2-roadmap)
 > for infra Phase 2 detail.
 
-Last refined: 2026-05-28 (backlog audit; ranking refreshed to strategic-impact / craft-signal lens).
+Last refined: 2026-05-28 (backlog audit + portfolio candidates discovery + ambiguity-resolution session — 4 of 6 strategic ambiguities locked).
 
 ## What just shipped (Phase 1, May 2026)
 
@@ -32,7 +32,7 @@ Last refined: 2026-05-28 (backlog audit; ranking refreshed to strategic-impact /
   (token to add post-deploy), one static OG image (asset pending),
   3 → 2 → 1 column responsive cluster grid.
 
-## What just shipped (Phase 2 follow-on, May 24–27, 2026)
+## What just shipped (Phase 2 follow-on, May 24–28, 2026)
 
 - **A4 first demo live** (2026-05-24): `/lab/research-graph/` —
   135 RL+control papers via new `research-kb graph export` CLI +
@@ -52,6 +52,15 @@ Last refined: 2026-05-28 (backlog audit; ranking refreshed to strategic-impact /
 - **Non-blocking cosmetic regressions still open**: F1 `/favicon.svg`
   404, F2 Cytoscape `hsl()` color rejection (logged, own commit per
   2026-05-28 audit Q3 — see "Quick wins backlog").
+- **Ambiguity-resolution session** (2026-05-28): 4 of 6 strategic
+  ambiguities locked via 4 sequenced `/exploring-options` rounds.
+  See `docs/sessions/2026-05-28--ambiguity-resolution.md`. Locked:
+  identity reconfirmed as build-to-learn; homepage cluster shape (3
+  lead + 4 tier tiles); `mathematical-guides` as sub-entry under
+  `books-and-guides`; insurance positioning stays off homepage; SSM
+  flagship-demo framing as the "Why discretization matters" explainer
+  (visualizer style TBD post-ship). Deferred: long-term hub
+  structure (defer-friendly until pull develops).
 
 ## Next 1–3 (pick one to start, in order — strategic-impact / craft-signal lens)
 
@@ -74,20 +83,25 @@ chain.
    (commit `6fcf97f`, issue #14 closed). ~4–6 hr multi-session.
    **Pre-flight risk**: `research-kb#16` (`--full-rebuild` not
    transactional) — handle before running full rebuild.
-3. **Phase 5 — Portfolio cluster additions.** Three new cluster cards
-   on `brandon-behring.dev` homepage: `tools`, `books-and-guides`,
-   `pricing-decision-systems`. ~1–2 hr. **Open question to flag
+3. **Phase 5 — Portfolio cluster additions.** Four new tier-strip
+   cluster tiles on `brandon-behring.dev` homepage: `tools`,
+   `books-and-guides`, `pricing-decision-systems`,
+   `research-infrastructure`. ~1–2 hr. **Open question to flag
    inline**: `tools` cluster name is generic (per
    `~/.claude/plans/i-want-to-look-streamed-pebble.md` open question
-   N7) — rename gate before going live. **Note**: `mathematical-guides`
-   family explicitly NOT added as a link entry pending placement
-   decision (see "Strategic decisions still open" below).
+   N7) — rename gate before going live. **Cluster shape locked**
+   2026-05-28 ambiguity-resolution Q1: 3 lead cards preserved
+   (causal-methods / ai-evaluation / course-notes) + 4 tier tiles in
+   Future strip. **`mathematical-guides` family** lands as a
+   sub-entry under `books-and-guides` cluster page (locked Q2);
+   deployment to `mathematical.brandon-behring.dev` proceeds
+   independently via existing `wrangler.toml`.
 
-**Parked candidate** (slot #4 if a slot opens): SSM stability flagship
-demo. Blocked on its own framing question (stability regions /
-symplectic / discretization-matters per
-`docs/visual-design-options-report.md:492`) — would benefit from its
-own `/exploring-options` round before committing.
+**Parked candidate** (slot #4 if a slot opens): SSM flagship demo —
+"Why discretization matters for sequence models" explainer (framing
+locked 2026-05-28 ambiguity-resolution Q3). Visualizer style
+(stability-region vs symplectic) deferred until explainer ships and
+reception is observable.
 
 Skip ahead, mix, or replace — the ranking is strategic-impact by
 craft-signal lens, not a forced sequence.
@@ -124,31 +138,32 @@ craft-signal lens, not a forced sequence.
 | `claude-books` | Workspace with 4 planned members; handbook in Phase 0 | Stale scaffold-bump issues `#2`–`#4` reference pre-v4.6 |
 | `post_transformers` | GitHub-only upstream research | `#51` BREAKING blocker labeled P2 in 2026-05-28 audit |
 | `research-kb` | Matcher unblock landed 2026-05-25 | `#16` (`--full-rebuild` data-loss risk) labeled P2 in 2026-05-28 audit |
-| `mathematical-guides` family | **NEW** (discovered 2026-05-28) — hub + transformers sibling + RL sibling | All private; all pushed 2026-05-28; hub has `wrangler.toml` (deploy-intent); placement open (see "Strategic decisions still open") |
+| `mathematical-guides` family | hub + transformers sibling + RL sibling (all private; all pushed 2026-05-28; all skeletons or scaffolded) | Placement locked 2026-05-28 ambiguity-resolution Q2: sub-entry under `books-and-guides` cluster page. Deployment to `mathematical.brandon-behring.dev` proceeds independently via existing `wrangler.toml`. |
 
 ## Strategic decisions still open
 
-Consolidates unresolved questions from `docs/website-decision-map.md`
-"Open Decisions For Later" + `docs/visual-design-options-report.md`
-Q&A. Top 4 flagged; rest live in those source documents.
+Consolidates unresolved questions. 4 of the prior 6 strategic
+ambiguities locked 2026-05-28 (see
+`docs/sessions/2026-05-28--ambiguity-resolution.md`); 2 remain.
 
-1. **`mathematical-guides` family placement** (NEW 2026-05-28). Options
-   surfaced by 2026-05-28 audit Q4: supplement under existing `guides`
-   (Option 1), own subdomain like `math.brandon-behring.dev`
-   (Option 2), own portfolio cluster (Option 3), defer everything
-   (Option 4). Leaning Option 1 per the family's own README
-   ("supplements (does not replace) the practical `guides` family") but
-   not committed.
-2. **SSM flagship-demo framing** — stability regions / symplectic
-   integration / "why discretization matters for sequence models"
-   (per `docs/visual-design-options-report.md:492`). Gates Phase 5+
-   SSM-demo work; parked Next-1-3 slot #4 candidate.
-3. **Long-term hub structure** — `/research`, `/lab`, `/notes`, or
+1. **Long-term hub structure** — `/research`, `/lab`, `/notes`, or
    hybrid? `/work/{slug}` and `/lab` both exist with one entry each
-   (per `docs/visual-design-options-report.md:500`).
-4. **Applied insurance/stats positioning** — homepage proof strip, or
-   only on deeper pages? (per
-   `docs/visual-design-options-report.md:498`)
+   (per `docs/visual-design-options-report.md:500`). Deferred-by-plan
+   in the 2026-05-28 ambiguity-resolution session; re-trigger when
+   `/lab` accumulates 2+ entries beyond `research-graph` OR when an
+   entry's natural home is clearly neither `/work/{slug}` nor `/lab/`.
+2. **SSM flagship-demo visualizer style** (post-explainer).
+   2026-05-28 ambiguity-resolution Q3 locked the explainer framing
+   ("Why discretization matters for sequence models"). Visualizer
+   style (stability-region vs symplectic) deferred until explainer
+   ships and reception is observable.
+
+Resolved 2026-05-28 (locked in
+`docs/sessions/2026-05-28--ambiguity-resolution.md`): identity
+reconfirmed as build-to-learn (Q6); cluster card count = 3 lead +
+4 tier tiles (Q1); `mathematical-guides` placement = sub-entry
+under `books-and-guides` (Q2); insurance/stats positioning = deeper
+pages only (Q5); SSM explainer framing (Q3).
 
 See `docs/website-decision-map.md` §"Open Decisions For Later" and
 `docs/visual-design-options-report.md` Q&A § for the full list.
@@ -216,6 +231,24 @@ Items not currently tracked in the right places; half handled by
 
 See `~/.claude/plans/i-want-to-think-wobbly-stroustrup.md` for the full
 27-decision history of this session.
+
+## Decisions Locked (Phase 2 follow-on, 2026-05-28)
+
+Closed via 4 sequenced `/exploring-options` rounds. See
+`docs/sessions/2026-05-28--ambiguity-resolution.md` for full
+audit-trail + reasoning per decision.
+
+| # | Decision | Choice |
+|---|---|---|
+| Q6 | Identity reconfirm | Build-to-learn framing preserved; research-infrastructure stays as secondary (tier) cluster, not lead identity shift. |
+| Q1 | Homepage cluster shape | 3 lead cards (causal-methods / ai-evaluation / course-notes) preserved + 4 tier tiles in Future strip (`tools`, `books-and-guides`, `pricing-decision-systems`, `research-infrastructure`). |
+| Q2 | `mathematical-guides` placement | Sub-entry under `books-and-guides` cluster page. Deployment to `mathematical.brandon-behring.dev` proceeds independently via existing `wrangler.toml`. |
+| Q5 | Insurance/stats positioning | Deeper pages only (Phase 2 lock preserved); no homepage proof strip. Risk-analysis topical framing OK in About; insurance examples surface naturally in demos + cluster pages. |
+| Q3 | SSM flagship-demo framing | Explainer first ("Why discretization matters for sequence models"); visualizer style (stability-region vs symplectic) deferred until explainer ships. |
+
+See `~/.claude/plans/examine-the-backlog-and-snappy-castle.md` for the
+prep plan that catalogued the 6 ambiguities and recommended the
+resolution sequence.
 
 ## Track A — Identity & Content (drives Tracks B & C)
 
