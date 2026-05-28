@@ -70,31 +70,26 @@ process-as-artifact pattern visible across consumer chapters. See
 `docs/sessions/2026-05-28--backlog-audit.md` for the full decision
 chain.
 
-1. **Phase 6a — `book-scaffold-astro` v5 Provenance + Audit component.**
-   Reusable Astro component reading provenance frontmatter (`ai_tools`,
-   `prompts_archive`, `decisions_log`, `audit_history`,
-   `citation_backstop`). Surfaces process-as-artifact on every chapter
-   of every consumer book (DML, ssm, dlai, guides, claude-books).
-   Spec: `~/.claude/plans/i-want-to-look-streamed-pebble.md:391-424`.
-   **Sequencing gate**: Phase 4 (guides paradigm migration) Steps 2-5
-   cannot advance until 6a ships + verifies on one consumer.
-2. **A4 graph densification.** Densify `/lab/research-graph/` with
+1. **A4 graph densification.** Densify `/lab/research-graph/` with
    pre-arXiv classics + textbooks; reuses Cytoscape + fcose
    infrastructure. research-kb matcher unblock landed 2026-05-25
    (commit `6fcf97f`, issue #14 closed). ~4–6 hr multi-session.
    **Pre-flight risk**: `research-kb#16` (`--full-rebuild` not
    transactional) — handle before running full rebuild.
-3. ~~Phase 5 — Portfolio cluster additions.~~ **✓ SHIPPED 2026-05-28.**
-   Four tier clusters added (final names, post rename-gate):
-   `published-research`, `research-infrastructure`,
-   `publishing-infrastructure`, `pricing-decision-systems` — rendered as
-   a compact "More work" strip under the 3 preserved lead cards. +14
-   projects (private repos link-less; Julia stack prose-only; ir-eval
-   deferred). Bundled quick wins shipped: sitemap, RSS, favicon (F1);
-   F2 already fixed. `mathematical-guides` family = one link-less
-   sub-entry under `published-research` (deploy to
-   `mathematical.brandon-behring.dev` still independent). See
-   `docs/sessions/2026-05-28--phase-5-prep.md` (Execution section).
+2. **Phase 4 (guides paradigm migration) Steps 2–5 — UNBLOCKED 2026-05-28**
+   by Phase 6a shipping. Plus the follow-on **provenance backfills** for the
+   other consumers (DML, dlai-study-notes, guides, claude-books) once each
+   bumps to scaffold v4.8.0 — tracked as GH issues (`tracked` label).
+3. ~~Phase 6a — `book-scaffold-astro` Provenance + Audit component.~~
+   **✓ SHIPPED 2026-05-28 as v4.8.0** (not "v5" — additive optional field +
+   new component = MINOR per the repo's own semver). Per-chapter "How this
+   was made" block auto-rendered on every chapter of every consumer (covers
+   both `Chapter.astro` + `Base.astro` paths via a route-layer insert);
+   opt-out fallback; `.strict`/`.refine` hardened (fail-loud, no silent data
+   loss). Verified on ssm-foundations ch01 (real `audits/`-sourced trail) +
+   ch07 fallback; suite 234→275; both npm packages at 4.8.0. PR #81 (merged).
+   ~~Phase 5 (4 tier clusters + sitemap/RSS/favicon)~~ also ✓ SHIPPED
+   2026-05-28 — see `docs/sessions/2026-05-28--phase-5-prep.md`.
 
 **Parked candidate** (slot #4 if a slot opens): SSM flagship demo —
 "Why discretization matters for sequence models" explainer (framing
