@@ -7,7 +7,9 @@
 > [`deploy-workflows/README.md`](https://github.com/brandon-behring/deploy-workflows#phase-2-roadmap)
 > for infra Phase 2 detail.
 
-Last refined: 2026-05-28 (backlog audit + portfolio candidates discovery + ambiguity-resolution session — 4 of 6 strategic ambiguities locked).
+Last reconciled against live sources: 2026-05-30 (backlog hygiene — roadmap/memory/phase-numbering drift; see `docs/sessions/2026-05-30--backlog-hygiene.md`). Last refined: 2026-05-28 (backlog audit + portfolio candidates discovery + ambiguity-resolution session — 4 of 6 strategic ambiguities locked).
+
+**Phase numbers here are _site_ phases.** The coordinated multi-repo plan uses its own _portfolio_ numbering — aligned on Phases 3/4/5/6a but **colliding on Phase 2** — see §"Phase numbering: site ↔ portfolio" near the end.
 
 ## What just shipped (Phase 1, May 2026)
 
@@ -36,8 +38,10 @@ Last refined: 2026-05-28 (backlog audit + portfolio candidates discovery + ambig
 
 - **A4 first demo live** (2026-05-24): `/lab/research-graph/` —
   135 RL+control papers via new `research-kb graph export` CLI +
-  Cytoscape.js + fcose. Graph currently sparse (3 edges across 84
-  nodes); densification is Next-1-3 item #2 below. See
+  Cytoscape.js + fcose. Initial deploy was sparse (3 edges across 84
+  nodes); **densified 2026-05-25 to 95 nodes / 51 edges** via the
+  research-kb matcher unblock (`6fcf97f`). Further densification
+  (pre-arXiv classics + textbooks) is Next-1-3 item #1 below. See
   `docs/sessions/2026-05-24--deploy-verification.md`.
 - **`deploy-workflows@v1` + `@v2` tagged** (2026-05-26): 3 consumers
   pinned to `@v1` (brandon-behring.dev, DML, ssm-foundations); DML
@@ -45,8 +49,8 @@ Last refined: 2026-05-28 (backlog audit + portfolio candidates discovery + ambig
 - **v4.6 dogfood sprint complete** (2026-05-27):
   `book-scaffold-astro` v4.6.0 published to npm; DML + ssm bumped +
   migrated `ci:validate` → `prevalidate` (recipe 19); scaffold issues
-  #76 (SEO parity) + #77 (validator UX) closed. Apex sitemap gap is
-  out-of-scaffold-scope and queued in "Quick wins backlog" below.
+  #76 (SEO parity) + #77 (validator UX) closed. Apex sitemap
+  subsequently shipped (`@astrojs/sitemap` in `astro.config.mjs`).
 - **Subdomain consumers live**: `dml.brandon-behring.dev` (DML),
   `ssm-foundations.brandon-behring.dev` (ssm-foundations).
 - **Cosmetic regressions resolved (2026-05-28, Phase 5)**: F1
@@ -102,9 +106,6 @@ craft-signal lens, not a forced sequence.
 
 ## Quick wins backlog (parallel-track fill for short open sessions)
 
-- **Apex sitemap** via `@astrojs/sitemap` (~15 min; closes the apex row
-  of the issue #76 grep table — see pickup memory)
-- **RSS feed** via `@astrojs/rss` (~30 min)
 - **CITATION.cff burst** across academic repos (ssm, dlai, eval-toolkit,
   ...; ~5 min/repo)
 - **OG image authoring** for DML + ssm (Option D from pickup memory;
@@ -115,15 +116,16 @@ craft-signal lens, not a forced sequence.
   homepage (~30–60 min; was Next-1-3 #2 pre-audit; see
   `docs/ASSETS-NEEDED.md`)
 - **Phase 4 (guides) paradigm migration Step 1 only** (~1–2 hr; Steps
-  2–5 blocked on Phase 6a)
-- **F1 favicon 404 + F2 Cytoscape `hsl()` color rejection fixes**
-  (~30 min combined; **own commit** per 2026-05-28 audit Q3)
+  2–5 unblocked — full migration is Next-1-3 #2)
+
+(Shipped + removed from this list 2026-05-30: apex sitemap, RSS feed,
+F1 favicon 404, F2 Cytoscape `hsl()` — all live; see "Phase 5" above.)
 
 ## Cross-repo coordination (state as of 2026-05-28)
 
 | Repo | Current state | Notes |
 |---|---|---|
-| `book-scaffold-astro` | v4.6.0 shipped | v5 (Phase 6a Provenance) is next major; see Next-1-3 #1 |
+| `book-scaffold-astro` | v4.8.0 shipped | Phase 6a Provenance shipped (v4.8.0 — additive MINOR, not "v5"); v5.x candidate is `#80` (multibook routing + AnkiCard CLI) |
 | `deploy-workflows` | `@v1` + `@v2` tagged | OIDC migration on future-track (cloudflare/wrangler-action#402) → `@v3` |
 | `double_ml_time_series` (DML) | Live at `dml.brandon-behring.dev`; on `@v2` | OG image pending (Option D) |
 | `ssm-foundations` | Live at `ssm-foundations.brandon-behring.dev`; on `@v2` | OG image pending; **5 new audit-burst issues from 2026-05-27** (#1, #3, #4, #5, #6) labeled in 2026-05-28 audit |
@@ -288,14 +290,14 @@ Authoritative detail lives at
 [`deploy-workflows/README.md`](https://github.com/brandon-behring/deploy-workflows#phase-2-roadmap).
 
 - [ ] **B1. Migrate `post_transformers/guides/web`** — currently manual
-  deploys. Mechanical 10-line workflow + secrets. *(See `Next` #2.)*
+  deploys. Mechanical 10-line workflow + secrets. *(Also in Quick wins.)*
 - [ ] **B2. Migrate `dlai-study-notes`** — currently on Cloudflare Pages.
   Higher-risk because of the documented 2–5 s domain switchover. Do
   during low-traffic window. Worker name: `brandon-behring-study-notes`.
 - [ ] **B3. Migrate `book-template-astro`** — currently Pages. Same
   pattern as B2 but no live audience; safer order is B1 → B3 → B2.
-- [ ] **B4. Tag `deploy-workflows@v1`** — only after a 2nd consumer
-  exists (after B1). Then bump callers from `@main` to `@v1`.
+- [x] **B4. Tag `deploy-workflows@v1`** — ✅ done (2026-05-26): `@v1` +
+  `@v2` tagged; 3 consumers (brandon-behring.dev, DML, ssm) pinned to `@v1`.
 - [ ] **B5. Optional: GitHub Organization** — `brandon-behring-org`
   (free), transfer deploy repos, convert per-repo secrets to org
   secrets. Single highest-leverage simplification once you have 3+
@@ -309,61 +311,31 @@ Authoritative detail lives at
 ## Track C — Showcase Inputs (adjacent active work)
 
 Other repos that affect *what* this site can show or what story it can
-tell. Not planned here; status snapshot to inform Track A decisions.
+tell. Not planned here; informs Track A decisions.
 
-### Already featured in `src/data/projects.json`
+> **Per-project status — clusters, versions, open-issue counts, the
+> featured flag — is authoritative in `src/data/projects.json`** (20
+> projects across 6 clusters as of Phase 5) **plus live GitHub issues.**
+> This section is a *strategy snapshot* (showcase judgments + blockers that
+> live nowhere else), **not a live registry** — don't trust counts/versions
+> here; reconcile against those sources. See `[[roadmap-drifts-from-projects-json]]`.
 
-- **`prompt_injection_detector`** — DeBERTa-LoRA PoC.
-  - Status: V2 methodology complete; DECISIONS.md being finalized
-    (D1–D29 recorded); PoC framing (not production) is the safe story.
-  - Showcase value: high — concrete artifact + metrics + clear caveats.
-  - Open: time-bounded finalization, then archive.
-- **`dlai-study-notes`** — live at study-notes.brandon-behring.dev.
-  - Status: live on Pages; pending Workers migration (B2).
-  - Showcase value: existing flagship; ~10 books planned.
-- **`causal_inference_mastery`** — Julia/Python.
-  - Status: dormant (last commit ~74 days ago). 10 open issues
-    (mostly reference-quality follow-ups).
-  - Showcase value: methodological depth proof; safe to point at.
-- **`bayesian-cold-start`** — hierarchical Bayes tutorial.
-  - Status: dormant (~74 days). Reference-quality.
-  - Showcase value: actuarial/insurance domain bridge.
+**Showcase judgments not captured in `projects.json`:**
 
-### Active but not yet featured (candidates per identity outcome)
-
-- **`post_transformers`** — SSMs / Mamba / Hyena guide.
-  - Status: 6 of 21 chapters live at
-    `post-transformers-guide.brandon-m-behring.workers.dev`.
-  - Showcase value: future-facing identity signal. Largest content
-    surface among Track-C repos.
-  - Blocked by: open issue [`#51`](https://github.com/brandon-behring/post_transformers/issues/51)
-    *v0.34.0 eval-toolkit BREAKING* — eval-toolkit version bump needed
-    to keep CI green.
-- **`book-scaffold-astro`** — npm package powering the books.
-  - Status: v3.5.x; 10 open issues (mix of bugs + features); recent
-    pivot from template-clone to npm-package model.
-  - Showcase value: "publishing system" cluster — tooling-for-tooling
-    risk per the strategy memo; needs a clear "why this matters" story.
-- **`eval-toolkit`** — PyPI binary-classification eval harness.
-  - Status: pre-v1.0; in Round 8 of audit; Decision Y.2 is the stop-gate
-    for cutting v1.0.
-  - Showcase value: evaluation-methodology cluster; complements
-    `prompt_injection_detector`.
-- **`research-kb`** — hybrid (BM25 + vector + graph + citation) search
-  over a personal research corpus; 22 MCP tools.
-  - Status: actively developed; 5 open issues
-    ([#1](https://github.com/brandon-behring/research-kb/issues/1),
-    [#8](https://github.com/brandon-behring/research-kb/issues/8),
-    [#9](https://github.com/brandon-behring/research-kb/issues/9),
-    [#10](https://github.com/brandon-behring/research-kb/issues/10),
-    [#13](https://github.com/brandon-behring/research-kb/issues/13)).
-  - Showcase value: research-infrastructure cluster. Niche audience;
-    explainer required.
-- **`research-agent`** — LangGraph multi-agent research QA on top of
-  research-kb; 7-node pipeline.
-  - Status: active; ~5 open issues.
-  - Showcase value: pairs with research-kb as the "agent-assisted research"
-    story.
+- **`prompt_injection_detector`** — high showcase value: concrete artifact +
+  metrics + clear PoC caveats. Path: finalize, then archive.
+- **`post_transformers`** — future-facing identity signal, largest content
+  surface. **Blocked by `post_transformers#51`** (eval-toolkit BREAKING;
+  gates the ssm pin bump).
+- **`book-scaffold-astro`** — "publishing system" cluster carries a
+  *tooling-for-tooling* risk (per the strategy memo); needs a clear
+  "why this matters" story, not just "I built a scaffold."
+- **`research-kb` / `research-agent`** — research-infrastructure cluster;
+  niche audience, explainer required. research-kb feeds `/lab/research-graph/`.
+- **`eval-toolkit`** — evaluation-methodology cluster; complements
+  `prompt_injection_detector`. Pre-v1.0 (Decision Y.2 is the v1.0 stop-gate).
+- **`causal_inference_mastery` / `bayesian-cold-start`** — dormant but
+  reference-quality; methodological-depth + actuarial-bridge proof, safe to cite.
 
 ## How the tracks interact
 
@@ -382,6 +354,27 @@ tell. Not planned here; status snapshot to inform Track A decisions.
   experimental forks, `interview_prep_series`, `annuity-*`,
   `julia_archive_audit`, and ~40 other dormant or non-portfolio repos.
   Showcased only if Track A picks an identity that calls for them.
+
+## Phase numbering: site ↔ portfolio
+
+Two planning docs use overlapping phase numbers for different work. This
+doc (`roadmap.md`) numbers **site** phases; the coordinated multi-repo plan
+(`~/.claude/plans/i-want-to-look-streamed-pebble.md`) numbers **portfolio**
+phases. They align on most labels but **collide on Phase 2** — disambiguate
+via this table, don't assume the numbers match.
+
+| Site (this doc) | Portfolio (coordinated plan) | State |
+|---|---|---|
+| Phase 1 — site live + deploy workflow | Phase 1a–1e (deploy infra) + 1.5 (`/how-this-was-made`) | shipped |
+| **Phase 2 — identity lock + homepage** | *no equivalent* — portfolio **Phase 2 = DEPRECATED** post_transformers migration | ⚠ collision |
+| Phase 3 — dlai deploy | Phase 3 — dlai deploy | aligned, pending |
+| Phase 4 — guides migration | Phase 4 — guides migration | aligned |
+| Phase 5 — tier clusters | Phase 5 — tier clusters + quick wins | aligned, shipped |
+| Phase 6a — Provenance component | Phase 6a — Provenance component | aligned, shipped |
+| — | Phase 6-pre / 6b–6e / 7 / 8 / 9 / 9.5 | portfolio-only (scaffold / infra / future) |
+
+No renumbering: session logs and commits reference these labels by name; the
+namespace + this table disambiguate without breaking that history.
 
 ## Cross-references
 
