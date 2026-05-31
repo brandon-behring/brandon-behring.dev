@@ -13,6 +13,10 @@ const nowClusters = clustersData
 const tierClusters = clustersData
   .filter((c) => c.section === 'tier')
   .sort((a, b) => a.order - b.order);
+
+const futureClusters = clustersData
+  .filter((c) => c.section === 'future')
+  .sort((a, b) => a.order - b.order);
 ---
 
 <nav class="cluster-nav" aria-label="Cluster navigation">
@@ -37,6 +41,23 @@ const tierClusters = clustersData
     <span class="label">More:</span>
     <ul>
       {tierClusters.map((cluster) => (
+        <li>
+          <a
+            href={`/work/${cluster.slug}/`}
+            class:list={[{ current: cluster.slug === currentSlug }]}
+            aria-current={cluster.slug === currentSlug ? "page" : undefined}
+          >
+            {cluster.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="nav-group">
+    <span class="label">Next:</span>
+    <ul>
+      {futureClusters.map((cluster) => (
         <li>
           <a
             href={`/work/${cluster.slug}/`}

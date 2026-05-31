@@ -12,6 +12,10 @@ const tierClusters = clustersData
   .filter((c) => c.section === 'tier')
   .sort((a, b) => a.order - b.order);
 
+const futureClusters = clustersData
+  .filter((c) => c.section === 'future')
+  .sort((a, b) => a.order - b.order);
+
 function projectsForCluster(slug: string) {
   return projectsData
     .filter((p) => p.cluster === slug)
@@ -47,6 +51,18 @@ function projectsForCluster(slug: string) {
     <h2 id="work-more-heading" class="prose section-heading">More work</h2>
     <div class="cluster-grid">
       {tierClusters.map((cluster) => (
+        <ClusterCard
+          cluster={cluster}
+          projects={projectsForCluster(cluster.slug)}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="clusters" aria-labelledby="work-future-heading">
+    <h2 id="work-future-heading" class="prose section-heading">Where this is going</h2>
+    <div class="cluster-grid">
+      {futureClusters.map((cluster) => (
         <ClusterCard
           cluster={cluster}
           projects={projectsForCluster(cluster.slug)}

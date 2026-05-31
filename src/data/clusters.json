@@ -26,7 +26,7 @@
     "name": "Where this is going",
     "section": "future",
     "order": 4,
-    "description": "Currently building out."
+    "description": "Where the work is heading: a foundations book on sequence models (SSMs / Mamba) and an RL + control-theory guide."
   },
   {
     "slug": "published-research",
