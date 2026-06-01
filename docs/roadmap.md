@@ -89,6 +89,36 @@ a read-only de-risking pass. See
 - **Staged (1.5b)**: a peer-reviewed Publications homepage section, gated on
   Brandon supplying the list.
 
+## What just shipped (Track 1.6 — polish & hygiene, 2026-06-01)
+
+Cleared the audit's P2/P3 tail. One reviewed commit (`62c1323`), deployed +
+verified live. Two `/exploring-options` rounds locked the design choices; gated
+by `independent-review` (3 cold reviewers) — see
+`docs/sessions/2026-06-01--polish-sweep-review.md`.
+
+- **Honest status model**: 7 ad-hoc statuses → 4 (`released`/`in-progress`/
+  `prototype`/`planned`) with color badges + a `/work/` legend. "released"
+  reserved for items with a real tag/package/live URL (4: temporalcv,
+  `@brandon_m_behring/book-scaffold-astro`, deploy-workflows, the OOD study).
+  Cold review caught 2 overclaims → `annuity-pricing` + `research-kb`
+  downgraded to `in-progress`.
+- **Jargon scrub**: internal notation (decision-log codes, audit-round numbers)
+  removed from public `whats_next` copy.
+- **Security headers** (`public/_headers`): CSP (`script-src 'self'` + CF
+  Analytics allowlist), HSTS (no preload), nosniff, Referrer-Policy,
+  Permissions-Policy — verified live (curl + Playwright; 0 CSP console errors,
+  lab graph renders).
+- **SEO**: `public/robots.txt` + Person/WebSite JSON-LD (factual `alumniOf`
+  NJIT + NYU; no `jobTitle`).
+- **Home↔Work de-dup**: homepage is a curated lead (hero · live-now · 3
+  now-cards · "See all work →" + "Where this is going →" signposts); `/work/`
+  is the single full catalog.
+- **Cross-repo backlog filed** (`tracked`): book-scaffold-astro#91 (a11y),
+  deploy-workflows#2 (LICENSE), prompt-injection-portfolio#3 (path scrub),
+  insurance-ai-toolkit#11 (dead README demo), annuity-pricing#11 (PyPI publish
+  → then it earns "released"), brandon-behring.dev#2 (homepage/topics +
+  CITATION.cff + OG images).
+
 ## Next 1–3 (pick one to start, in order — strategic-impact / craft-signal lens)
 
 Ranking lens picked in 2026-05-28 audit Q1: *craft signal* —
