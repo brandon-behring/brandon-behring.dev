@@ -284,7 +284,7 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
         linkHtml = `<a href="https://www.worldcat.org/isbn/${encodeURIComponent(isbnClean)}" target="_blank" rel="noopener">ISBN:${escapeHtml(d.isbn)} →</a>`;
       }
       panelContent.innerHTML = `
-        <h2>${escapeHtml(d.label || d.title || arxiv || 'Paper')}</h2>
+        <h2>${escapeHtml(d.title || d.label || arxiv || 'Paper')}</h2>
         <p class="meta">${kbBadge}${typeBadge} ${d.year ? `· ${d.year}` : ''} ${d.section ? `· ${escapeHtml(d.section)}` : ''}</p>
         ${authors ? `<p class="authors">${escapeHtml(authors)}</p>` : ''}
         ${d.key_finding ? `<p class="finding"><strong>Key finding:</strong> ${escapeHtml(d.key_finding)}</p>` : ''}
@@ -350,7 +350,15 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
           const label = String(n.data('label') || '').toLowerCase();
           const title = String(n.data('title') || '').toLowerCase();
           const aid = String(n.data('arxiv_id') || '').toLowerCase();
-          return label.includes(q) || title.includes(q) || aid.includes(q);
+          const finding = String(n.data('key_finding') || '').toLowerCase();
+          const authors = (n.data('authors') || []).join(' ').toLowerCase();
+          return (
+            label.includes(q) ||
+            title.includes(q) ||
+            aid.includes(q) ||
+            finding.includes(q) ||
+            authors.includes(q)
+          );
         });
         cy.nodes().forEach((n: any) => {
           if (matches.contains(n)) n.addClass('highlight');

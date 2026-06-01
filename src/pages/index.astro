@@ -34,6 +34,32 @@ function projectsForCluster(slug: string) {
     </p>
   </section>
 
+  <section class="live-now" aria-labelledby="live-heading">
+    <h2 id="live-heading" class="section-heading">Live now</h2>
+    <ul class="live-list">
+      <li>
+        <a href="https://ssm-foundations.brandon-behring.dev" rel="noopener">
+          ssm-foundations <span>sequence-models foundations book</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://dml.brandon-behring.dev" rel="noopener">
+          double_ml_time_series <span>Chapter 1 live</span>
+        </a>
+      </li>
+      <li>
+        <a href="/lab/research-graph/">
+          RL + Control citation graph <span>interactive demo</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://brandon-behring.github.io/prompt-injection-detection-prototype/" rel="noopener">
+          Prompt-injection OOD study <span>deployed docs</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
   <section class="clusters" aria-labelledby="now-heading">
     <h2 id="now-heading" class="prose section-heading">What I'm building now</h2>
     <div class="cluster-grid">
@@ -73,11 +99,6 @@ function projectsForCluster(slug: string) {
           )}
         </li>
       ))}
-      <li>
-        <strong>Live: <a href="/lab/research-graph/">RL + Control citation graph</a></strong>
-        — interactive citation network of the 135-paper RL+control reading list,
-        rendered from research-kb. First lab demo.
-      </li>
     </ul>
   </section>
 
@@ -120,6 +141,53 @@ function projectsForCluster(slug: string) {
     color: var(--color-text);
     margin: 0;
     line-height: 1.4;
+  }
+
+  .live-now {
+    margin: 0 auto 3rem auto;
+  }
+  .live-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-family: var(--font-sans);
+  }
+  .live-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: border-color 0.1s ease, color 0.1s ease;
+  }
+  .live-list a::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: #2e9e5b;
+  }
+  .live-list a:hover,
+  .live-list a:focus-visible {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    outline: none;
+  }
+  .live-list a span {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+  }
+  .live-list a:hover span,
+  .live-list a:focus-visible span {
+    color: inherit;
   }
 
   .clusters {

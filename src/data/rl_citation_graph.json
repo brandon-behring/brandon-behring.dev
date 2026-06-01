@@ -47,11 +47,19 @@
     {
       "id": "source:arxiv:1312.5602",
       "type": "source",
-      "label": "1312.5602",
+      "label": "Mnih et al. 2013",
       "data": {
-        "title": "1312.5602",
-        "year": 1312,
-        "authors": [],
+        "title": "Playing Atari with Deep Reinforcement Learning",
+        "year": 2013,
+        "authors": [
+          "Volodymyr Mnih",
+          "Koray Kavukcuoglu",
+          "David Silver",
+          "Alex Graves",
+          "Ioannis Antonoglou",
+          "Daan Wierstra",
+          "Martin Riedmiller"
+        ],
         "arxiv_id": "1312.5602",
         "source_id": "84129588-36cf-496f-b805-f22b8dcdd324",
         "kb_status": "ingested",
@@ -66,12 +74,18 @@
     {
       "id": "source:arxiv:1406.2199",
       "type": "source",
-      "label": "1406.2199",
+      "label": "Silver et al. 2014",
       "data": {
-        "title": "1406.2199",
-        "year": 1406,
-        "authors": [],
-        "arxiv_id": "1406.2199",
+        "title": "Deterministic Policy Gradient Algorithms",
+        "year": 2014,
+        "authors": [
+          "David Silver",
+          "Guy Lever",
+          "Nicolas Heess",
+          "Thomas Degris",
+          "Daan Wierstra",
+          "Martin Riedmiller"
+        ],
         "source_id": "aa2dfe22-94b1-45ac-99dc-201bf8219472",
         "kb_status": "ingested",
         "citation_authority": null,
@@ -79,17 +93,24 @@
         "section": "3. Off-Policy Continuous Control",
         "key_finding": "DPG: deterministic policy gradient theorem; foundation for DDPG",
         "paper_index_status": "downloaded",
-        "paper_index_year": 2014
+        "paper_index_year": 2014,
+        "url": "https://proceedings.mlr.press/v32/silver14.html"
       }
     },
     {
       "id": "source:arxiv:1502.05477",
       "type": "source",
-      "label": "1502.05477",
+      "label": "Schulman et al. 2015",
       "data": {
-        "title": "1502.05477",
-        "year": 1502,
-        "authors": [],
+        "title": "Trust Region Policy Optimization",
+        "year": 2015,
+        "authors": [
+          "John Schulman",
+          "Sergey Levine",
+          "Philipp Moritz",
+          "Michael I. Jordan",
+          "Pieter Abbeel"
+        ],
         "arxiv_id": "1502.05477",
         "source_id": "edc0885a-d799-4fe6-99aa-151d57a686c3",
         "kb_status": "ingested",
@@ -104,11 +125,16 @@
     {
       "id": "source:arxiv:1504.00702",
       "type": "source",
-      "label": "1504.00702",
+      "label": "Levine et al. 2015",
       "data": {
-        "title": "1504.00702",
-        "year": 1504,
-        "authors": [],
+        "title": "End-to-End Training of Deep Visuomotor Policies",
+        "year": 2015,
+        "authors": [
+          "Sergey Levine",
+          "Chelsea Finn",
+          "Trevor Darrell",
+          "Pieter Abbeel"
+        ],
         "arxiv_id": "1504.00702",
         "source_id": "790b214b-7bb7-47f6-80cc-103899cedff7",
         "kb_status": "ingested",
@@ -123,11 +149,17 @@
     {
       "id": "source:arxiv:1506.02438",
       "type": "source",
-      "label": "1506.02438",
+      "label": "Schulman et al. 2015",
       "data": {
-        "title": "1506.02438",
-        "year": 1506,
-        "authors": [],
+        "title": "High-Dimensional Continuous Control Using Generalized Advantage Estimation",
+        "year": 2015,
+        "authors": [
+          "John Schulman",
+          "Philipp Moritz",
+          "Sergey Levine",
+          "Michael Jordan",
+          "Pieter Abbeel"
+        ],
         "arxiv_id": "1506.02438",
         "source_id": "d60e8369-deed-4123-a012-09b255e318bb",
         "kb_status": "ingested",
@@ -142,11 +174,20 @@
     {
       "id": "source:arxiv:1509.02971",
       "type": "source",
-      "label": "1509.02971",
+      "label": "Lillicrap et al. 2015",
       "data": {
-        "title": "1509.02971",
-        "year": 1509,
-        "authors": [],
+        "title": "Continuous control with deep reinforcement learning",
+        "year": 2015,
+        "authors": [
+          "Timothy P. Lillicrap",
+          "Jonathan J. Hunt",
+          "Alexander Pritzel",
+          "Nicolas Heess",
+          "Tom Erez",
+          "Yuval Tassa",
+          "David Silver",
+          "Daan Wierstra"
+        ],
         "arxiv_id": "1509.02971",
         "source_id": "15c6abb1-5991-4663-bbdf-5038ebd71551",
         "kb_status": "ingested",
@@ -161,11 +202,15 @@
     {
       "id": "source:arxiv:1509.06461",
       "type": "source",
-      "label": "1509.06461",
+      "label": "Hasselt et al. 2015",
       "data": {
-        "title": "1509.06461",
-        "year": 1509,
-        "authors": [],
+        "title": "Deep Reinforcement Learning with Double Q-learning",
+        "year": 2015,
+        "authors": [
+          "Hado van Hasselt",
+          "Arthur Guez",
+          "David Silver"
+        ],
         "arxiv_id": "1509.06461",
         "source_id": "356802bb-9f3c-4636-9ae6-45df609f22bd",
         "kb_status": "ingested",
@@ -180,11 +225,16 @@
     {
       "id": "source:arxiv:1511.05952",
       "type": "source",
-      "label": "1511.05952",
+      "label": "Schaul et al. 2015",
       "data": {
-        "title": "1511.05952",
-        "year": 1511,
-        "authors": [],
+        "title": "Prioritized Experience Replay",
+        "year": 2015,
+        "authors": [
+          "Tom Schaul",
+          "John Quan",
+          "Ioannis Antonoglou",
+          "David Silver"
+        ],
         "arxiv_id": "1511.05952",
         "source_id": "326061d5-9d92-453d-938b-40ce4c022aa7",
         "kb_status": "ingested",
@@ -199,11 +249,18 @@
     {
       "id": "source:arxiv:1511.06581",
       "type": "source",
-      "label": "1511.06581",
+      "label": "Wang et al. 2015",
       "data": {
-        "title": "1511.06581",
-        "year": 1511,
-        "authors": [],
+        "title": "Dueling Network Architectures for Deep Reinforcement Learning",
+        "year": 2015,
+        "authors": [
+          "Ziyu Wang",
+          "Tom Schaul",
+          "Matteo Hessel",
+          "Hado van Hasselt",
+          "Marc Lanctot",
+          "Nando de Freitas"
+        ],
         "arxiv_id": "1511.06581",
         "source_id": "67982716-0651-410b-850e-5db43d8e9acc",
         "kb_status": "ingested",
@@ -218,11 +275,20 @@
     {
       "id": "source:arxiv:1602.01783",
       "type": "source",
-      "label": "1602.01783",
+      "label": "Mnih et al. 2016",
       "data": {
-        "title": "1602.01783",
-        "year": 1602,
-        "authors": [],
+        "title": "Asynchronous Methods for Deep Reinforcement Learning",
+        "year": 2016,
+        "authors": [
+          "Volodymyr Mnih",
+          "Adrià Puigdomènech Badia",
+          "Mehdi Mirza",
+          "Alex Graves",
+          "Timothy P. Lillicrap",
+          "Tim Harley",
+          "David Silver",
+          "Koray Kavukcuoglu"
+        ],
         "arxiv_id": "1602.01783",
         "source_id": "f8cd10d1-bec4-4ad8-b7d2-aa2954107f5b",
         "kb_status": "ingested",
@@ -237,11 +303,15 @@
     {
       "id": "source:arxiv:1609.05140",
       "type": "source",
-      "label": "1609.05140",
+      "label": "Bacon et al. 2016",
       "data": {
-        "title": "1609.05140",
-        "year": 1609,
-        "authors": [],
+        "title": "The Option-Critic Architecture",
+        "year": 2016,
+        "authors": [
+          "Pierre-Luc Bacon",
+          "Jean Harb",
+          "Doina Precup"
+        ],
         "arxiv_id": "1609.05140",
         "source_id": "725dd94d-0d7e-4399-9d67-447651d5f440",
         "kb_status": "ingested",
@@ -256,11 +326,19 @@
     {
       "id": "source:arxiv:1703.01161",
       "type": "source",
-      "label": "1703.01161",
+      "label": "Vezhnevets et al. 2017",
       "data": {
-        "title": "1703.01161",
-        "year": 1703,
-        "authors": [],
+        "title": "FeUdal Networks for Hierarchical Reinforcement Learning",
+        "year": 2017,
+        "authors": [
+          "Alexander Sasha Vezhnevets",
+          "Simon Osindero",
+          "Tom Schaul",
+          "Nicolas Heess",
+          "Max Jaderberg",
+          "David Silver",
+          "Koray Kavukcuoglu"
+        ],
         "arxiv_id": "1703.01161",
         "source_id": "9f2075f0-5310-4de7-b8a4-122a89e7a892",
         "kb_status": "ingested",
@@ -275,11 +353,15 @@
     {
       "id": "source:arxiv:1703.03400",
       "type": "source",
-      "label": "1703.03400",
+      "label": "Finn et al. 2017",
       "data": {
-        "title": "1703.03400",
-        "year": 1703,
-        "authors": [],
+        "title": "Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks",
+        "year": 2017,
+        "authors": [
+          "Chelsea Finn",
+          "Pieter Abbeel",
+          "Sergey Levine"
+        ],
         "arxiv_id": "1703.03400",
         "source_id": "370de700-b46c-465b-8314-02f9e4063703",
         "kb_status": "ingested",
@@ -294,11 +376,18 @@
     {
       "id": "source:arxiv:1703.06907",
       "type": "source",
-      "label": "1703.06907",
+      "label": "Tobin et al. 2017",
       "data": {
-        "title": "1703.06907",
-        "year": 1703,
-        "authors": [],
+        "title": "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World",
+        "year": 2017,
+        "authors": [
+          "Josh Tobin",
+          "Rachel Fong",
+          "Alex Ray",
+          "Jonas Schneider",
+          "Wojciech Zaremba",
+          "Pieter Abbeel"
+        ],
         "arxiv_id": "1703.06907",
         "source_id": "f8e83873-2b9a-4ea2-8c43-9f618c72b3c4",
         "kb_status": "ingested",
@@ -313,11 +402,18 @@
     {
       "id": "source:arxiv:1706.02275",
       "type": "source",
-      "label": "1706.02275",
+      "label": "Lowe et al. 2017",
       "data": {
-        "title": "1706.02275",
-        "year": 1706,
-        "authors": [],
+        "title": "Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments",
+        "year": 2017,
+        "authors": [
+          "Ryan Lowe",
+          "Yi Wu",
+          "Aviv Tamar",
+          "Jean Harb",
+          "Pieter Abbeel",
+          "Igor Mordatch"
+        ],
         "arxiv_id": "1706.02275",
         "source_id": "ac83364f-4bf7-4ea0-96c6-3c3e1cd38ac5",
         "kb_status": "ingested",
@@ -332,11 +428,22 @@
     {
       "id": "source:arxiv:1707.01495",
       "type": "source",
-      "label": "1707.01495",
+      "label": "Andrychowicz et al. 2017",
       "data": {
-        "title": "1707.01495",
-        "year": 1707,
-        "authors": [],
+        "title": "Hindsight Experience Replay",
+        "year": 2017,
+        "authors": [
+          "Marcin Andrychowicz",
+          "Filip Wolski",
+          "Alex Ray",
+          "Jonas Schneider",
+          "Rachel Fong",
+          "Peter Welinder",
+          "Bob McGrew",
+          "Josh Tobin",
+          "Pieter Abbeel",
+          "Wojciech Zaremba"
+        ],
         "arxiv_id": "1707.01495",
         "source_id": "490b2d20-763c-46bf-934a-2cd903504118",
         "kb_status": "ingested",
@@ -351,11 +458,17 @@
     {
       "id": "source:arxiv:1707.06347",
       "type": "source",
-      "label": "1707.06347",
+      "label": "Schulman et al. 2017",
       "data": {
-        "title": "1707.06347",
-        "year": 1707,
-        "authors": [],
+        "title": "Proximal Policy Optimization Algorithms",
+        "year": 2017,
+        "authors": [
+          "John Schulman",
+          "Filip Wolski",
+          "Prafulla Dhariwal",
+          "Alec Radford",
+          "Oleg Klimov"
+        ],
         "arxiv_id": "1707.06347",
         "source_id": "30453748-c6f0-46b4-a0e7-964d9fabc869",
         "kb_status": "ingested",
@@ -370,11 +483,18 @@
     {
       "id": "source:arxiv:1709.06560",
       "type": "source",
-      "label": "1709.06560",
+      "label": "Henderson et al. 2017",
       "data": {
-        "title": "1709.06560",
-        "year": 1709,
-        "authors": [],
+        "title": "Deep Reinforcement Learning that Matters",
+        "year": 2017,
+        "authors": [
+          "Peter Henderson",
+          "Riashat Islam",
+          "Philip Bachman",
+          "Joelle Pineau",
+          "Doina Precup",
+          "David Meger"
+        ],
         "arxiv_id": "1709.06560",
         "source_id": "113835fe-4412-4fd2-a0b9-9b29d55eb07b",
         "kb_status": "ingested",
@@ -389,11 +509,22 @@
     {
       "id": "source:arxiv:1710.02298",
       "type": "source",
-      "label": "1710.02298",
+      "label": "Hessel et al. 2017",
       "data": {
-        "title": "1710.02298",
-        "year": 1710,
-        "authors": [],
+        "title": "Rainbow: Combining Improvements in Deep Reinforcement Learning",
+        "year": 2017,
+        "authors": [
+          "Matteo Hessel",
+          "Joseph Modayil",
+          "Hado van Hasselt",
+          "Tom Schaul",
+          "Georg Ostrovski",
+          "Will Dabney",
+          "Dan Horgan",
+          "Bilal Piot",
+          "Mohammad Azar",
+          "David Silver"
+        ],
         "arxiv_id": "1710.02298",
         "source_id": "0dc6d235-53ef-4938-8370-837dcea90a3f",
         "kb_status": "ingested",
@@ -408,11 +539,16 @@
     {
       "id": "source:arxiv:1710.06537",
       "type": "source",
-      "label": "1710.06537",
+      "label": "Peng et al. 2017",
       "data": {
-        "title": "1710.06537",
-        "year": 1710,
-        "authors": [],
+        "title": "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization",
+        "year": 2017,
+        "authors": [
+          "Xue Bin Peng",
+          "Marcin Andrychowicz",
+          "Wojciech Zaremba",
+          "Pieter Abbeel"
+        ],
         "arxiv_id": "1710.06537",
         "source_id": "3762b42a-a5ff-4041-b70b-138c27c954d9",
         "kb_status": "ingested",
@@ -427,11 +563,25 @@
     {
       "id": "source:arxiv:1712.01815",
       "type": "source",
-      "label": "1712.01815",
+      "label": "Silver et al. 2017",
       "data": {
-        "title": "1712.01815",
-        "year": 1712,
-        "authors": [],
+        "title": "Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm",
+        "year": 2017,
+        "authors": [
+          "David Silver",
+          "Thomas Hubert",
+          "Julian Schrittwieser",
+          "Ioannis Antonoglou",
+          "Matthew Lai",
+          "Arthur Guez",
+          "Marc Lanctot",
+          "Laurent Sifre",
+          "Dharshan Kumaran",
+          "Thore Graepel",
+          "Timothy Lillicrap",
+          "Karen Simonyan",
+          "Demis Hassabis"
+        ],
         "arxiv_id": "1712.01815",
         "source_id": "781f9401-cc02-473d-ab88-12a4de6469a6",
         "kb_status": "ingested",
@@ -446,11 +596,16 @@
     {
       "id": "source:arxiv:1801.01290",
       "type": "source",
-      "label": "1801.01290",
+      "label": "Haarnoja et al. 2018",
       "data": {
-        "title": "1801.01290",
-        "year": 1801,
-        "authors": [],
+        "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+        "year": 2018,
+        "authors": [
+          "Tuomas Haarnoja",
+          "Aurick Zhou",
+          "Pieter Abbeel",
+          "Sergey Levine"
+        ],
         "arxiv_id": "1801.01290",
         "source_id": "7629d621-f1c5-4f99-97a4-e666def5d3e6",
         "kb_status": "ingested",
@@ -465,11 +620,15 @@
     {
       "id": "source:arxiv:1802.09477",
       "type": "source",
-      "label": "1802.09477",
+      "label": "Fujimoto et al. 2018",
       "data": {
-        "title": "1802.09477",
-        "year": 1802,
-        "authors": [],
+        "title": "Addressing Function Approximation Error in Actor-Critic Methods",
+        "year": 2018,
+        "authors": [
+          "Scott Fujimoto",
+          "Herke van Hoof",
+          "David Meger"
+        ],
         "arxiv_id": "1802.09477",
         "source_id": "e67a5ccc-ddaa-480f-82d4-ddb74808453a",
         "kb_status": "ingested",
@@ -484,11 +643,14 @@
     {
       "id": "source:arxiv:1803.10122",
       "type": "source",
-      "label": "arXiv:1803.10122",
+      "label": "Ha & Schmidhuber 2018",
       "data": {
-        "title": "arXiv:1803.10122",
+        "title": "World Models",
         "year": 2018,
-        "authors": [],
+        "authors": [
+          "David Ha",
+          "Jürgen Schmidhuber"
+        ],
         "arxiv_id": "1803.10122",
         "source_id": "3fc3d0aa-0c6c-4753-a474-bc37000646e8",
         "kb_status": "ingested",
@@ -503,11 +665,18 @@
     {
       "id": "source:arxiv:1803.11485",
       "type": "source",
-      "label": "1803.11485",
+      "label": "Rashid et al. 2018",
       "data": {
-        "title": "1803.11485",
-        "year": 1803,
-        "authors": [],
+        "title": "QMIX: Monotonic Value Function Factorisation for Deep Multi-Agent Reinforcement Learning",
+        "year": 2018,
+        "authors": [
+          "Tabish Rashid",
+          "Mikayel Samvelyan",
+          "Christian Schroeder de Witt",
+          "Gregory Farquhar",
+          "Jakob Foerster",
+          "Shimon Whiteson"
+        ],
         "arxiv_id": "1803.11485",
         "source_id": "9418a571-305f-4abc-a508-c5d64712212b",
         "kb_status": "ingested",
@@ -522,11 +691,16 @@
     {
       "id": "source:arxiv:1804.02717",
       "type": "source",
-      "label": "1804.02717",
+      "label": "Peng et al. 2018",
       "data": {
-        "title": "1804.02717",
-        "year": 1804,
-        "authors": [],
+        "title": "DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills",
+        "year": 2018,
+        "authors": [
+          "Xue Bin Peng",
+          "Pieter Abbeel",
+          "Sergey Levine",
+          "Michiel van de Panne"
+        ],
         "arxiv_id": "1804.02717",
         "source_id": "d275869f-80ad-454d-8c6e-25230ac25aab",
         "kb_status": "ingested",
@@ -541,11 +715,13 @@
     {
       "id": "source:arxiv:1805.00909",
       "type": "source",
-      "label": "1805.00909",
+      "label": "Levine 2018",
       "data": {
-        "title": "1805.00909",
-        "year": 1805,
-        "authors": [],
+        "title": "Reinforcement Learning and Control as Probabilistic Inference: Tutorial and Review",
+        "year": 2018,
+        "authors": [
+          "Sergey Levine"
+        ],
         "arxiv_id": "1805.00909",
         "source_id": "fbab4a31-8fe3-466c-98dc-43c026f041a4",
         "kb_status": "ingested",
@@ -560,11 +736,16 @@
     {
       "id": "source:arxiv:1805.08296",
       "type": "source",
-      "label": "1805.08296",
+      "label": "Nachum et al. 2018",
       "data": {
-        "title": "1805.08296",
-        "year": 1805,
-        "authors": [],
+        "title": "Data-Efficient Hierarchical Reinforcement Learning",
+        "year": 2018,
+        "authors": [
+          "Ofir Nachum",
+          "Shixiang Gu",
+          "Honglak Lee",
+          "Sergey Levine"
+        ],
         "arxiv_id": "1805.08296",
         "source_id": "12f7f6f5-b8d7-48de-8e83-610df2058b44",
         "kb_status": "ingested",
@@ -579,11 +760,16 @@
     {
       "id": "source:arxiv:1805.12114",
       "type": "source",
-      "label": "1805.12114",
+      "label": "Chua et al. 2018",
       "data": {
-        "title": "1805.12114",
-        "year": 1805,
-        "authors": [],
+        "title": "Deep Reinforcement Learning in a Handful of Trials using Probabilistic Dynamics Models",
+        "year": 2018,
+        "authors": [
+          "Kurtland Chua",
+          "Roberto Calandra",
+          "Rowan McAllister",
+          "Sergey Levine"
+        ],
         "arxiv_id": "1805.12114",
         "source_id": "e775b9cd-1235-4a90-9a23-63b823a12158",
         "kb_status": "ingested",
@@ -598,11 +784,13 @@
     {
       "id": "source:arxiv:1806.09460",
       "type": "source",
-      "label": "1806.09460",
+      "label": "Recht 2018",
       "data": {
-        "title": "1806.09460",
-        "year": 1806,
-        "authors": [],
+        "title": "A Tour of Reinforcement Learning: The View from Continuous Control",
+        "year": 2018,
+        "authors": [
+          "Benjamin Recht"
+        ],
         "arxiv_id": "1806.09460",
         "source_id": "563eafdc-3211-4938-b239-79455eec574e",
         "kb_status": "ingested",
@@ -617,11 +805,29 @@
     {
       "id": "source:arxiv:1808.00177",
       "type": "source",
-      "label": "1808.00177",
+      "label": "OpenAI et al. 2018",
       "data": {
-        "title": "1808.00177",
-        "year": 1808,
-        "authors": [],
+        "title": "Learning Dexterous In-Hand Manipulation",
+        "year": 2018,
+        "authors": [
+          "OpenAI",
+          "Marcin Andrychowicz",
+          "Bowen Baker",
+          "Maciek Chociej",
+          "Rafal Jozefowicz",
+          "Bob McGrew",
+          "Jakub Pachocki",
+          "Arthur Petron",
+          "Matthias Plappert",
+          "Glenn Powell",
+          "Alex Ray",
+          "Jonas Schneider",
+          "Szymon Sidor",
+          "Josh Tobin",
+          "Peter Welinder",
+          "Lilian Weng",
+          "Wojciech Zaremba"
+        ],
         "arxiv_id": "1808.00177",
         "source_id": "1a250ad3-5437-4f45-8d9c-dc14210aafc9",
         "kb_status": "ingested",
@@ -636,11 +842,17 @@
     {
       "id": "source:arxiv:1810.13400",
       "type": "source",
-      "label": "1810.13400",
+      "label": "Amos et al. 2018",
       "data": {
-        "title": "1810.13400",
-        "year": 1810,
-        "authors": [],
+        "title": "Differentiable MPC for End-to-end Planning and Control",
+        "year": 2018,
+        "authors": [
+          "Brandon Amos",
+          "Ivan Dario Jimenez Rodriguez",
+          "Jacob Sacks",
+          "Byron Boots",
+          "J. Zico Kolter"
+        ],
         "arxiv_id": "1810.13400",
         "source_id": "b0287ad7-74c1-44de-814b-b51294087fc2",
         "kb_status": "ingested",
@@ -655,11 +867,14 @@
     {
       "id": "source:arxiv:1811.00168",
       "type": "source",
-      "label": "1811.00168",
+      "label": "Barratt & Boyd 2018",
       "data": {
-        "title": "1811.00168",
-        "year": 1811,
-        "authors": [],
+        "title": "Stochastic Control with Affine Dynamics and Extended Quadratic Costs",
+        "year": 2018,
+        "authors": [
+          "Shane Barratt",
+          "Stephen Boyd"
+        ],
         "arxiv_id": "1811.00168",
         "source_id": "c5034fcf-96ea-45cb-9cd2-dd90d91b91c8",
         "kb_status": "ingested",
@@ -674,11 +889,19 @@
     {
       "id": "source:arxiv:1811.04551",
       "type": "source",
-      "label": "1811.04551",
+      "label": "Hafner et al. 2018",
       "data": {
-        "title": "1811.04551",
-        "year": 1811,
-        "authors": [],
+        "title": "Learning Latent Dynamics for Planning from Pixels",
+        "year": 2018,
+        "authors": [
+          "Danijar Hafner",
+          "Timothy Lillicrap",
+          "Ian Fischer",
+          "Ruben Villegas",
+          "David Ha",
+          "Honglak Lee",
+          "James Davidson"
+        ],
         "arxiv_id": "1811.04551",
         "source_id": "7514c0ef-a968-439b-a0e8-07a884e94e07",
         "kb_status": "ingested",
@@ -693,11 +916,23 @@
     {
       "id": "source:arxiv:1812.05905",
       "type": "source",
-      "label": "1812.05905",
+      "label": "Haarnoja et al. 2018",
       "data": {
-        "title": "1812.05905",
-        "year": 1812,
-        "authors": [],
+        "title": "Soft Actor-Critic Algorithms and Applications",
+        "year": 2018,
+        "authors": [
+          "Tuomas Haarnoja",
+          "Aurick Zhou",
+          "Kristian Hartikainen",
+          "George Tucker",
+          "Sehoon Ha",
+          "Jie Tan",
+          "Vikash Kumar",
+          "Henry Zhu",
+          "Abhishek Gupta",
+          "Pieter Abbeel",
+          "Sergey Levine"
+        ],
         "arxiv_id": "1812.05905",
         "source_id": "aa6717c8-f682-4537-bcf7-02fe2bc99dd2",
         "kb_status": "ingested",
@@ -712,11 +947,16 @@
     {
       "id": "source:arxiv:1906.08253",
       "type": "source",
-      "label": "1906.08253",
+      "label": "Janner et al. 2019",
       "data": {
-        "title": "1906.08253",
-        "year": 1906,
-        "authors": [],
+        "title": "When to Trust Your Model: Model-Based Policy Optimization",
+        "year": 2019,
+        "authors": [
+          "Michael Janner",
+          "Justin Fu",
+          "Marvin Zhang",
+          "Sergey Levine"
+        ],
         "arxiv_id": "1906.08253",
         "source_id": "47c29d12-1aa2-4639-932e-58c9db202883",
         "kb_status": "ingested",
@@ -731,11 +971,31 @@
     {
       "id": "source:arxiv:1910.07113",
       "type": "source",
-      "label": "1910.07113",
+      "label": "OpenAI et al. 2019",
       "data": {
-        "title": "1910.07113",
-        "year": 1910,
-        "authors": [],
+        "title": "Solving Rubik's Cube with a Robot Hand",
+        "year": 2019,
+        "authors": [
+          "OpenAI",
+          "Ilge Akkaya",
+          "Marcin Andrychowicz",
+          "Maciek Chociej",
+          "Mateusz Litwin",
+          "Bob McGrew",
+          "Arthur Petron",
+          "Alex Paino",
+          "Matthias Plappert",
+          "Glenn Powell",
+          "Raphael Ribas",
+          "Jonas Schneider",
+          "Nikolas Tezak",
+          "Jerry Tworek",
+          "Peter Welinder",
+          "Lilian Weng",
+          "Qiming Yuan",
+          "Wojciech Zaremba",
+          "Lei Zhang"
+        ],
         "arxiv_id": "1910.07113",
         "source_id": "26350505-3fbe-4436-81eb-0f241afc6170",
         "kb_status": "ingested",
@@ -750,11 +1010,24 @@
     {
       "id": "source:arxiv:1911.08265",
       "type": "source",
-      "label": "1911.08265",
+      "label": "Schrittwieser et al. 2019",
       "data": {
-        "title": "1911.08265",
-        "year": 1911,
-        "authors": [],
+        "title": "Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model",
+        "year": 2019,
+        "authors": [
+          "Julian Schrittwieser",
+          "Ioannis Antonoglou",
+          "Thomas Hubert",
+          "Karen Simonyan",
+          "Laurent Sifre",
+          "Simon Schmitt",
+          "Arthur Guez",
+          "Edward Lockhart",
+          "Demis Hassabis",
+          "Thore Graepel",
+          "Timothy Lillicrap",
+          "David Silver"
+        ],
         "arxiv_id": "1911.08265",
         "source_id": "d6a33313-108b-4c7b-93da-f190369a2960",
         "kb_status": "ingested",
@@ -769,11 +1042,39 @@
     {
       "id": "source:arxiv:1912.06680",
       "type": "source",
-      "label": "1912.06680",
+      "label": "OpenAI et al. 2019",
       "data": {
-        "title": "1912.06680",
-        "year": 1912,
-        "authors": [],
+        "title": "Dota 2 with Large Scale Deep Reinforcement Learning",
+        "year": 2019,
+        "authors": [
+          "OpenAI",
+          ":",
+          "Christopher Berner",
+          "Greg Brockman",
+          "Brooke Chan",
+          "Vicki Cheung",
+          "Przemysław Dębiak",
+          "Christy Dennison",
+          "David Farhi",
+          "Quirin Fischer",
+          "Shariq Hashme",
+          "Chris Hesse",
+          "Rafal Józefowicz",
+          "Scott Gray",
+          "Catherine Olsson",
+          "Jakub Pachocki",
+          "Michael Petrov",
+          "Henrique P. d. O. Pinto",
+          "Jonathan Raiman",
+          "Tim Salimans",
+          "Jeremy Schlatter",
+          "Jonas Schneider",
+          "Szymon Sidor",
+          "Ilya Sutskever",
+          "Jie Tang",
+          "Filip Wolski",
+          "Susan Zhang"
+        ],
         "arxiv_id": "1912.06680",
         "source_id": "fc104c00-228c-4061-987f-bf44699c714a",
         "kb_status": "ingested",
@@ -788,11 +1089,16 @@
     {
       "id": "source:arxiv:2002.04523",
       "type": "source",
-      "label": "2002.04523",
+      "label": "Lambert et al. 2020",
       "data": {
-        "title": "2002.04523",
-        "year": 2002,
-        "authors": [],
+        "title": "Objective Mismatch in Model-based Reinforcement Learning",
+        "year": 2020,
+        "authors": [
+          "Nathan Lambert",
+          "Brandon Amos",
+          "Omry Yadan",
+          "Roberto Calandra"
+        ],
         "arxiv_id": "2002.04523",
         "source_id": "c6dcae7e-d11b-460d-adf0-24a5b02b8c29",
         "kb_status": "ingested",
@@ -807,11 +1113,15 @@
     {
       "id": "source:arxiv:2004.04136",
       "type": "source",
-      "label": "2004.04136",
+      "label": "Srinivas et al. 2020",
       "data": {
-        "title": "2004.04136",
-        "year": 2004,
-        "authors": [],
+        "title": "CURL: Contrastive Unsupervised Representations for Reinforcement Learning",
+        "year": 2020,
+        "authors": [
+          "Aravind Srinivas",
+          "Michael Laskin",
+          "Pieter Abbeel"
+        ],
         "arxiv_id": "2004.04136",
         "source_id": "4c5fa83c-e2bb-4b83-b4df-81fc13ca11a5",
         "kb_status": "ingested",
@@ -826,11 +1136,16 @@
     {
       "id": "source:arxiv:2004.07584",
       "type": "source",
-      "label": "2004.07584",
+      "label": "Choi et al. 2020",
       "data": {
-        "title": "2004.07584",
-        "year": 2004,
-        "authors": [],
+        "title": "Reinforcement Learning for Safety-Critical Control under Model Uncertainty, using Control Lyapunov Functions and Control Barrier Functions",
+        "year": 2020,
+        "authors": [
+          "Jason Choi",
+          "Fernando Castañeda",
+          "Claire J. Tomlin",
+          "Koushil Sreenath"
+        ],
         "arxiv_id": "2004.07584",
         "source_id": "d7c1a3b4-07f1-41be-a276-d539f7b7b7e6",
         "kb_status": "ingested",
@@ -845,11 +1160,16 @@
     {
       "id": "source:arxiv:2005.01643",
       "type": "source",
-      "label": "2005.01643",
+      "label": "Levine et al. 2020",
       "data": {
-        "title": "2005.01643",
-        "year": 2005,
-        "authors": [],
+        "title": "Offline Reinforcement Learning: Tutorial, Review, and Perspectives on Open Problems",
+        "year": 2020,
+        "authors": [
+          "Sergey Levine",
+          "Aviral Kumar",
+          "George Tucker",
+          "Justin Fu"
+        ],
         "arxiv_id": "2005.01643",
         "source_id": "81a8a246-97b3-44b4-86bb-af90517a60ce",
         "kb_status": "ingested",
@@ -864,11 +1184,19 @@
     {
       "id": "source:arxiv:2005.12729",
       "type": "source",
-      "label": "2005.12729",
+      "label": "Engstrom et al. 2020",
       "data": {
-        "title": "2005.12729",
-        "year": 2005,
-        "authors": [],
+        "title": "Implementation Matters in Deep Policy Gradients: A Case Study on PPO and TRPO",
+        "year": 2020,
+        "authors": [
+          "Logan Engstrom",
+          "Andrew Ilyas",
+          "Shibani Santurkar",
+          "Dimitris Tsipras",
+          "Firdaus Janoos",
+          "Larry Rudolph",
+          "Aleksander Madry"
+        ],
         "arxiv_id": "2005.12729",
         "source_id": "be6ebf06-fcab-482f-b9b4-2ff7795f6587",
         "kb_status": "ingested",
@@ -883,11 +1211,16 @@
     {
       "id": "source:arxiv:2006.04779",
       "type": "source",
-      "label": "2006.04779",
+      "label": "Kumar et al. 2020",
       "data": {
-        "title": "2006.04779",
-        "year": 2006,
-        "authors": [],
+        "title": "Conservative Q-Learning for Offline Reinforcement Learning",
+        "year": 2020,
+        "authors": [
+          "Aviral Kumar",
+          "Aurick Zhou",
+          "George Tucker",
+          "Sergey Levine"
+        ],
         "arxiv_id": "2006.04779",
         "source_id": "56328f97-eae5-438e-b711-74e039e652e5",
         "kb_status": "ingested",
@@ -902,11 +1235,16 @@
     {
       "id": "source:arxiv:2006.07869",
       "type": "source",
-      "label": "2006.07869",
+      "label": "Papoudakis et al. 2020",
       "data": {
-        "title": "2006.07869",
-        "year": 2006,
-        "authors": [],
+        "title": "Benchmarking Multi-Agent Deep Reinforcement Learning Algorithms in Cooperative Tasks",
+        "year": 2020,
+        "authors": [
+          "Georgios Papoudakis",
+          "Filippos Christianos",
+          "Lukas Schäfer",
+          "Stefano V. Albrecht"
+        ],
         "arxiv_id": "2006.07869",
         "source_id": "64d6f72d-0fbe-40ca-aceb-097ee1c6a679",
         "kb_status": "ingested",
@@ -921,11 +1259,14 @@
     {
       "id": "source:arxiv:2009.05228",
       "type": "source",
-      "label": "2009.05228",
+      "label": "Wang & Jiang 2020",
       "data": {
-        "title": "2009.05228",
-        "year": 2009,
-        "authors": [],
+        "title": "Conditional Coupled Generative Adversarial Networks for Zero-Shot Domain Adaptation",
+        "year": 2020,
+        "authors": [
+          "Jinghua Wang",
+          "Jianmin Jiang"
+        ],
         "arxiv_id": "2009.05228",
         "source_id": "d8580001-996e-472b-adea-e830c58b7d2f",
         "kb_status": "ingested",
@@ -940,11 +1281,16 @@
     {
       "id": "source:arxiv:2010.02193",
       "type": "source",
-      "label": "2010.02193",
+      "label": "Hafner et al. 2020",
       "data": {
-        "title": "2010.02193",
-        "year": 2010,
-        "authors": [],
+        "title": "Mastering Atari with Discrete World Models",
+        "year": 2020,
+        "authors": [
+          "Danijar Hafner",
+          "Timothy Lillicrap",
+          "Mohammad Norouzi",
+          "Jimmy Ba"
+        ],
         "arxiv_id": "2010.02193",
         "source_id": "ef39f8e9-9615-4b2d-84a7-6dd0bc2fb309",
         "kb_status": "ingested",
@@ -959,11 +1305,17 @@
     {
       "id": "source:arxiv:2010.11251",
       "type": "source",
-      "label": "2010.11251",
+      "label": "Lee et al. 2020",
       "data": {
-        "title": "2010.11251",
-        "year": 2010,
-        "authors": [],
+        "title": "Learning Quadrupedal Locomotion over Challenging Terrain",
+        "year": 2020,
+        "authors": [
+          "Joonho Lee",
+          "Jemin Hwangbo",
+          "Lorenz Wellhausen",
+          "Vladlen Koltun",
+          "Marco Hutter"
+        ],
         "arxiv_id": "2010.11251",
         "source_id": "01e336d5-00c3-450d-a59d-7c36c3981f64",
         "kb_status": "ingested",
@@ -978,11 +1330,16 @@
     {
       "id": "source:arxiv:2011.03506",
       "type": "source",
-      "label": "2011.03506",
+      "label": "Grimm et al. 2020",
       "data": {
-        "title": "2011.03506",
-        "year": 2011,
-        "authors": [],
+        "title": "The Value Equivalence Principle for Model-Based Reinforcement Learning",
+        "year": 2020,
+        "authors": [
+          "Christopher Grimm",
+          "André Barreto",
+          "Satinder Singh",
+          "David Silver"
+        ],
         "arxiv_id": "2011.03506",
         "source_id": "cd0bd866-ed22-4f00-a26e-e5699cd2c3a6",
         "kb_status": "ingested",
@@ -997,11 +1354,19 @@
     {
       "id": "source:arxiv:2103.01955",
       "type": "source",
-      "label": "2103.01955",
+      "label": "Yu et al. 2021",
       "data": {
-        "title": "2103.01955",
-        "year": 2103,
-        "authors": [],
+        "title": "The Surprising Effectiveness of PPO in Cooperative, Multi-Agent Games",
+        "year": 2021,
+        "authors": [
+          "Chao Yu",
+          "Akash Velu",
+          "Eugene Vinitsky",
+          "Jiaxuan Gao",
+          "Yu Wang",
+          "Alexandre Bayen",
+          "Yi Wu"
+        ],
         "arxiv_id": "2103.01955",
         "source_id": "0e5881a3-508a-4146-98cb-8954d76e4e46",
         "kb_status": "ingested",
@@ -1016,11 +1381,21 @@
     {
       "id": "source:arxiv:2106.01345",
       "type": "source",
-      "label": "2106.01345",
+      "label": "Chen et al. 2021",
       "data": {
-        "title": "2106.01345",
-        "year": 2106,
-        "authors": [],
+        "title": "Decision Transformer: Reinforcement Learning via Sequence Modeling",
+        "year": 2021,
+        "authors": [
+          "Lili Chen",
+          "Kevin Lu",
+          "Aravind Rajeswaran",
+          "Kimin Lee",
+          "Aditya Grover",
+          "Michael Laskin",
+          "Pieter Abbeel",
+          "Aravind Srinivas",
+          "Igor Mordatch"
+        ],
         "arxiv_id": "2106.01345",
         "source_id": "4425e64b-0a6e-4fac-96be-2204be75743e",
         "kb_status": "ingested",
@@ -1035,11 +1410,16 @@
     {
       "id": "source:arxiv:2107.09645",
       "type": "source",
-      "label": "2107.09645",
+      "label": "Yarats et al. 2021",
       "data": {
-        "title": "2107.09645",
-        "year": 2107,
-        "authors": [],
+        "title": "Mastering Visual Continuous Control: Improved Data-Augmented Reinforcement Learning",
+        "year": 2021,
+        "authors": [
+          "Denis Yarats",
+          "Rob Fergus",
+          "Alessandro Lazaric",
+          "Lerrel Pinto"
+        ],
         "arxiv_id": "2107.09645",
         "source_id": "536b35e2-f48b-4068-b5c4-1e5eff5f69e8",
         "kb_status": "ingested",
@@ -1054,11 +1434,15 @@
     {
       "id": "source:arxiv:2110.06169",
       "type": "source",
-      "label": "2110.06169",
+      "label": "Kostrikov et al. 2021",
       "data": {
-        "title": "2110.06169",
-        "year": 2110,
-        "authors": [],
+        "title": "Offline Reinforcement Learning with Implicit Q-Learning",
+        "year": 2021,
+        "authors": [
+          "Ilya Kostrikov",
+          "Ashvin Nair",
+          "Sergey Levine"
+        ],
         "arxiv_id": "2110.06169",
         "source_id": "a84aef0b-1894-4967-81dd-b626a1eaa7ef",
         "kb_status": "ingested",
@@ -1073,11 +1457,15 @@
     {
       "id": "source:arxiv:2203.04955",
       "type": "source",
-      "label": "2203.04955",
+      "label": "Hansen et al. 2022",
       "data": {
-        "title": "2203.04955",
-        "year": 2203,
-        "authors": [],
+        "title": "Temporal Difference Learning for Model Predictive Control",
+        "year": 2022,
+        "authors": [
+          "Nicklas Hansen",
+          "Xiaolong Wang",
+          "Hao Su"
+        ],
         "arxiv_id": "2203.04955",
         "source_id": "ee03ecf5-c494-4d6f-b7f4-6261c5a0ed69",
         "kb_status": "ingested",
@@ -1092,11 +1480,16 @@
     {
       "id": "source:arxiv:2204.01464",
       "type": "source",
-      "label": "2204.01464",
+      "label": "Voelcker et al. 2022",
       "data": {
-        "title": "2204.01464",
-        "year": 2204,
-        "authors": [],
+        "title": "Value Gradient weighted Model-Based Reinforcement Learning",
+        "year": 2022,
+        "authors": [
+          "Claas Voelcker",
+          "Victor Liao",
+          "Animesh Garg",
+          "Amir-massoud Farahmand"
+        ],
         "arxiv_id": "2204.01464",
         "source_id": "d9a857f7-3f47-4321-bf2e-e8af55a3ba20",
         "kb_status": "ingested",
@@ -1111,11 +1504,19 @@
     {
       "id": "source:arxiv:2205.10330",
       "type": "source",
-      "label": "2205.10330",
+      "label": "Gu et al. 2022",
       "data": {
-        "title": "2205.10330",
-        "year": 2205,
-        "authors": [],
+        "title": "A Review of Safe Reinforcement Learning: Methods, Theory and Applications",
+        "year": 2022,
+        "authors": [
+          "Shangding Gu",
+          "Long Yang",
+          "Yali Du",
+          "Guang Chen",
+          "Florian Walter",
+          "Jun Wang",
+          "Alois Knoll"
+        ],
         "arxiv_id": "2205.10330",
         "source_id": "cac50bee-8fbc-4199-a3bb-77db0248dd70",
         "kb_status": "ingested",
@@ -1130,11 +1531,18 @@
     {
       "id": "source:arxiv:2206.09328",
       "type": "source",
-      "label": "2206.09328",
+      "label": "Luo et al. 2022",
       "data": {
-        "title": "2206.09328",
-        "year": 2206,
-        "authors": [],
+        "title": "A Survey on Model-based Reinforcement Learning",
+        "year": 2022,
+        "authors": [
+          "Fan-Ming Luo",
+          "Tian Xu",
+          "Hang Lai",
+          "Xiong-Hui Chen",
+          "Weinan Zhang",
+          "Yang Yu"
+        ],
         "arxiv_id": "2206.09328",
         "source_id": "76b7e990-124d-49e3-bebf-624d7aae9d27",
         "kb_status": "ingested",
@@ -1149,11 +1557,15 @@
     {
       "id": "source:arxiv:2209.00588",
       "type": "source",
-      "label": "2209.00588",
+      "label": "Micheli et al. 2022",
       "data": {
-        "title": "2209.00588",
-        "year": 2209,
-        "authors": [],
+        "title": "Transformers are Sample-Efficient World Models",
+        "year": 2022,
+        "authors": [
+          "Vincent Micheli",
+          "Eloi Alonso",
+          "François Fleuret"
+        ],
         "arxiv_id": "2209.00588",
         "source_id": "a4082ded-8e90-4df4-be7e-2b9693557427",
         "kb_status": "ingested",
@@ -1168,11 +1580,16 @@
     {
       "id": "source:arxiv:2301.04104",
       "type": "source",
-      "label": "2301.04104",
+      "label": "Hafner et al. 2023",
       "data": {
-        "title": "2301.04104",
-        "year": 2301,
-        "authors": [],
+        "title": "Mastering Diverse Domains through World Models",
+        "year": 2023,
+        "authors": [
+          "Danijar Hafner",
+          "Jurgis Pasukonis",
+          "Jimmy Ba",
+          "Timothy Lillicrap"
+        ],
         "arxiv_id": "2301.04104",
         "source_id": "8541b8a3-7c3b-4523-a4e2-c08ea83fd88e",
         "kb_status": "ingested",
@@ -1187,7 +1604,7 @@
     {
       "id": "source:arxiv:2301.08243",
       "type": "source",
-      "label": "Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture",
+      "label": "Assran et al. 2023",
       "data": {
         "title": "Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture",
         "year": 2023,
@@ -1197,7 +1614,7 @@
           "Ishan Misra",
           "Piotr Bojanowski",
           "Pascal Vincent",
-          "Michael G. Rabbat",
+          "Michael Rabbat",
           "Yann LeCun",
           "Nicolas Ballas"
         ],
@@ -1215,17 +1632,17 @@
     {
       "id": "source:arxiv:2303.03381",
       "type": "source",
-      "label": "Real-world humanoid locomotion with reinforcement learning",
+      "label": "Radosavovic et al. 2023",
       "data": {
-        "title": "Real-world humanoid locomotion with reinforcement learning",
+        "title": "Real-World Humanoid Locomotion with Reinforcement Learning",
         "year": 2023,
         "authors": [
           "Ilija Radosavovic",
           "Tete Xiao",
           "Bike Zhang",
-          "T. Darrell",
-          "J. Malik",
-          "K. Sreenath"
+          "Trevor Darrell",
+          "Jitendra Malik",
+          "Koushil Sreenath"
         ],
         "arxiv_id": "2303.03381",
         "source_id": "67e09e88-0899-48fa-8f25-51a8f45adb88",
@@ -1241,11 +1658,16 @@
     {
       "id": "source:arxiv:2306.09852",
       "type": "source",
-      "label": "2306.09852",
+      "label": "Romero et al. 2023",
       "data": {
-        "title": "2306.09852",
-        "year": 2306,
-        "authors": [],
+        "title": "Actor-Critic Model Predictive Control: Differentiable Optimization meets Reinforcement Learning for Agile Flight",
+        "year": 2023,
+        "authors": [
+          "Angel Romero",
+          "Elie Aljalbout",
+          "Yunlong Song",
+          "Davide Scaramuzza"
+        ],
         "arxiv_id": "2306.09852",
         "source_id": "1a738c90-a109-4764-9c50-eb16f4a35cd5",
         "kb_status": "ingested",
@@ -1260,11 +1682,15 @@
     {
       "id": "source:arxiv:2307.02064",
       "type": "source",
-      "label": "2307.02064",
+      "label": "Deng et al. 2023",
       "data": {
-        "title": "2307.02064",
-        "year": 2307,
-        "authors": [],
+        "title": "Facing Off World Model Backbones: RNNs, Transformers, and S4",
+        "year": 2023,
+        "authors": [
+          "Fei Deng",
+          "Junyeong Park",
+          "Sungjin Ahn"
+        ],
         "arxiv_id": "2307.02064",
         "source_id": "acafcacb-d950-46fd-85f2-1e304c17f4f7",
         "kb_status": "ingested",
@@ -1279,11 +1705,17 @@
     {
       "id": "source:arxiv:2310.06253",
       "type": "source",
-      "label": "2310.06253",
+      "label": "Wei et al. 2023",
       "data": {
-        "title": "2310.06253",
-        "year": 2310,
-        "authors": [],
+        "title": "A Unified View on Solving Objective Mismatch in Model-Based Reinforcement Learning",
+        "year": 2023,
+        "authors": [
+          "Ran Wei",
+          "Nathan Lambert",
+          "Anthony McDonald",
+          "Alfredo Garcia",
+          "Roberto Calandra"
+        ],
         "arxiv_id": "2310.06253",
         "source_id": "569900f3-c6c4-435f-8b20-84a5db5b8a09",
         "kb_status": "ingested",
@@ -1298,11 +1730,15 @@
     {
       "id": "source:arxiv:2310.16828",
       "type": "source",
-      "label": "2310.16828",
+      "label": "Hansen et al. 2023",
       "data": {
-        "title": "2310.16828",
-        "year": 2310,
-        "authors": [],
+        "title": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+        "year": 2023,
+        "authors": [
+          "Nicklas Hansen",
+          "Hao Su",
+          "Xiaolong Wang"
+        ],
         "arxiv_id": "2310.16828",
         "source_id": "12df7a35-9e1c-4b24-a35d-d5b1b709a8d6",
         "kb_status": "ingested",
@@ -1317,11 +1753,16 @@
     {
       "id": "source:arxiv:2312.06211",
       "type": "source",
-      "label": "2312.06211",
+      "label": "Bonassi et al. 2023",
       "data": {
-        "title": "2312.06211",
-        "year": 2312,
-        "authors": [],
+        "title": "Structured state-space models are deep Wiener models",
+        "year": 2023,
+        "authors": [
+          "Fabio Bonassi",
+          "Carl Andersson",
+          "Per Mattsson",
+          "Thomas B. Schön"
+        ],
         "arxiv_id": "2312.06211",
         "source_id": "cbaf3723-e53b-4ed5-84a8-99a3b1ed987d",
         "kb_status": "ingested",
@@ -1336,11 +1777,15 @@
     {
       "id": "source:arxiv:2312.15521",
       "type": "source",
-      "label": "2312.15521",
+      "label": "Zuliani et al. 2023",
       "data": {
-        "title": "2312.15521",
-        "year": 2312,
-        "authors": [],
+        "title": "BP-MPC: Optimizing the Closed-Loop Performance of MPC using BackPropagation",
+        "year": 2023,
+        "authors": [
+          "Riccardo Zuliani",
+          "Efe C. Balta",
+          "John Lygeros"
+        ],
         "arxiv_id": "2312.15521",
         "source_id": "b6e5f683-e5e3-460c-930f-51408f8753e4",
         "kb_status": "ingested",
@@ -1355,11 +1800,16 @@
     {
       "id": "source:arxiv:2403.04253",
       "type": "source",
-      "label": "2403.04253",
+      "label": "Samsami et al. 2024",
       "data": {
-        "title": "2403.04253",
-        "year": 2403,
-        "authors": [],
+        "title": "Mastering Memory Tasks with World Models",
+        "year": 2024,
+        "authors": [
+          "Mohammad Reza Samsami",
+          "Artem Zholus",
+          "Janarthanan Rajendran",
+          "Sarath Chandar"
+        ],
         "arxiv_id": "2403.04253",
         "source_id": "32922e83-a38e-4118-80e4-4e655722ce31",
         "kb_status": "ingested",
@@ -1374,11 +1824,20 @@
     {
       "id": "source:arxiv:2404.08471",
       "type": "source",
-      "label": "2404.08471",
+      "label": "Bardes et al. 2024",
       "data": {
-        "title": "2404.08471",
-        "year": 2404,
-        "authors": [],
+        "title": "Revisiting Feature Prediction for Learning Visual Representations from Video",
+        "year": 2024,
+        "authors": [
+          "Adrien Bardes",
+          "Quentin Garrido",
+          "Jean Ponce",
+          "Xinlei Chen",
+          "Michael Rabbat",
+          "Yann LeCun",
+          "Mahmoud Assran",
+          "Nicolas Ballas"
+        ],
         "arxiv_id": "2404.08471",
         "source_id": "f9c98ad0-f829-4a82-8886-f1696aa538ff",
         "kb_status": "ingested",
@@ -1393,11 +1852,13 @@
     {
       "id": "source:arxiv:2406.00592",
       "type": "source",
-      "label": "2406.00592",
+      "label": "Bertsekas 2024",
       "data": {
-        "title": "2406.00592",
-        "year": 2406,
-        "authors": [],
+        "title": "Model Predictive Control and Reinforcement Learning: A Unified Framework Based on Dynamic Programming",
+        "year": 2024,
+        "authors": [
+          "Dimitri P. Bertsekas"
+        ],
         "arxiv_id": "2406.00592",
         "source_id": "a4aa7133-48ed-4c48-8555-7108837d6843",
         "kb_status": "ingested",
@@ -1412,11 +1873,18 @@
     {
       "id": "source:arxiv:2408.03539",
       "type": "source",
-      "label": "2408.03539",
+      "label": "Tang et al. 2024",
       "data": {
-        "title": "2408.03539",
-        "year": 2408,
-        "authors": [],
+        "title": "Deep Reinforcement Learning for Robotics: A Survey of Real-World Successes",
+        "year": 2024,
+        "authors": [
+          "Chen Tang",
+          "Ben Abbatematteo",
+          "Jiaheng Hu",
+          "Rohan Chandra",
+          "Roberto Martín-Martín",
+          "Peter Stone"
+        ],
         "arxiv_id": "2408.03539",
         "source_id": "3dd2ff85-666c-417b-ba19-fd93ce1c5e8b",
         "kb_status": "ingested",
@@ -1431,11 +1899,17 @@
     {
       "id": "source:arxiv:2410.08893",
       "type": "source",
-      "label": "2410.08893",
+      "label": "Wang et al. 2024",
       "data": {
-        "title": "2410.08893",
-        "year": 2410,
-        "authors": [],
+        "title": "Drama: Mamba-Enabled Model-Based Reinforcement Learning Is Sample and Parameter Efficient",
+        "year": 2024,
+        "authors": [
+          "Wenlong Wang",
+          "Ivana Dusparic",
+          "Yucheng Shi",
+          "Ke Zhang",
+          "Vinny Cahill"
+        ],
         "arxiv_id": "2410.08893",
         "source_id": "936db97e-a6f9-4b9c-9539-ad422ec68f82",
         "kb_status": "ingested",
@@ -1450,11 +1924,14 @@
     {
       "id": "source:arxiv:2502.00021",
       "type": "source",
-      "label": "2502.00021",
+      "label": "McInroe & Garcin 2025",
       "data": {
-        "title": "2502.00021",
-        "year": 2502,
-        "authors": [],
+        "title": "PixelBrax: Learning Continuous Control from Pixels End-to-End on the GPU",
+        "year": 2025,
+        "authors": [
+          "Trevor McInroe",
+          "Samuel Garcin"
+        ],
         "arxiv_id": "2502.00021",
         "source_id": "e95e03d0-5f09-4197-bd55-4cb781e9d44b",
         "kb_status": "ingested",
@@ -1469,11 +1946,21 @@
     {
       "id": "source:arxiv:2502.02133",
       "type": "source",
-      "label": "2502.02133",
+      "label": "Reiter et al. 2025",
       "data": {
-        "title": "2502.02133",
-        "year": 2502,
-        "authors": [],
+        "title": "Synthesis of Model Predictive Control and Reinforcement Learning: Survey and Classification",
+        "year": 2025,
+        "authors": [
+          "Rudolf Reiter",
+          "Jasper Hoffmann",
+          "Dirk Reinhardt",
+          "Florian Messerer",
+          "Katrin Baumgärtner",
+          "Shamburaj Sawant",
+          "Joschka Boedecker",
+          "Moritz Diehl",
+          "Sebastien Gros"
+        ],
         "arxiv_id": "2502.02133",
         "source_id": "d7c60514-26e0-412e-9704-fefe2789c0fe",
         "kb_status": "ingested",
@@ -1488,11 +1975,18 @@
     {
       "id": "source:arxiv:2502.13187",
       "type": "source",
-      "label": "2502.13187",
+      "label": "Da et al. 2025",
       "data": {
-        "title": "2502.13187",
-        "year": 2502,
-        "authors": [],
+        "title": "A Survey of Sim-to-Real Methods in RL: Progress, Prospects and Challenges with Foundation Models",
+        "year": 2025,
+        "authors": [
+          "Longchao Da",
+          "Justin Turnau",
+          "Thirulogasankar Pranav Kutralingam",
+          "Alvaro Velasquez",
+          "Paulo Shakarian",
+          "Hua Wei"
+        ],
         "arxiv_id": "2502.13187",
         "source_id": "014afd22-f15b-4213-81c9-f7c32014fca7",
         "kb_status": "ingested",
@@ -1507,11 +2001,16 @@
     {
       "id": "source:arxiv:2502.20168",
       "type": "source",
-      "label": "2502.20168",
+      "label": "Krinner et al. 2025",
       "data": {
-        "title": "2502.20168",
-        "year": 2502,
-        "authors": [],
+        "title": "Accelerating Model-Based Reinforcement Learning with State-Space World Models",
+        "year": 2025,
+        "authors": [
+          "Maria Krinner",
+          "Elie Aljalbout",
+          "Angel Romero",
+          "Davide Scaramuzza"
+        ],
         "arxiv_id": "2502.20168",
         "source_id": "da2adef5-4544-4e85-a36a-1171bea7344a",
         "kb_status": "ingested",
@@ -1526,11 +2025,16 @@
     {
       "id": "source:arxiv:2505.08238",
       "type": "source",
-      "label": "2505.08238",
+      "label": "Wei et al. 2025",
       "data": {
-        "title": "2505.08238",
-        "year": 2505,
-        "authors": [],
+        "title": "Motion Control of High-Dimensional Musculoskeletal Systems with Hierarchical Model-Based Planning",
+        "year": 2025,
+        "authors": [
+          "Yunyue Wei",
+          "Shanning Zhuang",
+          "Vincent Zhuang",
+          "Yanan Sui"
+        ],
         "arxiv_id": "2505.08238",
         "source_id": "a8765e62-9be1-491e-943a-6e0591b34206",
         "kb_status": "ingested",
@@ -1545,11 +2049,16 @@
     {
       "id": "source:arxiv:2505.17342",
       "type": "source",
-      "label": "2505.17342",
+      "label": "Kushwaha et al. 2025",
       "data": {
-        "title": "2505.17342",
-        "year": 2505,
-        "authors": [],
+        "title": "A Survey of Safe Reinforcement Learning and Constrained MDPs: A Technical Survey on Single-Agent and Multi-Agent Safety",
+        "year": 2025,
+        "authors": [
+          "Ankita Kushwaha",
+          "Kiran Ravish",
+          "Preeti Lamba",
+          "Pawan Kumar"
+        ],
         "arxiv_id": "2505.17342",
         "source_id": "64ab2b3c-3aca-4c5a-baa8-021cfe92cde2",
         "kb_status": "ingested",
@@ -1564,11 +2073,18 @@
     {
       "id": "source:arxiv:2505.22772",
       "type": "source",
-      "label": "2505.22772",
+      "label": "Voelcker et al. 2025",
       "data": {
-        "title": "2505.22772",
-        "year": 2505,
-        "authors": [],
+        "title": "Calibrated Value-Aware Model Learning with Probabilistic Environment Models",
+        "year": 2025,
+        "authors": [
+          "Claas Voelcker",
+          "Anastasiia Pedan",
+          "Arash Ahmadian",
+          "Romina Abachi",
+          "Igor Gilitschenski",
+          "Amir-massoud Farahmand"
+        ],
         "arxiv_id": "2505.22772",
         "source_id": "1c2c3792-b098-4a8f-8e7f-c38550458026",
         "kb_status": "ingested",
@@ -1583,11 +2099,42 @@
     {
       "id": "source:arxiv:2506.09985",
       "type": "source",
-      "label": "2506.09985",
+      "label": "Assran et al. 2025",
       "data": {
-        "title": "2506.09985",
-        "year": 2506,
-        "authors": [],
+        "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning",
+        "year": 2025,
+        "authors": [
+          "Mido Assran",
+          "Adrien Bardes",
+          "David Fan",
+          "Quentin Garrido",
+          "Russell Howes",
+          "Mojtaba",
+          "Komeili",
+          "Matthew Muckley",
+          "Ammar Rizvi",
+          "Claire Roberts",
+          "Koustuv Sinha",
+          "Artem Zholus",
+          "Sergio Arnaud",
+          "Abha Gejji",
+          "Ada Martin",
+          "Francois Robert Hogan",
+          "Daniel Dugas",
+          "Piotr Bojanowski",
+          "Vasil Khalidov",
+          "Patrick Labatut",
+          "Francisco Massa",
+          "Marc Szafraniec",
+          "Kapil Krishnakumar",
+          "Yong Li",
+          "Xiaodong Ma",
+          "Sarath Chandar",
+          "Franziska Meier",
+          "Yann LeCun",
+          "Michael Rabbat",
+          "Nicolas Ballas"
+        ],
         "arxiv_id": "2506.09985",
         "source_id": "b6ec5fde-9a60-4689-98c2-755981844168",
         "kb_status": "ingested",
@@ -1602,11 +2149,14 @@
     {
       "id": "source:arxiv:2508.09128",
       "type": "source",
-      "label": "2508.09128",
+      "label": "Kushwaha & Biron 2025",
       "data": {
-        "title": "2508.09128",
-        "year": 2508,
-        "authors": [],
+        "title": "A Review On Safe Reinforcement Learning Using Lyapunov and Barrier Functions",
+        "year": 2025,
+        "authors": [
+          "Dhruv Singh Kushwaha",
+          "Zoleikha Abdollahi Biron"
+        ],
         "arxiv_id": "2508.09128",
         "source_id": "cf60c5af-62c0-4e87-8233-a52a84a9e939",
         "kb_status": "ingested",
@@ -1621,11 +2171,16 @@
     {
       "id": "source:arxiv:2510.06179",
       "type": "source",
-      "label": "2510.06179",
+      "label": "Adabag et al. 2025",
       "data": {
-        "title": "2510.06179",
-        "year": 2510,
-        "authors": [],
+        "title": "Differentiable Model Predictive Control on the GPU",
+        "year": 2025,
+        "authors": [
+          "Emre Adabag",
+          "Marcus Greiff",
+          "John Subosits",
+          "Thomas Lew"
+        ],
         "arxiv_id": "2510.06179",
         "source_id": "ee94f16e-4f29-4e93-a402-131611d5ebd1",
         "kb_status": "ingested",
@@ -1640,11 +2195,16 @@
     {
       "id": "source:arxiv:2603.28243",
       "type": "source",
-      "label": "2603.28243",
+      "label": "Cai et al. 2026",
       "data": {
-        "title": "2603.28243",
-        "year": 2603,
-        "authors": [],
+        "title": "Cost-Matching Model Predictive Control for Efficient Reinforcement Learning in Humanoid Locomotion",
+        "year": 2026,
+        "authors": [
+          "Wenqi Cai",
+          "Kyriakos G. Vamvoudakis",
+          "Sébastien Gros",
+          "Anthony Tzes"
+        ],
         "arxiv_id": "2603.28243",
         "source_id": "fe68a9b4-892c-4366-909b-fad5664ff007",
         "kb_status": "ingested",
@@ -1758,11 +2318,13 @@
     {
       "id": "source:uuid:9ff4349b-11de-47b4-a3b7-19adc04d0970",
       "type": "source",
-      "label": "Kalman Filtering 1960",
+      "label": "Kalman 1960",
       "data": {
-        "title": "Kalman Filtering 1960",
+        "title": "A New Approach to Linear Filtering and Prediction Problems",
         "year": 1960,
-        "authors": [],
+        "authors": [
+          "R. E. Kalman"
+        ],
         "arxiv_id": null,
         "doi": "10.1115/1.3662552",
         "isbn": null,
@@ -1780,11 +2342,13 @@
     {
       "id": "source:uuid:036ec0aa-4a4f-498a-ba75-b3c24f2255ea",
       "type": "source",
-      "label": "Kalman Optimal Control 1960",
+      "label": "Kalman 1960",
       "data": {
-        "title": "Kalman Optimal Control 1960",
+        "title": "Contributions to the Theory of Optimal Control",
         "year": 1960,
-        "authors": [],
+        "authors": [
+          "R. E. Kalman"
+        ],
         "arxiv_id": null,
         "doi": null,
         "isbn": null,
@@ -1802,11 +2366,14 @@
     {
       "id": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "source",
-      "label": "Watkins Qlearning 1992",
+      "label": "Watkins & Dayan 1992",
       "data": {
-        "title": "Watkins Qlearning 1992",
+        "title": "Q-learning",
         "year": 1992,
-        "authors": [],
+        "authors": [
+          "Christopher J. C. H. Watkins",
+          "Peter Dayan"
+        ],
         "arxiv_id": null,
         "doi": null,
         "isbn": null,
@@ -1824,11 +2391,16 @@
     {
       "id": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "source",
-      "label": "Sutton Pg 1999",
+      "label": "Sutton et al. 2000",
       "data": {
-        "title": "Sutton Pg 1999",
+        "title": "Policy Gradient Methods for Reinforcement Learning with Function Approximation",
         "year": 2000,
-        "authors": [],
+        "authors": [
+          "Richard S. Sutton",
+          "David McAllester",
+          "Satinder P. Singh",
+          "Yishay Mansour"
+        ],
         "arxiv_id": null,
         "doi": null,
         "isbn": null,
@@ -1846,11 +2418,13 @@
     {
       "id": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
       "type": "source",
-      "label": "Reinforcement Learning and Optimal Control",
+      "label": "Bertsekas 2019",
       "data": {
         "title": "Reinforcement Learning and Optimal Control",
         "year": 2019,
-        "authors": [],
+        "authors": [
+          "Dimitri P. Bertsekas"
+        ],
         "arxiv_id": null,
         "doi": null,
         "isbn": "978-1-886529-39-7",
@@ -1868,12 +2442,13 @@
     {
       "id": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "source",
-      "label": "Reinforcement Learning An Introduction 2nd ed",
+      "label": "Sutton & Barto 2018",
       "data": {
-        "title": "Reinforcement Learning An Introduction 2nd ed",
-        "year": 1998,
+        "title": "Reinforcement Learning: An Introduction (2nd ed.)",
+        "year": 2018,
         "authors": [
-          "Richard S. Sutton"
+          "Richard S. Sutton",
+          "Andrew G. Barto"
         ],
         "arxiv_id": null,
         "doi": null,
@@ -1892,10 +2467,10 @@
     {
       "id": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "source",
-      "label": "Dynamic programming and optimal control. Vol.1",
+      "label": "Bertsekas 2017",
       "data": {
         "title": "Dynamic programming and optimal control. Vol.1",
-        "year": null,
+        "year": 2017,
         "authors": [
           "Dimitri P. Bertsekas"
         ],
@@ -1921,7 +2496,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -1930,7 +2505,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -1939,7 +2514,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -1948,7 +2523,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -1957,7 +2532,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -1966,7 +2541,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -1975,7 +2550,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -1984,7 +2559,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -1993,7 +2568,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2002,7 +2577,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2011,7 +2586,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2020,7 +2595,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2029,7 +2604,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2038,7 +2613,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2047,7 +2622,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2056,7 +2631,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2065,7 +2640,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2074,7 +2649,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2083,7 +2658,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2092,7 +2667,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2101,7 +2676,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2110,7 +2685,7 @@
       "target": "source:uuid:9d8aa8b7-6e6f-491e-95b6-6a76afe80f8f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2119,7 +2694,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2128,7 +2703,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2137,7 +2712,7 @@
       "target": "source:uuid:9ff4349b-11de-47b4-a3b7-19adc04d0970",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2146,7 +2721,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2155,7 +2730,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2164,7 +2739,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2173,7 +2748,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2182,7 +2757,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2191,7 +2766,7 @@
       "target": "source:uuid:036ec0aa-4a4f-498a-ba75-b3c24f2255ea",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2200,7 +2775,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2209,7 +2784,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2218,7 +2793,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2227,7 +2802,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2236,7 +2811,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2245,7 +2820,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2254,7 +2829,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2263,7 +2838,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2272,7 +2847,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2281,7 +2856,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2290,7 +2865,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2299,7 +2874,7 @@
       "target": "source:arxiv:2301.08243",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2308,7 +2883,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2317,7 +2892,7 @@
       "target": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2326,7 +2901,7 @@
       "target": "source:uuid:350bc42b-735c-438c-b1ea-63abad1fbc59",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2335,7 +2910,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2344,7 +2919,7 @@
       "target": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2353,7 +2928,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2362,7 +2937,7 @@
       "target": "source:arxiv:2301.08243",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     },
     {
@@ -2371,7 +2946,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1.0
+        "weight": 1
       }
     }
   ]

@@ -29,11 +29,11 @@
     "description": "Where the work is heading: a foundations book on sequence models (SSMs / Mamba) and an RL + control-theory guide."
   },
   {
-    "slug": "published-research",
-    "name": "Published Research",
+    "slug": "books-and-guides",
+    "name": "Books & Guides",
     "section": "tier",
     "order": 1,
-    "description": "Shipped guides and long-form books: interview-prep guides, an agentic-coding book, and formal Definition–Theorem–Proof mathematical guides."
+    "description": "Long-form books and interview-prep guides — a live foundations book on sequence models, interview-prep guides, an agentic-coding book, and formal Definition–Theorem–Proof mathematical guides. In active development."
   },
   {
     "slug": "research-infrastructure",

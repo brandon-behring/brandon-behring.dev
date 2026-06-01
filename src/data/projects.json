@@ -133,8 +133,8 @@
   {
     "slug": "ssm-foundations",
     "title": "ssm-foundations",
-    "cluster": "future",
-    "order": 3,
+    "cluster": "books-and-guides",
+    "order": 1,
     "status": "in-progress",
     "summary": "17-chapter lens-led foundations book bridging numerical analysis and dynamical systems to modern sequence-model architectures (SSMs, Mamba, S4, Hyena, DeltaNet). Successor to a 21-week research-guide effort. Live and in progress — the foundations chapters are authored; the structured-SSM and later chapters are being written.",
     "description_long": "Public foundations book derived from the post-transformers research repo. 17 chapters organized lens-first: continuous-time dynamics → discretization → stability theory → structured state-space models → selective scans (Mamba, S4, S4D) → hybrids. Each chapter pairs prose with JAX and Julia companions, reproducible figures, and Julia stability tests. Built on book-scaffold-astro v4 academic preset; deployed via Cloudflare Workers + Static Assets.",
@@ -142,9 +142,7 @@
     "stack": ["Astro 6", "MDX", "JAX", "Julia", "DifferentialEquations.jl", "KaTeX", "Cloudflare Workers"],
     "repo_url": "https://github.com/brandon-behring/ssm-foundations",
     "site_url": "https://ssm-foundations.brandon-behring.dev",
-    "external_context": [
-      { "label": "Source: post-transformers research repo", "url": "https://github.com/brandon-behring/post_transformers" }
-    ],
+    "external_context": [],
     "visual": "/screenshots/ssm-foundations.png",
     "featured": true
   },
@@ -196,8 +194,8 @@
   {
     "slug": "guides",
     "title": "guides",
-    "cluster": "published-research",
-    "order": 1,
+    "cluster": "books-and-guides",
+    "order": 2,
     "status": "reference",
     "summary": "Hub repo for a family of interview-prep guides for data science, ML, and AI engineering — destined for guides.brandon-behring.dev.",
     "description_long": "Hub for a family of interview-prep guides aimed at data-science, ML-engineering, and AI-engineering readers: a landing page, methodology, and about section, with per-guide companion repos plugged in as subroutes. The architecture keeps each guide independently releasable while sharing one branded shell. The custom domain (guides.brandon-behring.dev) is not yet bound, so the link is to the source repo.",
@@ -211,8 +209,8 @@
   {
     "slug": "guides-experimentation",
     "title": "guides-experimentation (pilot)",
-    "cluster": "published-research",
-    "order": 2,
+    "cluster": "books-and-guides",
+    "order": 3,
     "status": "in-progress",
     "summary": "Pilot guide under the guides hub: experimentation methodology — A/B testing, sample size and power, variance reduction, sequential testing.",
     "description_long": "The first companion guide for the hub: a practitioner treatment of experimentation — design, sample-size and power, variance reduction, sequential testing, and decision-making under cost asymmetry. Currently schema plus skeleton; the full chapter build lands in Phase 1.",
@@ -226,8 +224,8 @@
   {
     "slug": "book-template-astro",
     "title": "Agentic Coding: Principles and Practices",
-    "cluster": "published-research",
-    "order": 3,
+    "cluster": "books-and-guides",
+    "order": 4,
     "status": "in-progress",
     "summary": "Long-form Astro/MDX book on agentic coding — principles, patterns, and system design for AI-assisted development. Built on book-scaffold-astro.",
     "description_long": "An authored book on agentic coding — principles, patterns, and system design for AI-assisted development — written as a research artifact (decision log, bibliography) on top of the book-scaffold-astro template. It also serves as the scaffold's reference consumer.",
@@ -241,8 +239,8 @@
   {
     "slug": "mathematical-guides",
     "title": "mathematical-guides (family)",
-    "cluster": "published-research",
-    "order": 4,
+    "cluster": "books-and-guides",
+    "order": 5,
     "status": "in-progress",
     "summary": "A family of formal, Definition–Theorem–Proof guides for a mathematician audience — a hub plus per-subject siblings (transformers, reinforcement learning). Private while in development.",
     "description_long": "Formal guides written in a Definition–Theorem–Proof register for readers who want the mathematics first. A hub coordinates per-subject sibling guides — transformers and reinforcement learning so far — each a standalone Astro/MDX book deploying under the hub. The repositories are private while the structure and first chapters are built, so there's no public link yet.",
@@ -255,8 +253,8 @@
   {
     "slug": "claude-books",
     "title": "claude-books",
-    "cluster": "published-research",
-    "order": 5,
+    "cluster": "books-and-guides",
+    "order": 6,
     "status": "planned",
     "summary": "A planned handbook on building with Claude Code — the successor that retires the earlier LaTeX claude-best-practices draft. Private; pre-v1.",
     "description_long": "A planned multi-part handbook on AI-assisted development with Claude Code. It is the deliberate successor to an earlier LaTeX draft: the LaTeX repos are treated as drafts and archived once their successor ships v1.0. It's listed here to make that sunset path explicit rather than leaving the old draft looking like the live artifact.",

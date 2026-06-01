@@ -67,6 +67,28 @@ Last reconciled against live sources: 2026-05-30 (backlog hygiene — roadmap/me
   (visualizer style TBD post-ship). Deferred: long-term hub
   structure (defer-friendly until pull develops).
 
+## What just shipped (Track 1.5 — credibility/funnel, 2026-06-01)
+
+Audit-driven reprioritization in response to the contrarian audit
+`brandon_behring_dev_audit_2026-06-01`. Three `/exploring-options` rounds +
+a read-only de-risking pass. See
+`docs/sessions/2026-06-01--track1.5-credibility.md` and
+`~/.claude/plans/i-want-to-examine-adaptive-wilkinson.md`.
+
+- **Credibility page de-bricked**: the 3 dead links on `/how-this-was-made/`
+  fixed (branch `main`→`master`; dead private `DECISIONS.md` examples →
+  the public `prompt-injection-detection-prototype/decisions` ADR log);
+  page now promoted into the top nav.
+- **Inverted bucket fixed**: `published-research` → **"Books & Guides"**
+  (name + slug); `ssm-foundations` moved in as the lead so the bucket holds
+  a real live book. Hero **"Live now" strip** foregrounds the 4 usable
+  surfaces.
+- **Lab graph data repaired**: titles/years/authors now real and accurate
+  to each linked arXiv ID (`scripts/enrich-citation-graph.mjs`); search works.
+- **Funnel**: GitHub profile README added (bio/blog = user-run step).
+- **Staged (1.5b)**: a peer-reviewed Publications homepage section, gated on
+  Brandon supplying the list.
+
 ## Next 1–3 (pick one to start, in order — strategic-impact / craft-signal lens)
 
 Ranking lens picked in 2026-05-28 audit Q1: *craft signal* —
@@ -80,6 +102,12 @@ chain.
    (commit `6fcf97f`, issue #14 closed). ~4–6 hr multi-session.
    **Pre-flight risk**: `research-kb#16` (`--full-rebuild` not
    transactional) — handle before running full rebuild.
+   **BLOCKED (2026-06-01)**: research-kb stores filename-derived junk
+   metadata (`title = arxiv_id`, `authors = []`) for these papers, so
+   densifying *from* it imports more junk. The live graph's data was
+   repaired out-of-band via the arXiv API in Track 1.5; a clean
+   densification needs the research-kb metadata-extraction issue
+   (filed 2026-06-01) resolved first.
 2. **Phase 4 (guides paradigm migration) Steps 2–5 — UNBLOCKED 2026-05-28**
    by Phase 6a shipping. Plus the follow-on **provenance backfills** for the
    other consumers (DML, dlai-study-notes, guides, claude-books) once each

@@ -29,8 +29,9 @@ import Base from '../layouts/Base.astro';
       </li>
       <li>
         <strong>Decisions are written down.</strong> Each substantive
-        project carries a <code>DECISIONS.md</code> file recording
-        non-obvious choices — why this approach over that one, what was
+        project carries a decision log — a <code>DECISIONS.md</code> file,
+        or a numbered <code>decisions/</code> ADR set — recording
+        non-obvious choices: why this approach over that one, what was
         tried and rejected, what constraint forced the call.
       </li>
       <li>
@@ -51,15 +52,16 @@ import Base from '../layouts/Base.astro';
 
     <h2 id="the-artifacts">The artifacts</h2>
 
-    <h3><code>DECISIONS.md</code></h3>
+    <h3>Decision log (<code>DECISIONS.md</code> / ADRs)</h3>
     <p>
-      Per-project file at the repo root. Captures decision-of-record
-      entries with date, context, alternatives considered, and reasoning.
-      Examples in the public record:
-      <a href="https://github.com/brandon-behring/prompt_injection_detector/blob/main/DECISIONS.md"
-        ><code>prompt_injection_detector</code></a>,
-      <a href="https://github.com/brandon-behring/annuity-knowledge-base/blob/main/DECISIONS.md"
-        ><code>annuity-knowledge-base</code></a>.
+      A per-project decision log — a <code>DECISIONS.md</code> at the repo
+      root, or a numbered <code>decisions/</code> ADR set — capturing
+      decision-of-record entries with date, context, alternatives
+      considered, and reasoning. Public example: the
+      <a href="https://github.com/brandon-behring/prompt-injection-detection-prototype/tree/main/decisions"
+        ><code>decisions/</code> ADR log</a>
+      in <code>prompt-injection-detection-prototype</code> — numbered ADRs
+      with a shared template and explicit supersession tracking.
     </p>
 
     <h3><code>AUDIT_&lt;date&gt;.md</code></h3>
@@ -68,7 +70,7 @@ import Base from '../layouts/Base.astro';
       <code>AUDIT_YYYY-MM-DD.md</code>, with <code>_INDEPENDENT</code>
       suffix for fresh-agent runs. A project accumulates several over
       time — for example,
-      <a href="https://github.com/brandon-behring/causal_inference_mastery/tree/main/docs"
+      <a href="https://github.com/brandon-behring/causal_inference_mastery/tree/master/docs"
         ><code>causal_inference_mastery</code></a>
       carries <code>AUDIT_2025-12-31.md</code>,
       <code>AUDIT_2026-01-01_INDEPENDENT.md</code>, and
@@ -89,7 +91,7 @@ import Base from '../layouts/Base.astro';
     <p>
       Content on this site is produced collaboratively with AI tools —
       principally
-      <a href="https://www.anthropic.com/claude-code">Claude Code</a>.
+      <a href="https://claude.com/product/claude-code">Claude Code</a>.
       The split varies by artifact: some pages are AI-drafted and
       human-audited; others are AI-assisted research synthesis with
       human framing; a few are mostly human writing reviewed by AI for
