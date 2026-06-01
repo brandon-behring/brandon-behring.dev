@@ -4,7 +4,7 @@
   "metadata": {
     "topic": "RL and optimal control",
     "source": "research-kb",
-    "generated_at": "2026-05-25T22:20:44.385545+00:00",
+    "generated_at": "2026-06-01T22:59:18.510282+00:00",
     "node_count": 95,
     "edge_count": 51,
     "ingested_count": 95,
@@ -1614,7 +1614,7 @@
           "Ishan Misra",
           "Piotr Bojanowski",
           "Pascal Vincent",
-          "Michael Rabbat",
+          "Michael G. Rabbat",
           "Yann LeCun",
           "Nicolas Ballas"
         ],
@@ -1634,15 +1634,15 @@
       "type": "source",
       "label": "Radosavovic et al. 2023",
       "data": {
-        "title": "Real-World Humanoid Locomotion with Reinforcement Learning",
+        "title": "Real-world humanoid locomotion with reinforcement learning",
         "year": 2023,
         "authors": [
           "Ilija Radosavovic",
           "Tete Xiao",
           "Bike Zhang",
-          "Trevor Darrell",
-          "Jitendra Malik",
-          "Koushil Sreenath"
+          "T. Darrell",
+          "J. Malik",
+          "K. Sreenath"
         ],
         "arxiv_id": "2303.03381",
         "source_id": "67e09e88-0899-48fa-8f25-51a8f45adb88",
@@ -2219,7 +2219,7 @@
     {
       "id": "source:uuid:2272bf89-b5cd-4c55-8e23-fb8a72dbcd82",
       "type": "source",
-      "label": "Dynamic Programming and Markov Processes",
+      "label": "Howard 1960",
       "data": {
         "title": "Dynamic Programming and Markov Processes",
         "year": 1960,
@@ -2243,7 +2243,7 @@
     {
       "id": "source:uuid:1be28bd5-858b-4ecf-99e5-f9e2688c987c",
       "type": "source",
-      "label": "The Mathematical Theory of Optimal Processes",
+      "label": "Pontryagin et al. 1962",
       "data": {
         "title": "The Mathematical Theory of Optimal Processes",
         "year": 1962,
@@ -2270,7 +2270,7 @@
     {
       "id": "source:uuid:9d8aa8b7-6e6f-491e-95b6-6a76afe80f8f",
       "type": "source",
-      "label": "Dynamic Programming",
+      "label": "Bellman 1957",
       "data": {
         "title": "Dynamic Programming",
         "year": 1957,
@@ -2294,7 +2294,7 @@
     {
       "id": "source:uuid:350bc42b-735c-438c-b1ea-63abad1fbc59",
       "type": "source",
-      "label": "Abstract Dynamic Programming, 3rd Edition",
+      "label": "Bertsekas 2022",
       "data": {
         "title": "Abstract Dynamic Programming, 3rd Edition",
         "year": 2022,
