@@ -3,9 +3,19 @@ interface Props {
   status: string;
 }
 const { status } = Astro.props;
+
+// Canonical 4-state taxonomy. Unknown values fall back to a neutral grey pill
+// echoing the raw string, so an unmapped status is visible rather than silent.
+const MAP: Record<string, { label: string; variant: string }> = {
+  'released': { label: 'released', variant: 'released' },
+  'in-progress': { label: 'in progress', variant: 'in-progress' },
+  'prototype': { label: 'prototype', variant: 'prototype' },
+  'planned': { label: 'planned', variant: 'planned' },
+};
+const { label, variant } = MAP[status] ?? { label: status, variant: 'unknown' };
 ---
 
-<span class="status-badge" aria-label={`Status: ${status}`}>{status}</span>
+<span class:list={["status-badge", `status-${variant}`]} aria-label={`Status: ${label}`}>{label}</span>
 
 <style>
   .status-badge {
@@ -15,17 +25,53 @@ const { status } = Astro.props;
     font-weight: 500;
     padding: 0.15rem 0.5rem;
     border-radius: 999px;
-    background: rgba(0, 0, 0, 0.04);
-    color: var(--color-text-muted);
-    border: 1px solid var(--color-border);
     letter-spacing: 0.03em;
     text-transform: lowercase;
     line-height: 1.4;
     vertical-align: middle;
+    border: 1px solid;
+  }
+  .status-released {
+    background: rgba(50, 150, 80, 0.15);
+    color: #1f6433;
+    border-color: rgba(50, 150, 80, 0.4);
+  }
+  .status-in-progress {
+    background: rgba(180, 130, 30, 0.15);
+    color: #7a5a18;
+    border-color: rgba(180, 130, 30, 0.4);
+  }
+  .status-prototype {
+    background: rgba(80, 110, 160, 0.15);
+    color: #2a4570;
+    border-color: rgba(80, 110, 160, 0.4);
+  }
+  .status-planned,
+  .status-unknown {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--color-text-muted);
+    border-color: var(--color-border);
   }
 
   @media (prefers-color-scheme: dark) {
-    .status-badge {
+    /* Lighten text and strengthen the tint so pills read clearly on the dark page background. */
+    .status-released {
+      background: rgba(50, 150, 80, 0.22);
+      color: #7dd39e;
+      border-color: rgba(50, 150, 80, 0.55);
+    }
+    .status-in-progress {
+      background: rgba(180, 130, 30, 0.22);
+      color: #e0b85a;
+      border-color: rgba(180, 130, 30, 0.55);
+    }
+    .status-prototype {
+      background: rgba(80, 110, 160, 0.22);
+      color: #9db8e0;
+      border-color: rgba(80, 110, 160, 0.55);
+    }
+    .status-planned,
+    .status-unknown {
       background: rgba(255, 255, 255, 0.05);
     }
   }

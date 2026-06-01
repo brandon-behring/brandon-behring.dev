@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import ClusterCard from '../../components/ClusterCard.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
 import clustersData from '../../data/clusters.json';
 import projectsData from '../../data/projects.json';
 
@@ -33,6 +34,12 @@ function projectsForCluster(slug: string) {
       Current work plus the infrastructure, research, and pricing systems
       behind it. Each links to a deeper page with per-project detail.
     </p>
+    <ul class="status-legend" aria-label="What the status labels mean">
+      <li><StatusBadge status="released" /> usable / published today</li>
+      <li><StatusBadge status="in-progress" /> actively being built</li>
+      <li><StatusBadge status="prototype" /> methodology demo, not productionized</li>
+      <li><StatusBadge status="planned" /> not started</li>
+    </ul>
   </section>
 
   <section class="clusters" aria-labelledby="work-now-heading">
@@ -78,6 +85,22 @@ function projectsForCluster(slug: string) {
   }
   .work-intro h1 {
     margin-bottom: 0.5rem;
+  }
+  .status-legend {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+  .status-legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
   .clusters {
     margin: 3rem 0;

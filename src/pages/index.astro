@@ -8,14 +8,6 @@ const nowClusters = clustersData
   .filter((c) => c.section === 'now')
   .sort((a, b) => a.order - b.order);
 
-const tierClusters = clustersData
-  .filter((c) => c.section === 'tier')
-  .sort((a, b) => a.order - b.order);
-
-const futureProjects = projectsData
-  .filter((p) => p.cluster === 'future')
-  .sort((a, b) => a.order - b.order);
-
 function projectsForCluster(slug: string) {
   return projectsData
     .filter((p) => p.cluster === slug)
@@ -70,36 +62,10 @@ function projectsForCluster(slug: string) {
         />
       ))}
     </div>
-  </section>
-
-  <section class="more-work" aria-labelledby="more-heading">
-    <h2 id="more-heading" class="prose section-heading">More work</h2>
-    <div class="tier-grid">
-      {tierClusters.map((cluster) => (
-        <ClusterCard
-          cluster={cluster}
-          projects={projectsForCluster(cluster.slug)}
-          compact
-        />
-      ))}
-    </div>
-  </section>
-
-  <section class="future prose" aria-labelledby="future-heading">
-    <h2 id="future-heading">Where this is going</h2>
-    <ul class="future-list">
-      {futureProjects.map((p) => (
-        <li>
-          <strong>{p.title}</strong> — {p.summary}
-          {p.site_url && (
-            <>
-              {' '}
-              <a href={p.site_url} rel="noopener">live</a>
-            </>
-          )}
-        </li>
-      ))}
-    </ul>
+    <p class="see-all">
+      <a class="see-all-primary" href="/work/">See all work →</a>
+      <a class="see-all-teaser" href="/work/#work-future-heading">Where this is going →</a>
+    </p>
   </section>
 
   <section id="about" class="bio prose" aria-labelledby="about-heading">
@@ -221,42 +187,20 @@ function projectsForCluster(slug: string) {
     }
   }
 
-  .more-work {
-    margin: 3rem 0;
-  }
-  .tier-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  @media (min-width: 768px) {
-    .tier-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (min-width: 1024px) {
-    .tier-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  .future {
-    margin: 3rem auto;
-  }
-  .future-list {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-  }
-  .future-list li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--color-border);
+  .see-all {
+    margin: 2rem 0 0 0;
     font-family: var(--font-sans);
-    font-size: 0.95rem;
-    line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    align-items: baseline;
   }
-  .future-list li:last-child {
-    border-bottom: none;
+  .see-all-primary {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .see-all-teaser {
+    font-size: 0.9rem;
   }
 
   .bio,

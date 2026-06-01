@@ -28,6 +28,47 @@ const {
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const ogImageUrl = new URL(ogImage, Astro.site);
+
+// Site-global identity, emitted on every page as a JSON-LD graph. Everything here is
+// factual and publicly verifiable; `sameAs` + `alumniOf` reinforce search-engine entity
+// resolution (disambiguating the academic namesake). No jobTitle — the site states none.
+const siteOrigin = Astro.site?.href ?? "https://brandon-behring.dev/";
+const personId = new URL("#person", Astro.site).href;
+const personLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": personId,
+  name: "Brandon Behring",
+  url: siteOrigin,
+  description:
+    "Builds applied causal methods, AI evaluation tooling, and a study notes corpus.",
+  image: new URL("/og-image.png", Astro.site).href,
+  sameAs: [
+    "https://github.com/brandon-behring",
+    "https://www.linkedin.com/in/brandon-behring/",
+    "https://scholar.google.com/citations?user=M1LzNAgAAAAJ",
+  ],
+  alumniOf: [
+    {
+      "@type": "CollegeOrUniversity",
+      name: "New Jersey Institute of Technology",
+      sameAs: "https://en.wikipedia.org/wiki/New_Jersey_Institute_of_Technology",
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      name: "New York University",
+      sameAs: "https://en.wikipedia.org/wiki/New_York_University",
+    },
+  ],
+};
+const siteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": new URL("#website", Astro.site).href,
+  url: siteOrigin,
+  name: "Brandon Behring",
+  creator: { "@id": personId },
+};
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -57,6 +98,9 @@ const ogImageUrl = new URL(ogImage, Astro.site);
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="alternate" type="application/rss+xml" title="Brandon Behring — new work" href="/rss.xml" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
 
   <!--
     Cloudflare Web Analytics is auto-injected at the edge for the
