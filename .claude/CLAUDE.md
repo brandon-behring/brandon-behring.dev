@@ -68,6 +68,21 @@ with `secrets: inherit`. That workflow runs `npm ci` + `npm run build` +
   `brandon-behring`; future sibling Workers under this account follow
   `brandon-behring-<site>`).
 
+## Independent review (ambient)
+
+- **Before committing substantive content/code changes, run the
+  `independent-review` skill.** It fans out fresh-context `independent-reviewer`
+  subagents that verify claims cold (no author reasoning), and surfaces only
+  verdicts + proposed fixes — you decide what to apply. Reviewers **advise**;
+  they never write.
+- A `PreToolUse` hook (`.claude/hooks/pre-commit-review.sh`) backstops this: a
+  `git commit` is blocked once if no fresh review marker (`.claude/.last-review`)
+  exists. Running the skill writes the marker and clears the gate. You never
+  invoke a reviewer by name — the skill + hook make it ambient.
+- The skill records each run as `docs/sessions/<date>--<topic>-review.md`
+  (process-as-artifact). See `~/.claude/plans/i-want-to-improve-functional-owl.md`
+  for the full design.
+
 ## Known foot-guns
 
 - **`gh secret set NAME`** — the secret value goes to stdin at the
