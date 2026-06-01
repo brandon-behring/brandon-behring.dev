@@ -1,0 +1,54 @@
+[
+  {
+    "authors": ["Roy H. Goodman", "Brandon M. Behring"],
+    "year": 2023,
+    "title": "Transition to instability of the leapfrogging vortex quartet",
+    "venue": "Mechanics Research Communications 128, 104068",
+    "doi": "10.1016/j.mechrescom.2023.104068",
+    "arxiv": "2210.16464",
+    "type": "article"
+  },
+  {
+    "authors": ["Brandon M. Behring", "Alessandro Rizzo", "Maurizio Porfiri"],
+    "year": 2021,
+    "title": "How adherence to public health measures shapes epidemic spreading: A temporal network model",
+    "venue": "Chaos: An Interdisciplinary Journal of Nonlinear Science 31(4), 043115",
+    "doi": "10.1063/5.0041993",
+    "type": "article"
+  },
+  {
+    "authors": ["Agnieszka Truszkowska", "Brandon Behring", "Jalil Hasanyan", "Lorenzo Zino", "Sachit Butail", "Emanuele Caroppo", "Zhong-Ping Jiang", "Alessandro Rizzo", "Maurizio Porfiri"],
+    "year": 2021,
+    "title": "High-resolution agent-based modeling of COVID-19 spreading in a small town",
+    "venue": "Advanced Theory and Simulations 4(3), 2000277",
+    "doi": "10.1002/adts.202000277",
+    "arxiv": "2101.05171",
+    "type": "article"
+  },
+  {
+    "authors": ["Brandon M. Behring", "Roy H. Goodman"],
+    "year": 2019,
+    "title": "Stability of leapfrogging vortex pairs: A semi-analytic approach",
+    "venue": "Physical Review Fluids 4(12), 124703",
+    "doi": "10.1103/PhysRevFluids.4.124703",
+    "arxiv": "1908.08618",
+    "type": "article"
+  },
+  {
+    "authors": ["Tatyana Budylin", "Sara R. Guariglia", "Leah I. Duran", "Brandon M. Behring", "Zarya Shaikh", "Lorenz S. Neuwirth", "Probal Banerjee"],
+    "year": 2019,
+    "title": "Ultrasonic vocalization sex differences in 5-HT1A-R deficient mouse pups: predictive phenotypes associated with later-life anxiety-like behaviors",
+    "venue": "Behavioural Brain Research 373, 112062",
+    "doi": "10.1016/j.bbr.2019.112062",
+    "type": "article"
+  },
+  {
+    "authors": ["Brandon Behring"],
+    "year": 2020,
+    "title": "Dances and Escape of the Vortex Quartet",
+    "venue": "PhD dissertation — New Jersey Institute of Technology (Mathematical Sciences)",
+    "url": "https://digitalcommons.njit.edu/dissertations/1491/",
+    "note": "Advisor: Roy H. Goodman",
+    "type": "dissertation"
+  }
+]

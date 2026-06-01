@@ -1,0 +1,119 @@
+---
+import Base from '../layouts/Base.astro';
+import publications from '../data/publications.json';
+
+const SCHOLAR = 'https://scholar.google.com/citations?user=M1LzNAgAAAAJ';
+
+/**
+ * Render the author list as HTML, bolding "Behring". Long lists (>6 authors)
+ * are abbreviated to the first three + "et al." — but Behring is always shown,
+ * so if Behring falls past the third position the name is spliced back in.
+ */
+function authorsHtml(authors: string[]): string {
+  const esc = (s: string) =>
+    s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const fmt = (a: string) => (/behring/i.test(a) ? `<strong>${esc(a)}</strong>` : esc(a));
+  if (authors.length <= 6) return authors.map(fmt).join(', ');
+  const shown = authors.slice(0, 3).map(fmt);
+  const behringIdx = authors.findIndex((a) => /behring/i.test(a));
+  if (behringIdx > 2) shown.push('&hellip; ' + fmt(authors[behringIdx]));
+  return shown.join(', ') + ', et al.';
+}
+
+const articles = publications.filter((p) => p.type !== 'dissertation');
+const dissertations = publications.filter((p) => p.type === 'dissertation');
+---
+
+<Base
+  title="Publications — Brandon Behring"
+  description="Peer-reviewed publications by Brandon Behring — applied mathematics, dynamical systems, and network epidemiology."
+>
+  <article class="prose">
+    <h1>Publications</h1>
+    <p class="lead">
+      Peer-reviewed work from my applied-mathematics research — point-vortex /
+      Hamiltonian dynamics and network epidemiology.
+    </p>
+
+    <ul class="pub-list">
+      {articles.map((p) => (
+        <li>
+          <span set:html={authorsHtml(p.authors)} /> ({p.year}). <em>{p.title}.</em> {p.venue}.
+          {p.doi && (
+            <>{' '}<a href={`https://doi.org/${p.doi}`} rel="noopener">DOI&nbsp;→</a></>
+          )}
+          {p.arxiv && (
+            <>{' '}<a href={`https://arxiv.org/abs/${p.arxiv}`} rel="noopener">arXiv&nbsp;→</a></>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    {dissertations.length > 0 && (
+      <>
+        <h2>PhD dissertation</h2>
+        <ul class="pub-list">
+          {dissertations.map((p) => (
+            <li>
+              <span set:html={authorsHtml(p.authors)} /> ({p.year}). <em>{p.title}.</em> {p.venue}.
+              {p.url && (
+                <>{' '}<a href={p.url} rel="noopener">NJIT&nbsp;→</a></>
+              )}
+              {p.note && <span class="pub-note"> {p.note}.</span>}
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+
+    <p class="pub-foot">
+      Full list on <a href={SCHOLAR} rel="noopener">Google Scholar →</a>
+    </p>
+  </article>
+</Base>
+
+<style>
+  .lead {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    margin: 1.5rem 0 2.5rem 0;
+    line-height: 1.5;
+  }
+  article h2 {
+    margin-top: 2.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+  .pub-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .pub-list li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .pub-list li:last-child {
+    border-bottom: none;
+  }
+  .pub-list em {
+    color: var(--color-text);
+  }
+  .pub-list a {
+    white-space: nowrap;
+  }
+  .pub-note {
+    color: var(--color-text-muted);
+  }
+  .pub-foot {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: 1.5rem;
+  }
+</style>
