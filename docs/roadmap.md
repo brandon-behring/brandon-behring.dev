@@ -7,7 +7,7 @@
 > [`deploy-workflows/README.md`](https://github.com/brandon-behring/deploy-workflows#phase-2-roadmap)
 > for infra Phase 2 detail.
 
-Last reconciled against live sources: 2026-05-30 (backlog hygiene — roadmap/memory/phase-numbering drift; see `docs/sessions/2026-05-30--backlog-hygiene.md`). Last refined: 2026-05-28 (backlog audit + portfolio candidates discovery + ambiguity-resolution session — 4 of 6 strategic ambiguities locked).
+Last reconciled against live sources: 2026-06-01 (full-portfolio examination + tracking-drift reconciliation — Work Tracker board #1 made authoritative, 11 orphan issues boarded; see `docs/sessions/2026-06-01--roadmap-examination.md`). Prior: 2026-05-30 (backlog hygiene; `docs/sessions/2026-05-30--backlog-hygiene.md`).
 
 **Phase numbers here are _site_ phases.** The coordinated multi-repo plan uses its own _portfolio_ numbering — aligned on Phases 3/4/5/6a but **colliding on Phase 2** — see §"Phase numbering: site ↔ portfolio" near the end.
 
@@ -86,8 +86,8 @@ a read-only de-risking pass. See
 - **Lab graph data repaired**: titles/years/authors now real and accurate
   to each linked arXiv ID (`scripts/enrich-citation-graph.mjs`); search works.
 - **Funnel**: GitHub profile README added (bio/blog = user-run step).
-- **Staged (1.5b)**: a peer-reviewed Publications homepage section, gated on
-  Brandon supplying the list.
+- **Publications shipped (1.5b)**: peer-reviewed Publications page live at
+  `/publications/` (commit `c599101`); linked from the funnel.
 
 ## What just shipped (Track 1.6 — polish & hygiene, 2026-06-01)
 
@@ -113,11 +113,13 @@ by `independent-review` (3 cold reviewers) — see
 - **Home↔Work de-dup**: homepage is a curated lead (hero · live-now · 3
   now-cards · "See all work →" + "Where this is going →" signposts); `/work/`
   is the single full catalog.
-- **Cross-repo backlog filed** (`tracked`): book-scaffold-astro#91 (a11y),
-  deploy-workflows#2 (LICENSE), prompt-injection-portfolio#3 (path scrub),
-  insurance-ai-toolkit#11 (dead README demo), annuity-pricing#11 (PyPI publish
-  → then it earns "released"), brandon-behring.dev#2 (homepage/topics +
-  CITATION.cff + OG images).
+- **Cross-repo backlog**: filed as issues but the 2026-06-01 audit found them
+  *orphaned* (un-boarded + unlabeled); boarded with `tracked` in that session's
+  hygiene pass. book-scaffold-astro#91 (a11y) · deploy-workflows#2 (LICENSE,
+  **closed 2026-06-01**) · insurance-ai-toolkit#11 (dead README demo) ·
+  annuity-pricing#11 (PyPI publish → then it earns "released") ·
+  brandon-behring.dev#2 (homepage/topics + CITATION.cff + OG images).
+  (`prompt-injection-portfolio#3` path-scrub has since closed and is dropped.)
 
 ## Next 1–3 (pick one to start, in order — strategic-impact / craft-signal lens)
 
@@ -136,8 +138,8 @@ chain.
    metadata (`title = arxiv_id`, `authors = []`) for these papers, so
    densifying *from* it imports more junk. The live graph's data was
    repaired out-of-band via the arXiv API in Track 1.5; a clean
-   densification needs the research-kb metadata-extraction issue
-   (filed 2026-06-01) resolved first.
+   densification needs **`research-kb#20`** (filename→junk metadata)
+   resolved first.
 2. **Phase 4 (guides paradigm migration) Steps 2–5 — UNBLOCKED 2026-05-28**
    by Phase 6a shipping. Plus the follow-on **provenance backfills** for the
    other consumers (DML, dlai-study-notes, guides, claude-books) once each
@@ -179,19 +181,44 @@ craft-signal lens, not a forced sequence.
 (Shipped + removed from this list 2026-05-30: apex sitemap, RSS feed,
 F1 favicon 404, F2 Cytoscape `hsl()` — all live; see "Phase 5" above.)
 
-## Cross-repo coordination (state as of 2026-05-28)
+## Remaining work — all tiers (index)
+
+Full map + evidence: `docs/sessions/2026-06-01--roadmap-examination.md`. **Live
+status = [Work Tracker board #1](https://github.com/users/brandon-behring/projects/1)** —
+this index is issue pointers only, deliberately status-free so it can't rot.
+
+- **Tier 1 — site-coupled**: A4 densification (`research-kb#20` → `#16`) ·
+  `brandon-behring.dev#2` (homepage/topics + CITATION.cff + OG) · `#1` (synthesis
+  map) · `insurance-ai-toolkit#11` (dead demo) · A6 content-collections · A7
+  visual identity · SSM explainer (parked).
+- **Tier 2 — research infra**: `research-kb` #20/#16/#13/#8/#9/#10 ·
+  `research_toolkit` #21/#22 (P1)/#23/#24/#25/#26/#27.
+- **Tier 3 — released-gating + hygiene**: `annuity-pricing#11` (PyPI) ·
+  `book-scaffold-astro` #90/#91/#80 (v5.x) · `eval-toolkit#88` · `causal_inference_mastery#12` ·
+  `ssm-foundations` #1/#3/#4/#5/#6 · `post_transformers#51` · `rl_and_control#1`.
+  (`deploy-workflows#2` LICENSE — done 2026-06-01.)
+- **Tier 4 — deferred (trigger-gated)**: Phases 3, 4, 6c–e, 7, 8, 9, 9.5,
+  8.5/OIDC; Track B6/B7. (B5 deprecated.)
+- **Tier 5 — open decisions**: hub structure · SSM visualizer style ·
+  `brandonmbehring-dev` second-account resolution.
+
+## Cross-repo coordination (snapshot 2026-06-01)
+
+> Live status = the [Work Tracker board #1](https://github.com/users/brandon-behring/projects/1)
+> + `src/data/projects.json`. This table is a dated snapshot of judgments/blockers
+> that live nowhere else — not a registry.
 
 | Repo | Current state | Notes |
 |---|---|---|
 | `book-scaffold-astro` | v4.8.0 shipped | Phase 6a Provenance shipped (v4.8.0 — additive MINOR, not "v5"); v5.x candidate is `#80` (multibook routing + AnkiCard CLI) |
-| `deploy-workflows` | `@v1` + `@v2` tagged | OIDC migration on future-track (cloudflare/wrangler-action#402) → `@v3` |
+| `deploy-workflows` | `@v1` + `@v2` tagged; **MIT LICENSE added 2026-06-01** (#2 closed) | OIDC → `@v3` gated on cloudflare/wrangler-action#402 |
 | `double_ml_time_series` (DML) | Live at `dml.brandon-behring.dev`; on `@v2` | OG image pending (Option D) |
-| `ssm-foundations` | Live at `ssm-foundations.brandon-behring.dev`; on `@v2` | OG image pending; **5 new audit-burst issues from 2026-05-27** (#1, #3, #4, #5, #6) labeled in 2026-05-28 audit |
+| `ssm-foundations` | Live; on `@v2`; **CITATION.cff added 2026-06-01** | OG image pending; 5 audit-burst issues (#1, #3, #4, #5, #6) from 2026-05-27 standards audit |
 | `dlai-study-notes` | Phase 3 deploy candidate | `site_url` unset until shipped |
 | `guides` | Phase 4 paradigm migration ready | Provenance opt-in gated on Phase 6a + cross-consumer verify; stale scaffold-bump issue `#2` references pre-v4.6 |
 | `claude-books` | Workspace with 4 planned members; handbook in Phase 0 | Stale scaffold-bump issues `#2`–`#4` reference pre-v4.6 |
 | `post_transformers` | GitHub-only upstream research | `#51` BREAKING blocker labeled P2 in 2026-05-28 audit |
-| `research-kb` | Matcher unblock landed 2026-05-25 | `#16` (`--full-rebuild` data-loss risk) labeled P2 in 2026-05-28 audit |
+| `research-kb` | Powers `/lab/research-graph/` | `#20` (junk metadata — A4 blocker) + `#16` (P2 `--full-rebuild` data-loss risk) boarded `tracked` 2026-06-01 |
 | `mathematical-guides` family | hub + transformers sibling + RL sibling (all private; all pushed 2026-05-28; all skeletons or scaffolded) | Placement locked 2026-05-28 ambiguity-resolution Q2: sub-entry under `books-and-guides` cluster page. Deployment to `mathematical.brandon-behring.dev` proceeds independently via existing `wrangler.toml`. |
 
 ## Strategic decisions still open
@@ -317,16 +344,14 @@ dependency order:
   /research page eventually?
 - [~] **A3. Homepage balance.** Partially resolved: Now-clusters dominate,
   Future section follows, Past removed from homepage entirely.
-- [~] **A4. First demo to build.** Phase 1 shipped 2026-05-24: live at
-  `/lab/research-graph/` — interactive citation graph of 135 RL+control
-  papers via Cytoscape.js + fcose, fed by new `research-kb graph export`
-  CLI + `rl_and_control/scripts/build_graph_export.py` merge pipeline.
-  Edges currently sparse (pending full citation extraction; backfill of
-  `arxiv_id` metadata done 2026-05-24); structural pipeline working.
-  Deploy verified live 2026-05-24 (see
-  `docs/sessions/2026-05-24--deploy-verification.md`); two cosmetic
-  follow-ups surfaced: F1 `/favicon.svg` 404 and F2 Cytoscape `hsl()`
-  color rejection (per-domain node colors silently fall back to default).
+- [~] **A4. First demo to build.** Live at `/lab/research-graph/` —
+  interactive citation graph (Cytoscape.js + fcose) fed by `research-kb graph
+  export` + `rl_and_control/scripts/build_graph_export.py`. **Densified
+  2026-05-25 to 95 nodes / 51 edges**; titles/years/authors repaired to real
+  arXiv data in Track 1.5 (`scripts/enrich-citation-graph.mjs`). Cosmetic
+  follow-ups F1 (favicon) + F2 (Cytoscape `hsl()`) resolved 2026-05-28.
+  **Clean densification remaining** is blocked on `research-kb#20` (junk
+  metadata) → `#16` (transactional rebuild).
 - [x] **A5. Route structure.** ✅ Locked Phase 2: `/work/{slug}` for
   3 cluster pages. `/research`, `/notes`, `/lab` deferred until needed.
 - [ ] **A6. Content collections migration.** Move `src/data/projects.json`
@@ -356,10 +381,10 @@ Authoritative detail lives at
   pattern as B2 but no live audience; safer order is B1 → B3 → B2.
 - [x] **B4. Tag `deploy-workflows@v1`** — ✅ done (2026-05-26): `@v1` +
   `@v2` tagged; 3 consumers (brandon-behring.dev, DML, ssm) pinned to `@v1`.
-- [ ] **B5. Optional: GitHub Organization** — `brandon-behring-org`
-  (free), transfer deploy repos, convert per-repo secrets to org
-  secrets. Single highest-leverage simplification once you have 3+
-  consuming sites.
+- [x] **B5. ~~GitHub Organization~~ — DEPRECATED** (scrapped 2026-05-26):
+  solo-dev convention favors personal-account-as-namespace; URL stability +
+  migration/redirect risk outweigh the ~2 min saved on unified org secrets.
+  See `[[cloudflare-account]]`.
 - [ ] **B6. Optional: `astro-cf-template`** — GitHub template repo with
   pre-wired `wrangler.jsonc` + caller workflow. "Use this template" →
   ready-to-deploy new site.
@@ -372,11 +397,12 @@ Other repos that affect *what* this site can show or what story it can
 tell. Not planned here; informs Track A decisions.
 
 > **Per-project status — clusters, versions, open-issue counts, the
-> featured flag — is authoritative in `src/data/projects.json`** (20
-> projects across 6 clusters as of Phase 5) **plus live GitHub issues.**
+> featured flag — is authoritative in `src/data/projects.json`** (23
+> projects across 8 clusters as of 2026-06-01) **plus live GitHub issues.**
 > This section is a *strategy snapshot* (showcase judgments + blockers that
 > live nowhere else), **not a live registry** — don't trust counts/versions
-> here; reconcile against those sources. See `[[roadmap-drifts-from-projects-json]]`.
+> here; reconcile against those sources (and §"Remaining work — all tiers (index)" +
+> the board). See `[[roadmap-drifts-from-projects-json]]`.
 
 **Showcase judgments not captured in `projects.json`:**
 
