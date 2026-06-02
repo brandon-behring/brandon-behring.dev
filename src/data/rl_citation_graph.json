@@ -4,7 +4,7 @@
   "metadata": {
     "topic": "RL and optimal control",
     "source": "research-kb",
-    "generated_at": "2026-06-01T22:59:18.510282+00:00",
+    "generated_at": "2026-06-02T01:55:31.337041+00:00",
     "node_count": 95,
     "edge_count": 51,
     "ingested_count": 95,
@@ -41,7 +41,9 @@
       "E-A. Multi-Agent RL (Elective)",
       "E-C. Hierarchical RL (Elective)",
       "E-D. Sim-to-Real (Elective Supplement)"
-    ]
+    ],
+    "overrides_source": "references/graph_overrides.json",
+    "overrides_applied": 8
   },
   "nodes": [
     {
@@ -2496,7 +2498,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2505,7 +2507,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2514,7 +2516,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2523,7 +2525,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2532,7 +2534,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2541,7 +2543,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2550,7 +2552,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2559,7 +2561,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2568,7 +2570,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2577,7 +2579,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2586,7 +2588,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2595,7 +2597,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2604,7 +2606,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2613,7 +2615,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2622,7 +2624,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2631,7 +2633,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2640,7 +2642,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2649,7 +2651,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2658,7 +2660,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2667,7 +2669,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2676,7 +2678,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2685,7 +2687,7 @@
       "target": "source:uuid:9d8aa8b7-6e6f-491e-95b6-6a76afe80f8f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2694,7 +2696,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2703,7 +2705,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2712,7 +2714,7 @@
       "target": "source:uuid:9ff4349b-11de-47b4-a3b7-19adc04d0970",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2721,7 +2723,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2730,7 +2732,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2739,7 +2741,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2748,7 +2750,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2757,7 +2759,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2766,7 +2768,7 @@
       "target": "source:uuid:036ec0aa-4a4f-498a-ba75-b3c24f2255ea",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2775,7 +2777,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2784,7 +2786,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2793,7 +2795,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2802,7 +2804,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2811,7 +2813,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2820,7 +2822,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2829,7 +2831,7 @@
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2838,7 +2840,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2847,7 +2849,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2856,7 +2858,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2865,7 +2867,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2874,7 +2876,7 @@
       "target": "source:arxiv:2301.08243",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2883,7 +2885,7 @@
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2892,7 +2894,7 @@
       "target": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2901,7 +2903,7 @@
       "target": "source:uuid:350bc42b-735c-438c-b1ea-63abad1fbc59",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2910,7 +2912,7 @@
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2919,7 +2921,7 @@
       "target": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2928,7 +2930,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2937,7 +2939,7 @@
       "target": "source:arxiv:2301.08243",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     },
     {
@@ -2946,7 +2948,7 @@
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
-        "weight": 1
+        "weight": 1.0
       }
     }
   ]
