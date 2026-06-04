@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Email signature — style variants</title>
+</head>
+<!--
+  SCRATCH / SELECTION FILE. Renders the three candidate signature styles on both a
+  light and a dark background so the final look can be chosen visually.
+  The chosen variant becomes signature.html. Accent = site token #4477AA.
+  Each signature block is fully inline-styled (as required for email clients);
+  the <section> wrappers only provide the light/dark backdrops + labels.
+-->
+<body style="margin:0;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+
+  <!-- ===================== LIGHT MODE ===================== -->
+  <section style="background:#ffffff;padding:28px 32px;">
+    <div style="font:600 12px sans-serif;color:#999;letter-spacing:.08em;margin-bottom:20px;">LIGHT MODE (typical inbox)</div>
+
+    <div style="margin:0 0 28px;">
+      <div style="font:600 11px sans-serif;color:#bbb;margin-bottom:8px;">VARIANT A — Clean</div>
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+        <tr><td style="padding:0;line-height:1.5;">
+          <div style="font-size:15px;font-weight:700;color:#1a1a1a;">Brandon Behring, Ph.D.</div>
+          <div style="font-size:13px;color:#555555;">Applied mathematician&nbsp;·&nbsp;AI systems &amp; evaluation</div>
+          <div style="font-size:13px;margin-top:3px;"><a href="https://brandon-behring.dev/" style="color:#4477AA;text-decoration:none;">brandon-behring.dev</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.linkedin.com/in/brandon-behring/" style="color:#4477AA;text-decoration:none;">LinkedIn</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://github.com/brandon-behring" style="color:#4477AA;text-decoration:none;">GitHub</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://huggingface.co/BBehring" style="color:#4477AA;text-decoration:none;">Hugging Face</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.credly.com/users/brandon-behring" style="color:#4477AA;text-decoration:none;">Credly</a></div>
+        </td></tr>
+      </table>
+    </div>
+
+    <div style="margin:0 0 28px;">
+      <div style="font:600 11px sans-serif;color:#bbb;margin-bottom:8px;">VARIANT B — Left accent rule</div>
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+        <tr><td style="padding:1px 0 1px 12px;border-left:3px solid #4477AA;line-height:1.5;">
+          <div style="font-size:15px;font-weight:700;color:#1a1a1a;">Brandon Behring, Ph.D.</div>
+          <div style="font-size:13px;color:#555555;">Applied mathematician&nbsp;·&nbsp;AI systems &amp; evaluation</div>
+          <div style="font-size:13px;margin-top:3px;"><a href="https://brandon-behring.dev/" style="color:#4477AA;text-decoration:none;">brandon-behring.dev</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.linkedin.com/in/brandon-behring/" style="color:#4477AA;text-decoration:none;">LinkedIn</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://github.com/brandon-behring" style="color:#4477AA;text-decoration:none;">GitHub</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://huggingface.co/BBehring" style="color:#4477AA;text-decoration:none;">Hugging Face</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.credly.com/users/brandon-behring" style="color:#4477AA;text-decoration:none;">Credly</a></div>
+        </td></tr>
+      </table>
+    </div>
+
+    <div style="margin:0;">
+      <div style="font:600 11px sans-serif;color:#bbb;margin-bottom:8px;">VARIANT C — Accent name + hairline</div>
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+        <tr><td style="padding:0;line-height:1.5;">
+          <div style="font-size:15px;font-weight:700;color:#4477AA;">Brandon Behring, Ph.D.</div>
+          <div style="font-size:13px;color:#555555;">Applied mathematician&nbsp;·&nbsp;AI systems &amp; evaluation</div>
+          <div style="font-size:13px;margin-top:5px;padding-top:5px;border-top:1px solid #dddddd;"><a href="https://brandon-behring.dev/" style="color:#4477AA;text-decoration:none;">brandon-behring.dev</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.linkedin.com/in/brandon-behring/" style="color:#4477AA;text-decoration:none;">LinkedIn</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://github.com/brandon-behring" style="color:#4477AA;text-decoration:none;">GitHub</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://huggingface.co/BBehring" style="color:#4477AA;text-decoration:none;">Hugging Face</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.credly.com/users/brandon-behring" style="color:#4477AA;text-decoration:none;">Credly</a></div>
+        </td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== DARK MODE ===================== -->
+  <section style="background:#1f1f1f;padding:28px 32px;">
+    <div style="font:600 12px sans-serif;color:#777;letter-spacing:.08em;margin-bottom:20px;">DARK MODE (worst case — no client auto-adjust)</div>
+
+    <div style="margin:0 0 28px;">
+      <div style="font:600 11px sans-serif;color:#666;margin-bottom:8px;">VARIANT A — Clean</div>
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+        <tr><td style="padding:0;line-height:1.5;">
+          <div style="font-size:15px;font-weight:700;color:#1a1a1a;">Brandon Behring, Ph.D.</div>
+          <div style="font-size:13px;color:#555555;">Applied mathematician&nbsp;·&nbsp;AI systems &amp; evaluation</div>
+          <div style="font-size:13px;margin-top:3px;"><a href="https://brandon-behring.dev/" style="color:#4477AA;text-decoration:none;">brandon-behring.dev</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.linkedin.com/in/brandon-behring/" style="color:#4477AA;text-decoration:none;">LinkedIn</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://github.com/brandon-behring" style="color:#4477AA;text-decoration:none;">GitHub</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://huggingface.co/BBehring" style="color:#4477AA;text-decoration:none;">Hugging Face</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.credly.com/users/brandon-behring" style="color:#4477AA;text-decoration:none;">Credly</a></div>
+        </td></tr>
+      </table>
+    </div>
+
+    <div style="margin:0 0 28px;">
+      <div style="font:600 11px sans-serif;color:#666;margin-bottom:8px;">VARIANT B — Left accent rule</div>
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+        <tr><td style="padding:1px 0 1px 12px;border-left:3px solid #4477AA;line-height:1.5;">
+          <div style="font-size:15px;font-weight:700;color:#1a1a1a;">Brandon Behring, Ph.D.</div>
+          <div style="font-size:13px;color:#555555;">Applied mathematician&nbsp;·&nbsp;AI systems &amp; evaluation</div>
+          <div style="font-size:13px;margin-top:3px;"><a href="https://brandon-behring.dev/" style="color:#4477AA;text-decoration:none;">brandon-behring.dev</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.linkedin.com/in/brandon-behring/" style="color:#4477AA;text-decoration:none;">LinkedIn</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://github.com/brandon-behring" style="color:#4477AA;text-decoration:none;">GitHub</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://huggingface.co/BBehring" style="color:#4477AA;text-decoration:none;">Hugging Face</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.credly.com/users/brandon-behring" style="color:#4477AA;text-decoration:none;">Credly</a></div>
+        </td></tr>
+      </table>
+    </div>
+
+    <div style="margin:0;">
+      <div style="font:600 11px sans-serif;color:#666;margin-bottom:8px;">VARIANT C — Accent name + hairline</div>
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+        <tr><td style="padding:0;line-height:1.5;">
+          <div style="font-size:15px;font-weight:700;color:#4477AA;">Brandon Behring, Ph.D.</div>
+          <div style="font-size:13px;color:#555555;">Applied mathematician&nbsp;·&nbsp;AI systems &amp; evaluation</div>
+          <div style="font-size:13px;margin-top:5px;padding-top:5px;border-top:1px solid #444444;"><a href="https://brandon-behring.dev/" style="color:#4477AA;text-decoration:none;">brandon-behring.dev</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.linkedin.com/in/brandon-behring/" style="color:#4477AA;text-decoration:none;">LinkedIn</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://github.com/brandon-behring" style="color:#4477AA;text-decoration:none;">GitHub</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://huggingface.co/BBehring" style="color:#4477AA;text-decoration:none;">Hugging Face</a><span style="color:#9aa0a6;">&nbsp;·&nbsp;</span><a href="https://www.credly.com/users/brandon-behring" style="color:#4477AA;text-decoration:none;">Credly</a></div>
+        </td></tr>
+      </table>
+    </div>
+  </section>
+
+</body>
+</html>
