@@ -80,7 +80,29 @@ future work has the same maturity as past production work.
 | What I should lead with now | Technical hiring signal | 3 to 5 strongest clusters with concrete evidence | Above-the-fold thesis plus selected proof cards |
 | Where I am going | Future research identity | post-transformers, AI evaluation methodology, research-kb, long-form technical guides | A visible but grounded "current direction" section |
 
+## Showcase positioning (durable — not status)
+
+Timeless positioning guidance (relocated from roadmap Track C, 2026-06-04). These are
+*judgments*, not live state — for current per-repo status/versions go to the
+[board](https://github.com/users/brandon-behring/projects/1) + each repo.
+
+- **`book-scaffold-astro` / publishing infra** — carries a *tooling-for-tooling* risk:
+  needs a clear "why this matters" story, not just "I built a scaffold."
+- **`research-kb` / `research-agent`** — research-infrastructure: niche audience, an
+  explainer is required for it to read as a strength. research-kb feeds `/lab/research-graph/`.
+- **`causal_inference_mastery`** — dormant but reference-quality; methodological-depth +
+  actuarial-bridge proof, safe to cite.
+
 ## Portfolio Cluster Audit
+
+> **⚠ Frozen scoring artifact — do not read the counts below as current.** This cluster
+> audit was the *input* to the identity-scoring decision, now **closed** (Framing 4 /
+> build-to-learn locked; see
+> [`sessions/2026-05-28--ambiguity-resolution.md`](sessions/2026-05-28--ambiguity-resolution.md)).
+> Every evidence count, version, and status below is **frozen at scoring time and not
+> maintained** — treat this like a dated session log, not live context. For current state,
+> go to the repos + the [board](https://github.com/users/brandon-behring/projects/1). Per
+> [`DOC-CONVENTIONS.md`](DOC-CONVENTIONS.md), nothing below is a pointer to current truth.
 
 Score clusters on capability signal, evidence strength, future relevance, demo
 potential, maturity, maintenance cost, and privacy risk. Do not choose the final

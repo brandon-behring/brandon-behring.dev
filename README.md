@@ -8,7 +8,7 @@ Personal portfolio site for Brandon Behring. Applied Mathematician who builds an
 
 - Astro 6 (static output)
 - No JavaScript frameworks — vanilla Astro + CSS
-- Deployed to Cloudflare Pages
+- Deployed to Cloudflare Workers (Static Assets)
 
 ## Develop
 
@@ -21,13 +21,13 @@ npm run preview  # serves dist/
 
 ## Content updates
 
-Featured projects live in `src/data/projects.json`. Set `featured: true` and an `order` integer to surface on the homepage; other projects can live in the file for future "all projects" page expansion.
+Projects live in `src/data/projects.json`, grouped by `cluster` (visibility logic in `src/data/portfolio.ts`). Set `draft: true` to hide an entry until it's ready; the homepage shows the `now`-section clusters. See [`docs/DOC-CONVENTIONS.md`](docs/DOC-CONVENTIONS.md).
 
 The hero / bio / contact sections are in `src/pages/index.astro`. Update those directly when bio language changes.
 
 ## Deploy
 
-GitHub Actions workflow auto-deploys to Cloudflare Pages on push to `main`. Requires repo secrets:
+GitHub Actions workflow auto-deploys to Cloudflare Workers (Static Assets) on push to `main`. Requires repo secrets:
 - `CLOUDFLARE_API_TOKEN`
 - `CLOUDFLARE_ACCOUNT_ID`
 
@@ -65,14 +65,11 @@ For each new project that already has a Cloudflare Workers / Pages deploy:
 
 ### Registry
 
-| Slug | Repo | Deploy product | Status |
-|---|---|---|---|
-| `brandon-behring.dev` (root) | `brandon-behring.dev` | Cloudflare Pages | live (apex) |
-| `study-notes` | `dlai-study-notes` | Cloudflare Pages | live |
-| `ssm-foundations` | `ssm-foundations` | Workers + Static Assets | attached |
-| `post-transformers-guide` | `post_transformers` | Workers + Static Assets | preview-only (`workers.dev`); subdomain attach pending |
-
-Update this table when adding a new subdomain.
+Live subdomain assignments + deploy status are tracked on the
+[Work Tracker board #1](https://github.com/users/brandon-behring/projects/1) and in each
+project's own repo — **not snapshotted here** (it rots; see
+[`docs/DOC-CONVENTIONS.md`](docs/DOC-CONVENTIONS.md)). The slug-naming *rule* above is the
+durable, architectural part; per-project deploy status is not.
 
 ### Subdomain vs subpath
 

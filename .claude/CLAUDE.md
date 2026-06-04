@@ -5,16 +5,18 @@ Workers Static Assets).
 
 ## Where to start (if you're picking this up fresh)
 
-1. **[`docs/roadmap.md`](../docs/roadmap.md)** — current state + Next 1–3
-   items + Tracks A/B/C. This is the "where are we, what's next" doc.
-2. **[`docs/website-decision-map.md`](../docs/website-decision-map.md)** —
-   authoritative strategy memo (identity framings, cluster audit, scoring
-   rubric). All Track A (Identity & Content) decisions defer here.
-3. **[`docs/sessions/`](../docs/sessions/)** — historical decision logs.
-   Most recent: `2026-05-22--phase-1.md` (Q1–Q17 + gotchas).
-4. **[`deploy-workflows/README.md`](https://github.com/brandon-behring/deploy-workflows#phase-2-roadmap)**
-   (separate repo) — authoritative infra plan. All Track B (Infrastructure)
-   decisions defer here.
+This is the portfolio **hub** — read live state from the board, not from a snapshot in
+these docs (see [`docs/DOC-CONVENTIONS.md`](../docs/DOC-CONVENTIONS.md)).
+
+1. **[`CURRENT_WORK.md`](../CURRENT_WORK.md)** — the 30-second resume: what's active right now.
+2. **[Work Tracker board #1](https://github.com/users/brandon-behring/projects/1)** —
+   live cross-repo status + backlog (the canonical source; not snapshotted here).
+3. **[`docs/roadmap.md`](../docs/roadmap.md)** — the *site's* forward plan (site work only).
+4. **[`CHANGELOG.md`](../CHANGELOG.md)** — what shipped, when → its session log.
+5. **[`docs/website-decision-map.md`](../docs/website-decision-map.md)** — strategy memo
+   (identity framings, cluster audit). All Track A (Identity & Content) decisions defer here.
+6. **[`docs/sessions/`](../docs/sessions/)** — historical decision logs. Infra (Track B)
+   defers to [`deploy-workflows/README.md`](https://github.com/brandon-behring/deploy-workflows#phase-2-roadmap).
 
 ## Stack
 
@@ -32,8 +34,9 @@ Workers Static Assets).
 - `.wrangler/` — wrangler local state (gitignored)
 - `.github/workflows/deploy.yml` — 10-line caller of the reusable workflow
 - `wrangler.jsonc` — Cloudflare Worker config (Static Assets)
-- `docs/` — strategy (`website-decision-map.md`), roadmap (`roadmap.md`),
-  Cloudflare setup walkthrough (`cloudflare-setup.md`), session logs
+- `CURRENT_WORK.md` / `CHANGELOG.md` — 30-sec resume + shipped-history index (root)
+- `docs/` — `roadmap.md` (site forward plan), `website-decision-map.md` (strategy),
+  `DOC-CONVENTIONS.md` (how docs work here), `cloudflare-setup.md`, session logs
   (`sessions/`)
 
 ## Common commands
@@ -64,6 +67,11 @@ with `secrets: inherit`. That workflow runs `npm ci` + `npm run build` +
 - Content is the primary work product — keep build/config minimal.
 - Prefer Astro components over MDX unless mixing prose + components.
 - No backend; everything is static at build time.
+- **Single source of truth — don't snapshot cross-repo state here.** Other repos'
+  versions, release status, and open-issue numbers rot when copied in (and these docs
+  load as agent context) — point to the
+  [board](https://github.com/users/brandon-behring/projects/1) / the repo, never copy.
+  Doc structure: [`docs/DOC-CONVENTIONS.md`](../docs/DOC-CONVENTIONS.md).
 - Worker naming convention: **person-prefixed flat** (this Worker is
   `brandon-behring`; future sibling Workers under this account follow
   `brandon-behring-<site>`).

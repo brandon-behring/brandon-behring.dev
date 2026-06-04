@@ -19,9 +19,12 @@ reviewers' distilled verdicts — never their reasoning. Follow this exactly.
 Break the scope into independent review jobs. Each job = one artifact + one
 checklist. Keep it to **1–4 reviewers**. Typical shards:
 
-- **Drift review** — `docs/roadmap.md` per-project status vs `src/data/projects.json`
-  vs live `gh issue list`. Checklist: does every status/claim in roadmap match
-  projects.json and open issues?
+- **Drift review** — context docs (`CURRENT_WORK.md`, `docs/roadmap.md`,
+  `docs/website-decision-map.md`, `.claude/CLAUDE.md`) vs reality. Checklist: does any
+  doc **snapshot a cross-repo fact** (a version, release status, or open-issue-number)
+  instead of pointing to the board / the repo? Is `CURRENT_WORK.md` current (no
+  left-behind "in progress" after merge)? Do `docs/roadmap.md` claims match
+  `src/data/projects.json` + live `gh issue list`? (See `docs/DOC-CONVENTIONS.md`.)
 - **Diff review** — the `git diff`. Checklist: correctness, false claims,
   broken links/refs introduced, overclaim in copy.
 - **Claim/link review** — external claims in changed `projects.json` entries.

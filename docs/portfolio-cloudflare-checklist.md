@@ -1,5 +1,11 @@
 # Portfolio Cloudflare deployment checklist
 
+> **⚠ ARCHIVED historical setup log (2026-05).** All three deployments are **live** as of
+> 2026-06-04. This is a point-in-time setup record — do **not** read its per-project
+> "Phase / in flight / queued / pending" status as current. Live cross-repo deployment
+> status → [Work Tracker board #1](https://github.com/users/brandon-behring/projects/1).
+> See [`DOC-CONVENTIONS.md`](DOC-CONVENTIONS.md).
+
 Cross-project state and remaining work for the three Cloudflare Workers Static Assets deployments in the portfolio:
 
 - **`brandon-behring.dev`** — apex portfolio (LIVE)
