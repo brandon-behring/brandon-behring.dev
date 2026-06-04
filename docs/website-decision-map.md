@@ -80,6 +80,19 @@ future work has the same maturity as past production work.
 | What I should lead with now | Technical hiring signal | 3 to 5 strongest clusters with concrete evidence | Above-the-fold thesis plus selected proof cards |
 | Where I am going | Future research identity | post-transformers, AI evaluation methodology, research-kb, long-form technical guides | A visible but grounded "current direction" section |
 
+## Showcase positioning (durable — not status)
+
+Timeless positioning guidance (relocated from roadmap Track C, 2026-06-04). These are
+*judgments*, not live state — for current per-repo status/versions go to the
+[board](https://github.com/users/brandon-behring/projects/1) + each repo.
+
+- **`book-scaffold-astro` / publishing infra** — carries a *tooling-for-tooling* risk:
+  needs a clear "why this matters" story, not just "I built a scaffold."
+- **`research-kb` / `research-agent`** — research-infrastructure: niche audience, an
+  explainer is required for it to read as a strength. research-kb feeds `/lab/research-graph/`.
+- **`causal_inference_mastery`** — dormant but reference-quality; methodological-depth +
+  actuarial-bridge proof, safe to cite.
+
 ## Portfolio Cluster Audit
 
 > **⚠ Frozen scoring artifact — do not read the counts below as current.** This cluster
@@ -94,19 +107,6 @@ future work has the same maturity as past production work.
 Score clusters on capability signal, evidence strength, future relevance, demo
 potential, maturity, maintenance cost, and privacy risk. Do not choose the final
 homepage lead until this audit is complete.
-
-### Showcase notes (durable positioning — relocated from roadmap Track C, 2026-06-04)
-
-- **`book-scaffold-astro` / publishing infra** — carries a *tooling-for-tooling* risk:
-  needs a clear "why this matters" story, not just "I built a scaffold."
-- **`research-kb` / `research-agent`** — research-infrastructure: niche audience, an
-  explainer is required for it to read as a strength. research-kb feeds `/lab/research-graph/`.
-- **`causal_inference_mastery`** — dormant but reference-quality; methodological-depth +
-  actuarial-bridge proof, safe to cite.
-
-(Live per-repo status/versions are not here — see the board + each repo. The
-prompt-injection PoC + portfolio are currently backlogged; see `src/data/projects.json`
-+ [`sessions/2026-06-04--roster-curation-review.md`](sessions/2026-06-04--roster-curation-review.md).)
 
 ### 1. Post-Transformer / Mathematical AI Research
 
