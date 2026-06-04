@@ -1,18 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import ClusterCard from '../components/ClusterCard.astro';
-import clustersData from '../data/clusters.json';
-import projectsData from '../data/projects.json';
+import { clustersInSection, projectsForCluster } from '../data/portfolio';
 
-const nowClusters = clustersData
-  .filter((c) => c.section === 'now')
-  .sort((a, b) => a.order - b.order);
-
-function projectsForCluster(slug: string) {
-  return projectsData
-    .filter((p) => p.cluster === slug)
-    .sort((a, b) => a.order - b.order);
-}
+const nowClusters = clustersInSection('now');
 ---
 
 <Base

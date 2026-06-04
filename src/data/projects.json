@@ -64,7 +64,8 @@
       { "label": "Methodology harness — eval-toolkit", "url": "https://github.com/brandon-behring/eval-toolkit" }
     ],
     "visual": null,
-    "featured": true
+    "featured": true,
+    "draft": true
   },
   {
     "slug": "eval-toolkit",
@@ -94,7 +95,8 @@
     "repo_url": "https://github.com/brandon-behring/prompt-injection-portfolio",
     "external_context": [],
     "visual": null,
-    "featured": true
+    "featured": true,
+    "draft": true
   },
   {
     "slug": "dlai-study-notes",
@@ -107,7 +109,6 @@
     "whats_next": "PoC for a broader pattern: 10-20 Gold-tier DLAI courses targeted; additional course-derived note projects from other sources (e.g., Bertsekas RL+Control, ssm-foundations chapters) lined up. Deploy to a public URL is the immediate-next step.",
     "stack": ["Astro 6", "MDX", "TypeScript", "Pandoc", "KaTeX", "Pagefind", "Cloudflare Pages"],
     "repo_url": "https://github.com/brandon-behring/dlai-study-notes",
-    "site_url": "",
     "external_context": [],
     "visual": null,
     "featured": true
@@ -122,9 +123,8 @@
     "description_long": "In-progress authored guide bridging classical optimal control (Bellman, DP, MPC, LQR/LQG) with modern reinforcement learning (policy gradient, actor-critic, model-based, MPC-RL hybrids). 28-week syllabus organized into 3 parts: RL Foundations (10 weeks) -> Control Theory (8 weeks) -> Convergence (10 weeks). Includes Python (PyTorch/Gymnasium/SB3), JAX (Brax, differentiable MPC), and Julia (ControlSystems.jl, JuMP MPC) experiment tracks. Bibliography: 135 papers indexed across 18 thematic sections with status tracking and 12 method-family dossiers.",
     "whats_next": "Local-only; publishing surface (Astro/MDX web guide) planned, matching the ssm-foundations book-scaffold-astro pattern. Bibliography (rl_and_control/references/paper_index.md) is the data source for the /lab/research-graph/ demo (shipped 2026-05-24, densified 2026-05-25).",
     "stack": ["Astro", "MDX", "Python", "PyTorch", "JAX", "Julia", "Gymnasium", "SB3", "ControlSystems.jl"],
-    "repo_url": "",
     "external_context": [
-      { "label": "Bertsekas — Reinforcement Learning and Optimal Control (2019)", "url": "" },
+      { "label": "Live demo: RL + Control citation graph", "url": "/lab/research-graph/" },
       { "label": "Companion: ssm-foundations", "url": "https://ssm-foundations.brandon-behring.dev" }
     ],
     "visual": "/screenshots/rl-and-control.png",
@@ -133,7 +133,7 @@
   {
     "slug": "ssm-foundations",
     "title": "ssm-foundations",
-    "cluster": "books-and-guides",
+    "cluster": "future",
     "order": 1,
     "status": "in-progress",
     "summary": "17-chapter lens-led foundations book bridging numerical analysis and dynamical systems to modern sequence-model architectures (SSMs, Mamba, S4, Hyena, DeltaNet). Successor to a 21-week research-guide effort. Live and in progress — the foundations chapters are authored; the structured-SSM and later chapters are being written.",
@@ -248,7 +248,8 @@
     "stack": ["Astro", "MDX", "KaTeX"],
     "external_context": [],
     "visual": null,
-    "featured": false
+    "featured": false,
+    "draft": true
   },
   {
     "slug": "claude-books",
@@ -262,7 +263,8 @@
     "stack": ["MDX", "book-scaffold-astro"],
     "external_context": [],
     "visual": null,
-    "featured": false
+    "featured": false,
+    "draft": true
   },
   {
     "slug": "annuity-pricing",

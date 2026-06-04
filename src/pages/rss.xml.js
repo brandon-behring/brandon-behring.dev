@@ -1,13 +1,8 @@
 import rss from '@astrojs/rss';
-import clustersData from '../data/clusters.json';
-import projectsData from '../data/projects.json';
+import { visibleProjects, visibleClusters } from '../data/portfolio';
 
-// Clusters that have a generated /work/{slug} page (now + tier).
-const pagedClusters = new Set(
-  clustersData
-    .filter((c) => c.section === 'now' || c.section === 'tier')
-    .map((c) => c.slug)
-);
+// Every visible cluster has a generated /work/{slug} page.
+const pagedClusters = new Set(visibleClusters.map((c) => c.slug));
 
 /**
  * Resolve a stable, non-404 link for a project:
@@ -27,7 +22,7 @@ export function GET(context) {
     title: 'Brandon Behring — new work',
     description: 'New work: projects, guides, tooling, and research artifacts.',
     site: context.site,
-    items: projectsData.map((p) => ({
+    items: visibleProjects.map((p) => ({
       title: p.title,
       description: p.summary,
       link: projectLink(p),
