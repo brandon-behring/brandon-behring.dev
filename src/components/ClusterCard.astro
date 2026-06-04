@@ -1,14 +1,6 @@
 ---
 import StatusBadge from './StatusBadge.astro';
-
-interface Project {
-  slug: string;
-  title: string;
-  status: string;
-  site_url?: string;
-  repo_url?: string;
-  visual?: string | null;
-}
+import { projectHref, type Project } from '../data/portfolio';
 
 interface Cluster {
   slug: string;
@@ -22,14 +14,13 @@ interface Props {
   projects: Project[];
   /**
    * Compact variant for the homepage "More work" tier strip: omits the
-   * artifact list + screenshot placeholder, keeping just the header and
-   * the "More →" link so tier tiles read as clearly secondary.
+   * artifact list, keeping just the header and the "More →" link so tier
+   * tiles read as clearly secondary.
    */
   compact?: boolean;
 }
 
 const { cluster, projects, compact = false } = Astro.props;
-const heroVisual = projects.find((p) => p.visual)?.visual ?? null;
 ---
 
 <article class:list={["cluster-card", { compact }]}>
@@ -40,13 +31,20 @@ const heroVisual = projects.find((p) => p.visual)?.visual ?? null;
 
   {!compact && (
     <ul class="artifact-list">
-      {projects.map((p) => (
-        <li class="artifact">
-          <span class="artifact-bullet" aria-hidden="true">▪</span>
-          <span class="artifact-title">{p.title}</span>
-          <StatusBadge status={p.status} />
-        </li>
-      ))}
+      {projects.map((p) => {
+        const href = projectHref(p);
+        return (
+          <li class="artifact">
+            <span class="artifact-bullet" aria-hidden="true">▪</span>
+            {href ? (
+              <a class="artifact-title artifact-link" href={href} rel="noopener">{p.title}</a>
+            ) : (
+              <span class="artifact-title">{p.title}</span>
+            )}
+            <StatusBadge status={p.status} />
+          </li>
+        );
+      })}
       {cluster.expanding && (
         <li class="expanding-hint">
           <span class="artifact-bullet" aria-hidden="true">▫</span>
@@ -54,12 +52,6 @@ const heroVisual = projects.find((p) => p.visual)?.visual ?? null;
         </li>
       )}
     </ul>
-  )}
-
-  {!compact && heroVisual && (
-    <div class="cluster-visual" aria-hidden="true">
-      <img src={heroVisual} alt="" loading="lazy" />
-    </div>
   )}
 
   <a href={`/work/${cluster.slug}/`} class="more-link">
@@ -135,6 +127,17 @@ const heroVisual = projects.find((p) => p.visual)?.visual ?? null;
     color: var(--color-text);
   }
 
+  .artifact-link {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.1s ease, border-color 0.1s ease;
+  }
+  .artifact-link:hover,
+  .artifact-link:focus-visible {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+  }
+
   .expanding-hint {
     display: flex;
     align-items: center;
@@ -145,42 +148,6 @@ const heroVisual = projects.find((p) => p.visual)?.visual ?? null;
 
   .expanding-hint .artifact-bullet {
     color: var(--color-text-muted);
-  }
-
-  .visual-placeholder {
-    aspect-ratio: 16 / 9;
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px dashed var(--color-border);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-muted);
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    text-transform: lowercase;
-    letter-spacing: 0.05em;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .visual-placeholder {
-      background: rgba(255, 255, 255, 0.03);
-    }
-  }
-
-  .cluster-visual {
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.02);
-  }
-  .cluster-visual img {
-    width: 100%;
-    height: auto;
-    display: block;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    object-position: top;
   }
 
   .more-link {

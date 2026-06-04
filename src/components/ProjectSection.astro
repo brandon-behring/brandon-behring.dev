@@ -1,23 +1,6 @@
 ---
 import StatusBadge from './StatusBadge.astro';
-
-interface ExternalContext {
-  label: string;
-  url: string;
-}
-
-interface Project {
-  slug: string;
-  title: string;
-  status: string;
-  description_long: string;
-  whats_next: string;
-  stack?: string[];
-  repo_url?: string;
-  site_url?: string;
-  external_context?: ExternalContext[];
-  visual?: string;
-}
+import { type Project } from '../data/portfolio';
 
 interface Props {
   project: Project;
@@ -33,12 +16,6 @@ const hasExternal = project.external_context && project.external_context.length 
     <h2>{project.title}</h2>
     <StatusBadge status={project.status} />
   </header>
-
-  {project.visual && (
-    <div class="project-visual" aria-hidden="true">
-      <img src={project.visual} alt="" loading="lazy" />
-    </div>
-  )}
 
   <div class="project-body">
     <p class="project-description">{project.description_long}</p>
@@ -106,20 +83,6 @@ const hasExternal = project.external_context && project.external_context.length 
   .project-header h2 {
     margin: 0;
     font-size: 1.4rem;
-  }
-
-  .project-visual {
-    margin: 1rem 0;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.02);
-  }
-
-  .project-visual img {
-    width: 100%;
-    height: auto;
-    display: block;
   }
 
   .project-body p {

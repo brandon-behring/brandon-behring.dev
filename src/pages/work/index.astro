@@ -2,26 +2,20 @@
 import Base from '../../layouts/Base.astro';
 import ClusterCard from '../../components/ClusterCard.astro';
 import StatusBadge from '../../components/StatusBadge.astro';
-import clustersData from '../../data/clusters.json';
-import projectsData from '../../data/projects.json';
+import { clustersInSection, projectsForCluster, visibleProjects } from '../../data/portfolio';
 
-const nowClusters = clustersData
-  .filter((c) => c.section === 'now')
-  .sort((a, b) => a.order - b.order);
+const nowClusters = clustersInSection('now');
+const tierClusters = clustersInSection('tier');
+const futureClusters = clustersInSection('future');
 
-const tierClusters = clustersData
-  .filter((c) => c.section === 'tier')
-  .sort((a, b) => a.order - b.order);
-
-const futureClusters = clustersData
-  .filter((c) => c.section === 'future')
-  .sort((a, b) => a.order - b.order);
-
-function projectsForCluster(slug: string) {
-  return projectsData
-    .filter((p) => p.cluster === slug)
-    .sort((a, b) => a.order - b.order);
-}
+// Status legend: only show labels for statuses actually present among visible projects.
+const visibleStatuses = new Set(visibleProjects.map((p) => p.status));
+const legend = [
+  { status: 'released', note: 'usable / published today' },
+  { status: 'in-progress', note: 'actively being built' },
+  { status: 'prototype', note: 'methodology demo, not productionized' },
+  { status: 'planned', note: 'not started' },
+].filter((l) => visibleStatuses.has(l.status));
 ---
 
 <Base
@@ -35,10 +29,9 @@ function projectsForCluster(slug: string) {
       behind it. Each links to a deeper page with per-project detail.
     </p>
     <ul class="status-legend" aria-label="What the status labels mean">
-      <li><StatusBadge status="released" /> usable / published today</li>
-      <li><StatusBadge status="in-progress" /> actively being built</li>
-      <li><StatusBadge status="prototype" /> methodology demo, not productionized</li>
-      <li><StatusBadge status="planned" /> not started</li>
+      {legend.map((l) => (
+        <li><StatusBadge status={l.status} /> {l.note}</li>
+      ))}
     </ul>
   </section>
 

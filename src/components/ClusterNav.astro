@@ -1,22 +1,14 @@
 ---
-import clustersData from '../data/clusters.json';
+import { clustersInSection } from '../data/portfolio';
 
 interface Props {
   currentSlug: string;
 }
 const { currentSlug } = Astro.props;
 
-const nowClusters = clustersData
-  .filter((c) => c.section === 'now')
-  .sort((a, b) => a.order - b.order);
-
-const tierClusters = clustersData
-  .filter((c) => c.section === 'tier')
-  .sort((a, b) => a.order - b.order);
-
-const futureClusters = clustersData
-  .filter((c) => c.section === 'future')
-  .sort((a, b) => a.order - b.order);
+const nowClusters = clustersInSection('now');
+const tierClusters = clustersInSection('tier');
+const futureClusters = clustersInSection('future');
 ---
 
 <nav class="cluster-nav" aria-label="Cluster navigation">

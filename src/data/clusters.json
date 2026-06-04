@@ -23,24 +23,24 @@
   },
   {
     "slug": "future",
-    "name": "Where this is going",
+    "name": "Sequence Models & RL",
     "section": "future",
     "order": 4,
-    "description": "Where the work is heading: a foundations book on sequence models (SSMs / Mamba) and an RL + control-theory guide."
+    "description": "A live sequence-models foundations book and an authored RL + control-theory guide — the research direction."
   },
   {
     "slug": "books-and-guides",
     "name": "Books & Guides",
     "section": "tier",
     "order": 1,
-    "description": "Long-form books and interview-prep guides — a live foundations book on sequence models, interview-prep guides, an agentic-coding book, and formal Definition–Theorem–Proof mathematical guides. In active development."
+    "description": "Interview-prep guides for data, ML, and AI engineering, plus a book on agentic coding — in active development."
   },
   {
     "slug": "research-infrastructure",
     "name": "Research Infrastructure",
     "section": "tier",
     "order": 2,
-    "description": "The search, memory, and agent tooling I built to accelerate my own research and learning — it powers the citation-graph demo and the study-notes pipeline."
+    "description": "Search, memory, and agent tooling I built to accelerate my own research — it powers the citation-graph demo."
   },
   {
     "slug": "publishing-infrastructure",
@@ -54,6 +54,6 @@
     "name": "Pricing Decision Systems",
     "section": "tier",
     "order": 4,
-    "description": "Annuity pricing and insurance-risk valuation — a Python pricing library and an AI/ML actuarial toolkit, with a companion Julia stack. Earlier domain work, intentionally not the lead."
+    "description": "Annuity pricing and insurance-risk valuation — earlier domain work, intentionally not the lead."
   }
 ]
