@@ -2,9 +2,11 @@
 layout: ../../layouts/ProseArticle.astro
 title: "Why discretization matters — Brandon Behring"
 heading: "Why discretization matters"
-subtitle: "Numerical analysis is quietly steering sequence-model design: zero-order hold, stability regions, and why Mamba-3 swapped its integrator."
+subtitle: "Zero-order hold, stability regions, and why Mamba-3 swapped its integrator: the numerical analysis inside modern sequence models."
 description: "How discretization choices — zero-order hold, bilinear, trapezoidal — decide the stability and accuracy of state-space sequence models like S4 and Mamba. A short explainer connecting classical numerical analysis to modern architecture design."
 dateLabel: "June 2026 · 8 minute read"
+ogImage: "/figures/ssm-explainer/eigenvalue-migration-light.png"
+pubDate: "2026-06-10"
 ---
 
 import EigenSlider from '../../components/EigenSlider.astro';
@@ -13,17 +15,17 @@ Mamba-3 landed this spring ([Lahoti et al., ICLR 2026](https://openreview.net/fo
 from a team that includes the original Mamba authors. Its abstract lists three
 improvements, and the first is easy to read past: *"a more expressive recurrence
 derived from SSM discretization."* Unpacked, it means something striking. Mamba-3
-swapped its numerical integrator — the rule that converts a continuous-time model
-into the discrete steps a GPU actually runs — replacing a first-order update with
+swapped its numerical integrator (the rule that converts a continuous-time model
+into the discrete steps a GPU actually runs), replacing a first-order update with
 a second-order **trapezoidal rule**.
 
-That is not an exotic new neural mechanism. The trapezoidal rule is textbook
+There is no exotic neural machinery in that. The trapezoidal rule is textbook
 numerical analysis, and the theory that explains why it is the right upgrade was
 worked out by Dahlquist and the ODE community in the 1950s and '60s. Yet in 2026
-it is load-bearing in a frontier sequence-model architecture.
+it sits at the center of a frontier sequence-model architecture.
 
 This page is a short tour of why. The claim: for state-space models,
-discretization is not plumbing. It is a design axis — and stability, memory, and
+discretization is not plumbing. It is a design axis, and stability, memory, and
 accuracy all hang off it.
 
 ## A sequence model is an ODE in disguise
@@ -51,22 +53,26 @@ $$
 that approximates the flow of the ODE. That conversion rule *is* a numerical
 integrator, and everything in this story turns on which one you pick.
 
-[S4](https://ssm-foundations.brandon-behring.dev/chapters/ch08-lti-ssms/) — the
-architecture that launched the modern SSM line — answers with the **zero-order
-hold** (ZOH): hold the input constant across each step and integrate the rest
-exactly, so that $\bar A = e^{A\Delta}$. And crucially, S4 makes $\Delta$ a
-*learnable parameter*: the network tunes its own timescale by gradient descent.
-Mamba pushes this further — we will get there. First: what could possibly go
-wrong?
+[S4](https://ssm-foundations.brandon-behring.dev/chapters/ch08-lti-ssms/), the
+architecture that launched the modern SSM line, discretized with the **bilinear
+transform** — a rule we will meet properly below. Later SSMs, Mamba included,
+settled on discretizations built around the exact exponential
+$\bar A = e^{A\Delta}$, the **zero-order hold** (ZOH) and its close cousins:
+hold the input constant across each step and integrate the rest exactly. The
+recipe is the same either way, and one detail is crucial: $\Delta$ is a
+*learnable parameter* — the network tunes its own timescale by gradient
+descent. Mamba pushes this further; we will get there. First: what could
+possibly go wrong?
 
 ## Stability is geometry
 
 The simplest integrator anyone writes down is **forward Euler**: follow the
 local slope, $\bar A = I + \Delta A$. To see why it can fail, look at one mode
-at a time. If $\lambda$ is an eigenvalue of $A$, the discretization maps it to
-an eigenvalue $\mu$ of $\bar A$, and the recurrence multiplies that mode by
-$\mu$ at every step. After a thousand tokens, that is $\mu^{1000}$. The discrete
-model survives precisely when $|\mu| \le 1$.
+at a time (take $A$ diagonalizable — every matrix in this story is). If
+$\lambda$ is an eigenvalue of $A$, the discretization maps it to an eigenvalue
+$\mu$ of $\bar A$, and the recurrence multiplies that mode by $\mu$ at every
+step. After a thousand tokens, that is $\mu^{1000}$. The discrete model survives
+precisely when $|\mu| \le 1$.
 
 So the continuous and discrete worlds have different stability geographies. A
 continuous mode decays when $\operatorname{Re}(\lambda) < 0$ — the **left
@@ -78,11 +84,13 @@ ZOH sends $\lambda \mapsto e^{\lambda\Delta}$, and
 $|e^{\lambda\Delta}| = e^{\Delta\,\operatorname{Re}(\lambda)} < 1$ whenever
 $\operatorname{Re}(\lambda) < 0$ — for **every** step size $\Delta > 0$. Decay
 in, decay out, unconditionally. Numerical analysts call such schemes
-**A-stable**. Forward Euler instead sends $\lambda \mapsto 1 + \lambda\Delta$: a
-point marching along a straight line away from $1$. For any decaying mode there
-is a finite threshold (for real $\lambda$, $\Delta > 2/|\lambda|$) beyond which
-the image exits the disk — and the discrete model blows up even though the
-continuous system it approximates decays perfectly.
+**A-stable**; ZOH earns the label trivially, since $e^{\lambda\Delta}$ is the
+exact solution map and exactness preserves decay. Forward Euler instead sends
+$\lambda \mapsto 1 + \lambda\Delta$: a point marching along a straight line away
+from $1$. For any decaying mode there is a finite threshold (for real $\lambda$,
+$\Delta > 2/|\lambda|$) beyond which the image exits the disk, and the discrete
+model blows up even though the continuous system it approximates decays
+perfectly.
 
 <figure>
   <picture>
@@ -92,31 +100,31 @@ continuous system it approximates decays perfectly.
   <figcaption>
     The eigenvalue map at a small step ($\Delta = 0.1$): a damped oscillator's
     two continuous eigenvalues (left) and their discrete images under forward
-    Euler, ZOH, and bilinear (right). At this $\Delta$ everyone agrees — all
+    Euler, ZOH, and bilinear (right). At this $\Delta$ everyone agrees: all
     images sit safely inside the unit disk.
   </figcaption>
 </figure>
 
-Small steps are safe for everyone. The drama starts when $\Delta$ grows — drag
-it:
+Small steps are safe for everyone. Trouble starts as $\Delta$ grows — drag it:
 
 <EigenSlider />
 
-For SSMs this is not a hypothetical, because $\Delta$ is *learned* — and in
+For SSMs this is not a hypothetical, because $\Delta$ is *learned*, and in
 Mamba it is computed per token from the input. Training explores
 $\Delta$-space freely. With an A-stable scheme, every $\Delta$ the optimizer can
 reach yields a stable recurrence:
 [HiPPO initialization](https://ssm-foundations.brandon-behring.dev/chapters/ch07-hippo-theory/)
-places $A$'s eigenvalues in the left half-plane, ZOH keeps their images in the
-disk, and S4's trainability over very long sequences follows. S4's stability is
-not a lucky hyperparameter. It is a theorem
+is built to place $A$'s eigenvalues in the left half-plane, and an A-stable rule
+(bilinear for S4, the $e^{A\Delta}$ family for Mamba) keeps their images inside
+the disk. That
+stability is a theorem, not a lucky hyperparameter
 ([ch. 4](https://ssm-foundations.brandon-behring.dev/chapters/ch04-discretization/#43-zero-order-hold-zoh)).
 
 ## Accuracy is a ladder
 
 Staying stable is not the same as being right: the discrete model should also
 *track* the continuous one. The standard yardstick is the **order of
-accuracy** — error shrinking like $O(\Delta^p)$ as the step refines. ZOH is
+accuracy**: error shrinking like $O(\Delta^p)$ as the step refines. ZOH is
 exact on the unforced system ($e^{A\Delta}$ is the true flow map), but it
 freezes the input across each step, which costs it accuracy on forced systems:
 first order, $p = 1$.
@@ -130,7 +138,8 @@ first order, $p = 1$.
     Error vs step size on a forced damped oscillator (log–log). Forward Euler
     and ZOH converge at first order (slope $\approx 1$); the bilinear transform
     converges at second order (slope $\approx 2$). Empirical slopes, measured
-    against an adaptive implicit reference solver.
+    against a high-accuracy implicit reference (SciPy's Radau integrator,
+    rtol $10^{-11}$).
   </figcaption>
 </figure>
 
@@ -145,7 +154,7 @@ the SSM world it shows up in two guises:
 - The [**exponential-trapezoidal family**](https://ssm-foundations.brandon-behring.dev/chapters/ch04-discretization/#45-exponential-family-discretizations):
   keep the exact $e^{A\Delta}$ for the state and apply the trapezoid only to the
   input integral. Exact on the unforced system *and* second-order on the forced
-  one — ZOH's best property and bilinear's, simultaneously.
+  one: ZOH's best property and bilinear's, simultaneously.
 
 <figure>
   <picture>
@@ -155,12 +164,12 @@ the SSM world it shows up in two guises:
   <figcaption>
     The exponential-trapezoidal scheme joins bilinear at second order (slope
     $\approx 2$) while retaining ZOH's exact treatment of the autonomous flow —
-    the combination Mamba-3's discretization builds on.
+    the combination Mamba-3's discretization builds on (same Radau reference).
   </figcaption>
 </figure>
 
 <details>
-  <summary>For the numerics reader: the Dahlquist barrier, precisely</summary>
+  <summary>More precision: the Dahlquist barrier</summary>
 
   Dahlquist's second barrier theorem (1963): an A-stable **linear multistep
   method** cannot exceed order 2, and among A-stable order-2 methods the
@@ -175,44 +184,52 @@ the SSM world it shows up in two guises:
 </details>
 
 <details>
-  <summary>For the numerics reader: how $\bar A$ and $\bar B$ are actually computed</summary>
+  <summary>More precision: computing $\bar A$ and $\bar B$</summary>
 
   ZOH's input matrix is $\bar B = A^{-1}(e^{A\Delta} - I)B$ — awkward when $A$
   is singular or badly conditioned. The standard trick: build the augmented
   block matrix with $A\Delta$ and $B\Delta$ in the top row and zeros below, and
   take **one** matrix exponential; $\bar A$ and $\bar B$ appear as blocks of the
-  result, no inverse required (Al-Mohy &amp; Higham 2011). The
+  result, no inverse required (a construction going back to Van Loan 1978). The
   $\varphi$-functions of the exponential-trapezoidal scheme fall out of the same
-  construction with one more block. Derivation in
+  construction with one more block (Al-Mohy &amp; Higham 2011 give the modern
+  treatment). Derivation in
   [ch. 4](https://ssm-foundations.brandon-behring.dev/chapters/ch04-discretization/),
   production implementations in the
   [companion code](https://github.com/brandon-behring/ssm-foundations/tree/main/companions/ch04).
 
 </details>
 
-## Per-token integrators
+## Selectivity is adaptive stepping
 
 Through this lens, Mamba's signature "selectivity" reads as something an ODE
-person already knows. Mamba computes $\Delta_t$ *from the current token* — the
+person already knows. Mamba computes $\Delta_t$ *from the current token*: the
 network runs an **adaptive step size**, the same idea every production ODE
 solver has used for decades. A small $\Delta_t$ barely advances the state
-(hold your memory); a large one integrates far (reset toward the new input).
-The discretization is not under the hood here. It *is* the
+(hold your memory); a large one integrates far (reset toward the new input);
+$\Delta$ is simultaneously the stability knob and the memory horizon. The
+discretization *is* the
 [gating mechanism](https://ssm-foundations.brandon-behring.dev/chapters/ch09-selective-ssms/).
 
 Which makes Mamba-3's headline change read like the natural next move from the
-numerical-analysis playbook. The first-order update was the accuracy
-bottleneck, so the paper replaces it with a generalized trapezoidal rule —
-second order, A-stable, sitting exactly at the Dahlquist bound — and pairs it
-with a complex-valued state, so each mode can rotate as well as decay
+numerical-analysis playbook. The first-order update was the accuracy bottleneck
+(the paper pins its predecessors' rule down as *exponential-Euler*: exact
+exponential for the state, Euler for the input), so it is replaced with a
+generalized trapezoidal rule — in
+its own terms an *exponential-trapezoidal* discretization: exact exponential for
+the state, trapezoid for the input, second-order and A-stable, the very ceiling
+Dahlquist's barrier sets in the classical constant-step theory. Mamba-3 combines
+it with a second, independent upgrade, a complex-valued state, so each mode can
+rotate as well as decay
 ([ch. 10 develops the scheme in full](https://ssm-foundations.brandon-behring.dev/chapters/ch10-mamba-3/)).
-The reported payoff is concrete: perplexity comparable to Mamba-2 with **half
-the state size**, plus gains on retrieval and state-tracking. Better numerics
-bought memory.
+The reported payoff is concrete, for the system as a whole: perplexity
+comparable to Mamba-2 with **half the state size**, plus gains on retrieval and
+state-tracking. The paper credits its three changes together; better numerics
+helped buy that memory.
 
-The theory underneath — A-stability, order conditions, the barrier theorems,
-the Lax equivalence framework that ties consistency and stability to
-convergence — was finished before "sequence model" meant anything neural. None
+The theory underneath (A-stability, order conditions, the barrier theorems, the
+equivalence results that tie consistency and stability to convergence) was
+finished before "sequence model" meant anything neural. None
 of this is my invention, and that is the point: the bridge between classical
 numerical analysis and modern architectures is short, load-bearing, and still
 being crossed. If this page pulled you across it, the book below walks the

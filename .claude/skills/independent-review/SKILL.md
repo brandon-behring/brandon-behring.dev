@@ -61,6 +61,32 @@ transcripts. That suppression is the objectivity mechanism. You may verify a
 decisive finding yourself before acting on it — but report the verdict, not the
 reasoning chain.
 
+## 4b. Adversarial mode (refute-mode)
+
+When the user asks for an **adversarial** / refute-mode review (or the artifact
+is a public-facing flagship where verification has already passed once), switch
+the shard prompts from *verify* to *attack*:
+
+- Each reviewer plays a **hostile, perspective-diverse lens** (e.g. pedantic
+  domain expert · hostile researcher checking history against primary sources ·
+  hostile front-end/a11y engineer · hostile editor suspecting AI prose + process
+  auditor). Its job is to find reasons the artifact should NOT ship; uncertain
+  attacks are INCLUDED, not dropped.
+- Checklists still name coverage areas only — never the expected answer.
+- **Adjudication**: the orchestrator confirms/refutes each *objective* attack
+  with hard evidence only (fetch the primary source, compute, inspect the build)
+  and records the evidence; *judgment* findings (voice, taste, emphasis) pass to
+  the user RAW — never self-adjudicated by the artifact's author.
+- Default to **report-only**: verdict table + proposed fixes; apply nothing
+  until the user picks.
+
+Why this exists: verification-mode confirms what a checklist names and so
+structurally misses wrong-but-unchecked claims (a claim inherited from a
+sibling artifact passed 15/15 verification and fell in one adversarial pass —
+see `docs/sessions/2026-06-10--ssm-explainer-adversarial-review.md`). Claims
+inherited from your own prior artifacts must be re-verified against *primary*
+sources — the sibling artifact is not a primary source.
+
 ## 5. Authority boundary
 
 Reviewers **advise + propose fixes only**. Present the proposed fixes; the user

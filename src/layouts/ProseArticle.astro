@@ -8,7 +8,11 @@ import 'katex/dist/katex.min.css';
 const { frontmatter } = Astro.props;
 ---
 
-<Base title={frontmatter.title} description={frontmatter.description}>
+<Base
+  title={frontmatter.title}
+  description={frontmatter.description}
+  ogImage={frontmatter.ogImage}
+>
   <article class="prose explainer">
     <header class="explainer-header">
       <h1>{frontmatter.heading ?? frontmatter.title}</h1>
@@ -51,6 +55,10 @@ const { frontmatter } = Astro.props;
     color: var(--color-text-muted);
     margin-top: 0.5rem;
     line-height: 1.5;
+  }
+  /* MDX wraps caption text in <p>; kill its default margins inside captions. */
+  .explainer :global(figcaption p) {
+    margin: 0;
   }
   .explainer :global(details) {
     border: 1px solid var(--color-border);

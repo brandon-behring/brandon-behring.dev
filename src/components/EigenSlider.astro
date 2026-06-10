@@ -14,6 +14,12 @@
     eigenvalue inside the unit disk for all Δ; forward Euler pushes them out
     as Δ grows.
   </canvas>
+  <noscript>
+    <p class="es-noscript">
+      The interactive version needs JavaScript — the static figures above tell
+      the same story.
+    </p>
+  </noscript>
   <div class="es-controls">
     <label for="es-delta">Step size Δ</label>
     <input type="range" id="es-delta" min="0.01" max="1.5" step="0.01" value="0.4" />
@@ -53,7 +59,14 @@
     width: 100%;
     max-width: 560px;
     height: auto;
+    aspect-ratio: 1 / 1;
     margin: 0 auto;
+  }
+  .es-noscript {
+    max-width: 560px;
+    margin: 0.5rem auto 0 auto;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
   }
   .es-controls {
     display: flex;
@@ -72,6 +85,11 @@
     flex: 1;
     min-width: 10rem;
     accent-color: var(--color-accent);
+  }
+  .es-controls input[type='range']:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 3px;
   }
   .es-controls output {
     font-variant-numeric: tabular-nums;
@@ -104,14 +122,25 @@
 </style>
 
 <script>
-  function initEigenSlider() {
-    const canvas = document.getElementById('es-canvas') as HTMLCanvasElement | null;
-    const slider = document.getElementById('es-delta') as HTMLInputElement | null;
-    const status = document.getElementById('es-status');
+  function initEigenSlider(wrapper: HTMLElement) {
+    // Lookups scoped to the component root; ids retained only for the
+    // label[for]/output[for] associations.
+    const canvas = wrapper.querySelector('canvas') as HTMLCanvasElement | null;
+    const slider = wrapper.querySelector(
+      'input[type="range"]'
+    ) as HTMLInputElement | null;
+    const status = wrapper.querySelector('output');
     if (!canvas || !slider || !status) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    const wrapper = canvas.closest('.eigen-slider') as HTMLElement;
+
+    // Logical drawing size; the backing buffer is scaled by devicePixelRatio
+    // so points and text stay crisp on HiDPI displays.
+    const SIZE = 560;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = SIZE * dpr;
+    canvas.height = SIZE * dpr;
+    ctx.scale(dpr, dpr);
 
     // Six left-half-plane modes: four real (HiPPO-flavored decay ladder) and
     // one lightly damped oscillatory pair — the fragile case for Euler.
@@ -126,10 +155,9 @@
 
     // Plot window chosen so every Euler point stays visible up to Δ = 1.5.
     const VIEW = { x0: -3.0, x1: 1.6, y0: -2.4, y1: 2.4 };
-    const W = canvas.width;
-    const H = canvas.height;
-    const px = (re: number) => ((re - VIEW.x0) / (VIEW.x1 - VIEW.x0)) * W;
-    const py = (im: number) => H - ((im - VIEW.y0) / (VIEW.y1 - VIEW.y0)) * H;
+    const px = (re: number) => ((re - VIEW.x0) / (VIEW.x1 - VIEW.x0)) * SIZE;
+    const py = (im: number) =>
+      SIZE - ((im - VIEW.y0) / (VIEW.y1 - VIEW.y0)) * SIZE;
 
     const zoh = ([a, b]: [number, number], dt: number): [number, number] => {
       const r = Math.exp(a * dt);
@@ -144,8 +172,11 @@
     const cssVar = (name: string) =>
       getComputedStyle(wrapper).getPropertyValue(name).trim();
 
+    const eulerDiverged = (dt: number) =>
+      LAMBDAS.filter((lam) => mag(euler(lam, dt)) > 1).length;
+
     function draw() {
-      if (!ctx || !canvas || !slider || !status) return;
+      if (!ctx || !slider) return;
       const dt = parseFloat(slider.value);
       const colors = {
         zoh: cssVar('--es-zoh'),
@@ -155,7 +186,7 @@
         disk: cssVar('--es-disk'),
       };
 
-      ctx.clearRect(0, 0, W, H);
+      ctx.clearRect(0, 0, SIZE, SIZE);
 
       // Unit disk (stable region for the discrete recurrence) + axes.
       const r = px(1) - px(0);
@@ -171,21 +202,19 @@
       ctx.lineWidth = 0.75;
       ctx.beginPath();
       ctx.moveTo(0, py(0));
-      ctx.lineTo(W, py(0));
+      ctx.lineTo(SIZE, py(0));
       ctx.moveTo(px(0), 0);
-      ctx.lineTo(px(0), H);
+      ctx.lineTo(px(0), SIZE);
       ctx.stroke();
 
       ctx.fillStyle = colors.text;
       ctx.font = '13px sans-serif';
-      ctx.fillText('Re(μ)', W - 48, py(0) - 8);
+      ctx.fillText('Re(μ)', SIZE - 48, py(0) - 8);
       ctx.fillText('Im(μ)', px(0) + 8, 16);
 
-      let eulerOut = 0;
       for (const lam of LAMBDAS) {
         const z = zoh(lam, dt);
         const e = euler(lam, dt);
-        if (mag(e) > 1) eulerOut += 1;
 
         // ZOH: filled circle.
         ctx.beginPath();
@@ -202,25 +231,38 @@
         ctx.fillStyle = colors.euler;
         ctx.fill();
       }
+    }
 
+    function updateStatus() {
+      if (!slider || !status) return;
+      const dt = parseFloat(slider.value);
+      const out = eulerDiverged(dt);
       const eulerWord =
-        eulerOut === 0
-          ? 'all 6 modes stable'
-          : `${eulerOut} of 6 modes diverge`;
+        out === 0 ? 'all 6 modes stable' : `${out} of 6 modes diverge`;
       status.textContent = `Δ = ${dt.toFixed(2)} — ZOH: all 6 modes stable, every Δ · forward Euler: ${eulerWord}`;
     }
 
+    // Redraw continuously while dragging; announce to assistive tech only on
+    // release (a live region updated per input event reads as spam).
     slider.addEventListener('input', draw);
+    slider.addEventListener('change', updateStatus);
     // Re-read palette when the color scheme flips.
     window
       .matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', draw);
     draw();
+    updateStatus();
+  }
+
+  function initAll() {
+    document
+      .querySelectorAll<HTMLElement>('.eigen-slider')
+      .forEach(initEigenSlider);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initEigenSlider);
+    document.addEventListener('DOMContentLoaded', initAll);
   } else {
-    initEigenSlider();
+    initAll();
   }
 </script>
