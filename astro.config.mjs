@@ -15,4 +15,12 @@ export default defineConfig({
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],
   },
+  vite: {
+    build: {
+      // The production CSP (public/_headers) is strict: script-src 'self',
+      // font-src 'self'. Never inline small scripts or assets as inline
+      // <script>/data: URIs — they'd be blocked at the edge.
+      assetsInlineLimit: 0,
+    },
+  },
 });
