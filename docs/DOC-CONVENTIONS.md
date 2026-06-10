@@ -18,6 +18,11 @@ A survey of ~32 repos in this portfolio found a 3-file convention at three granu
 Detail lives in dated [`docs/sessions/`](sessions/) logs; `CHANGELOG.md` only **indexes**
 them (one line each, no copied detail).
 
+**Ship-at-merge semantics:** a `CHANGELOG.md` entry (and matching roadmap phrasing) may be
+pre-loaded on a PR branch, dated and written in shipped tense — it becomes true when the
+PR merges (merging deploys). While a PR is staged, `CURRENT_WORK.md` is the authoritative
+answer to "is this actually live?".
+
 ## This repo is a HUB, not a project
 
 Most repos in the portfolio are *projects* — one codebase advancing through phases.

@@ -142,7 +142,9 @@
     "stack": ["Astro 6", "MDX", "JAX", "Julia", "DifferentialEquations.jl", "KaTeX", "Cloudflare Workers"],
     "repo_url": "https://github.com/brandon-behring/ssm-foundations",
     "site_url": "https://ssm-foundations.brandon-behring.dev",
-    "external_context": [],
+    "external_context": [
+      { "label": "Explainer: Why discretization matters", "url": "/lab/why-discretization-matters/" }
+    ],
     "visual": "/screenshots/ssm-foundations.png",
     "featured": true
   },

@@ -19,11 +19,11 @@ or replace — not a forced sequence.
    Corpus growth itself is board work (`research-kb#8/#10/#23` + the remaining
    `[needed]` rows in `rl_and_control/references/paper_index.md`); rerun the recipe in
    `rl_and_control/scripts/README.md` (private repo) whenever the corpus advances.
-2. **SSM "Why discretization matters" explainer** — the flagship-demo page (framing
-   locked; see `website-decision-map.md`). Visualizer style (stability-region vs
-   symplectic) deferred until the explainer ships and reception is observable.
-3. **A6 — content-collections migration.** Move `src/data/projects.json` to Astro
+2. **A6 — content-collections migration.** Move `src/data/projects.json` to Astro
    content collections. Independent, cheap, do anytime.
+3. **SSM visualizer** — gated on observing the explainer's reception (the explainer
+   shipped 2026-06-10 to `/lab/why-discretization-matters/`); style question is Open
+   decision #2 below.
 
 **Also:** A7 visual identity (full editorial direction) · per-project OG images
 (see [`ASSETS-NEEDED.md`](ASSETS-NEEDED.md)).
@@ -33,7 +33,8 @@ or replace — not a forced sequence.
 1. **Long-term hub structure** — `/research`, `/lab`, `/notes`, or hybrid? Re-trigger
    when `/lab` gains 2+ entries beyond `research-graph`, or when an entry's home is
    clearly neither `/work/{slug}` nor `/lab/`. (Deferred 2026-05-28.)
-2. **SSM visualizer style** (stability-region vs symplectic) — post-explainer.
+2. **SSM visualizer style** (stability-region vs symplectic) — re-trigger now that the
+   explainer is live (shipped 2026-06-10): decide once its reception is observable.
 3. **Account split** (`brandon-behring` vs `brandonmbehring-dev`) — decides which org
    the site's repo links, PyPI provenance, and CITATION.cff anchors point at. Tracked:
    [`brandon-behring.dev#5`](https://github.com/brandon-behring/brandon-behring.dev/issues/5).
