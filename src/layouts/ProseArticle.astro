@@ -1,0 +1,104 @@
+---
+import Base from './Base.astro';
+import 'katex/dist/katex.min.css';
+
+// Layout for MDX prose pages (essays/explainers). MDX `layout:` frontmatter
+// hands us `frontmatter`; map it onto Base's props and wrap the body in the
+// editorial prose column.
+const { frontmatter } = Astro.props;
+---
+
+<Base
+  title={frontmatter.title}
+  description={frontmatter.description}
+  ogImage={frontmatter.ogImage}
+>
+  <article class="prose explainer">
+    <header class="explainer-header">
+      <h1>{frontmatter.heading ?? frontmatter.title}</h1>
+      {frontmatter.subtitle && <p class="subtitle">{frontmatter.subtitle}</p>}
+      {frontmatter.dateLabel && <p class="meta">{frontmatter.dateLabel}</p>}
+    </header>
+    <slot />
+  </article>
+</Base>
+
+<style>
+  .explainer-header {
+    margin-bottom: 2.5rem;
+  }
+  .subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+  .meta {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 0.75rem;
+  }
+
+  /* MDX slot content renders outside this component's scope — style it via
+     :global() anchored on .explainer. */
+  .explainer :global(figure) {
+    margin: 2rem 0;
+  }
+  .explainer :global(figure img) {
+    max-width: 100%;
+    height: auto;
+  }
+  .explainer :global(figcaption) {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+  /* MDX wraps caption text in <p>; kill its default margins inside captions. */
+  .explainer :global(figcaption p) {
+    margin: 0;
+  }
+  .explainer :global(details) {
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+  .explainer :global(details summary) {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--color-text-muted);
+  }
+  .explainer :global(details[open] summary) {
+    margin-bottom: 0.5rem;
+  }
+  .explainer :global(.sources) {
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 2.5rem 0 1rem 0;
+    font-size: 0.95rem;
+  }
+  .explainer :global(.sources h2) {
+    font-size: 1.05rem;
+    margin-top: 0;
+  }
+  .explainer :global(.sources ul) {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.25rem;
+  }
+  .explainer :global(.sources li) {
+    margin-bottom: 0.4rem;
+  }
+  /* Display math can exceed the 65ch column on small screens. */
+  .explainer :global(.katex-display) {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.25rem 0;
+  }
+</style>

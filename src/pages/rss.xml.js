@@ -17,15 +17,30 @@ function projectLink(p) {
   return '/';
 }
 
+// Lab essays/explainers (MDX with a pubDate in frontmatter) are feed items too.
+// research-graph (.astro, app-shaped) is intentionally not globbed.
+const labPages = import.meta.glob('./lab/*.mdx', { eager: true });
+const labItems = Object.entries(labPages)
+  .filter(([, mod]) => mod.frontmatter?.pubDate)
+  .map(([path, mod]) => ({
+    title: mod.frontmatter.heading ?? mod.frontmatter.title,
+    description: mod.frontmatter.description,
+    link: path.replace('./', '/').replace(/\.mdx$/, '/'),
+    pubDate: new Date(mod.frontmatter.pubDate),
+  }));
+
 export function GET(context) {
   return rss({
     title: 'Brandon Behring — new work',
     description: 'New work: projects, guides, tooling, and research artifacts.',
     site: context.site,
-    items: visibleProjects.map((p) => ({
-      title: p.title,
-      description: p.summary,
-      link: projectLink(p),
-    })),
+    items: [
+      ...labItems,
+      ...visibleProjects.map((p) => ({
+        title: p.title,
+        description: p.summary,
+        link: projectLink(p),
+      })),
+    ],
   });
 }

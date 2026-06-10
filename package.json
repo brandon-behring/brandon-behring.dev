@@ -24,6 +24,9 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
+    "katex": "^0.17.0",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "typescript": "^5.7.0",
     "wrangler": "^4.93.1"
   }

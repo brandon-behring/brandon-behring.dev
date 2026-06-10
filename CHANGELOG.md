@@ -12,6 +12,7 @@ why it's split this way → [`docs/DOC-CONVENTIONS.md`](docs/DOC-CONVENTIONS.md)
 
 ## 2026
 
+- **2026-06-10** — SSM explainer live: `/lab/why-discretization-matters/` ("Why discretization matters" — ZOH, stability regions, Mamba-3's integrator swap; KaTeX build-time math + Δ-slider + light/dark regenerated figures) → [session](docs/sessions/2026-06-10--ssm-explainer.md)
 - **2026-06-10** — A4 densification round 2: `/lab/research-graph/` 95 nodes / 51 edges → **119 / 460** (corpus push: 20 acquisitions + 4 anchor stubs + citation re-match) → [session](docs/sessions/2026-06-09--audit-densify-node24.md)
 - **2026-06-10** — Node-24 Actions sweep: 209 pins across 34 repos bumped, 0 regressions, `dml#6` closed ahead of the 06-16 deadline → [session](docs/sessions/2026-06-09--audit-densify-node24.md)
 - **2026-06-09** — Portfolio audit: board #1 reconciled (every open `tracked` issue on it, +27), roadmap drift fixed + refreshed → [session](docs/sessions/2026-06-09--audit-densify-node24.md)
