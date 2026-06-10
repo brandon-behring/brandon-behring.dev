@@ -56,7 +56,7 @@ to the decision map.
 - [~] **A3. Homepage balance** — Now-clusters lead, future section follows, past off the homepage.
 - [x] **A4. First demo** — live at `/lab/research-graph/`, KB-sourced + densified (2026-06-10). Ongoing growth = Next-1-3 #1 → the board's corpus queue.
 - [x] **A5. Route structure** — `/work/{slug}` cluster pages.
-- [ ] **A6. Content-collections migration** — Next-1-3 #3.
+- [ ] **A6. Content-collections migration** — Next-1-3 #2.
 - [~] **A7. Visual approach** — minimal editorial + status badges; full visual identity still open.
 
 Open content issue: [`brandon-behring.dev#1`](https://github.com/brandon-behring/brandon-behring.dev/issues/1) (synthesis-map integration) — tracked on the board.
