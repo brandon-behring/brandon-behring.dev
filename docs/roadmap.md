@@ -14,9 +14,11 @@
 Ranking lens: craft-signal (process-as-artifact visible across the site). Skip, mix,
 or replace — not a forced sequence.
 
-1. **A4 graph densification.** Densify `/lab/research-graph/` with pre-arXiv classics +
-   textbooks (reuses the Cytoscape + fcose infra). *Gated on corpus acquisition* —
-   tracked cross-repo on the board (`research-kb#21`), not here.
+1. **A4 densify, round 2 — the graph-refresh loop.** Site-side: re-export → curate
+   labels (`graph_overrides.json`) → verify rendered density on `/lab/research-graph/`.
+   Corpus growth itself is board work (`research-kb#8/#10/#23` + the remaining
+   `[needed]` rows in `rl_and_control/references/paper_index.md`); rerun the recipe in
+   `rl_and_control/scripts/README.md` (private repo) whenever the corpus advances.
 2. **SSM "Why discretization matters" explainer** — the flagship-demo page (framing
    locked; see `website-decision-map.md`). Visualizer style (stability-region vs
    symplectic) deferred until the explainer ships and reception is observable.
@@ -32,6 +34,10 @@ or replace — not a forced sequence.
    when `/lab` gains 2+ entries beyond `research-graph`, or when an entry's home is
    clearly neither `/work/{slug}` nor `/lab/`. (Deferred 2026-05-28.)
 2. **SSM visualizer style** (stability-region vs symplectic) — post-explainer.
+3. **Account split** (`brandon-behring` vs `brandonmbehring-dev`) — decides which org
+   the site's repo links, PyPI provenance, and CITATION.cff anchors point at. Tracked:
+   [`brandon-behring.dev#5`](https://github.com/brandon-behring/brandon-behring.dev/issues/5).
+   Resolve before any repo consolidation or transfer.
 
 Resolved site decisions live in the dated session logs (e.g.
 [`sessions/2026-05-28--ambiguity-resolution.md`](sessions/2026-05-28--ambiguity-resolution.md):
@@ -47,7 +53,7 @@ to the decision map.
 - [x] **A1. Lead identity** — Framing 4, *build-to-learn engineer*, 3 visible clusters.
 - [~] **A2. `post_transformers` positioning** — surfaces in the homepage "where this is going"; a dedicated `/research` page is part of the open hub-structure question.
 - [~] **A3. Homepage balance** — Now-clusters lead, future section follows, past off the homepage.
-- [~] **A4. First demo** — live at `/lab/research-graph/` (KB-sourced). Densification = Next-1-3 #1.
+- [x] **A4. First demo** — live at `/lab/research-graph/`, KB-sourced + densified (2026-06-10). Ongoing growth = Next-1-3 #1 → the board's corpus queue.
 - [x] **A5. Route structure** — `/work/{slug}` cluster pages.
 - [ ] **A6. Content-collections migration** — Next-1-3 #3.
 - [~] **A7. Visual approach** — minimal editorial + status badges; full visual identity still open.

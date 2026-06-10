@@ -12,6 +12,9 @@ why it's split this way → [`docs/DOC-CONVENTIONS.md`](docs/DOC-CONVENTIONS.md)
 
 ## 2026
 
+- **2026-06-10** — A4 densification round 2: `/lab/research-graph/` 95 nodes / 51 edges → **119 / 460** (corpus push: 20 acquisitions + 4 anchor stubs + citation re-match) → [session](docs/sessions/2026-06-09--audit-densify-node24.md)
+- **2026-06-10** — Node-24 Actions sweep: 209 pins across 34 repos bumped, 0 regressions, `dml#6` closed ahead of the 06-16 deadline → [session](docs/sessions/2026-06-09--audit-densify-node24.md)
+- **2026-06-09** — Portfolio audit: board #1 reconciled (every open `tracked` issue on it, +27), roadmap drift fixed + refreshed → [session](docs/sessions/2026-06-09--audit-densify-node24.md)
 - **2026-06-04** — Roster curation: draft-hide mechanism (19 of 23 visible), `ssm-foundations` → "Sequence Models & RL" cluster, clickable project names, screenshots dropped → [session](docs/sessions/2026-06-04--roster-curation-review.md) · [PR review](docs/sessions/2026-06-04--pr4-independent-review.md)
 - **2026-06-04** — Professional Gmail email signature → [`docs/email-signature/`](docs/email-signature/)
 - **2026-06-01** — Track 1.6 polish & hygiene: 4-state status model, security headers, SEO/JSON-LD, Home↔Work de-dup → [session](docs/sessions/2026-06-01--polish-sweep-review.md)

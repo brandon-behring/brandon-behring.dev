@@ -4,10 +4,10 @@
   "metadata": {
     "topic": "RL and optimal control",
     "source": "research-kb",
-    "generated_at": "2026-06-02T01:55:31.337041+00:00",
-    "node_count": 95,
-    "edge_count": 51,
-    "ingested_count": 95,
+    "generated_at": "2026-06-10T09:45:05.677758+00:00",
+    "node_count": 119,
+    "edge_count": 460,
+    "ingested_count": 119,
     "not_ingested_count": 0,
     "node_types": [
       "source"
@@ -16,11 +16,11 @@
       "cites"
     ],
     "selectors": {
-      "arxiv_ids_count": 84,
+      "arxiv_ids_count": 91,
       "role": "anchor.rl_optimal_control"
     },
     "overlay_source": "rl_and_control/references/paper_index.md",
-    "overlay_node_count": 84,
+    "overlay_node_count": 91,
     "overlay_added_not_ingested": 0,
     "sections": [
       "1. DP/MPC Foundations",
@@ -69,7 +69,7 @@
         "source_type": "paper",
         "section": "2. RL Foundations",
         "key_finding": "DQN: experience replay + target networks stabilize deep Q-learning; Atari from pixels",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2015
       }
     },
@@ -94,7 +94,7 @@
         "source_type": "paper",
         "section": "3. Off-Policy Continuous Control",
         "key_finding": "DPG: deterministic policy gradient theorem; foundation for DDPG",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2014,
         "url": "https://proceedings.mlr.press/v32/silver14.html"
       }
@@ -120,7 +120,7 @@
         "source_type": "paper",
         "section": "2. RL Foundations",
         "key_finding": "TRPO: monotonic improvement via KL-constrained surrogate objective",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2015
       }
     },
@@ -144,7 +144,7 @@
         "source_type": "paper",
         "section": "12. Representation Learning",
         "key_finding": "GPS + CNN policy for real robotic manipulation from raw pixels; foundational visuomotor RL",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2016
       }
     },
@@ -169,7 +169,7 @@
         "source_type": "paper",
         "section": "2. RL Foundations",
         "key_finding": "Generalized Advantage Estimation; bias-variance tradeoff via exponential weighting of TD residuals",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2016
       }
     },
@@ -197,14 +197,14 @@
         "source_type": "paper",
         "section": "3. Off-Policy Continuous Control",
         "key_finding": "DDPG: deterministic policy gradient + replay buffer for continuous action spaces",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2016
       }
     },
     {
       "id": "source:arxiv:1509.06461",
       "type": "source",
-      "label": "Hasselt et al. 2015",
+      "label": "van Hasselt et al. 2015",
       "data": {
         "title": "Deep Reinforcement Learning with Double Q-learning",
         "year": 2015,
@@ -220,7 +220,7 @@
         "source_type": "paper",
         "section": "2. RL Foundations",
         "key_finding": "Double DQN: decouples selection and evaluation to reduce overestimation bias",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2016
       }
     },
@@ -244,7 +244,7 @@
         "source_type": "paper",
         "section": "2. RL Foundations",
         "key_finding": "TD-error prioritization yields 2x faster learning; importance sampling correction",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2016
       }
     },
@@ -270,7 +270,7 @@
         "source_type": "paper",
         "section": "2. RL Foundations",
         "key_finding": "Separate value and advantage streams improve sample efficiency on Atari",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2016
       }
     },
@@ -298,7 +298,7 @@
         "source_type": "paper",
         "section": "2. RL Foundations",
         "key_finding": "A3C: parallel actor-learners replace replay buffer; on-policy deep RL at scale",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2016
       }
     },
@@ -321,7 +321,7 @@
         "source_type": "paper",
         "section": "E-C. Hierarchical RL (Elective)",
         "key_finding": "End-to-end learning of options (temporally extended actions) via policy gradient over option policies",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2017
       }
     },
@@ -348,7 +348,7 @@
         "source_type": "paper",
         "section": "E-C. Hierarchical RL (Elective)",
         "key_finding": "Manager-worker hierarchy with directional goals; transition policy gradient for multi-level learning",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2017
       }
     },
@@ -371,7 +371,7 @@
         "source_type": "paper",
         "section": "9. Adaptive Control",
         "key_finding": "MAML: gradient-based meta-learning; few-shot adaptation connects to adaptive control",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2017
       }
     },
@@ -397,7 +397,7 @@
         "source_type": "paper",
         "section": "5. RL Robotics Successes",
         "key_finding": "Randomizing visual parameters in sim enables zero-shot real-world transfer",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2017
       }
     },
@@ -423,7 +423,7 @@
         "source_type": "paper",
         "section": "E-A. Multi-Agent RL (Elective)",
         "key_finding": "MADDPG: centralized training + decentralized execution paradigm for multi-agent continuous control",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2017
       }
     },
@@ -453,7 +453,7 @@
         "source_type": "paper",
         "section": "2. RL Foundations",
         "key_finding": "HER: relabel failed episodes as successes for alternative goals; sparse reward breakthrough",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2017
       }
     },
@@ -478,7 +478,7 @@
         "source_type": "paper",
         "section": "2. RL Foundations",
         "key_finding": "PPO: clipped surrogate objective achieves TRPO-level performance with first-order methods",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2017
       }
     },
@@ -504,7 +504,7 @@
         "source_type": "paper",
         "section": "15. Implementation and Reproducibility",
         "key_finding": "Hyperparameters, seeds, and codebases cause more variance than algorithm differences",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2018
       }
     },
@@ -534,7 +534,7 @@
         "source_type": "paper",
         "section": "2. RL Foundations",
         "key_finding": "Combines 6 DQN improvements; establishes SOTA on Atari-57",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2018
       }
     },
@@ -558,7 +558,7 @@
         "source_type": "paper",
         "section": "E-D. Sim-to-Real (Elective Supplement)",
         "key_finding": "Progressive neural networks transfer learned features from sim to real without catastrophic forgetting",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2017
       }
     },
@@ -591,7 +591,7 @@
         "source_type": "paper",
         "section": "8. Decision-Aware Learning",
         "key_finding": "AlphaZero: MCTS + neural network generalizes across chess, shogi, and Go",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2017
       }
     },
@@ -615,7 +615,7 @@
         "source_type": "paper",
         "section": "3. Off-Policy Continuous Control",
         "key_finding": "SAC: entropy-regularized RL; stable off-policy learning for continuous control",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2018
       }
     },
@@ -638,7 +638,7 @@
         "source_type": "paper",
         "section": "3. Off-Policy Continuous Control",
         "key_finding": "TD3: clipped double Q, delayed updates, target smoothing fix overestimation in DDPG",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2018
       }
     },
@@ -686,7 +686,7 @@
         "source_type": "paper",
         "section": "E-A. Multi-Agent RL (Elective)",
         "key_finding": "QMIX: factorized Q-function with monotonicity constraint; SOTA on StarCraft micromanagement",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2018
       }
     },
@@ -710,7 +710,7 @@
         "source_type": "paper",
         "section": "5. RL Robotics Successes",
         "key_finding": "DeepMimic: dynamics randomization + reference motion enables physical robot imitation",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2018
       }
     },
@@ -731,7 +731,7 @@
         "source_type": "paper",
         "section": "14. Max-Entropy / KL-Regularized Control",
         "key_finding": "Unifying tutorial: RL as inference in graphical model; connects entropy, KL, and optimal control",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2018
       }
     },
@@ -755,7 +755,7 @@
         "source_type": "paper",
         "section": "E-C. Hierarchical RL (Elective)",
         "key_finding": "HIRO: off-policy correction for hierarchical goal-conditioned RL; enables reuse of experience",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2018
       }
     },
@@ -779,7 +779,7 @@
         "source_type": "paper",
         "section": "4. Model-Based RL",
         "key_finding": "PETS: ensemble of probabilistic NNs for planning; competitive with model-free in 100x fewer samples",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2018
       }
     },
@@ -800,7 +800,7 @@
         "source_type": "paper",
         "section": "9. Adaptive Control",
         "key_finding": "Bridges control theory and RL; shows classical results imply strong baselines for RL benchmarks",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2019
       }
     },
@@ -837,7 +837,7 @@
         "source_type": "paper",
         "section": "5. RL Robotics Successes",
         "key_finding": "PPO + domain randomization on Shadow Hand; precursor to Rubik's cube work",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2019
       }
     },
@@ -862,7 +862,7 @@
         "source_type": "paper",
         "section": "6. MPC-RL Convergence",
         "key_finding": "Backpropagation through MPC solver enables end-to-end learning of cost functions",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2018
       }
     },
@@ -884,7 +884,7 @@
         "source_type": "paper",
         "section": "1. DP/MPC Foundations",
         "key_finding": "Extends LQR beyond quadratic costs; convex formulation with constraints",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2022
       }
     },
@@ -911,7 +911,7 @@
         "source_type": "paper",
         "section": "4. Model-Based RL",
         "key_finding": "PlaNet: latent dynamics model with RSSM; planning in latent space from image observations",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2019
       }
     },
@@ -942,8 +942,52 @@
         "source_type": "paper",
         "section": "3. Off-Policy Continuous Control",
         "key_finding": "SAC v2: automatic entropy tuning; state-of-the-art on MuJoCo locomotion benchmarks",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2018
+      }
+    },
+    {
+      "id": "source:arxiv:1904.04152",
+      "type": "source",
+      "label": "Gros & Zanon 2019",
+      "data": {
+        "title": "Data-driven Economic NMPC using Reinforcement Learning",
+        "year": 2019,
+        "authors": [
+          "Sébastien Gros",
+          "Mario Zanon"
+        ],
+        "arxiv_id": "1904.04152",
+        "source_id": "26ae58bb-e386-494d-a809-545ffcf00b0a",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper",
+        "section": "6. MPC-RL Convergence",
+        "key_finding": "Parameterize MPC cost/constraints as RL policy; Q-learning updates MPC parameters",
+        "paper_index_status": "in-kb",
+        "paper_index_year": 2020
+      }
+    },
+    {
+      "id": "source:arxiv:1906.04005",
+      "type": "source",
+      "label": "Zanon & Gros 2019",
+      "data": {
+        "title": "Safe Reinforcement Learning Using Robust MPC",
+        "year": 2019,
+        "authors": [
+          "Mario Zanon",
+          "Sébastien Gros"
+        ],
+        "arxiv_id": "1906.04005",
+        "source_id": "ff6c65d0-5c32-4505-b876-97cefbae1f44",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper",
+        "section": "6. MPC-RL Convergence",
+        "key_finding": "MPC-based policy class guarantees constraint satisfaction during RL exploration",
+        "paper_index_status": "in-kb",
+        "paper_index_year": 2021
       }
     },
     {
@@ -966,7 +1010,7 @@
         "source_type": "paper",
         "section": "4. Model-Based RL",
         "key_finding": "MBPO: short model rollouts branching from real data; monotonic improvement guarantee",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2019
       }
     },
@@ -1005,7 +1049,30 @@
         "source_type": "paper",
         "section": "5. RL Robotics Successes",
         "key_finding": "Automatic domain randomization enables sim-to-real transfer for dexterous manipulation",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
+        "paper_index_year": 2019
+      }
+    },
+    {
+      "id": "source:arxiv:1910.12047",
+      "type": "source",
+      "label": "Lin et al. 2019",
+      "data": {
+        "title": "Comparison of Deep Reinforcement Learning and Model Predictive Control for Adaptive Cruise Control",
+        "year": 2019,
+        "authors": [
+          "Yuan Lin",
+          "John McPhee",
+          "Nasser L. Azad"
+        ],
+        "arxiv_id": "1910.12047",
+        "source_id": "b64cf03c-a4bc-4cc6-a1f9-d22dbd1bcf1a",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper",
+        "section": "15. Implementation and Reproducibility",
+        "key_finding": "Head-to-head comparison; MPC better with accurate model, DDPG better under model mismatch",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2019
       }
     },
@@ -1037,7 +1104,7 @@
         "source_type": "paper",
         "section": "8. Decision-Aware Learning",
         "key_finding": "MuZero: learns dynamics model without game rules; plans in latent space with MCTS",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1084,7 +1151,7 @@
         "source_type": "paper",
         "section": "5. RL Robotics Successes",
         "key_finding": "OpenAI Five: multi-agent RL at scale; beats world champion team in Dota 2",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2019
       }
     },
@@ -1108,7 +1175,7 @@
         "source_type": "paper",
         "section": "6. MPC-RL Convergence",
         "key_finding": "Maximum likelihood model training misaligned with control performance; proposes alternatives",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1131,7 +1198,7 @@
         "source_type": "paper",
         "section": "12. Representation Learning",
         "key_finding": "Contrastive learning on augmented observations yields sample-efficient visual RL",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1155,7 +1222,7 @@
         "source_type": "paper",
         "section": "13. Safe RL + Control Theory",
         "key_finding": "Combines control Lyapunov functions and control barrier functions with model-free RL",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1179,7 +1246,7 @@
         "source_type": "paper",
         "section": "11. Offline RL",
         "key_finding": "Comprehensive tutorial on distributional shift, pessimism, and offline policy evaluation",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1206,7 +1273,7 @@
         "source_type": "paper",
         "section": "15. Implementation and Reproducibility",
         "key_finding": "Code-level choices (clipping, normalization) matter more than algorithm choice for PPO/TRPO",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1230,7 +1297,7 @@
         "source_type": "paper",
         "section": "11. Offline RL",
         "key_finding": "CQL: lower-bounds Q-values on out-of-distribution actions; prevents overestimation without data",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1254,7 +1321,7 @@
         "source_type": "paper",
         "section": "E-A. Multi-Agent RL (Elective)",
         "key_finding": "Independent PPO competitive with specialized MARL methods; questions need for complex architectures",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1276,7 +1343,7 @@
         "source_type": "paper",
         "section": "E-D. Sim-to-Real (Elective Supplement)",
         "key_finding": "Taxonomy: domain randomization, system identification, domain adaptation, curriculum transfer",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1300,7 +1367,7 @@
         "source_type": "paper",
         "section": "4. Model-Based RL",
         "key_finding": "DreamerV2: discrete latent representations; first world model to match model-free on Atari",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1325,7 +1392,7 @@
         "source_type": "paper",
         "section": "5. RL Robotics Successes",
         "key_finding": "Teacher-student distillation enables blind quadruped locomotion over rough terrain",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1349,7 +1416,7 @@
         "source_type": "paper",
         "section": "8. Decision-Aware Learning",
         "key_finding": "Model need only be value-equivalent, not observation-equivalent; formalizes decision-aware models",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2020
       }
     },
@@ -1376,7 +1443,7 @@
         "source_type": "paper",
         "section": "E-A. Multi-Agent RL (Elective)",
         "key_finding": "MAPPO: simple PPO with parameter sharing matches specialized MARL algorithms on SMAC",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2022
       }
     },
@@ -1405,7 +1472,7 @@
         "source_type": "paper",
         "section": "11. Offline RL",
         "key_finding": "Casts RL as sequence prediction conditioned on desired return; no Bellman backup needed",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2021
       }
     },
@@ -1429,7 +1496,7 @@
         "source_type": "paper",
         "section": "12. Representation Learning",
         "key_finding": "DrQ-v2: simple augmentation + DDPG achieves state-of-the-art visual control; no encoder pretraining",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2021
       }
     },
@@ -1452,7 +1519,33 @@
         "source_type": "paper",
         "section": "11. Offline RL",
         "key_finding": "IQL: avoids querying out-of-distribution actions entirely via expectile regression",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
+        "paper_index_year": 2022
+      }
+    },
+    {
+      "id": "source:arxiv:2201.08117",
+      "type": "source",
+      "label": "Miki et al. 2022",
+      "data": {
+        "title": "Learning Robust Perceptive Locomotion for Quadrupedal Robots in the Wild",
+        "year": 2022,
+        "authors": [
+          "Takahiro Miki",
+          "Joonho Lee",
+          "Jemin Hwangbo",
+          "Lorenz Wellhausen",
+          "Vladlen Koltun",
+          "Marco Hutter"
+        ],
+        "arxiv_id": "2201.08117",
+        "source_id": "77887deb-ccdf-423d-8e9d-8eeaccf759e4",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper",
+        "section": "5. RL Robotics Successes",
+        "key_finding": "Proprioceptive + exteroceptive RL policy traverses stairs, gaps, and obstacles outdoors",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2022
       }
     },
@@ -1475,7 +1568,7 @@
         "source_type": "paper",
         "section": "6. MPC-RL Convergence",
         "key_finding": "TD-MPC: learned latent dynamics + MPPI planning + TD learning; sample-efficient continuous control",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2022
       }
     },
@@ -1499,7 +1592,7 @@
         "source_type": "paper",
         "section": "8. Decision-Aware Learning",
         "key_finding": "VaGraM: weights model gradients by value gradient magnitude; improves policy-relevant accuracy",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2022
       }
     },
@@ -1526,7 +1619,7 @@
         "source_type": "paper",
         "section": "13. Safe RL + Control Theory",
         "key_finding": "Comprehensive taxonomy of safe RL: constrained MDPs, Lyapunov methods, barrier functions, shielding",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2024
       }
     },
@@ -1552,7 +1645,7 @@
         "source_type": "paper",
         "section": "4. Model-Based RL",
         "key_finding": "Comprehensive taxonomy: dynamics models, planning, policy learning, and hybrid approaches",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2024
       }
     },
@@ -1575,7 +1668,54 @@
         "source_type": "paper",
         "section": "4. Model-Based RL",
         "key_finding": "IRIS: autoregressive Transformer world model; 2 hours of game-play matches 50M frame methods",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
+        "paper_index_year": 2023
+      }
+    },
+    {
+      "id": "source:arxiv:2210.04302",
+      "type": "source",
+      "label": "Kordabad et al. 2022",
+      "data": {
+        "title": "Equivalence of Optimality Criteria for Markov Decision Process and Model Predictive Control",
+        "year": 2022,
+        "authors": [
+          "Arash Bahari Kordabad",
+          "Mario Zanon",
+          "Sebastien Gros"
+        ],
+        "arxiv_id": "2210.04302",
+        "source_id": "ab09c6e8-46ed-4f22-b8f4-205706f82187",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper",
+        "section": "6. MPC-RL Convergence",
+        "key_finding": "Proves MPC policy is equivalent to an MDP policy under specific structural conditions",
+        "paper_index_status": "in-kb",
+        "paper_index_year": 2024
+      }
+    },
+    {
+      "id": "source:arxiv:2211.16300",
+      "type": "source",
+      "label": "Parsi et al. 2022",
+      "data": {
+        "title": "Dual adaptive MPC using an exact set-membership reformulation",
+        "year": 2022,
+        "authors": [
+          "Anilkumar Parsi",
+          "Diyou Liu",
+          "Andrea Iannelli",
+          "Roy S. Smith"
+        ],
+        "arxiv_id": "2211.16300",
+        "source_id": "8c3cbe01-567d-4cd7-ba21-b9a756f651df",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper",
+        "section": "9. Adaptive Control",
+        "key_finding": "Set-membership uncertainty quantification for dual adaptive MPC; tractable reformulation",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2023
       }
     },
@@ -1599,7 +1739,7 @@
         "source_type": "paper",
         "section": "4. Model-Based RL",
         "key_finding": "DreamerV3: single algorithm across 150+ tasks; symlog predictions + entropy regularization",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2023
       }
     },
@@ -1627,7 +1767,7 @@
         "source_type": "paper",
         "section": "12. Representation Learning",
         "key_finding": "I-JEPA: predicts latent representations rather than pixels; avoids representation collapse",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2023
       }
     },
@@ -1653,7 +1793,7 @@
         "source_type": "paper",
         "section": "5. RL Robotics Successes",
         "key_finding": "Zero-shot sim-to-real transfer for full-size humanoid walking in outdoor environments",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2024
       }
     },
@@ -1677,7 +1817,7 @@
         "source_type": "paper",
         "section": "6. MPC-RL Convergence",
         "key_finding": "Augments MPC with learned value function as terminal cost; bridges optimality gap",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2023
       }
     },
@@ -1700,7 +1840,7 @@
         "source_type": "paper",
         "section": "10. SSM World Models",
         "key_finding": "S4WM: S4 world model competitive with GRU/Transformer on Atari; better long-term predictions",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2023
       }
     },
@@ -1725,7 +1865,7 @@
         "source_type": "paper",
         "section": "8. Decision-Aware Learning",
         "key_finding": "Unifies decision-aware model learning approaches under single theoretical framework",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2024
       }
     },
@@ -1748,7 +1888,7 @@
         "source_type": "paper",
         "section": "6. MPC-RL Convergence",
         "key_finding": "Single 317M-param world model across 104 tasks; no task-specific tuning",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2024
       }
     },
@@ -1772,7 +1912,7 @@
         "source_type": "paper",
         "section": "10. SSM World Models",
         "key_finding": "SSMs equivalent to Wiener models in systems identification; control-theoretic interpretation",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2023
       }
     },
@@ -1795,7 +1935,7 @@
         "source_type": "paper",
         "section": "6. MPC-RL Convergence",
         "key_finding": "Differentiates through MPC rollout to optimize closed-loop cost over entire trajectory",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2023
       }
     },
@@ -1819,7 +1959,7 @@
         "source_type": "paper",
         "section": "10. SSM World Models",
         "key_finding": "Recurrent imagination with reverse imagination for credit assignment over long horizons",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2024
       }
     },
@@ -1847,7 +1987,7 @@
         "source_type": "paper",
         "section": "12. Representation Learning",
         "key_finding": "V-JEPA: self-supervised video representation via latent prediction; strong downstream transfer",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2024
       }
     },
@@ -1868,7 +2008,7 @@
         "source_type": "paper",
         "section": "1. DP/MPC Foundations",
         "key_finding": "Formal unification of MPC and RL through abstract DP; rollout as common thread",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2024
       }
     },
@@ -1894,7 +2034,7 @@
         "source_type": "paper",
         "section": "5. RL Robotics Successes",
         "key_finding": "Comprehensive survey of deployed RL systems; identifies common sim-to-real patterns",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -1919,7 +2059,31 @@
         "source_type": "paper",
         "section": "10. SSM World Models",
         "key_finding": "Mamba world model matches DreamerV3 with 40% fewer parameters; SSM recurrence for latent dynamics",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
+        "paper_index_year": 2025
+      }
+    },
+    {
+      "id": "source:arxiv:2410.21845",
+      "type": "source",
+      "label": "Luo et al. 2024",
+      "data": {
+        "title": "Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning",
+        "year": 2024,
+        "authors": [
+          "Jianlan Luo",
+          "Charles Xu",
+          "Jeffrey Wu",
+          "Sergey Levine"
+        ],
+        "arxiv_id": "2410.21845",
+        "source_id": "3a371333-1a74-4e7c-b19c-8a0e2461ed38",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper",
+        "section": "5. RL Robotics Successes",
+        "key_finding": "HIL-SERL: human corrections during RL training enable sub-millimeter precision manipulation",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -1941,7 +2105,7 @@
         "source_type": "paper",
         "section": "4. Model-Based RL",
         "key_finding": "Continuous control from pixels entirely in JAX; end-to-end differentiable",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -1970,7 +2134,7 @@
         "source_type": "paper",
         "section": "1. DP/MPC Foundations",
         "key_finding": "Survey of MPC-RL integration; taxonomy of combination strategies",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -1996,7 +2160,7 @@
         "source_type": "paper",
         "section": "5. RL Robotics Successes",
         "key_finding": "Sim-to-real with foundation models survey",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -2020,7 +2184,7 @@
         "source_type": "paper",
         "section": "10. SSM World Models",
         "key_finding": "SSM world models enable 10x faster imagination rollouts versus RNN-based Dreamer variants",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -2044,7 +2208,7 @@
         "source_type": "paper",
         "section": "7. MPC Solvers",
         "key_finding": "GPU-parallelized MPC with thousands of parallel solves; enables population-based MPC",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -2068,7 +2232,7 @@
         "source_type": "paper",
         "section": "13. Safe RL + Control Theory",
         "key_finding": "Constrained MDP formulation for safe RL; Lagrangian and primal-dual approaches",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -2094,7 +2258,7 @@
         "source_type": "paper",
         "section": "8. Decision-Aware Learning",
         "key_finding": "Calibrates value-aware loss with bias-variance control; more stable than prior VAML methods",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -2144,7 +2308,7 @@
         "source_type": "paper",
         "section": "12. Representation Learning",
         "key_finding": "V-JEPA 2: unified video model for perception, prediction, and action; enables planning from video",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -2166,7 +2330,7 @@
         "source_type": "paper",
         "section": "13. Safe RL + Control Theory",
         "key_finding": "Survey of Lyapunov and barrier function methods for safety guarantees in RL",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -2190,7 +2354,7 @@
         "source_type": "paper",
         "section": "6. MPC-RL Convergence",
         "key_finding": "GPU-accelerated differentiable MPC solver; enables batch optimization at scale",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2025
       }
     },
@@ -2214,8 +2378,432 @@
         "source_type": "paper",
         "section": "6. MPC-RL Convergence",
         "key_finding": "Learns MPC cost from RL demonstrations; applies to humanoid locomotion",
-        "paper_index_status": "downloaded",
+        "paper_index_status": "in-kb",
         "paper_index_year": 2026
+      }
+    },
+    {
+      "id": "source:uuid:fee7c2d7-77ed-4024-ac04-2e78ab49172b",
+      "type": "source",
+      "label": "LeCun 2022",
+      "data": {
+        "title": "A Path Towards Autonomous Machine Intelligence",
+        "year": 2022,
+        "authors": [
+          "Yann LeCun"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": "https://openreview.net/forum?id=BZ5a1r-kVsf",
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "fee7c2d7-77ed-4024-ac04-2e78ab49172b",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:537c1f43-b5ad-45b5-81b7-575ec688b7c7",
+      "type": "source",
+      "label": "Grüne 2019",
+      "data": {
+        "title": "Dynamic Programming, Optimal Control and Model Predictive Control",
+        "year": 2019,
+        "authors": [
+          "Lars Grüne"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": "chapter",
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "537c1f43-b5ad-45b5-81b7-575ec688b7c7",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:9471cc01-47dd-44d4-9362-4ac38908922d",
+      "type": "source",
+      "label": "Grüne 2013",
+      "data": {
+        "title": "Economic Receding Horizon Control Without Terminal Constraints",
+        "year": 2013,
+        "authors": [
+          "Lars Grüne"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "9471cc01-47dd-44d4-9362-4ac38908922d",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:dfd03ab7-1773-4109-b583-ac262a134038",
+      "type": "source",
+      "label": "Wang & Wu 2024",
+      "data": {
+        "title": "Physics-Informed Reinforcement Learning for Optimal Control of Nonlinear Systems",
+        "year": 2024,
+        "authors": [
+          "Yujia Wang",
+          "Zhe Wu"
+        ],
+        "arxiv_id": null,
+        "doi": "10.1002/aic.18542",
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "dfd03ab7-1773-4109-b583-ac262a134038",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:1f0e24e6-1464-484a-ae71-edd4f64d9fd4",
+      "type": "source",
+      "label": "Heirung et al. 2017",
+      "data": {
+        "title": "Dual Adaptive Model Predictive Control",
+        "year": 2017,
+        "authors": [
+          "Tor Aksel N. Heirung",
+          "B. Erik Ydstie",
+          "Bjarne Foss"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "1f0e24e6-1464-484a-ae71-edd4f64d9fd4",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:dcd185b3-959e-41cd-be80-42bbdb445dd3",
+      "type": "source",
+      "label": "Katayama et al. 2023",
+      "data": {
+        "title": "Model Predictive Control of Legged and Humanoid Robots: Models and Algorithms",
+        "year": 2023,
+        "authors": [
+          "Sotaro Katayama",
+          "Masaki Murooka",
+          "Yuichi Tazaki"
+        ],
+        "arxiv_id": null,
+        "doi": "10.1080/01691864.2023.2168134",
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "dcd185b3-959e-41cd-be80-42bbdb445dd3",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:be0628e5-281b-47cc-b0e3-f7aaec596b43",
+      "type": "source",
+      "label": "Mayne et al. 2000",
+      "data": {
+        "title": "Constrained Model Predictive Control: Stability and Optimality",
+        "year": 2000,
+        "authors": [
+          "David Q. Mayne",
+          "James B. Rawlings",
+          "Christopher V. Rao",
+          "Pierre O. M. Scokaert"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "be0628e5-281b-47cc-b0e3-f7aaec596b43",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:c1846ad6-eca1-499b-bfea-5565b0dfe239",
+      "type": "source",
+      "label": "Annaswamy 2023",
+      "data": {
+        "title": "Adaptive Control and Intersections with Reinforcement Learning",
+        "year": 2023,
+        "authors": [
+          "Anuradha M. Annaswamy"
+        ],
+        "arxiv_id": null,
+        "doi": "10.1146/annurev-control-062922-090153",
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "c1846ad6-eca1-499b-bfea-5565b0dfe239",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:e9e2181d-fa90-4c3e-a1f1-530f45912a0d",
+      "type": "source",
+      "label": "Ernst et al. 2009",
+      "data": {
+        "title": "Reinforcement Learning Versus Model Predictive Control: A Comparison on a Power System Problem",
+        "year": 2009,
+        "authors": [
+          "Damien Ernst",
+          "Mevludin Glavic",
+          "Florin Capitanescu",
+          "Louis Wehenkel"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "e9e2181d-fa90-4c3e-a1f1-530f45912a0d",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:3fab55d5-6d43-408a-b277-0d10a5d168ea",
+      "type": "source",
+      "label": "Doyle et al. 1989",
+      "data": {
+        "title": "State-Space Solutions to Standard H2 and H-infinity Control Problems",
+        "year": 1989,
+        "authors": [
+          "John C. Doyle",
+          "Keith Glover",
+          "Pramod P. Khargonekar",
+          "Bruce A. Francis"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "3fab55d5-6d43-408a-b277-0d10a5d168ea",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:c269f2f3-7cfb-4d64-b9b0-69c9ca58d0e5",
+      "type": "source",
+      "label": "Sutton 1991",
+      "data": {
+        "title": "Dyna, an Integrated Architecture for Learning, Planning, and Reacting",
+        "year": 1991,
+        "authors": [
+          "Richard S. Sutton"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "c269f2f3-7cfb-4d64-b9b0-69c9ca58d0e5",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:cc27d13b-23ae-40cd-ae25-de5f7425ec45",
+      "type": "source",
+      "label": "Tsitsiklis & Van Roy 1997",
+      "data": {
+        "title": "An Analysis of Temporal-Difference Learning with Function Approximation",
+        "year": 1997,
+        "authors": [
+          "John N. Tsitsiklis",
+          "Benjamin Van Roy"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "cc27d13b-23ae-40cd-ae25-de5f7425ec45",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:42f236f8-f4d6-481b-a4c2-30d6c9d6d555",
+      "type": "source",
+      "label": "Baird 1995",
+      "data": {
+        "title": "Residual Algorithms: Reinforcement Learning with Function Approximation",
+        "year": 1995,
+        "authors": [
+          "Leemon Baird"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "42f236f8-f4d6-481b-a4c2-30d6c9d6d555",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:a5f9394a-2fcb-458b-beeb-3bc7d2f8a1cc",
+      "type": "source",
+      "label": "Mayne 2014",
+      "data": {
+        "title": "Model Predictive Control: Recent Developments and Future Promise",
+        "year": 2014,
+        "authors": [
+          "David Q. Mayne"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "a5f9394a-2fcb-458b-beeb-3bc7d2f8a1cc",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:523c88f3-7836-4b18-88d4-1772eb3b22f0",
+      "type": "source",
+      "label": "Feldbaum 1961",
+      "data": {
+        "title": "Dual Control Theory",
+        "year": 1961,
+        "authors": [
+          "Alexander A. Feldbaum"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "523c88f3-7836-4b18-88d4-1772eb3b22f0",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:aa3ef87e-89f9-4d67-9f94-58953acfa370",
+      "type": "source",
+      "label": "Bar-Shalom & Tse 1974",
+      "data": {
+        "title": "Dual Effect, Certainty Equivalence, and Separation in Stochastic Control",
+        "year": 1974,
+        "authors": [
+          "Yaakov Bar-Shalom",
+          "Edison Tse"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "aa3ef87e-89f9-4d67-9f94-58953acfa370",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
+      }
+    },
+    {
+      "id": "source:uuid:7d06190f-49e9-411c-83bc-b244b8c7bd6c",
+      "type": "source",
+      "label": "Zames 1981",
+      "data": {
+        "title": "Feedback and Optimal Sensitivity: Model Reference Transformations, Multiplicative Seminorms, and Approximate Inverses",
+        "year": 1981,
+        "authors": [
+          "George Zames"
+        ],
+        "arxiv_id": null,
+        "doi": null,
+        "isbn": null,
+        "url": null,
+        "kind": null,
+        "roles": [
+          "anchor.rl_optimal_control"
+        ],
+        "source_id": "7d06190f-49e9-411c-83bc-b244b8c7bd6c",
+        "kb_status": "ingested",
+        "citation_authority": null,
+        "source_type": "paper"
       }
     },
     {
@@ -2512,6 +3100,24 @@
     },
     {
       "id": "e:3",
+      "source": "source:arxiv:1312.5602",
+      "target": "source:uuid:42f236f8-f4d6-481b-a4c2-30d6c9d6d555",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:4",
+      "source": "source:arxiv:1312.5602",
+      "target": "source:uuid:cc27d13b-23ae-40cd-ae25-de5f7425ec45",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:5",
       "source": "source:arxiv:1502.05477",
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
@@ -2520,7 +3126,34 @@
       }
     },
     {
-      "id": "e:4",
+      "id": "e:6",
+      "source": "source:arxiv:1502.05477",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:7",
+      "source": "source:arxiv:1504.00702",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:8",
+      "source": "source:arxiv:1504.00702",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:9",
       "source": "source:arxiv:1506.02438",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
@@ -2529,7 +3162,7 @@
       }
     },
     {
-      "id": "e:5",
+      "id": "e:10",
       "source": "source:arxiv:1506.02438",
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
@@ -2538,53 +3171,8 @@
       }
     },
     {
-      "id": "e:6",
-      "source": "source:arxiv:1506.02438",
-      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
-      "type": "cites",
-      "data": {
-        "weight": 1.0
-      }
-    },
-    {
-      "id": "e:7",
-      "source": "source:arxiv:1509.02971",
-      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
-      "type": "cites",
-      "data": {
-        "weight": 1.0
-      }
-    },
-    {
-      "id": "e:8",
-      "source": "source:arxiv:1509.06461",
-      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
-      "type": "cites",
-      "data": {
-        "weight": 1.0
-      }
-    },
-    {
-      "id": "e:9",
-      "source": "source:arxiv:1511.05952",
-      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
-      "type": "cites",
-      "data": {
-        "weight": 1.0
-      }
-    },
-    {
-      "id": "e:10",
-      "source": "source:arxiv:1511.06581",
-      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
-      "type": "cites",
-      "data": {
-        "weight": 1.0
-      }
-    },
-    {
       "id": "e:11",
-      "source": "source:arxiv:1511.06581",
+      "source": "source:arxiv:1506.02438",
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
       "data": {
@@ -2593,8 +3181,8 @@
     },
     {
       "id": "e:12",
-      "source": "source:arxiv:1602.01783",
-      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "source": "source:arxiv:1506.02438",
+      "target": "source:arxiv:1509.02971",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2602,8 +3190,8 @@
     },
     {
       "id": "e:13",
-      "source": "source:arxiv:1609.05140",
-      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "source": "source:arxiv:1506.02438",
+      "target": "source:arxiv:1502.05477",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2611,8 +3199,8 @@
     },
     {
       "id": "e:14",
-      "source": "source:arxiv:1706.02275",
-      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "source": "source:arxiv:1509.02971",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2620,8 +3208,8 @@
     },
     {
       "id": "e:15",
-      "source": "source:arxiv:1706.02275",
-      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "source": "source:arxiv:1509.02971",
+      "target": "source:arxiv:1504.00702",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2629,8 +3217,8 @@
     },
     {
       "id": "e:16",
-      "source": "source:arxiv:1709.06560",
-      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "source": "source:arxiv:1509.02971",
+      "target": "source:arxiv:1312.5602",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2638,8 +3226,8 @@
     },
     {
       "id": "e:17",
-      "source": "source:arxiv:1710.02298",
-      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "source": "source:arxiv:1509.02971",
+      "target": "source:arxiv:1502.05477",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2647,8 +3235,8 @@
     },
     {
       "id": "e:18",
-      "source": "source:arxiv:1710.06537",
-      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "source": "source:arxiv:1509.06461",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2656,8 +3244,8 @@
     },
     {
       "id": "e:19",
-      "source": "source:arxiv:1801.01290",
-      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "source": "source:arxiv:1509.06461",
+      "target": "source:uuid:42f236f8-f4d6-481b-a4c2-30d6c9d6d555",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2665,8 +3253,8 @@
     },
     {
       "id": "e:20",
-      "source": "source:arxiv:1802.09477",
-      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "source": "source:arxiv:1509.06461",
+      "target": "source:uuid:cc27d13b-23ae-40cd-ae25-de5f7425ec45",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2674,8 +3262,8 @@
     },
     {
       "id": "e:21",
-      "source": "source:arxiv:1802.09477",
-      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "source": "source:arxiv:1511.05952",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2683,8 +3271,8 @@
     },
     {
       "id": "e:22",
-      "source": "source:arxiv:1802.09477",
-      "target": "source:uuid:9d8aa8b7-6e6f-491e-95b6-6a76afe80f8f",
+      "source": "source:arxiv:1511.05952",
+      "target": "source:arxiv:1511.06581",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2692,8 +3280,8 @@
     },
     {
       "id": "e:23",
-      "source": "source:arxiv:1803.10122",
-      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "source": "source:arxiv:1511.05952",
+      "target": "source:arxiv:1312.5602",
       "type": "cites",
       "data": {
         "weight": 1.0
@@ -2701,7 +3289,7 @@
     },
     {
       "id": "e:24",
-      "source": "source:arxiv:1804.02717",
+      "source": "source:arxiv:1511.06581",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
       "data": {
@@ -2710,6 +3298,681 @@
     },
     {
       "id": "e:25",
+      "source": "source:arxiv:1511.06581",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:26",
+      "source": "source:arxiv:1511.06581",
+      "target": "source:arxiv:1509.06461",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:27",
+      "source": "source:arxiv:1511.06581",
+      "target": "source:arxiv:1506.02438",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:28",
+      "source": "source:arxiv:1602.01783",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:29",
+      "source": "source:arxiv:1602.01783",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:30",
+      "source": "source:arxiv:1602.01783",
+      "target": "source:arxiv:1511.05952",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:31",
+      "source": "source:arxiv:1602.01783",
+      "target": "source:arxiv:1509.06461",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:32",
+      "source": "source:arxiv:1602.01783",
+      "target": "source:arxiv:1511.06581",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:33",
+      "source": "source:arxiv:1602.01783",
+      "target": "source:arxiv:1504.00702",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:34",
+      "source": "source:arxiv:1602.01783",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:35",
+      "source": "source:arxiv:1602.01783",
+      "target": "source:arxiv:1506.02438",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:36",
+      "source": "source:arxiv:1602.01783",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:37",
+      "source": "source:arxiv:1609.05140",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:38",
+      "source": "source:arxiv:1609.05140",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:39",
+      "source": "source:arxiv:1609.05140",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:40",
+      "source": "source:arxiv:1703.01161",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:41",
+      "source": "source:arxiv:1703.01161",
+      "target": "source:arxiv:1504.00702",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:42",
+      "source": "source:arxiv:1703.01161",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:43",
+      "source": "source:arxiv:1703.01161",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:44",
+      "source": "source:arxiv:1703.03400",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:45",
+      "source": "source:arxiv:1703.06907",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:46",
+      "source": "source:arxiv:1706.02275",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:47",
+      "source": "source:arxiv:1706.02275",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:48",
+      "source": "source:arxiv:1706.02275",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:49",
+      "source": "source:arxiv:1706.02275",
+      "target": "source:arxiv:1504.00702",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:50",
+      "source": "source:arxiv:1707.01495",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:51",
+      "source": "source:arxiv:1707.01495",
+      "target": "source:arxiv:1511.05952",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:52",
+      "source": "source:arxiv:1707.01495",
+      "target": "source:arxiv:1504.00702",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:53",
+      "source": "source:arxiv:1707.01495",
+      "target": "source:arxiv:1703.01161",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:54",
+      "source": "source:arxiv:1707.01495",
+      "target": "source:arxiv:1703.06907",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:55",
+      "source": "source:arxiv:1707.06347",
+      "target": "source:arxiv:1506.02438",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:56",
+      "source": "source:arxiv:1707.06347",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:57",
+      "source": "source:arxiv:1707.06347",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:58",
+      "source": "source:arxiv:1709.06560",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:59",
+      "source": "source:arxiv:1709.06560",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:60",
+      "source": "source:arxiv:1709.06560",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:61",
+      "source": "source:arxiv:1709.06560",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:62",
+      "source": "source:arxiv:1709.06560",
+      "target": "source:arxiv:1506.02438",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:63",
+      "source": "source:arxiv:1709.06560",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:64",
+      "source": "source:arxiv:1709.06560",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:65",
+      "source": "source:arxiv:1710.02298",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:66",
+      "source": "source:arxiv:1710.02298",
+      "target": "source:arxiv:1511.05952",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:67",
+      "source": "source:arxiv:1710.02298",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:68",
+      "source": "source:arxiv:1710.02298",
+      "target": "source:arxiv:1703.01161",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:69",
+      "source": "source:arxiv:1710.02298",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:70",
+      "source": "source:arxiv:1710.02298",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:71",
+      "source": "source:arxiv:1710.06537",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:72",
+      "source": "source:arxiv:1710.06537",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:73",
+      "source": "source:arxiv:1710.06537",
+      "target": "source:arxiv:1707.01495",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:74",
+      "source": "source:arxiv:1710.06537",
+      "target": "source:arxiv:1504.00702",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:75",
+      "source": "source:arxiv:1710.06537",
+      "target": "source:arxiv:1703.06907",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:76",
+      "source": "source:arxiv:1801.01290",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:77",
+      "source": "source:arxiv:1801.01290",
+      "target": "source:arxiv:1709.06560",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:78",
+      "source": "source:arxiv:1801.01290",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:79",
+      "source": "source:arxiv:1801.01290",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:80",
+      "source": "source:arxiv:1801.01290",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:81",
+      "source": "source:arxiv:1801.01290",
+      "target": "source:arxiv:1802.09477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:82",
+      "source": "source:arxiv:1801.01290",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:83",
+      "source": "source:arxiv:1801.01290",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:84",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:85",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:86",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:uuid:9d8aa8b7-6e6f-491e-95b6-6a76afe80f8f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:87",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:arxiv:1709.06560",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:88",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:89",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:90",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:arxiv:1801.01290",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:91",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:92",
+      "source": "source:arxiv:1802.09477",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:93",
+      "source": "source:arxiv:1803.10122",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:94",
+      "source": "source:arxiv:1803.10122",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:95",
+      "source": "source:arxiv:1803.11485",
+      "target": "source:arxiv:1706.02275",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:96",
+      "source": "source:arxiv:1804.02717",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:97",
+      "source": "source:arxiv:1804.02717",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:98",
+      "source": "source:arxiv:1804.02717",
+      "target": "source:arxiv:1506.02438",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:99",
+      "source": "source:arxiv:1804.02717",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:100",
       "source": "source:arxiv:1805.00909",
       "target": "source:uuid:9ff4349b-11de-47b4-a3b7-19adc04d0970",
       "type": "cites",
@@ -2718,7 +3981,88 @@
       }
     },
     {
-      "id": "e:26",
+      "id": "e:101",
+      "source": "source:arxiv:1805.00909",
+      "target": "source:arxiv:1801.01290",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:102",
+      "source": "source:arxiv:1805.00909",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:103",
+      "source": "source:arxiv:1805.08296",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:104",
+      "source": "source:arxiv:1805.08296",
+      "target": "source:arxiv:1707.01495",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:105",
+      "source": "source:arxiv:1805.08296",
+      "target": "source:arxiv:1703.01161",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:106",
+      "source": "source:arxiv:1805.08296",
+      "target": "source:arxiv:1802.09477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:107",
+      "source": "source:arxiv:1805.08296",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:108",
+      "source": "source:arxiv:1805.12114",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:109",
+      "source": "source:arxiv:1805.12114",
+      "target": "source:arxiv:1801.01290",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:110",
       "source": "source:arxiv:1806.09460",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
@@ -2727,7 +4071,7 @@
       }
     },
     {
-      "id": "e:27",
+      "id": "e:111",
       "source": "source:arxiv:1806.09460",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2736,7 +4080,7 @@
       }
     },
     {
-      "id": "e:28",
+      "id": "e:112",
       "source": "source:arxiv:1806.09460",
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
@@ -2745,7 +4089,115 @@
       }
     },
     {
-      "id": "e:29",
+      "id": "e:113",
+      "source": "source:arxiv:1806.09460",
+      "target": "source:arxiv:1709.06560",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:114",
+      "source": "source:arxiv:1806.09460",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:115",
+      "source": "source:arxiv:1806.09460",
+      "target": "source:arxiv:1506.02438",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:116",
+      "source": "source:arxiv:1806.09460",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:117",
+      "source": "source:arxiv:1808.00177",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:118",
+      "source": "source:arxiv:1808.00177",
+      "target": "source:arxiv:1710.06537",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:119",
+      "source": "source:arxiv:1808.00177",
+      "target": "source:arxiv:1506.02438",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:120",
+      "source": "source:arxiv:1808.00177",
+      "target": "source:arxiv:1703.06907",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:121",
+      "source": "source:arxiv:1810.13400",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:122",
+      "source": "source:arxiv:1810.13400",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:123",
+      "source": "source:arxiv:1810.13400",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:124",
+      "source": "source:arxiv:1810.13400",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:125",
       "source": "source:arxiv:1811.00168",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
@@ -2754,7 +4206,7 @@
       }
     },
     {
-      "id": "e:30",
+      "id": "e:126",
       "source": "source:arxiv:1811.00168",
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
@@ -2763,7 +4215,7 @@
       }
     },
     {
-      "id": "e:31",
+      "id": "e:127",
       "source": "source:arxiv:1811.00168",
       "target": "source:uuid:036ec0aa-4a4f-498a-ba75-b3c24f2255ea",
       "type": "cites",
@@ -2772,7 +4224,34 @@
       }
     },
     {
-      "id": "e:32",
+      "id": "e:128",
+      "source": "source:arxiv:1811.04551",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:129",
+      "source": "source:arxiv:1811.04551",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:130",
+      "source": "source:arxiv:1811.04551",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:131",
       "source": "source:arxiv:1812.05905",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
@@ -2781,7 +4260,313 @@
       }
     },
     {
-      "id": "e:33",
+      "id": "e:132",
+      "source": "source:arxiv:1812.05905",
+      "target": "source:arxiv:1709.06560",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:133",
+      "source": "source:arxiv:1812.05905",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:134",
+      "source": "source:arxiv:1812.05905",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:135",
+      "source": "source:arxiv:1812.05905",
+      "target": "source:arxiv:1801.01290",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:136",
+      "source": "source:arxiv:1812.05905",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:137",
+      "source": "source:arxiv:1812.05905",
+      "target": "source:arxiv:1802.09477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:138",
+      "source": "source:arxiv:1812.05905",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:139",
+      "source": "source:arxiv:1812.05905",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:140",
+      "source": "source:arxiv:1904.04152",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:141",
+      "source": "source:arxiv:1904.04152",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:142",
+      "source": "source:arxiv:1904.04152",
+      "target": "source:uuid:be0628e5-281b-47cc-b0e3-f7aaec596b43",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:143",
+      "source": "source:arxiv:1906.04005",
+      "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:144",
+      "source": "source:arxiv:1906.04005",
+      "target": "source:arxiv:1810.13400",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:145",
+      "source": "source:arxiv:1906.04005",
+      "target": "source:uuid:9471cc01-47dd-44d4-9362-4ac38908922d",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:146",
+      "source": "source:arxiv:1906.04005",
+      "target": "source:uuid:a5f9394a-2fcb-458b-beeb-3bc7d2f8a1cc",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:147",
+      "source": "source:arxiv:1906.08253",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:148",
+      "source": "source:arxiv:1906.08253",
+      "target": "source:arxiv:1801.01290",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:149",
+      "source": "source:arxiv:1906.08253",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:150",
+      "source": "source:arxiv:1906.08253",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:151",
+      "source": "source:arxiv:1910.07113",
+      "target": "source:arxiv:1808.00177",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:152",
+      "source": "source:arxiv:1910.07113",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:153",
+      "source": "source:arxiv:1910.07113",
+      "target": "source:arxiv:1703.03400",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:154",
+      "source": "source:arxiv:1910.07113",
+      "target": "source:arxiv:1710.06537",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:155",
+      "source": "source:arxiv:1910.07113",
+      "target": "source:arxiv:1712.01815",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:156",
+      "source": "source:arxiv:1910.07113",
+      "target": "source:arxiv:1812.05905",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:157",
+      "source": "source:arxiv:1910.07113",
+      "target": "source:arxiv:1703.06907",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:158",
+      "source": "source:arxiv:1910.12047",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:159",
+      "source": "source:arxiv:1910.12047",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:160",
+      "source": "source:arxiv:1910.12047",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:161",
+      "source": "source:arxiv:1910.12047",
+      "target": "source:arxiv:1703.03400",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:162",
+      "source": "source:arxiv:1910.12047",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:163",
+      "source": "source:arxiv:1910.12047",
+      "target": "source:arxiv:1904.04152",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:164",
+      "source": "source:arxiv:1911.08265",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:165",
+      "source": "source:arxiv:1911.08265",
+      "target": "source:arxiv:1811.04551",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:166",
       "source": "source:arxiv:1912.06680",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2790,7 +4575,43 @@
       }
     },
     {
-      "id": "e:34",
+      "id": "e:167",
+      "source": "source:arxiv:1912.06680",
+      "target": "source:arxiv:1910.07113",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:168",
+      "source": "source:arxiv:1912.06680",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:169",
+      "source": "source:arxiv:1912.06680",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:170",
+      "source": "source:arxiv:1912.06680",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:171",
       "source": "source:arxiv:2002.04523",
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
@@ -2799,7 +4620,52 @@
       }
     },
     {
-      "id": "e:35",
+      "id": "e:172",
+      "source": "source:arxiv:2002.04523",
+      "target": "source:arxiv:1906.08253",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:173",
+      "source": "source:arxiv:2002.04523",
+      "target": "source:arxiv:1811.04551",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:174",
+      "source": "source:arxiv:2002.04523",
+      "target": "source:arxiv:1810.13400",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:175",
+      "source": "source:arxiv:2002.04523",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:176",
+      "source": "source:arxiv:2002.04523",
+      "target": "source:uuid:c269f2f3-7cfb-4d64-b9b0-69c9ca58d0e5",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:177",
       "source": "source:arxiv:2004.04136",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
@@ -2808,7 +4674,79 @@
       }
     },
     {
-      "id": "e:36",
+      "id": "e:178",
+      "source": "source:arxiv:2004.04136",
+      "target": "source:arxiv:1710.02298",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:179",
+      "source": "source:arxiv:2004.04136",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:180",
+      "source": "source:arxiv:2004.04136",
+      "target": "source:arxiv:1511.05952",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:181",
+      "source": "source:arxiv:2004.04136",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:182",
+      "source": "source:arxiv:2004.04136",
+      "target": "source:arxiv:1511.06581",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:183",
+      "source": "source:arxiv:2004.04136",
+      "target": "source:arxiv:1811.04551",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:184",
+      "source": "source:arxiv:2004.04136",
+      "target": "source:arxiv:1812.05905",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:185",
+      "source": "source:arxiv:2004.04136",
+      "target": "source:arxiv:1911.08265",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:186",
       "source": "source:arxiv:2005.01643",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
@@ -2817,7 +4755,7 @@
       }
     },
     {
-      "id": "e:37",
+      "id": "e:187",
       "source": "source:arxiv:2005.01643",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2826,7 +4764,7 @@
       }
     },
     {
-      "id": "e:38",
+      "id": "e:188",
       "source": "source:arxiv:2005.01643",
       "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "type": "cites",
@@ -2835,7 +4773,169 @@
       }
     },
     {
-      "id": "e:39",
+      "id": "e:189",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:190",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:191",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:arxiv:1906.08253",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:192",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:arxiv:2006.04779",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:193",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:arxiv:1811.04551",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:194",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:arxiv:1801.01290",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:195",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:196",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:197",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:198",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:arxiv:1805.00909",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:199",
+      "source": "source:arxiv:2005.01643",
+      "target": "source:uuid:c269f2f3-7cfb-4d64-b9b0-69c9ca58d0e5",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:200",
+      "source": "source:arxiv:2005.12729",
+      "target": "source:arxiv:1709.06560",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:201",
+      "source": "source:arxiv:2005.12729",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:202",
+      "source": "source:arxiv:2005.12729",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:203",
+      "source": "source:arxiv:2005.12729",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:204",
+      "source": "source:arxiv:2006.04779",
+      "target": "source:arxiv:2005.01643",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:205",
+      "source": "source:arxiv:2006.04779",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:206",
+      "source": "source:arxiv:2006.04779",
+      "target": "source:arxiv:1802.09477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:207",
       "source": "source:arxiv:2006.07869",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2844,7 +4944,205 @@
       }
     },
     {
-      "id": "e:40",
+      "id": "e:208",
+      "source": "source:arxiv:2006.07869",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:209",
+      "source": "source:arxiv:2006.07869",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:210",
+      "source": "source:arxiv:2006.07869",
+      "target": "source:arxiv:1803.11485",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:211",
+      "source": "source:arxiv:2006.07869",
+      "target": "source:arxiv:1706.02275",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:212",
+      "source": "source:arxiv:2006.07869",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:213",
+      "source": "source:arxiv:2010.02193",
+      "target": "source:arxiv:1511.05952",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:214",
+      "source": "source:arxiv:2010.02193",
+      "target": "source:arxiv:1506.02438",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:215",
+      "source": "source:arxiv:2010.02193",
+      "target": "source:arxiv:1911.08265",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:216",
+      "source": "source:arxiv:2010.02193",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:217",
+      "source": "source:arxiv:2010.02193",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:218",
+      "source": "source:arxiv:2010.11251",
+      "target": "source:arxiv:1910.07113",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:219",
+      "source": "source:arxiv:2010.11251",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:220",
+      "source": "source:arxiv:2011.03506",
+      "target": "source:arxiv:1911.08265",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:221",
+      "source": "source:arxiv:2103.01955",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:222",
+      "source": "source:arxiv:2103.01955",
+      "target": "source:arxiv:1803.11485",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:223",
+      "source": "source:arxiv:2103.01955",
+      "target": "source:arxiv:1706.02275",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:224",
+      "source": "source:arxiv:2103.01955",
+      "target": "source:arxiv:1912.06680",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:225",
+      "source": "source:arxiv:2106.01345",
+      "target": "source:arxiv:1906.08253",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:226",
+      "source": "source:arxiv:2106.01345",
+      "target": "source:arxiv:2006.04779",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:227",
+      "source": "source:arxiv:2106.01345",
+      "target": "source:arxiv:2005.01643",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:228",
+      "source": "source:arxiv:2106.01345",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:229",
+      "source": "source:arxiv:2106.01345",
+      "target": "source:arxiv:2010.02193",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:230",
       "source": "source:arxiv:2107.09645",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2853,7 +5151,232 @@
       }
     },
     {
-      "id": "e:41",
+      "id": "e:231",
+      "source": "source:arxiv:2107.09645",
+      "target": "source:arxiv:1710.02298",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:232",
+      "source": "source:arxiv:2107.09645",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:233",
+      "source": "source:arxiv:2107.09645",
+      "target": "source:arxiv:2004.04136",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:234",
+      "source": "source:arxiv:2107.09645",
+      "target": "source:arxiv:1811.04551",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:235",
+      "source": "source:arxiv:2107.09645",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:236",
+      "source": "source:arxiv:2107.09645",
+      "target": "source:arxiv:1812.05905",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:237",
+      "source": "source:arxiv:2107.09645",
+      "target": "source:arxiv:1802.09477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:238",
+      "source": "source:arxiv:2107.09645",
+      "target": "source:arxiv:2010.02193",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:239",
+      "source": "source:arxiv:2107.09645",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:240",
+      "source": "source:arxiv:2110.06169",
+      "target": "source:arxiv:2106.01345",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:241",
+      "source": "source:arxiv:2110.06169",
+      "target": "source:arxiv:2006.04779",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:242",
+      "source": "source:arxiv:2201.08117",
+      "target": "source:arxiv:2010.11251",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:243",
+      "source": "source:arxiv:2201.08117",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:244",
+      "source": "source:arxiv:2201.08117",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:245",
+      "source": "source:arxiv:2201.08117",
+      "target": "source:arxiv:1804.02717",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:246",
+      "source": "source:arxiv:2203.04955",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:247",
+      "source": "source:arxiv:2203.04955",
+      "target": "source:arxiv:1906.08253",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:248",
+      "source": "source:arxiv:2203.04955",
+      "target": "source:arxiv:2004.04136",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:249",
+      "source": "source:arxiv:2203.04955",
+      "target": "source:arxiv:2107.09645",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:250",
+      "source": "source:arxiv:2203.04955",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:251",
+      "source": "source:arxiv:2203.04955",
+      "target": "source:arxiv:1812.05905",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:252",
+      "source": "source:arxiv:2203.04955",
+      "target": "source:arxiv:1802.09477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:253",
+      "source": "source:arxiv:2203.04955",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:254",
+      "source": "source:arxiv:2203.04955",
+      "target": "source:arxiv:2010.02193",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:255",
+      "source": "source:arxiv:2203.04955",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:256",
       "source": "source:arxiv:2204.01464",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2862,7 +5385,43 @@
       }
     },
     {
-      "id": "e:42",
+      "id": "e:257",
+      "source": "source:arxiv:2204.01464",
+      "target": "source:arxiv:1801.01290",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:258",
+      "source": "source:arxiv:2204.01464",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:259",
+      "source": "source:arxiv:2204.01464",
+      "target": "source:arxiv:2002.04523",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:260",
+      "source": "source:arxiv:2204.01464",
+      "target": "source:arxiv:2011.03506",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:261",
       "source": "source:arxiv:2205.10330",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2871,7 +5430,826 @@
       }
     },
     {
-      "id": "e:43",
+      "id": "e:262",
+      "source": "source:arxiv:2205.10330",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:263",
+      "source": "source:arxiv:2205.10330",
+      "target": "source:arxiv:1801.01290",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:264",
+      "source": "source:arxiv:2205.10330",
+      "target": "source:arxiv:1803.11485",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:265",
+      "source": "source:arxiv:2205.10330",
+      "target": "source:arxiv:2004.07584",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:266",
+      "source": "source:arxiv:2205.10330",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:267",
+      "source": "source:arxiv:2205.10330",
+      "target": "source:arxiv:1912.06680",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:268",
+      "source": "source:arxiv:2205.10330",
+      "target": "source:uuid:be0628e5-281b-47cc-b0e3-f7aaec596b43",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:269",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1910.07113",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:270",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1703.03400",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:271",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:272",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1906.08253",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:273",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1707.01495",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:274",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:2006.04779",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:275",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1811.04551",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:276",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1801.01290",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:277",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:2201.08117",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:278",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1712.01815",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:279",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:2005.01643",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:280",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:281",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:2002.04523",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:282",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1911.08265",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:283",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:284",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:285",
+      "source": "source:arxiv:2206.09328",
+      "target": "source:uuid:c269f2f3-7cfb-4d64-b9b0-69c9ca58d0e5",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:286",
+      "source": "source:arxiv:2209.00588",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:287",
+      "source": "source:arxiv:2209.00588",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:288",
+      "source": "source:arxiv:2209.00588",
+      "target": "source:arxiv:2106.01345",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:289",
+      "source": "source:arxiv:2209.00588",
+      "target": "source:arxiv:2004.04136",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:290",
+      "source": "source:arxiv:2209.00588",
+      "target": "source:arxiv:1602.01783",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:291",
+      "source": "source:arxiv:2209.00588",
+      "target": "source:arxiv:1912.06680",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:292",
+      "source": "source:arxiv:2210.04302",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:293",
+      "source": "source:arxiv:2210.04302",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:294",
+      "source": "source:arxiv:2210.04302",
+      "target": "source:arxiv:1904.04152",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:295",
+      "source": "source:arxiv:2211.16300",
+      "target": "source:arxiv:2211.16300",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:296",
+      "source": "source:arxiv:2301.04104",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:297",
+      "source": "source:arxiv:2301.04104",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:298",
+      "source": "source:arxiv:2301.04104",
+      "target": "source:arxiv:1511.05952",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:299",
+      "source": "source:arxiv:2301.04104",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:300",
+      "source": "source:arxiv:2301.04104",
+      "target": "source:arxiv:2107.09645",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:301",
+      "source": "source:arxiv:2301.04104",
+      "target": "source:arxiv:1811.04551",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:302",
+      "source": "source:arxiv:2301.04104",
+      "target": "source:arxiv:1911.08265",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:303",
+      "source": "source:arxiv:2301.04104",
+      "target": "source:arxiv:2010.02193",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:304",
+      "source": "source:arxiv:2301.04104",
+      "target": "source:uuid:c269f2f3-7cfb-4d64-b9b0-69c9ca58d0e5",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:305",
+      "source": "source:arxiv:2301.08243",
+      "target": "source:uuid:fee7c2d7-77ed-4024-ac04-2e78ab49172b",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:306",
+      "source": "source:arxiv:2303.03381",
+      "target": "source:arxiv:2010.11251",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:307",
+      "source": "source:arxiv:2303.03381",
+      "target": "source:arxiv:1910.07113",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:308",
+      "source": "source:arxiv:2303.03381",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:309",
+      "source": "source:arxiv:2303.03381",
+      "target": "source:arxiv:1703.06907",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:310",
+      "source": "source:arxiv:2306.09852",
+      "target": "source:arxiv:2010.11251",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:311",
+      "source": "source:arxiv:2306.09852",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:312",
+      "source": "source:arxiv:2306.09852",
+      "target": "source:arxiv:2201.08117",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:313",
+      "source": "source:arxiv:2306.09852",
+      "target": "source:arxiv:1810.13400",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:314",
+      "source": "source:arxiv:2306.09852",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:315",
+      "source": "source:arxiv:2306.09852",
+      "target": "source:arxiv:2203.04955",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:316",
+      "source": "source:arxiv:2306.09852",
+      "target": "source:arxiv:1904.04152",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:317",
+      "source": "source:arxiv:2306.09852",
+      "target": "source:uuid:fee7c2d7-77ed-4024-ac04-2e78ab49172b",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:318",
+      "source": "source:arxiv:2307.02064",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:319",
+      "source": "source:arxiv:2307.02064",
+      "target": "source:arxiv:2301.04104",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:320",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:2310.16828",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:321",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:322",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:323",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:1906.08253",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:324",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:2006.04779",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:325",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:2206.09328",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:326",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:1712.01815",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:327",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:2005.01643",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:328",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:329",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:2301.04104",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:330",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:1812.05905",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:331",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:2011.03506",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:332",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:2009.05228",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:333",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:2204.01464",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:334",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:1802.09477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:335",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:336",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:2203.04955",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:337",
+      "source": "source:arxiv:2310.06253",
+      "target": "source:arxiv:1805.00909",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:338",
+      "source": "source:arxiv:2310.16828",
+      "target": "source:arxiv:2004.04136",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:339",
+      "source": "source:arxiv:2310.16828",
+      "target": "source:arxiv:2107.09645",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:340",
+      "source": "source:arxiv:2310.16828",
+      "target": "source:arxiv:2301.04104",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:341",
+      "source": "source:arxiv:2310.16828",
+      "target": "source:arxiv:1812.05905",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:342",
+      "source": "source:arxiv:2310.16828",
+      "target": "source:arxiv:2002.04523",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:343",
+      "source": "source:arxiv:2310.16828",
+      "target": "source:arxiv:2203.04955",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:344",
+      "source": "source:arxiv:2310.16828",
+      "target": "source:arxiv:1912.06680",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:345",
+      "source": "source:arxiv:2312.15521",
+      "target": "source:arxiv:1810.13400",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:346",
+      "source": "source:arxiv:2312.15521",
+      "target": "source:arxiv:1904.04152",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:347",
+      "source": "source:arxiv:2403.04253",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:348",
+      "source": "source:arxiv:2403.04253",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:349",
+      "source": "source:arxiv:2403.04253",
+      "target": "source:arxiv:2301.04104",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:350",
+      "source": "source:arxiv:2403.04253",
+      "target": "source:arxiv:2307.02064",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:351",
+      "source": "source:arxiv:2403.04253",
+      "target": "source:arxiv:2002.04523",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:352",
+      "source": "source:arxiv:2403.04253",
+      "target": "source:arxiv:2010.02193",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:353",
       "source": "source:arxiv:2404.08471",
       "target": "source:arxiv:2301.08243",
       "type": "cites",
@@ -2880,7 +6258,16 @@
       }
     },
     {
-      "id": "e:44",
+      "id": "e:354",
+      "source": "source:arxiv:2404.08471",
+      "target": "source:uuid:fee7c2d7-77ed-4024-ac04-2e78ab49172b",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:355",
       "source": "source:arxiv:2406.00592",
       "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
       "type": "cites",
@@ -2889,7 +6276,7 @@
       }
     },
     {
-      "id": "e:45",
+      "id": "e:356",
       "source": "source:arxiv:2406.00592",
       "target": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
       "type": "cites",
@@ -2898,7 +6285,7 @@
       }
     },
     {
-      "id": "e:46",
+      "id": "e:357",
       "source": "source:arxiv:2406.00592",
       "target": "source:uuid:350bc42b-735c-438c-b1ea-63abad1fbc59",
       "type": "cites",
@@ -2907,7 +6294,205 @@
       }
     },
     {
-      "id": "e:47",
+      "id": "e:358",
+      "source": "source:arxiv:2406.00592",
+      "target": "source:arxiv:1712.01815",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:359",
+      "source": "source:arxiv:2406.00592",
+      "target": "source:arxiv:1904.04152",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:360",
+      "source": "source:arxiv:2406.00592",
+      "target": "source:uuid:a5f9394a-2fcb-458b-beeb-3bc7d2f8a1cc",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:361",
+      "source": "source:arxiv:2406.00592",
+      "target": "source:uuid:be0628e5-281b-47cc-b0e3-f7aaec596b43",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:362",
+      "source": "source:arxiv:2408.03539",
+      "target": "source:arxiv:2010.11251",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:363",
+      "source": "source:arxiv:2408.03539",
+      "target": "source:arxiv:2310.16828",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:364",
+      "source": "source:arxiv:2408.03539",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:365",
+      "source": "source:arxiv:2408.03539",
+      "target": "source:arxiv:2201.08117",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:366",
+      "source": "source:arxiv:2410.08893",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:367",
+      "source": "source:arxiv:2410.08893",
+      "target": "source:arxiv:2403.04253",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:368",
+      "source": "source:arxiv:2410.08893",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:369",
+      "source": "source:arxiv:2410.08893",
+      "target": "source:arxiv:2106.01345",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:370",
+      "source": "source:arxiv:2410.08893",
+      "target": "source:arxiv:1801.01290",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:371",
+      "source": "source:arxiv:2410.08893",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:372",
+      "source": "source:arxiv:2410.08893",
+      "target": "source:arxiv:2301.04104",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:373",
+      "source": "source:arxiv:2410.08893",
+      "target": "source:arxiv:2307.02064",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:374",
+      "source": "source:arxiv:2410.08893",
+      "target": "source:arxiv:1912.06680",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:375",
+      "source": "source:arxiv:2410.21845",
+      "target": "source:arxiv:2010.11251",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:376",
+      "source": "source:arxiv:2410.21845",
+      "target": "source:arxiv:1509.06461",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:377",
+      "source": "source:arxiv:2410.21845",
+      "target": "source:arxiv:1801.01290",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:378",
+      "source": "source:arxiv:2410.21845",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:379",
+      "source": "source:arxiv:2502.00021",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:380",
       "source": "source:arxiv:2502.02133",
       "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
       "type": "cites",
@@ -2916,7 +6501,7 @@
       }
     },
     {
-      "id": "e:48",
+      "id": "e:381",
       "source": "source:arxiv:2502.02133",
       "target": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
       "type": "cites",
@@ -2925,7 +6510,295 @@
       }
     },
     {
-      "id": "e:49",
+      "id": "e:382",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:383",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:arxiv:1703.03400",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:384",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:arxiv:1712.01815",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:385",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:arxiv:1810.13400",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:386",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:arxiv:1802.09477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:387",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:388",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:389",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:uuid:9471cc01-47dd-44d4-9362-4ac38908922d",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:390",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:uuid:be0628e5-281b-47cc-b0e3-f7aaec596b43",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:391",
+      "source": "source:arxiv:2502.02133",
+      "target": "source:uuid:e9e2181d-fa90-4c3e-a1f1-530f45912a0d",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:392",
+      "source": "source:arxiv:2502.13187",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:393",
+      "source": "source:arxiv:2502.13187",
+      "target": "source:arxiv:1910.07113",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:394",
+      "source": "source:arxiv:2502.13187",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:395",
+      "source": "source:arxiv:2502.13187",
+      "target": "source:arxiv:1703.06907",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:396",
+      "source": "source:arxiv:2502.20168",
+      "target": "source:arxiv:2010.11251",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:397",
+      "source": "source:arxiv:2502.20168",
+      "target": "source:arxiv:1509.02971",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:398",
+      "source": "source:arxiv:2502.20168",
+      "target": "source:arxiv:1707.06347",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:399",
+      "source": "source:arxiv:2502.20168",
+      "target": "source:arxiv:1906.08253",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:400",
+      "source": "source:arxiv:2502.20168",
+      "target": "source:arxiv:2004.04136",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:401",
+      "source": "source:arxiv:2502.20168",
+      "target": "source:arxiv:2301.04104",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:402",
+      "source": "source:arxiv:2502.20168",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:403",
+      "source": "source:arxiv:2502.20168",
+      "target": "source:arxiv:2203.04955",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:404",
+      "source": "source:arxiv:2505.08238",
+      "target": "source:arxiv:2310.16828",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:405",
+      "source": "source:arxiv:2505.17342",
+      "target": "source:arxiv:1802.09477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:406",
+      "source": "source:arxiv:2505.22772",
+      "target": "source:arxiv:1906.08253",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:407",
+      "source": "source:arxiv:2505.22772",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:408",
+      "source": "source:arxiv:2505.22772",
+      "target": "source:arxiv:2002.04523",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:409",
+      "source": "source:arxiv:2505.22772",
+      "target": "source:arxiv:2011.03506",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:410",
+      "source": "source:arxiv:2505.22772",
+      "target": "source:arxiv:2204.01464",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:411",
+      "source": "source:arxiv:2505.22772",
+      "target": "source:arxiv:1802.09477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:412",
+      "source": "source:arxiv:2505.22772",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:413",
+      "source": "source:arxiv:2505.22772",
+      "target": "source:arxiv:2203.04955",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:414",
       "source": "source:arxiv:2506.09985",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
       "type": "cites",
@@ -2934,7 +6807,7 @@
       }
     },
     {
-      "id": "e:50",
+      "id": "e:415",
       "source": "source:arxiv:2506.09985",
       "target": "source:arxiv:2301.08243",
       "type": "cites",
@@ -2943,9 +6816,405 @@
       }
     },
     {
-      "id": "e:51",
+      "id": "e:416",
+      "source": "source:arxiv:2506.09985",
+      "target": "source:arxiv:2010.11251",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:417",
+      "source": "source:arxiv:2506.09985",
+      "target": "source:arxiv:2310.16828",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:418",
+      "source": "source:arxiv:2506.09985",
+      "target": "source:arxiv:2403.04253",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:419",
+      "source": "source:arxiv:2506.09985",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:420",
+      "source": "source:arxiv:2506.09985",
+      "target": "source:arxiv:1707.01495",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:421",
+      "source": "source:arxiv:2506.09985",
+      "target": "source:arxiv:1811.04551",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:422",
+      "source": "source:arxiv:2506.09985",
+      "target": "source:arxiv:2301.04104",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:423",
+      "source": "source:arxiv:2506.09985",
+      "target": "source:arxiv:2203.04955",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:424",
+      "source": "source:arxiv:2506.09985",
+      "target": "source:arxiv:2404.08471",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:425",
+      "source": "source:arxiv:2506.09985",
+      "target": "source:uuid:fee7c2d7-77ed-4024-ac04-2e78ab49172b",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:426",
+      "source": "source:arxiv:2508.09128",
+      "target": "source:arxiv:1312.5602",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:427",
+      "source": "source:arxiv:2508.09128",
+      "target": "source:arxiv:2205.10330",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:428",
+      "source": "source:arxiv:2508.09128",
+      "target": "source:arxiv:2004.07584",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:429",
+      "source": "source:arxiv:2510.06179",
+      "target": "source:arxiv:1810.13400",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:430",
+      "source": "source:arxiv:2603.28243",
+      "target": "source:arxiv:1904.04152",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:431",
+      "source": "source:arxiv:2603.28243",
+      "target": "source:uuid:dcd185b3-959e-41cd-be80-42bbdb445dd3",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:432",
+      "source": "source:uuid:fee7c2d7-77ed-4024-ac04-2e78ab49172b",
+      "target": "source:uuid:fb0b20ac-254d-4ae4-98cf-a270ed15a5a5",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:433",
+      "source": "source:uuid:fee7c2d7-77ed-4024-ac04-2e78ab49172b",
+      "target": "source:arxiv:1803.10122",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:434",
+      "source": "source:uuid:fee7c2d7-77ed-4024-ac04-2e78ab49172b",
+      "target": "source:arxiv:1811.04551",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:435",
+      "source": "source:uuid:fee7c2d7-77ed-4024-ac04-2e78ab49172b",
+      "target": "source:arxiv:1805.12114",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:436",
+      "source": "source:uuid:fee7c2d7-77ed-4024-ac04-2e78ab49172b",
+      "target": "source:arxiv:2010.02193",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:437",
+      "source": "source:uuid:537c1f43-b5ad-45b5-81b7-575ec688b7c7",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:438",
+      "source": "source:uuid:537c1f43-b5ad-45b5-81b7-575ec688b7c7",
+      "target": "source:uuid:9471cc01-47dd-44d4-9362-4ac38908922d",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:439",
+      "source": "source:uuid:537c1f43-b5ad-45b5-81b7-575ec688b7c7",
+      "target": "source:uuid:be0628e5-281b-47cc-b0e3-f7aaec596b43",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:440",
+      "source": "source:uuid:9471cc01-47dd-44d4-9362-4ac38908922d",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:441",
+      "source": "source:uuid:9471cc01-47dd-44d4-9362-4ac38908922d",
+      "target": "source:uuid:be0628e5-281b-47cc-b0e3-f7aaec596b43",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:442",
+      "source": "source:uuid:1f0e24e6-1464-484a-ae71-edd4f64d9fd4",
+      "target": "source:uuid:a5f9394a-2fcb-458b-beeb-3bc7d2f8a1cc",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:443",
+      "source": "source:uuid:1f0e24e6-1464-484a-ae71-edd4f64d9fd4",
+      "target": "source:uuid:aa3ef87e-89f9-4d67-9f94-58953acfa370",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:444",
+      "source": "source:uuid:1f0e24e6-1464-484a-ae71-edd4f64d9fd4",
+      "target": "source:uuid:be0628e5-281b-47cc-b0e3-f7aaec596b43",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:445",
+      "source": "source:uuid:dcd185b3-959e-41cd-be80-42bbdb445dd3",
+      "target": "source:uuid:537c1f43-b5ad-45b5-81b7-575ec688b7c7",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:446",
+      "source": "source:uuid:be0628e5-281b-47cc-b0e3-f7aaec596b43",
+      "target": "source:uuid:9d8aa8b7-6e6f-491e-95b6-6a76afe80f8f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:447",
+      "source": "source:uuid:be0628e5-281b-47cc-b0e3-f7aaec596b43",
+      "target": "source:uuid:036ec0aa-4a4f-498a-ba75-b3c24f2255ea",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:448",
+      "source": "source:uuid:c1846ad6-eca1-499b-bfea-5565b0dfe239",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:449",
+      "source": "source:uuid:c1846ad6-eca1-499b-bfea-5565b0dfe239",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:450",
+      "source": "source:uuid:c1846ad6-eca1-499b-bfea-5565b0dfe239",
+      "target": "source:arxiv:1703.03400",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:451",
+      "source": "source:uuid:c1846ad6-eca1-499b-bfea-5565b0dfe239",
+      "target": "source:arxiv:1502.05477",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:452",
+      "source": "source:uuid:e9e2181d-fa90-4c3e-a1f1-530f45912a0d",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:453",
+      "source": "source:uuid:e9e2181d-fa90-4c3e-a1f1-530f45912a0d",
+      "target": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:454",
+      "source": "source:uuid:e9e2181d-fa90-4c3e-a1f1-530f45912a0d",
+      "target": "source:uuid:9d8aa8b7-6e6f-491e-95b6-6a76afe80f8f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:455",
+      "source": "source:uuid:e9e2181d-fa90-4c3e-a1f1-530f45912a0d",
+      "target": "source:uuid:be0628e5-281b-47cc-b0e3-f7aaec596b43",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:456",
+      "source": "source:uuid:cc27d13b-23ae-40cd-ae25-de5f7425ec45",
+      "target": "source:uuid:1780be3f-c5f0-457f-8b7d-b23bec517cf1",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:457",
+      "source": "source:uuid:cc27d13b-23ae-40cd-ae25-de5f7425ec45",
+      "target": "source:uuid:fd904023-8bdf-4112-97e1-2d22eb087254",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:458",
+      "source": "source:uuid:cc27d13b-23ae-40cd-ae25-de5f7425ec45",
+      "target": "source:uuid:42f236f8-f4d6-481b-a4c2-30d6c9d6d555",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:459",
       "source": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
       "target": "source:uuid:34bc15ba-66aa-46f9-80b5-f4d38b3cde1f",
+      "type": "cites",
+      "data": {
+        "weight": 1.0
+      }
+    },
+    {
+      "id": "e:460",
+      "source": "source:uuid:485af9e5-7f42-4b8c-b9f1-fa5b6b790b13",
+      "target": "source:uuid:42f236f8-f4d6-481b-a4c2-30d6c9d6d555",
       "type": "cites",
       "data": {
         "weight": 1.0
