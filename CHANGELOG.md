@@ -12,12 +12,13 @@ why it's split this way → [`docs/DOC-CONVENTIONS.md`](docs/DOC-CONVENTIONS.md)
 
 ## 2026
 
+- **2026-06-11** — Work-so-far adversarial review (methodology-audit `--depth deep` + 3 hostile live-reality shards): 6 stale `projects.json` claims corrected, regressed DPG citation misattribution hotfixed (upstream → `rl_and_control#4`), lab cross-links added, roadmap Next-1-3 re-prioritized → [session](docs/sessions/2026-06-11--work-so-far-adversarial-review.md)
 - **2026-06-10** — SSM explainer live: `/lab/why-discretization-matters/` ("Why discretization matters" — ZOH, stability regions, Mamba-3's integrator swap; KaTeX build-time math + Δ-slider + light/dark regenerated figures) → [session](docs/sessions/2026-06-10--ssm-explainer.md)
 - **2026-06-10** — A4 densification round 2: `/lab/research-graph/` 95 nodes / 51 edges → **119 / 460** (corpus push: 20 acquisitions + 4 anchor stubs + citation re-match) → [session](docs/sessions/2026-06-09--audit-densify-node24.md)
 - **2026-06-10** — Node-24 Actions sweep: 209 pins across 34 repos bumped, 0 regressions, `dml#6` closed ahead of the 06-16 deadline → [session](docs/sessions/2026-06-09--audit-densify-node24.md)
 - **2026-06-09** — Portfolio audit: board #1 reconciled (every open `tracked` issue on it, +27), roadmap drift fixed + refreshed → [session](docs/sessions/2026-06-09--audit-densify-node24.md)
 - **2026-06-04** — Roster curation: draft-hide mechanism (19 of 23 visible), `ssm-foundations` → "Sequence Models & RL" cluster, clickable project names, screenshots dropped → [session](docs/sessions/2026-06-04--roster-curation-review.md) · [PR review](docs/sessions/2026-06-04--pr4-independent-review.md)
-- **2026-06-04** — Professional Gmail email signature → [`docs/email-signature/`](docs/email-signature/)
+- **2026-06-04** — Professional Gmail email signature → [`docs/email-signature/`](docs/email-signature/) · [session](docs/sessions/2026-06-04--email-signature-review.md)
 - **2026-06-01** — Track 1.6 polish & hygiene: 4-state status model, security headers, SEO/JSON-LD, Home↔Work de-dup → [session](docs/sessions/2026-06-01--polish-sweep-review.md)
 - **2026-06-01** — Track 1.5 credibility funnel + `/publications/` page → [session](docs/sessions/2026-06-01--track1.5-credibility.md)
 - **2026-06-01** — A4 citation-graph chain: `/lab/research-graph/` reproducibly KB-sourced → [session](docs/sessions/2026-06-01--a4-chain-review.md)

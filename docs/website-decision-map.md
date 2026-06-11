@@ -13,6 +13,11 @@ homepage feel like several unrelated portfolios.
 
 ## Current Baseline
 
+> **Frozen at planning time (pre-2026-05-28 identity lock; banner added
+> 2026-06-11).** "Current" below describes the site as it stood when this memo
+> was written. Live site shape → <https://brandon-behring.dev> +
+> `src/data/projects.json`.
+
 The current site is a small Astro static portfolio:
 
 - Stack: Astro static site with project data in `src/data/projects.json`.
@@ -29,7 +34,10 @@ The current site is a small Astro static portfolio:
 - Writing voice: technical memo, evidence-heavy but readable.
 - Primary near-term goal: technical hiring.
 - Long-term goal: expandable research and public hub.
-- Lead identity: intentionally undecided.
+- Lead identity: locked 2026-05-28 — Framing 4, *build-to-learn engineer*, 3
+  visible clusters (decided in
+  [`sessions/2026-05-28--ambiguity-resolution.md`](sessions/2026-05-28--ambiguity-resolution.md);
+  supersedes the original "intentionally undecided").
 - Portfolio organization: narrative clusters, not a repo-by-repo catalog.
 - Demo posture: interactive demos are worth considering, but project pages
   should be the first home for demos.

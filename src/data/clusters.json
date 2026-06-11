@@ -11,7 +11,7 @@
     "name": "AI Evaluation",
     "section": "now",
     "order": 2,
-    "description": "Methodology-led AI safety evaluation: real evals, calibration, anti-overclaim discipline."
+    "description": "Methodology-led AI evaluation: adversarial robustness, real evals, calibration, anti-overclaim discipline."
   },
   {
     "slug": "course-notes",
