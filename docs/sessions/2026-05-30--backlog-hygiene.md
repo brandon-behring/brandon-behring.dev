@@ -31,6 +31,10 @@ phase-numbering collision between the two planning docs.
 authoritatively in `src/data/projects.json` (20 projects / 6 clusters, current)
 and live GitHub issues. Copies rot; originals don't.
 
+> **Correction (2026-06-11, methodology-audit):** projects.json held 23 projects /
+> 8 clusters on this date, not 20 / 6 — the parenthetical itself was a rotted copy,
+> proving the point it was making.
+
 ## Decisions (`/exploring-options`, Q1–Q8)
 
 | Q | Decision | Why |

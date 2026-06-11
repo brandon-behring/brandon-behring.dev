@@ -57,12 +57,13 @@ export function projectsForCluster(slug: string): Project[] {
 }
 
 /**
- * Best public destination for a project's name link:
- * live site › public repo › first external-context companion with a url.
- * Returns null when nothing is publicly reachable (render as plain text).
+ * Best public destination for a project's name link: live site › public repo.
+ * Returns null when nothing is publicly reachable (render as plain text) —
+ * external-context companions belong in the Related section, not the name
+ * link, so a click never lands on a different artifact than the title names.
  */
 export function projectHref(p: Project): string | null {
-  return p.site_url || p.repo_url || (p.external_context?.find((e) => e.url)?.url ?? null);
+  return p.site_url || p.repo_url || null;
 }
 
 /**

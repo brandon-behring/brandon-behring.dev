@@ -11,30 +11,45 @@
 
 ## Next 1–3 (site work — pick one)
 
-Ranking lens: craft-signal (process-as-artifact visible across the site). Skip, mix,
+Ranking lens: craft-signal + what the 2026-06-11 work-so-far review surfaced
+([session](sessions/2026-06-11--work-so-far-adversarial-review.md)). Skip, mix,
 or replace — not a forced sequence.
 
-1. **A4 densify, round 2 — the graph-refresh loop.** Site-side: re-export → curate
-   labels (`graph_overrides.json`) → verify rendered density on `/lab/research-graph/`.
-   Corpus growth itself is board work (`research-kb#8/#10/#23` + the remaining
-   `[needed]` rows in `rl_and_control/references/paper_index.md`); rerun the recipe in
-   `rl_and_control/scripts/README.md` (private repo) whenever the corpus advances.
+1. **`/lab/` index page.** The lab now has two artifacts but the nav's "Lab" entry
+   deep-links to only one; the 06-11 review confirmed a Lab visitor couldn't find
+   the second (hotfixed with cross-links — the structural fix is an index). Point
+   the nav at `/lab/`, list both artifacts with status. Feeds Open decision #1.
 2. **A6 — content-collections migration.** Move `src/data/projects.json` to Astro
-   content collections. Independent, cheap, do anytime.
-3. **SSM visualizer** — gated on observing the explainer's reception (the explainer
-   shipped 2026-06-10 to `/lab/why-discretization-matters/`); style question is Open
-   decision #2 below.
+   content collections. The 06-11 review found six stale claims in projects.json —
+   a typed schema (status enums, claim dates) is the structural counter. Independent,
+   cheap, do anytime.
+3. **SSM visualizer** — gated on the explainer's reception: re-trigger **2 weeks
+   after the explainer is first distributed** (LinkedIn/newsletter/etc.; signal =
+   Cloudflare Web Analytics referrers + views). If not distributed by **2026-07-01**,
+   this converts to a pure dated check. Style question is Open decision #2 below.
+
+**Standing (not a slot):** A4 graph-refresh loop — rerun (re-export → curate
+`graph_overrides.json` → verify rendered on `/lab/research-graph/`) whenever the
+corpus advances **and** after the override-persistence bug is fixed upstream
+([`rl_and_control#4`](https://github.com/brandon-behring/rl_and_control/issues/4):
+the 06-10 re-export clobbered a 06-01 manual citation correction). Corpus growth
+itself is board work (`research-kb#8/#10/#23` + the remaining `[needed]` rows in
+`rl_and_control/references/paper_index.md`); recipe in
+`rl_and_control/scripts/README.md` (private repo).
 
 **Also:** A7 visual identity (full editorial direction) · per-project OG images
 (see [`ASSETS-NEEDED.md`](ASSETS-NEEDED.md)).
 
 ## Open decisions (site)
 
-1. **Long-term hub structure** — `/research`, `/lab`, `/notes`, or hybrid? Re-trigger
-   when `/lab` gains 2+ entries beyond `research-graph`, or when an entry's home is
-   clearly neither `/work/{slug}` nor `/lab/`. (Deferred 2026-05-28.)
-2. **SSM visualizer style** (stability-region vs symplectic) — re-trigger now that the
-   explainer is live (shipped 2026-06-10): decide once its reception is observable.
+1. **Long-term hub structure** — `/research`, `/lab`, `/notes`, or hybrid? The lab
+   reached 2 entries on 2026-06-10 (one short of the original "2+ beyond
+   `research-graph`" trigger); Next-1-3 #1 (`/lab/` index) is a partial answer that
+   keeps this decision open for `/research` / `/notes`. (Deferred 2026-05-28;
+   trigger context updated 2026-06-11.)
+2. **SSM visualizer style** (stability-region vs symplectic) — decide when the
+   visualizer's gate fires (2 weeks after the explainer is first distributed, or
+   2026-07-01, whichever comes first — see Next-1-3 #3).
 3. **Account split** (`brandon-behring` vs `brandonmbehring-dev`) — decides which org
    the site's repo links, PyPI provenance, and CITATION.cff anchors point at. Tracked:
    [`brandon-behring.dev#5`](https://github.com/brandon-behring/brandon-behring.dev/issues/5).
@@ -54,7 +69,7 @@ to the decision map.
 - [x] **A1. Lead identity** — Framing 4, *build-to-learn engineer*, 3 visible clusters.
 - [~] **A2. `post_transformers` positioning** — surfaces in the homepage "where this is going"; a dedicated `/research` page is part of the open hub-structure question.
 - [~] **A3. Homepage balance** — Now-clusters lead, future section follows, past off the homepage.
-- [x] **A4. First demo** — live at `/lab/research-graph/`, KB-sourced + densified (2026-06-10). Ongoing growth = Next-1-3 #1 → the board's corpus queue.
+- [x] **A4. First demo** — live at `/lab/research-graph/`, KB-sourced + densified (2026-06-10). Ongoing growth = the standing graph-refresh loop (above) → the board's corpus queue.
 - [x] **A5. Route structure** — `/work/{slug}` cluster pages.
 - [ ] **A6. Content-collections migration** — Next-1-3 #2.
 - [~] **A7. Visual approach** — minimal editorial + status badges; full visual identity still open.
