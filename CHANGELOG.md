@@ -12,6 +12,7 @@ why it's split this way → [`docs/DOC-CONVENTIONS.md`](docs/DOC-CONVENTIONS.md)
 
 ## 2026
 
+- **2026-06-11** — Board #1 cron reconciler ([`board-reconciler.yml`](.github/workflows/board-reconciler.yml)): the open-`tracked`-⇒-board invariant (broke 7× manually) is now machine-held every 6h across both accounts; auto-add (#8) demoted to latency optimization → [session](docs/sessions/2026-06-11--board-reconciler.md)
 - **2026-06-11** — Work-so-far adversarial review (methodology-audit `--depth deep` + 3 hostile live-reality shards): 6 stale `projects.json` claims corrected, regressed DPG citation misattribution hotfixed (upstream → `rl_and_control#4`), lab cross-links added, roadmap Next-1-3 re-prioritized → [session](docs/sessions/2026-06-11--work-so-far-adversarial-review.md)
 - **2026-06-10** — SSM explainer live: `/lab/why-discretization-matters/` ("Why discretization matters" — ZOH, stability regions, Mamba-3's integrator swap; KaTeX build-time math + Δ-slider + light/dark regenerated figures) → [session](docs/sessions/2026-06-10--ssm-explainer.md)
 - **2026-06-10** — A4 densification round 2: `/lab/research-graph/` 95 nodes / 51 edges → **119 / 460** (corpus push: 20 acquisitions + 4 anchor stubs + citation re-match) → [session](docs/sessions/2026-06-09--audit-densify-node24.md)
