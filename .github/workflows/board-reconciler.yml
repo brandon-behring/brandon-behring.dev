@@ -1,0 +1,67 @@
+# Board #1 cron reconciler — holds the invariant: every open `tracked` issue
+# (across both GitHub accounts) is on Work Tracker board #1.
+# Add-only: never moves, relabels, or removes board items. Design: issue #13.
+#
+# Auth: BOARD_RECONCILER_TOKEN — CLASSIC PAT, scopes `repo` + `project`
+# (user-owned Projects v2 have no fine-grained PAT permission; the
+# fine-grained "Projects" permission is organization-only). The token sees
+# whatever brandon-behring can access; brandonmbehring-dev private repos
+# without collaborator access stay invisible — accepted limitation until
+# the account split (#5) is resolved.
+# This repo is public, so run logs are public: log issue URLs only, never titles.
+
+name: Board reconciler
+
+on:
+  schedule:
+    - cron: '17 */6 * * *' # offset minute — GitHub delays/drops top-of-hour crons
+  workflow_dispatch:
+
+permissions: {} # the job authenticates with the PAT, not GITHUB_TOKEN
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.BOARD_RECONCILER_TOKEN }}
+      BOARD: '1'
+      BOARD_OWNER: brandon-behring
+    steps:
+      - name: Add missing tracked issues to board
+        run: |
+          set -euo pipefail
+
+          open_tracked=$(gh search issues \
+            --owner brandon-behring --owner brandonmbehring-dev \
+            --label tracked --state open --limit 1000 \
+            --json url --jq '.[].url' | LC_ALL=C sort -u)
+
+          # A dead/expired token makes search return nothing and the job would
+          # silently no-op forever; 0 open tracked issues across 20+ repos is
+          # implausible, so treat empty as failure.
+          if [ -z "$open_tracked" ]; then
+            echo "::error::search returned 0 open tracked issues — token expired or auth broken?"
+            exit 1
+          fi
+
+          board_items=$(gh project item-list "$BOARD" --owner "$BOARD_OWNER" \
+            --limit 1000 --format json \
+            --jq '.items[].content.url // empty' | LC_ALL=C sort -u)
+
+          if [ "$(wc -l <<<"$board_items")" -ge 1000 ]; then
+            echo "::error::board at the item-list --limit; raise it or results are silently truncated"
+            exit 1
+          fi
+
+          missing=$(LC_ALL=C comm -23 <(printf '%s\n' "$open_tracked") \
+                                      <(printf '%s\n' "$board_items"))
+
+          if [ -z "$missing" ]; then
+            echo "Board diff = 0 — invariant holds."
+            exit 0
+          fi
+
+          while IFS= read -r url; do
+            gh project item-add "$BOARD" --owner "$BOARD_OWNER" --url "$url"
+            echo "added: $url" | tee -a "$GITHUB_STEP_SUMMARY"
+          done <<<"$missing"
