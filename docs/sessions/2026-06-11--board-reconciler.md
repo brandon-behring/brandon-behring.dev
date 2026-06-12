@@ -64,6 +64,17 @@ designed (classic has no read-only private-repo scope), accepted because the tig
 split (project-only token for board writes) cannot resolve private-repo issue URLs at
 `item-add`. This sat in the gate reviewer's `not_reviewed` list, not its passed checks.
 
+**Post-gate correction 2 (2026-06-12)**: first live run failed with `unknown owner type`.
+An instrumented debug run ([27419961662](https://github.com/brandon-behring/brandon-behring.dev/actions/runs/27419961662),
+temporary branch, since deleted) isolated it: the token (classic, `repo`+`project`,
+correct identity) passes `gh search issues` and `gh project item-list --owner "@me"` but
+fails `--owner brandon-behring` — gh resolves an explicit login via a combined
+user+organization GraphQL lookup that needs **`read:org`**; without it the org half
+returns a scope error (not NOT_FOUND), gh can't classify the owner, and the command dies
+even though plain `user(login:){id}` resolves fine. Fix: `BOARD_OWNER: '@me'` (viewer
+path, no org lookup) — works because the board owner *is* the token owner, and avoids
+widening the token.
+
 ## Acceptance (issue #13)
 
 Board diff stays 0 with **zero manual reconciliation** through ~2026-06-18. First

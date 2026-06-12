@@ -25,7 +25,11 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.BOARD_RECONCILER_TOKEN }}
       BOARD: '1'
-      BOARD_OWNER: brandon-behring
+      # "@me" (viewer path), NOT the login: gh resolves an explicit login via a
+      # combined user+organization lookup that needs read:org — without it the
+      # org half fails with a scope error gh won't tolerate ("unknown owner
+      # type"). The board owner IS the token owner, so @me is also stricter.
+      BOARD_OWNER: '@me'
     steps:
       - name: Add missing tracked issues to board
         run: |
