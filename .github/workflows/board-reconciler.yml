@@ -2,10 +2,12 @@
 # (across both GitHub accounts) is on Work Tracker board #1.
 # Add-only: never moves, relabels, or removes board items. Design: issue #13.
 #
-# Auth: BOARD_RECONCILER_TOKEN — fine-grained PAT (resource owner
-# brandon-behring; all repos: Issues + Metadata read; account: Projects
-# read/write). Private repos under brandonmbehring-dev are invisible to it —
-# accepted limitation until the account split (#5) is resolved.
+# Auth: BOARD_RECONCILER_TOKEN — CLASSIC PAT, scopes `repo` + `project`
+# (user-owned Projects v2 have no fine-grained PAT permission; the
+# fine-grained "Projects" permission is organization-only). The token sees
+# whatever brandon-behring can access; brandonmbehring-dev private repos
+# without collaborator access stay invisible — accepted limitation until
+# the account split (#5) is resolved.
 # This repo is public, so run logs are public: log issue URLs only, never titles.
 
 name: Board reconciler

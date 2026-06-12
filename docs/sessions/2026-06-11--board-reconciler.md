@@ -22,7 +22,7 @@ missing. Add-only. Plus CURRENT_WORK/CHANGELOG bumps.
 | # | Decision | Choice | Why |
 |---|----------|--------|-----|
 | 1 | Host repo | **brandon-behring.dev** | Issue #13/#8 locality; public workflow = process-as-artifact. Logs show issue URLs only (repos already named on the portfolio), never titles. |
-| 2 | Owner scope | **Both accounts** | The one missing item lives in `brandonmbehring-dev` — single-owner search misses it permanently. Limitation: the PAT sees only *public* dev-account repos (fine today; `claude-best-practices` is public). |
+| 2 | Owner scope | **Both accounts** | The one missing item lives in `brandonmbehring-dev` — single-owner search misses it permanently. Limitation: the PAT sees only what `brandon-behring` can access — dev-account private repos without collaborator access stay invisible (fine today; `claude-best-practices` is public). |
 | 3 | Cadence | **Every 6h** (`17 */6 * * *`) | Issue's own design; worst-case 6h gap ≪ the multi-day windows in which breaks were actually noticed. Minute offset because GitHub delays/drops top-of-hour crons. |
 | 4 | PAT expiration | **1 year** (rotate ~2027-06-11) | Failure mode is loud (sentinel + expiry emails), so long lifetime carries little silent risk. |
 | 5 | Failure alerting | **Default GitHub failure email** | Zero extra code; keeps the PAT read-only on repos. |
@@ -54,6 +54,15 @@ failure paths incl. unset-secret confirmed loud, no token-leak/injection vector,
 links + issue refs accurate). Reviewer `not_reviewed`: PAT existence (secrets are
 write-only), rate-limit behavior at scale, `item-add` duplicate semantics (moot — the
 comm-diff prevents re-adds; the API call is also idempotent).
+
+**Post-gate correction (2026-06-12)**: the plan specified a *fine-grained* PAT — wrong.
+User-owned Projects v2 have **no fine-grained PAT permission** (the "Projects" permission
+exists for *organizations* only — confirmed against both the live PAT-creation UI and
+[GitHub's permission catalog](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens)).
+The token is therefore a **classic PAT with `repo` + `project` scopes** — broader than
+designed (classic has no read-only private-repo scope), accepted because the tighter
+split (project-only token for board writes) cannot resolve private-repo issue URLs at
+`item-add`. This sat in the gate reviewer's `not_reviewed` list, not its passed checks.
 
 ## Acceptance (issue #13)
 
