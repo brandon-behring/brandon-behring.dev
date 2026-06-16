@@ -46,7 +46,6 @@ This section is the **canonical source of truth** for the convention; other repo
 
 1. **Default (mechanical)**: the slug is the repo name normalized to kebab-case. Underscores become hyphens; otherwise no transformation.
    - `ssm-foundations` → `ssm-foundations.brandon-behring.dev`
-   - `book-template-astro` → `book-template-astro.brandon-behring.dev`
    - `post_transformers` → would be `post-transformers.brandon-behring.dev` (if ever deployed as such)
 2. **Exception (semantic suffix)**: when a repo holds multiple deployable artifacts and the mechanical slug would be ambiguous, append a hyphenated artifact-type suffix.
    - `post_transformers` repo holds both research code and a book → the book deploys to `post-transformers-guide.brandon-behring.dev`. The research site, if separately deployed, would be `post-transformers.brandon-behring.dev`.

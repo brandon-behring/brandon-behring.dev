@@ -65,7 +65,7 @@ them, but each framing has different tradeoffs.
 | Applied mathematician who builds AI systems | Mathematical depth, production modeling, probability, causal/statistical rigor, modern AI systems | May understate research ambition if examples skew insurance-heavy | Staff IC, applied scientist, ML engineer, technical hiring manager | production models, causal/time-series repos, prompt-injection evaluation, post-transformers | Sounds broad unless the homepage gives concrete evidence fast |
 | AI evaluation and safety methodology builder | Prompt-injection work, `eval-toolkit`, confidence intervals, calibration, leakage checks, stopping rules | Can hide actuarial, math, and publishing-system breadth | AI safety teams, eval teams, LLM platform teams | prompt-injection detector/showcase/portfolio, `eval-toolkit` | Can imply security-product claims if caveats are sloppy |
 | Research engineer translating math into modern AI architectures | Future-facing identity, numerical analysis, dynamical systems, SSMs, Mamba, DeltaNet, linear attention | May underplay production business judgment | AI research engineering, frontier-model infrastructure, applied research roles | `post_transformers`, JAX/Julia experiments, notebooks, benchmarks, guide | Needs careful explanation for visitors who do not know SSMs |
-| Learning systems and research-infrastructure builder | DLAI notes, book scaffold, research-kb, public guides, tooling, reusable workflows | Can look like tooling for tooling's sake | Developer education, research tooling, platform teams | `dlai-study-notes`, `book-scaffold-astro`, `research-kb`, `book-template-astro` | Needs a clear "why this matters" story |
+| Learning systems and research-infrastructure builder | DLAI notes, book scaffold, research-kb, public guides, tooling, reusable workflows | Can look like tooling for tooling's sake | Developer education, research tooling, platform teams | `dlai-study-notes`, `book-scaffold-astro`, `research-kb`, `claude-books` | Needs a clear "why this matters" story |
 | Insurance/applied modeling expert expanding into AI research | Domain credibility, production maturity, actuarial/math edge, real business constraints | Can pigeonhole the site into insurance roles | Insurtech, actuarial modeling, applied ML, financial services | Bayesian cold-start, insurance AI toolkit, annuity repos, causal/time-series work | Must avoid proprietary details and avoid making the whole site feel backward-looking |
 
 Working rule: the site should show "where I am going" without pretending the
@@ -221,7 +221,8 @@ Evidence strength:
   Anki extraction, downloadable deck artifacts.
 - `book-scaffold-astro`: npm package for long-form technical books with
   profile-aware pedagogy, citations, search, figures, and CLI tooling.
-- `book-template-astro`: reference consumer and long-form book example.
+- `claude-books`: multi-book home (Architect's Reference, Agentic Systems Design,
+  Glossary) on the scaffold; folds in the `book-template-astro` Agentic Coding book.
 
 Future relevance:
 

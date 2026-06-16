@@ -78,7 +78,7 @@ Open content issue: [`brandon-behring.dev#1`](https://github.com/brandon-behring
 
 ## Infrastructure & cross-repo work → board
 
-Deploy-pattern migrations (`post_transformers`, `dlai-study-notes`, `book-template-astro`),
+Deploy-pattern migrations (`post_transformers`, `dlai-study-notes`, `claude-books`),
 the reusable-workflow backlog, the tiered cross-repo backlog, and all other cross-repo
 coordination live on the
 [Work Tracker board #1](https://github.com/users/brandon-behring/projects/1) +
