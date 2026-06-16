@@ -33,7 +33,7 @@
     "name": "Books & Guides",
     "section": "tier",
     "order": 1,
-    "description": "Interview-prep guides for data, ML, and AI engineering, plus a book on agentic coding — in active development."
+    "description": "Interview-prep guides for data science, ML, and AI engineering — live at guides.brandon-behring.dev, with AI engineering the first shipped sub-guide."
   },
   {
     "slug": "research-infrastructure",
