@@ -30,13 +30,38 @@ Full decision record: `~/.claude/plans/what-can-we-do-wobbly-seal.md`.
   guides-hub index 4th-module text (separate deployed repo, out of scope); existence of
   the AI-eng companion mini-libraries (not URL-checked); `claude-books.brandon-behring.dev`
   DNS (not yet provisioned — "deploys soon" is intent). Orchestrator closed one gap:
-  grep confirmed **no dangling references** to the removed `book-template-astro` slug.
+  grep confirmed **no dangling references in `src/` routing** to the removed
+  `book-template-astro` slug (project slugs aren't individually routed).
 
 ## Open follow-ups
 - Committed next step (own session): fold Agentic Coding into claude-books, apex+subroute
   deploy of the content-complete surfaces, archive `claude-best-practices` +
   `claude-code-field-guide`, then flip the claude-books family card live (add `site_url`).
 - Flagged: open-source the claude-books repo when ready → add `repo_url`.
+
+## Adversarial review (2026-06-16, 3-voice: Claude + codex + gemini, on PR #18)
+
+Refutation + tool-grounding (not line-matching). 13 raw findings → consensus:
+
+- **Verified (tool-confirmed), fixed in follow-up commit:**
+  - "companion mini-libraries **for each module**" overclaimed — 4 libs
+    (mini_eval/rag/agent/prod) map to 3 modules; "Working with AI" has none →
+    reworded to "with companion mini-libraries."
+  - This log's "no dangling references" overstated coverage (only `src/` routing
+    was grepped) → scoped above.
+- **Verified but pre-existing / outside this PR (TODO):** current docs still treat
+  `book-template-astro` as a live, own-subdomain artifact — `README.md:49`,
+  `docs/roadmap.md:81`, `docs/website-decision-map.md:68,224`. Stale vs the
+  fold-into-claude-books decision; reconcile when the repo is sunset (deploy session).
+- **Majority (not applied, defensible):** guides `whats_next` "first shipped
+  sub-guide" vs experimentation "the pilot/first companion" reads slightly tense.
+- **Disputed → context-resolved:** claude-books "apex + subroutes" copy contradicts
+  the claude-books repo roadmap (per-subdomain) — but the copy reflects *this
+  session's* superseding decision (#140 fixed); the roadmap is the stale side.
+- **False-positive (tool-refuted):** draft-flag dropped (draft:true present);
+  `status:"released"` invalid (7× in dataset, build passes); "Astro 6" tag fracture
+  (pre-existing 4×); trailing-slash/live-claim (both URLs 200); "data science, ML"
+  implies nonexistent guides (refuted by codex + gemini).
 
 ## Reference
 - Plan: `~/.claude/plans/what-can-we-do-wobbly-seal.md`

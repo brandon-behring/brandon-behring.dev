@@ -231,7 +231,7 @@
     "order": 4,
     "status": "released",
     "summary": "Practitioner guide to AI engineering — evaluation, LLM application engineering, production systems, and working effectively with AI. Four modules, 13 chapters each, live under the guides hub.",
-    "description_long": "A four-module guide to building and shipping AI systems: evaluation and benchmarking (decision discipline, calibration, judge-based eval), LLM application engineering (prompting, retrieval, RAG, agents, system design), production AI systems (deployment, latency, cost, observability, drift, guardrails), and working with AI (verification, delegation, and provenance under automation). Built on book-scaffold-astro and shipped as the first sub-guide of the guides hub, with companion mini-libraries for each module.",
+    "description_long": "A four-module guide to building and shipping AI systems: evaluation and benchmarking (decision discipline, calibration, judge-based eval), LLM application engineering (prompting, retrieval, RAG, agents, system design), production AI systems (deployment, latency, cost, observability, drift, guardrails), and working with AI (verification, delegation, and provenance under automation). Built on book-scaffold-astro and shipped as the first sub-guide of the guides hub, with companion mini-libraries.",
     "whats_next": "Live at guides.brandon-behring.dev/ai-engineering/. Companion mini-libraries (mini_eval, mini_rag, mini_agent, mini_prod) ship alongside; further guides (data fundamentals, ML systems) follow under the hub.",
     "stack": ["Astro 6", "MDX", "book-scaffold-astro", "Cloudflare Workers", "Python"],
     "repo_url": "https://github.com/brandon-behring/guides-ai-engineering",
