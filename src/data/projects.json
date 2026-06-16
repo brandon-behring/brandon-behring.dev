@@ -261,14 +261,19 @@
     "cluster": "books-and-guides",
     "order": 6,
     "status": "in-progress",
-    "summary": "A multi-book home for Claude Code / agentic-coding writing on book-scaffold-astro: the Architect's Reference, Agentic Systems Design, and a shared glossary (content-complete, pre-deployment), with a Claude Code handbook in progress and the cross-tool Agentic Coding book planned to fold in.",
-    "description_long": "A Claude Code / agentic-coding book ecosystem — a monorepo on book-scaffold-astro. Three surfaces are content-complete and pre-deployment: the Architect's Reference (a self-contained CCA-F study guide), Agentic Systems Design (engineering agentic systems, multi-volume), and a shared, deep-linkable Glossary; a Claude-Code-specific Handbook is in progress. The cross-tool 'Agentic Coding: Principles and Practices' book is planned to fold in as the 'using coding agents' companion. It consolidates earlier LaTeX drafts — claude-best-practices (whose handbook content migrates here) and claude-code-field-guide (whose mission folds into Agentic Systems Design).",
-    "whats_next": "Deploys soon to claude-books.brandon-behring.dev (apex plus per-book subroutes): the content-complete surfaces publish first, the Handbook follows. Surfaced here once it's live.",
+    "summary": "A multi-book home for Claude Code / agentic-coding writing on book-scaffold-astro — live at claude-books.brandon-behring.dev: the Architect's Reference (cert study guide), Agentic Systems Design, the cross-tool Agentic Coding book, and a shared glossary, with a Claude Code handbook in progress.",
+    "description_long": "A Claude Code / agentic-coding book ecosystem — a monorepo on book-scaffold-astro, deployed as one apex site with per-book subroutes. Live: the Architect's Reference (a self-contained CCA-F study guide, /architect/), Agentic Systems Design (engineering agentic systems, multi-volume, /design/), and the cross-tool 'Agentic Coding: Principles and Practices' book (/agentic-coding/, the 'using coding agents' companion); a Claude-Code-specific Handbook is in progress (served noindex until its v1.0). It supersedes earlier LaTeX drafts (claude-best-practices, claude-code-field-guide).",
+    "whats_next": "Live at claude-books.brandon-behring.dev. Next: finish the Handbook (the 'Use' book) toward v1.0; the cert and design tracks keep deepening.",
     "stack": ["Astro 6", "MDX", "book-scaffold-astro", "Cloudflare Workers", "KaTeX"],
-    "external_context": [],
+    "repo_url": "https://github.com/brandon-behring/claude-books",
+    "site_url": "https://claude-books.brandon-behring.dev",
+    "external_context": [
+      { "label": "Architect's Reference — CCA-F study guide", "url": "https://claude-books.brandon-behring.dev/architect/" },
+      { "label": "Agentic Systems Design", "url": "https://claude-books.brandon-behring.dev/design/" },
+      { "label": "Agentic Coding — cross-tool (Claude Code · Gemini · Codex)", "url": "https://claude-books.brandon-behring.dev/agentic-coding/" }
+    ],
     "visual": null,
-    "featured": false,
-    "draft": true
+    "featured": false
   },
   {
     "slug": "annuity-pricing",

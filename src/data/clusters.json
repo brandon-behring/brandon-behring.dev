@@ -33,7 +33,7 @@
     "name": "Books & Guides",
     "section": "tier",
     "order": 1,
-    "description": "Interview-prep guides for data science, ML, and AI engineering — live at guides.brandon-behring.dev, with AI engineering the first shipped sub-guide."
+    "description": "Interview-prep guides for data, ML, and AI engineering (live at guides.brandon-behring.dev), plus the claude-books series on Claude Code and agentic-coding (claude-books.brandon-behring.dev) — both live."
   },
   {
     "slug": "research-infrastructure",
