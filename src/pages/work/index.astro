@@ -20,13 +20,17 @@ const legend = [
 
 <Base
   title="Work — Brandon Behring"
-  description="Projects in applied causal methods, AI evaluation, and course-derived study notes."
+  description="Projects in causal inference, AI evaluation, sequence-model and RL foundations, and the research infrastructure behind them."
 >
   <section class="work-intro prose">
     <h1>Work</h1>
     <p>
       Current work plus the infrastructure, research, and pricing systems
       behind it. Each links to a deeper page with per-project detail.
+    </p>
+    <p class="work-method">
+      Every artifact ships with a decision log and an independent audit —
+      <a href="/how-this-was-made/">Methodology &amp; audit trail →</a>
     </p>
     <ul class="status-legend" aria-label="What the status labels mean">
       {legend.map((l) => (
@@ -35,41 +39,47 @@ const legend = [
     </ul>
   </section>
 
-  <section class="clusters" aria-labelledby="work-now-heading">
-    <h2 id="work-now-heading" class="prose section-heading">Current work</h2>
-    <div class="cluster-grid">
-      {nowClusters.map((cluster) => (
-        <ClusterCard
-          cluster={cluster}
-          projects={projectsForCluster(cluster.slug)}
-        />
-      ))}
-    </div>
-  </section>
+  {nowClusters.length > 0 && (
+    <section class="clusters" aria-labelledby="work-now-heading">
+      <h2 id="work-now-heading" class="prose section-heading">Current work</h2>
+      <div class="cluster-grid">
+        {nowClusters.map((cluster) => (
+          <ClusterCard
+            cluster={cluster}
+            projects={projectsForCluster(cluster.slug)}
+          />
+        ))}
+      </div>
+    </section>
+  )}
 
-  <section class="clusters" aria-labelledby="work-more-heading">
-    <h2 id="work-more-heading" class="prose section-heading">More work</h2>
-    <div class="cluster-grid">
-      {tierClusters.map((cluster) => (
-        <ClusterCard
-          cluster={cluster}
-          projects={projectsForCluster(cluster.slug)}
-        />
-      ))}
-    </div>
-  </section>
+  {tierClusters.length > 0 && (
+    <section class="clusters" aria-labelledby="work-more-heading">
+      <h2 id="work-more-heading" class="prose section-heading">More work</h2>
+      <div class="cluster-grid">
+        {tierClusters.map((cluster) => (
+          <ClusterCard
+            cluster={cluster}
+            projects={projectsForCluster(cluster.slug)}
+          />
+        ))}
+      </div>
+    </section>
+  )}
 
-  <section class="clusters" aria-labelledby="work-future-heading">
-    <h2 id="work-future-heading" class="prose section-heading">Where this is going</h2>
-    <div class="cluster-grid">
-      {futureClusters.map((cluster) => (
-        <ClusterCard
-          cluster={cluster}
-          projects={projectsForCluster(cluster.slug)}
-        />
-      ))}
-    </div>
-  </section>
+  {futureClusters.length > 0 && (
+    <section class="clusters" aria-labelledby="work-future-heading">
+      <h2 id="work-future-heading" class="prose section-heading">Where this is going</h2>
+      <div class="cluster-grid">
+        {futureClusters.map((cluster) => (
+          <ClusterCard
+            cluster={cluster}
+            projects={projectsForCluster(cluster.slug)}
+          />
+        ))}
+      </div>
+    </section>
+  )}
 </Base>
 
 <style>
@@ -78,6 +88,12 @@ const legend = [
   }
   .work-intro h1 {
     margin-bottom: 0.5rem;
+  }
+  .work-method {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: 0.75rem;
   }
   .status-legend {
     list-style: none;

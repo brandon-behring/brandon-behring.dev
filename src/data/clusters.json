@@ -1,7 +1,7 @@
 [
   {
     "slug": "causal-methods",
-    "name": "Causal Methods",
+    "name": "Causal Inference",
     "section": "now",
     "order": 1,
     "description": "Time-series causal inference and statistical validation methods."
@@ -11,22 +11,22 @@
     "name": "AI Evaluation",
     "section": "now",
     "order": 2,
-    "description": "Methodology-led AI evaluation: adversarial robustness, real evals, calibration, anti-overclaim discipline."
+    "description": "Methodology-led AI evaluation — adversarial robustness, calibration, and claim validation designed to find failures, not flatter the model."
   },
   {
     "slug": "course-notes",
-    "name": "Course Notes",
+    "name": "Books & Study Notes",
     "section": "now",
     "order": 3,
-    "description": "Long-form study notes synthesized from technical courses. DLAI is the first; more course-derived notes lined up.",
+    "description": "Authored long-form technical books and course-derived study notes — searchable, math-rendered, and citation-tracked. Includes the sequence-models foundations book and DeepLearning.AI notes.",
     "expanding": true
   },
   {
     "slug": "future",
-    "name": "Sequence Models & RL",
+    "name": "RL + Control Theory",
     "section": "future",
     "order": 4,
-    "description": "A live sequence-models foundations book and an authored RL + control-theory guide — the research direction."
+    "description": "An authored guide bridging classical optimal control and modern reinforcement learning — in progress, with a live interactive citation graph."
   },
   {
     "slug": "books-and-guides",

@@ -11,5 +11,21 @@ import graphData from '../../data/rl_citation_graph.json';
   fullBleed={true}
   hideFooter={true}
 >
+  <h1 class="vh-graph-title">RL + Control citation graph</h1>
   <CitationGraph graphData={graphData} />
 </Base>
+
+<style>
+  /* Visually-hidden page title — gives the full-bleed graph app a programmatic <h1>. */
+  .vh-graph-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

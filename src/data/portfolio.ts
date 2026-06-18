@@ -1,12 +1,12 @@
-import clustersData from './clusters.json';
-import projectsData from './projects.json';
+import { getCollection } from 'astro:content';
 
 /**
- * Typed accessors over the raw project/cluster JSON. This is the single source of
- * truth for "what is publicly visible": every page, the RSS feed, and the nav read
- * from here rather than importing the JSON directly, so a `draft` entry is filtered
- * out everywhere at once (and the cluster/section helpers stay in one place instead
- * of being copy-pasted across pages).
+ * Typed accessors over the project/cluster/demo content collections (roadmap A6).
+ * This is the single source of truth for "what is publicly visible": every page,
+ * the RSS feed, and the nav read from here rather than touching the collections
+ * directly, so a `draft` entry is filtered out everywhere at once and the
+ * cluster/section helpers stay in one place. The raw JSON in `src/data/` remains
+ * the editing surface; `src/content.config.ts` validates it at build time.
  */
 
 export interface ExternalContext {
@@ -16,6 +16,8 @@ export interface ExternalContext {
 
 export interface Project {
   slug: string;
+  /** Source-file position; used only to keep the RSS feed in a stable order. */
+  srcOrder?: number;
   title: string;
   cluster: string;
   order: number;
@@ -43,10 +45,37 @@ export interface Cluster {
   expanding?: boolean;
 }
 
-const allProjects = projectsData as Project[];
-const allClusters = clustersData as Cluster[];
+/** An interactive demo in the Lab gallery, linked to the work it came from. */
+export interface Demo {
+  slug: string;
+  title: string;
+  blurb: string;
+  href: string;
+  sourceWork: { collection: string; id: string };
+  thumbnail?: string | null;
+}
 
-/** Every non-draft project. The backlog is `projectsData` minus this set. */
+/** A curated card on the homepage "Selected work" section. */
+export interface Flagship {
+  kind: 'project' | 'demo';
+  title: string;
+  blurb: string;
+  href: string;
+  /** Project status badge (projects only). */
+  status?: string;
+  /** The deeper work a demo was extracted from (demos only). */
+  source?: { title: string; href: string | null };
+  thumbnail?: string | null;
+}
+
+// Load + flatten the typed collections once (top-level await runs at module init).
+const allProjects: Project[] = (await getCollection('projects'))
+  .map((e) => e.data as Project)
+  .sort((a, b) => (a.srcOrder ?? 0) - (b.srcOrder ?? 0));
+const allClusters: Cluster[] = (await getCollection('clusters')).map((e) => e.data as Cluster);
+const allDemos: Demo[] = (await getCollection('demos')).map((e) => e.data as Demo);
+
+/** Every non-draft project. The backlog is the collection minus this set. */
 export const visibleProjects: Project[] = allProjects.filter((p) => !p.draft);
 
 /** Visible projects in a cluster, ordered. */
@@ -81,3 +110,55 @@ export function clustersInSection(section: string): Cluster[] {
     .filter((c) => c.section === section)
     .sort((a, b) => a.order - b.order);
 }
+
+// --- Homepage "Selected work" curation (Phase B consumes this) ----------------
+// Explicit, ordered roster — deliberately decoupled from the `featured` flag
+// (which still drives /work): 3 live works + the 2 interactive demos.
+const FLAGSHIP_PROJECT_SLUGS = [
+  'ssm-foundations',
+  'double-ml-time-series',
+  'prompt-injection-detection-prototype',
+];
+const FLAGSHIP_DEMO_SLUGS = ['research-graph', 'why-discretization-matters'];
+
+// Curated one-line blurbs for the landing cards — deliberately short and
+// vanity-metric-free, kept separate from the longer /work summaries.
+const FLAGSHIP_BLURBS: Record<string, string> = {
+  'double-ml-time-series':
+    'Double machine learning extended to time series — cross-fitting that respects time ordering, with a live web edition.',
+  'ssm-foundations':
+    'A foundations book bridging numerical analysis and dynamical systems to modern sequence models — live and in progress.',
+  'prompt-injection-detection-prototype':
+    'A research study: do prompt-injection detectors generalize to attack families they were never trained on?',
+};
+
+function projectBySlug(slug: string): Project | null {
+  return allProjects.find((p) => p.slug === slug) ?? null;
+}
+
+export const landingFlagships: Flagship[] = [
+  ...FLAGSHIP_PROJECT_SLUGS.map((slug): Flagship => {
+    const p = projectBySlug(slug);
+    if (!p) throw new Error(`landingFlagships: unknown project slug "${slug}"`);
+    return {
+      kind: 'project',
+      title: p.title,
+      blurb: FLAGSHIP_BLURBS[slug] ?? p.summary,
+      href: projectHref(p) ?? '#',
+      status: p.status,
+    };
+  }),
+  ...FLAGSHIP_DEMO_SLUGS.map((slug): Flagship => {
+    const d = allDemos.find((x) => x.slug === slug);
+    if (!d) throw new Error(`landingFlagships: unknown demo slug "${slug}"`);
+    const src = projectBySlug(d.sourceWork.id);
+    return {
+      kind: 'demo',
+      title: d.title,
+      blurb: d.blurb,
+      href: d.href,
+      source: { title: src?.title ?? '', href: src ? projectHref(src) : null },
+      thumbnail: d.thumbnail ?? null,
+    };
+  }),
+];

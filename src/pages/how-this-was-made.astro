@@ -10,10 +10,17 @@ import Base from '../layouts/Base.astro';
     <h1>How this was made</h1>
 
     <p class="lead">
-      Work on this site is produced with substantial AI assistance.
-      This page documents the discipline that keeps it auditable, the
-      artifacts that record what was done, and the workflow that lets
-      any specific claim be traced to its source.
+      Mathematical rigor is the differentiator here; AI is the lever that
+      scales it — and scaled output only earns trust if every claim stays
+      checkable. So this site is built to be audited. This page documents the
+      discipline that keeps it auditable, the artifacts that record what was
+      done, and the workflow that traces any claim to its source.
+    </p>
+    <p>
+      The AI assistance is disclosed in full below — it is part of the audit
+      trail, not a footnote to apologize for. What makes the output trustworthy
+      is the discipline around it, the same whether a human or a model drafts the
+      first pass.
     </p>
 
     <h2 id="the-discipline">The discipline</h2>
@@ -35,7 +42,7 @@ import Base from '../layouts/Base.astro';
         tried and rejected, what constraint forced the call.
       </li>
       <li>
-        <strong>Periodic independent audits.</strong> Projects get an
+        <strong>Independent audits, event-driven.</strong> Projects get an
         <code>AUDIT_&lt;date&gt;.md</code> file when audited, with
         <code>_INDEPENDENT</code> suffix when the audit is run by a
         fresh agent without prior conversation context. Independent
@@ -100,11 +107,11 @@ import Base from '../layouts/Base.astro';
     </p>
 
     <p>
-      This site voluntarily aligns with the disclosure principles of
+      This disclosure is offered in the spirit of
       <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">EU AI
-      Act Article 50</a> (effective 2026-08-02), though the apex domain
-      is US-operated and not legally bound. The discipline exists;
-      making it visible is the cost-free part.
+      Act Article 50</a>-style transparency — not as a legal-compliance claim
+      (the site is US-operated). The discipline already exists; making it
+      visible is the cost-free part.
     </p>
 
     <h2 id="bisection">Bisection — claim to source</h2>
@@ -112,7 +119,7 @@ import Base from '../layouts/Base.astro';
     <p>
       Given a suspect claim in any chapter or article, the path from
       claim to source is four steps. A Provenance component, rolling out
-      across the book-scaffold-astro consumers, will surface most of this
+      across the books built on the shared Astro scaffold, will surface most of this
       inline on chapter pages; today the workflow is manual.
     </p>
 

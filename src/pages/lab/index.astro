@@ -1,0 +1,88 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+// Curated demos gallery: each interactive demo is a window into a deeper work,
+// with a back-link to the guide/book/project it was extracted from.
+const demos = await getCollection('demos');
+const items = await Promise.all(
+  demos.map(async (d) => {
+    const src = await getEntry(d.data.sourceWork);
+    const srcData = src?.data as
+      | { title?: string; site_url?: string; repo_url?: string; cluster?: string }
+      | undefined;
+    return {
+      ...d.data,
+      sourceTitle: srcData?.title ?? d.data.sourceWork.id,
+      // live site › repo › the source's /work cluster page, so every demo's "from:" is a link
+      sourceHref:
+        srcData?.site_url ?? srcData?.repo_url ?? (srcData?.cluster ? `/work/${srcData.cluster}/` : null),
+    };
+  }),
+);
+---
+
+<Base
+  title="Lab — Brandon Behring"
+  description="Interactive demos — small, focused windows into the deeper research: an RL + control citation graph and a state-space discretization explorer."
+>
+  <section class="lab-intro prose">
+    <h1>Lab</h1>
+    <p>
+      Small, focused interactive demos — each one a window into a deeper piece of work,
+      with a link back to the guide or book it came from.
+    </p>
+  </section>
+
+  <div class="fulcrum-rule" role="presentation"></div>
+
+  <section class="demo-grid" aria-label="Interactive demos">
+    {items.map((item) => (
+      <article class="demo-card">
+        <h2 class="demo-title"><a href={item.href}>{item.title}</a></h2>
+        <p class="demo-blurb">{item.blurb}</p>
+        {item.sourceHref ? (
+          <a class="demo-from" href={item.sourceHref} rel="noopener">from: {item.sourceTitle} →</a>
+        ) : (
+          <span class="demo-from demo-from--plain">from: {item.sourceTitle}</span>
+        )}
+      </article>
+    ))}
+  </section>
+</Base>
+
+<style>
+  .lab-intro { margin: 2rem auto 0; }
+  .lab-intro h1 { margin-bottom: 0.5rem; }
+  .lab-intro p { color: var(--color-text-muted); max-width: 60ch; }
+
+  .demo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 0 auto 3rem;
+  }
+  @media (min-width: 720px) {
+    .demo-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .demo-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: var(--elevation-card);
+    padding: 1.25rem 1.4rem;
+  }
+  .demo-title { font-family: var(--font-sans); font-size: 1.15rem; margin: 0 0 0.5rem; }
+  .demo-title a { color: var(--color-text); text-decoration: none; }
+  .demo-title a:hover, .demo-title a:focus-visible { color: var(--color-accent); }
+  .demo-blurb {
+    font-family: var(--font-prose);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    margin: 0 0 0.8rem;
+  }
+  .demo-from { font-family: var(--font-sans); font-size: 0.82rem; color: var(--color-accent); text-decoration: none; }
+  .demo-from:hover, .demo-from:focus-visible { text-decoration: underline; }
+  .demo-from--plain { color: var(--color-text-muted); }
+</style>
