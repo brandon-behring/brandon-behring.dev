@@ -37,7 +37,10 @@
 
 <style>
   .eigen-slider {
-    --es-zoh: #004488;
+    /* --es-zoh hand-synced to the site accent (tokens.css). Kept as a literal hex,
+       not var(--color-accent): getComputedStyle() on an unregistered custom property
+       won't reliably resolve a nested var(), and the canvas needs a real color. */
+    --es-zoh: #3b6fa0;
     --es-euler: #bb5566;
     --es-grid: #cccccc;
     --es-text: #555555;
@@ -47,7 +50,7 @@
   }
   @media (prefers-color-scheme: dark) {
     .eigen-slider {
-      --es-zoh: #77aadd;
+      --es-zoh: #7fb0dd;
       --es-euler: #ee8899;
       --es-grid: #555555;
       --es-text: #aaaaaa;

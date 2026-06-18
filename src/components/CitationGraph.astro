@@ -220,7 +220,9 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
         {
           selector: 'node.highlight',
           style: {
-            'border-color': '#4477AA',
+            // Hand-synced to the site accent (tokens.css --color-accent). Cytoscape
+            // can't read CSS vars, so this hex must be updated when the accent changes.
+            'border-color': '#3B6FA0',
             'border-width': 3,
             'background-opacity': 1,
             'text-opacity': 1,
@@ -313,6 +315,9 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
     });
     closeBtn.addEventListener('click', () => {
       panel.hidden = true;
+    });
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && !panel.hidden) panel.hidden = true;
     });
 
     // -------- Section pills --------
@@ -459,7 +464,7 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
   }
   .pill.active {
     background: var(--color-accent);
-    color: #fff;
+    color: var(--color-on-accent);
     border-color: var(--color-accent);
   }
 

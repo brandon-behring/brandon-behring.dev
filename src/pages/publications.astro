@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import publications from '../data/publications.json';
+import { getCollection } from 'astro:content';
 
 const SCHOLAR = 'https://scholar.google.com/citations?user=M1LzNAgAAAAJ';
 
@@ -20,6 +20,7 @@ function authorsHtml(authors: string[]): string {
   return shown.join(', ') + ', et al.';
 }
 
+const publications = (await getCollection('publications')).map((e) => e.data);
 const articles = publications.filter((p) => p.type !== 'dissertation');
 const dissertations = publications.filter((p) => p.type === 'dissertation');
 ---

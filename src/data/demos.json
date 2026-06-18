@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "research-graph",
+    "title": "RL + Control citation graph",
+    "blurb": "Interactive citation graph of the RL + control literature — drag, search, and filter by theme.",
+    "href": "/lab/research-graph/",
+    "sourceWork": "rl-and-control",
+    "thumbnail": null
+  },
+  {
+    "slug": "why-discretization-matters",
+    "title": "Why discretization matters",
+    "blurb": "An interactive eigenvalue explorer: watch a system's stability region shift as the discretization step changes.",
+    "href": "/lab/why-discretization-matters/",
+    "sourceWork": "ssm-foundations",
+    "thumbnail": null
+  }
+]

@@ -30,10 +30,10 @@ const projects = projectsForCluster(cluster.slug);
   <div class="prose">
     <ClusterNav currentSlug={cluster.slug} />
 
-    <header class="cluster-page-header">
+    <div class="cluster-page-header">
       <h1>{cluster.name}</h1>
       <p class="cluster-intro">{cluster.description}</p>
-    </header>
+    </div>
 
     {projects.map((project) => (
       <ProjectSection project={project} />
@@ -44,7 +44,7 @@ const projects = projectsForCluster(cluster.slug);
         <h2>More coming</h2>
         <p>
           {cluster.name} is an active and expanding cluster. More
-          course-derived notes from other technical sources are lined up
+          course-derived books from other technical sources are lined up
           (Bertsekas RL + control, ssm-foundations chapters, and others).
         </p>
       </section>

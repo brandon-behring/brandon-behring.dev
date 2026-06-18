@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import '../styles/tokens.css';
 
 type HeaderVariant = "full" | "minimal";
 
@@ -19,7 +20,7 @@ interface Props {
 }
 const {
   title,
-  description = "Brandon Behring builds applied causal methods, AI evaluation tooling, and a study notes corpus.",
+  description = "Brandon Behring builds causal-inference and AI-evaluation tooling, foundations books on sequence models and reinforcement learning, and the research infrastructure beneath them.",
   ogImage = "/og-image.png",
   headerVariant = "full",
   fullBleed = false,
@@ -41,7 +42,7 @@ const personLd = {
   name: "Brandon Behring",
   url: siteOrigin,
   description:
-    "Builds applied causal methods, AI evaluation tooling, and a study notes corpus.",
+    "Builds causal-inference and AI-evaluation tooling, foundations books on sequence models and reinforcement learning, and the research infrastructure beneath them.",
   image: new URL("/og-image.png", Astro.site).href,
   sameAs: [
     "https://github.com/brandon-behring",
@@ -97,6 +98,7 @@ const siteLd = {
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="preload" href="/fonts/fraunces-vf.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="alternate" type="application/rss+xml" title="Brandon Behring — new work" href="/rss.xml" />
 
   <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
@@ -134,26 +136,7 @@ const siteLd = {
 </html>
 
 <style is:global>
-  :root {
-    --color-text: #1a1a1a;
-    --color-text-muted: #555;
-    --color-bg: #fafafa;
-    --color-accent: #4477AA;
-    --color-border: #ddd;
-    --max-width-prose: 65ch;
-    --max-width-wide: 1200px;
-    --font-prose: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
-    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-text: #f0f0f0;
-      --color-text-muted: #aaa;
-      --color-bg: #1a1a1a;
-      --color-border: #333;
-    }
-  }
+  /* Design tokens live in src/styles/tokens.css (imported in the frontmatter). */
   html { font-family: var(--font-prose); color: var(--color-text); background: var(--color-bg); line-height: 1.6; }
   body { margin: 0; padding: 0; }
   main {
@@ -179,13 +162,17 @@ const siteLd = {
     font-family: var(--font-sans);
     margin-top: 4rem;
   }
+  /* Quiet the footer link run: color-only, underline on hover (audit P3). */
+  footer a { text-decoration: none; }
+  footer a:hover, footer a:focus-visible { text-decoration: underline; }
   .footer-inner {
     max-width: var(--max-width-wide);
     margin: 0 auto;
     padding: 1.5rem;
   }
-  h1, h2, h3 { font-family: var(--font-sans); font-weight: 600; line-height: 1.2; }
-  h1 { font-size: 2.25rem; margin-top: 0; }
+  h1, h2, h3 { font-weight: 600; line-height: 1.2; }
+  h1 { font-family: var(--font-display); font-optical-sizing: auto; font-weight: 540; letter-spacing: -0.01em; font-size: 2.25rem; margin-top: 0; }
+  h2, h3 { font-family: var(--font-sans); }
   h2 { font-size: 1.5rem; margin-top: 2.5rem; }
   h3 { font-size: 1.15rem; margin-top: 1.5rem; }
   a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
@@ -196,13 +183,34 @@ const siteLd = {
     code { background: rgba(255,255,255,0.1); }
   }
 
+  /* Fulcrum-rule: signature section divider — a hairline with one off-center
+     accent tick (~38% from left). A subtle nod to the rigor-as-fulcrum thesis;
+     reads as a tasteful divider regardless. */
+  .fulcrum-rule {
+    position: relative;
+    height: 1px;
+    border: 0;
+    background: var(--color-border);
+    margin: var(--space-12, 3rem) 0;
+  }
+  .fulcrum-rule::after {
+    content: "";
+    position: absolute;
+    left: 38%;
+    top: -2.5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
   /* Skip-to-content link for keyboard / screen-reader users */
   .skip-link {
     position: absolute;
     left: -9999px;
     top: 0;
     background: var(--color-accent);
-    color: white;
+    color: var(--color-on-accent);
     padding: 0.5rem 1rem;
     z-index: 100;
     text-decoration: none;

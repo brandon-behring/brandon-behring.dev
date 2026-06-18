@@ -1,88 +1,92 @@
 ---
 import Base from '../layouts/Base.astro';
-import ClusterCard from '../components/ClusterCard.astro';
-import { clustersInSection, projectsForCluster } from '../data/portfolio';
+import { landingFlagships } from '../data/portfolio';
 
-const nowClusters = clustersInSection('now');
+const hostOf = (url: string) => {
+  try {
+    return new URL(url).host.replace(/^www\./, '');
+  } catch {
+    return 'Live';
+  }
+};
+
+// Clean subdomain hosts read as proof (a real live *.brandon-behring.dev);
+// the github.io host is ugly, so a friendly label stands in for it.
+const linkLabelFor = (url: string) => {
+  const h = hostOf(url);
+  return h.endsWith('brandon-behring.dev') ? h : 'Deployed study';
+};
 ---
 
 <Base
-  title="Brandon Behring — Applied Causal Methods + AI Evaluation"
-  description="Brandon Behring builds applied causal methods, AI evaluation tooling, and a study notes corpus."
+  title="Brandon Behring — Applied-math rigor for auditable AI"
+  description="Applied-math PhD and industry research engineer building causal-inference and AI-evaluation tooling, foundations books on sequence models and reinforcement learning, and the research infrastructure beneath them."
 >
   <section class="hero prose">
-    <h1>Brandon Behring</h1>
-    <p class="hero-tagline">
-      Building applied causal methods, AI evaluation tooling, and a study notes corpus.
+    <h1>Applied-math rigor for auditable AI.</h1>
+    <p class="subtitle">
+      Applied-math PhD, now an industry research engineer. I build causal-inference and
+      AI-evaluation tooling, foundations books on sequence models and reinforcement
+      learning, and the research infrastructure beneath them.
     </p>
+    <p class="thesis">Rigor is the fulcrum; AI is the lever.</p>
+    <p class="cred-band">
+      Applied-math PhD (NJIT 2020; NYU postdoc) &middot; peer-reviewed publications &middot; now in industry
+    </p>
+    <div class="cta-row">
+      <a class="cta cta-primary" href="#selected-work">See selected work →</a>
+      <a class="cta cta-secondary" href="/how-this-was-made/">Methodology &amp; audit trail →</a>
+    </div>
   </section>
 
-  <section class="live-now" aria-labelledby="live-heading">
-    <h2 id="live-heading" class="section-heading">Live now</h2>
-    <ul class="live-list">
-      <li>
-        <a href="https://ssm-foundations.brandon-behring.dev" rel="noopener">
-          ssm-foundations <span>sequence-models foundations book</span>
-        </a>
-      </li>
-      <li>
-        <a href="/lab/why-discretization-matters/">
-          Why discretization matters <span>SSM numerics explainer</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://dml.brandon-behring.dev" rel="noopener">
-          double_ml_time_series <span>Chapter 1 live</span>
-        </a>
-      </li>
-      <li>
-        <a href="/lab/research-graph/">
-          RL + Control citation graph <span>interactive demo</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://brandon-behring.github.io/prompt-injection-detection-prototype/" rel="noopener">
-          Prompt-injection OOD study <span>deployed docs</span>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <div class="fulcrum-rule" role="presentation"></div>
 
-  <section class="clusters" aria-labelledby="now-heading">
-    <h2 id="now-heading" class="prose section-heading">What I'm building now</h2>
-    <div class="cluster-grid">
-      {nowClusters.map((cluster) => (
-        <ClusterCard
-          cluster={cluster}
-          projects={projectsForCluster(cluster.slug)}
-        />
+  <section id="selected-work" class="selected" aria-labelledby="sw-heading">
+    <h2 id="sw-heading" class="section-heading">Selected work</h2>
+    <div class="flag-grid">
+      {landingFlagships.map((item) => (
+        <article class="flag-card" data-kind={item.kind}>
+          <div class="flag-top">
+            <h3 class="flag-title"><a href={item.href}>{item.title}</a></h3>
+            <span class="flag-chip">{item.kind === 'demo' ? 'demo' : (item.status ?? '').replace('-', ' ')}</span>
+          </div>
+          <p class="flag-blurb">{item.blurb}</p>
+          {item.kind === 'demo' && item.source?.href ? (
+            <a class="flag-meta" href={item.source.href}>from: {item.source.title} →</a>
+          ) : item.kind === 'project' ? (
+            <a class="flag-meta" href={item.href}>{linkLabelFor(item.href)} →</a>
+          ) : null}
+        </article>
       ))}
     </div>
-    <p class="see-all">
-      <a class="see-all-primary" href="/work/">See all work →</a>
-      <a class="see-all-teaser" href="/work/#work-future-heading">Where this is going →</a>
+    <p class="see-all"><a href="/work/">See all work →</a></p>
+  </section>
+
+  <section class="proof prose" aria-labelledby="proof-heading">
+    <h2 id="proof-heading" class="section-heading">Built to be audited</h2>
+    <p>
+      AI expands what one person can ship; rigor decides what is allowed to ship. Substantive
+      artifacts carry a decision log and an independent audit, and key claims trace back to
+      source — the math is hand-derived and checkable.
     </p>
+    <p class="proof-link"><a href="/how-this-was-made/">How this was made →</a></p>
   </section>
 
   <section id="about" class="bio prose" aria-labelledby="about-heading">
     <h2 id="about-heading">About</h2>
     <p>
-      Currently working through post-transformer sequence model
-      architectures (SSMs, Mamba, Hyena, DeltaNet) and reinforcement
-      learning + optimal control. Expanding the course-derived study notes
-      pattern beyond DLAI. Direction: research engineering on next-generation
-      AI architectures, with applied causal methods, risk analysis,
-      and rigorous evaluation as the methodology spine.
+      I work on modern sequence-model architectures — state-space models such as
+      Mamba and S4 — and reinforcement learning with optimal control, and I turn that work
+      into rigorous, auditable books and tooling. Applied causal inference, risk analysis,
+      and evaluation are the methodology spine throughout.
     </p>
-    <p class="about-methodology">
-      Methodology, AI disclosure, and audit trail:
-      <a href="/how-this-was-made/">How this was made →</a>
-    </p>
-    <p class="about-methodology">
-      Earlier peer-reviewed research:
-      <a href="/publications/">Publications →</a>
+    <p class="pubs">
+      Before industry: five peer-reviewed papers in applied mathematics — point-vortex /
+      Hamiltonian dynamics and network epidemiology. <a href="/publications/">Publications →</a>
     </p>
   </section>
+
+  <div class="fulcrum-rule" role="presentation"></div>
 
   <section id="contact" class="contact prose" aria-labelledby="contact-heading">
     <h2 id="contact-heading">Contact</h2>
@@ -92,130 +96,131 @@ const nowClusters = clustersInSection('now');
       <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/brandon-behring/">/in/brandon-behring</a></li>
     </ul>
   </section>
+
+  <p class="page-closer">Rigor is the fulcrum; AI is the lever.</p>
 </Base>
 
 <style>
-  .hero {
-    margin: 2rem auto 3rem auto;
-  }
-  .hero h1 {
-    margin-bottom: 0.75rem;
-  }
-  .hero-tagline {
-    font-size: 1.25rem;
+  /* Phase B = copy/structure only. Styling is intentionally neutral and reuses the
+     current tokens; the T3 "Hybrid Dossier" visual system lands in Phase C/D. */
+  .hero { margin: 2rem auto 2.5rem; }
+  .hero h1 { margin: 0 0 0.85rem; line-height: 1.08; font-size: clamp(2.2rem, 5vw, 2.85rem); }
+  .subtitle {
     font-family: var(--font-sans);
+    font-size: 1.15rem;
+    line-height: 1.5;
     color: var(--color-text);
-    margin: 0;
-    line-height: 1.4;
+    margin: 0 0 0.6rem;
+    max-width: 60ch;
   }
-
-  .live-now {
-    margin: 0 auto 3rem auto;
-  }
-  .live-list {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    font-family: var(--font-sans);
-  }
-  .live-list a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.4rem 0.85rem;
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    font-size: 0.9rem;
-    text-decoration: none;
-    color: var(--color-text);
-    transition: border-color 0.1s ease, color 0.1s ease;
-  }
-  .live-list a::before {
-    content: "";
-    flex: 0 0 auto;
-    width: 0.45rem;
-    height: 0.45rem;
-    border-radius: 50%;
-    background: #2e9e5b;
-  }
-  .live-list a:hover,
-  .live-list a:focus-visible {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-    outline: none;
-  }
-  .live-list a span {
+  .thesis {
+    font-family: var(--font-prose);
+    font-style: italic;
+    font-size: 1.05rem;
     color: var(--color-text-muted);
-    font-size: 0.8rem;
+    margin: 0 0 1.1rem;
   }
-  .live-list a:hover span,
-  .live-list a:focus-visible span {
-    color: inherit;
+  .cred-band {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    margin: 0 0 1.4rem;
+  }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+  .cta {
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    text-decoration: none;
+    padding: 0.55rem 1.05rem;
+    border-radius: 7px;
+    display: inline-block;
+    transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+  }
+  .cta-primary { background: var(--color-accent-warm); color: var(--color-on-accent-warm); border: 1px solid var(--color-accent-warm); }
+  .cta-primary:hover, .cta-primary:focus-visible { background: var(--color-accent-strong); border-color: var(--color-accent-strong); }
+  .cta-secondary { color: var(--color-accent); border: 1px solid var(--color-border); }
+  .cta-secondary:hover, .cta-secondary:focus-visible { border-color: var(--color-accent); }
+  /* Stack the CTAs full-width on small screens so they share edges instead of sizing to text. */
+  @media (max-width: 520px) {
+    .cta-row { flex-direction: column; align-items: stretch; }
+    .cta { text-align: center; }
   }
 
-  .clusters {
-    margin: 3rem 0;
-  }
+  .selected { margin: 3rem 0; }
   .section-heading {
+    font-family: var(--font-sans);
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--color-text-muted);
     margin-bottom: 1.5rem;
   }
-
-  .cluster-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  @media (min-width: 768px) {
-    .cluster-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (min-width: 1024px) {
-    .cluster-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .see-all {
-    margin: 2rem 0 0 0;
-    font-family: var(--font-sans);
+  .flag-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+  @media (min-width: 720px) { .flag-grid { grid-template-columns: repeat(2, 1fr); } }
+  .flag-card {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 1.5rem;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.1rem 1.2rem;
+    background: var(--color-surface);
+    box-shadow: var(--elevation-card);
+  }
+  .flag-top {
+    display: flex;
     align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem;
+    margin-bottom: 0.45rem;
   }
-  .see-all-primary {
-    font-size: 1.05rem;
-    font-weight: 600;
-  }
-  .see-all-teaser {
-    font-size: 0.9rem;
-  }
-
-  .bio,
-  .contact {
-    margin: 3rem auto;
-  }
-  .about-methodology {
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
+  .flag-title { font-family: var(--font-sans); font-size: 1.05rem; margin: 0; font-weight: 600; }
+  .flag-title a { color: var(--color-text); text-decoration: none; }
+  .flag-title a:hover, .flag-title a:focus-visible { color: var(--color-accent); }
+  .flag-chip {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
     color: var(--color-text-muted);
-    margin-top: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.12rem 0.5rem;
+    white-space: nowrap;
   }
+  .flag-blurb {
+    font-family: var(--font-prose);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    margin: 0 0 0.7rem;
+  }
+  /* margin-top:auto pins the link to the card bottom so links align across a row of unequal-height cards */
+  .flag-meta { margin-top: auto; font-family: var(--font-sans); font-size: 0.82rem; color: var(--color-accent); text-decoration: none; }
+  .flag-meta:hover, .flag-meta:focus-visible { text-decoration: underline; }
+  .see-all { margin-top: 1.5rem; font-family: var(--font-sans); }
+  .see-all a { font-weight: 600; }
 
-  .contact-list {
-    list-style: none;
-    padding-left: 0;
+  .proof { margin: 3rem auto; }
+  .proof p { max-width: 60ch; }
+  .proof-link { font-family: var(--font-sans); font-size: 0.9rem; }
+
+  .bio, .contact { margin: 3rem auto; }
+  .pubs {
     font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-top: 1rem;
   }
-  .contact-list li {
-    margin: 0.5rem 0;
+  .contact-list { list-style: none; padding-left: 0; font-family: var(--font-sans); }
+  .contact-list li { margin: 0.5rem 0; }
+
+  /* Quiet page-foot echo of the hero thesis line (subtle bookend). */
+  .page-closer {
+    font-family: var(--font-prose);
+    font-style: italic;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin: 4rem auto 1rem;
+    opacity: 0.85;
   }
 </style>

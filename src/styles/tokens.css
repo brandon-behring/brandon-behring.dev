@@ -1,0 +1,110 @@
+/*
+ * Design tokens — single source of truth (roadmap A7).
+ *
+ * Phase C ships these at TODAY's exact values: extracting them here is a
+ * zero-visual-diff refactor (computed styles are unchanged). Phase D then flips
+ * the VALUES to the chosen "T3 — Hybrid Dossier" treatment (Fraunces display,
+ * warmer surfaces, categorical status palette) in one place.
+ *
+ * Two canvas components read color OUTSIDE the CSS cascade and must be
+ * hand-synced whenever the palette here changes:
+ *   - CitationGraph.astro (hex hardcoded in JS — Cytoscape can't read vars)
+ *   - EigenSlider.astro   (reads --es-* via getComputedStyle at draw time)
+ */
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/fonts/fraunces-vf.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  /* Core palette — T3 "Hybrid Dossier" (Phase D) */
+  --color-text: #1a1a1a;
+  --color-text-muted: #555;
+  --color-bg: #faf9f7;
+  --color-surface: #ffffff;
+  --color-accent: #3b6fa0;        /* exact match to the book-scaffold-astro ecosystem */
+  --color-accent-strong: #2c557d;
+  --color-accent-warm: var(--color-accent);
+  --color-on-accent-warm: #ffffff;
+  --color-on-accent: #ffffff;      /* text on a --color-accent fill (skip-link, active pill) */
+  --color-border: #e6e2da;
+
+  /* Semantic status — single source for StatusBadge + CitationGraph badges */
+  --status-released-bg: rgba(50, 150, 80, 0.15);
+  --status-released-fg: #1f6433;
+  --status-released-border: rgba(50, 150, 80, 0.4);
+  --status-progress-bg: rgba(180, 130, 30, 0.15);
+  --status-progress-fg: #7a5a18;
+  --status-progress-border: rgba(180, 130, 30, 0.4);
+  --status-prototype-bg: rgba(80, 110, 160, 0.15);
+  --status-prototype-fg: #2a4570;
+  --status-prototype-border: rgba(80, 110, 160, 0.4);
+  --status-neutral-bg: rgba(0, 0, 0, 0.04);
+  --status-neutral-fg: var(--color-text-muted);
+  --status-neutral-border: var(--color-border);
+
+  /* Fonts */
+  --font-prose: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+
+  /* Type scale (1.200 minor third) — scaffolding; applied in Phase D */
+  --text-sm: 0.833rem;
+  --text-base: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.44rem;
+  --text-2xl: 1.728rem;
+  --text-3xl: 2.074rem;
+  --text-4xl: 2.488rem;
+
+  /* Spacing (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Radii / elevation */
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --elevation-card: 0 2px 10px rgba(20, 16, 10, 0.06);
+
+  /* Layout */
+  --max-width-prose: 65ch;
+  --max-width-wide: 1200px;
+  --header-height: 4.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #f1efe9;
+    --color-text-muted: #aaa39a;
+    --color-bg: #15140f;
+    --color-surface: #232019;        /* lifted ~7% L above bg so dark cards read as cards (audit P1) */
+    --color-border: #3d372c;         /* stronger border to define cards in dark */
+    --color-accent: #7fb0dd;
+    --color-accent-strong: #9cc4e6;
+    --color-accent-warm: #d8a657;
+    --color-on-accent-warm: #15140f;
+    --color-on-accent: #15140f;      /* dark: white-on-#7fb0dd is 2.3:1; dark text on it is 8:1 (AA) */
+    --elevation-card: none;
+
+    --status-released-bg: rgba(50, 150, 80, 0.22);
+    --status-released-fg: #7dd39e;
+    --status-released-border: rgba(50, 150, 80, 0.55);
+    --status-progress-bg: rgba(180, 130, 30, 0.22);
+    --status-progress-fg: #e0b85a;
+    --status-progress-border: rgba(180, 130, 30, 0.55);
+    --status-prototype-bg: rgba(80, 110, 160, 0.22);
+    --status-prototype-fg: #9db8e0;
+    --status-prototype-border: rgba(80, 110, 160, 0.55);
+    --status-neutral-bg: rgba(255, 255, 255, 0.05);
+  }
+}
