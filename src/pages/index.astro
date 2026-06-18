@@ -48,7 +48,7 @@ const linkLabelFor = (url: string) => {
         <article class="flag-card" data-kind={item.kind}>
           <div class="flag-top">
             <h3 class="flag-title"><a href={item.href}>{item.title}</a></h3>
-            <span class="flag-chip">{item.kind === 'demo' ? 'demo' : item.status.replace('-', ' ')}</span>
+            <span class="flag-chip">{item.kind === 'demo' ? 'demo' : (item.status ?? '').replace('-', ' ')}</span>
           </div>
           <p class="flag-blurb">{item.blurb}</p>
           {item.kind === 'demo' && item.source?.href ? (
@@ -104,14 +104,6 @@ const linkLabelFor = (url: string) => {
   /* Phase B = copy/structure only. Styling is intentionally neutral and reuses the
      current tokens; the T3 "Hybrid Dossier" visual system lands in Phase C/D. */
   .hero { margin: 2rem auto 2.5rem; }
-  .eyebrow {
-    font-family: var(--font-sans);
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
-    margin: 0 0 0.5rem;
-  }
   .hero h1 { margin: 0 0 0.85rem; line-height: 1.08; font-size: clamp(2.2rem, 5vw, 2.85rem); }
   .subtitle {
     font-family: var(--font-sans);

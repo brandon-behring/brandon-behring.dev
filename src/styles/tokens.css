@@ -28,6 +28,7 @@
   --color-accent-strong: #2c557d;
   --color-accent-warm: var(--color-accent);
   --color-on-accent-warm: #ffffff;
+  --color-on-accent: #ffffff;      /* text on a --color-accent fill (skip-link, active pill) */
   --color-border: #e6e2da;
 
   /* Semantic status — single source for StatusBadge + CitationGraph badges */
@@ -92,6 +93,7 @@
     --color-accent-strong: #9cc4e6;
     --color-accent-warm: #d8a657;
     --color-on-accent-warm: #15140f;
+    --color-on-accent: #15140f;      /* dark: white-on-#7fb0dd is 2.3:1; dark text on it is 8:1 (AA) */
     --elevation-card: none;
 
     --status-released-bg: rgba(50, 150, 80, 0.22);

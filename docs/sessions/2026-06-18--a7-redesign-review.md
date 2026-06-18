@@ -28,3 +28,16 @@ Build green · Phase 0 + tokens **zero-diff** · canvas QA (graph 119 nodes/460 
 
 ## Parked (deliberate, user calls)
 Demo thumbnails · per-project OG rollout (samples shown) · `/research`-vs-`/notes` hub taxonomy.
+
+## Adversarial review round (refute-mode, 2026-06-18, on PR #21)
+Voices: Codex (gpt-5.5) + a fresh Claude `independent-reviewer`, refute-mode on the diff (Gemini CLI down).
+Caught what the verification audit missed; all fixed in a follow-up commit:
+- **A (high):** dark-mode **white-on-accent contrast 2.29:1** (skip-link + graph active pill, from the `#7fb0dd`
+  dark accent) → added `--color-on-accent` token (white light / `#15140f` dark = 8:1).
+- **C (med):** `landingFlagships` draft-leak invariant — resolved via `allProjects` → now `visibleProjects`.
+- **D (med):** residual "Every artifact…" overclaim on `/work` → "Substantive artifacts…".
+- **E/F/G/H/I (low):** "paper-shaped" in `projects.json`; how-this-was-made meta-desc EU-AI-Act legalism;
+  dead `.eyebrow` CSS; homepage demo "from:" link (cluster fallback); `status.replace` type guard.
+- **Follow-up (B, pre-existing — not a PR regression):** CitationGraph node labels (`#1a1a1a`) + detail-panel
+  badges hardcode light colors → low dark-mode contrast (labels hidden until highlight); needs scheme-aware
+  canvas JS. Advisory: mobile `<details>` no auto-close on same-page hash links (no-JS).

@@ -133,7 +133,8 @@ const FLAGSHIP_BLURBS: Record<string, string> = {
 };
 
 function projectBySlug(slug: string): Project | null {
-  return allProjects.find((p) => p.slug === slug) ?? null;
+  // visibleProjects (not allProjects): a draft-flagged curated slug must not publish
+  return visibleProjects.find((p) => p.slug === slug) ?? null;
 }
 
 export const landingFlagships: Flagship[] = [
@@ -157,7 +158,7 @@ export const landingFlagships: Flagship[] = [
       title: d.title,
       blurb: d.blurb,
       href: d.href,
-      source: { title: src?.title ?? '', href: src ? projectHref(src) : null },
+      source: { title: src?.title ?? '', href: src ? (projectHref(src) ?? `/work/${src.cluster}/`) : null },
       thumbnail: d.thumbnail ?? null,
     };
   }),
