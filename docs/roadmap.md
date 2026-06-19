@@ -15,18 +15,15 @@ Ranking lens: craft-signal + what the 2026-06-11 work-so-far review surfaced
 ([session](sessions/2026-06-11--work-so-far-adversarial-review.md)). Skip, mix,
 or replace — not a forced sequence.
 
-1. **`/lab/` index page.** The lab now has two artifacts but the nav's "Lab" entry
-   deep-links to only one; the 06-11 review confirmed a Lab visitor couldn't find
-   the second (hotfixed with cross-links — the structural fix is an index). Point
-   the nav at `/lab/`, list both artifacts with status. Feeds Open decision #1.
-2. **A6 — content-collections migration.** Move `src/data/projects.json` to Astro
-   content collections. The 06-11 review found six stale claims in projects.json —
-   a typed schema (status enums, claim dates) is the structural counter. Independent,
-   cheap, do anytime.
-3. **SSM visualizer** — gated on the explainer's reception: re-trigger **2 weeks
+> The previous top two — the `/lab/` index and A6 content-collections — **both shipped
+> in the A7 redesign** (2026-06-18); see Track A below + [`../CHANGELOG.md`](../CHANGELOG.md).
+
+1. **SSM visualizer** — gated on the explainer's reception: re-trigger **2 weeks
    after the explainer is first distributed** (LinkedIn/newsletter/etc.; signal =
    Cloudflare Web Analytics referrers + views). If not distributed by **2026-07-01**,
    this converts to a pure dated check. Style question is Open decision #2 below.
+2. **`/research`-vs-`/notes` hub structure** — Open decision #1 below; the shipped
+   `/lab/` index is a partial answer that keeps the broader hub taxonomy open.
 
 **Standing (not a slot):** A4 graph-refresh loop — rerun (re-export → curate
 `graph_overrides.json` → verify rendered on `/lab/research-graph/`) whenever the
@@ -37,19 +34,18 @@ itself is board work (`research-kb#8/#10/#23` + the remaining `[needed]` rows in
 `rl_and_control/references/paper_index.md`); recipe in
 `rl_and_control/scripts/README.md` (private repo).
 
-**Also:** A7 visual identity (full editorial direction) · per-project OG images
-(see [`ASSETS-NEEDED.md`](ASSETS-NEEDED.md)).
+**Also (parked):** deeper visual identity beyond A7's shipped editorial baseline ·
+per-project OG images (see [`ASSETS-NEEDED.md`](ASSETS-NEEDED.md)) · demo thumbnails.
 
 ## Open decisions (site)
 
-1. **Long-term hub structure** — `/research`, `/lab`, `/notes`, or hybrid? The lab
-   reached 2 entries on 2026-06-10 (one short of the original "2+ beyond
-   `research-graph`" trigger); Next-1-3 #1 (`/lab/` index) is a partial answer that
-   keeps this decision open for `/research` / `/notes`. (Deferred 2026-05-28;
-   trigger context updated 2026-06-11.)
+1. **Long-term hub structure** — `/research`, `/lab`, `/notes`, or hybrid? The `/lab/`
+   index shipped in A7 (2026-06-18) as a partial answer; the broader taxonomy
+   (`/research` vs `/notes`) stays open — see Next-1–3 #2. (Deferred 2026-05-28;
+   partially addressed 2026-06-18.)
 2. **SSM visualizer style** (stability-region vs symplectic) — decide when the
    visualizer's gate fires (2 weeks after the explainer is first distributed, or
-   2026-07-01, whichever comes first — see Next-1-3 #3).
+   2026-07-01, whichever comes first — see Next-1–3 #1).
 3. **Account split** (`brandon-behring` vs `brandonmbehring-dev`) — decides which org
    the site's repo links, PyPI provenance, and CITATION.cff anchors point at. Tracked:
    [`brandon-behring.dev#5`](https://github.com/brandon-behring/brandon-behring.dev/issues/5).
@@ -71,8 +67,8 @@ to the decision map.
 - [~] **A3. Homepage balance** — Now-clusters lead, future section follows, past off the homepage.
 - [x] **A4. First demo** — live at `/lab/research-graph/`, KB-sourced + densified (2026-06-10). Ongoing growth = the standing graph-refresh loop (above) → the board's corpus queue.
 - [x] **A5. Route structure** — `/work/{slug}` cluster pages.
-- [ ] **A6. Content-collections migration** — Next-1-3 #2.
-- [~] **A7. Visual approach** — minimal editorial + status badges; full visual identity still open.
+- [x] **A6. Content-collections migration** — shipped in A7 (2026-06-18): `src/content.config.ts` Zod schemas validate `src/data/*.json` at build time; `portfolio.ts` reads via `getCollection()`, same export surface.
+- [x] **A7. Visual approach** — editorial redesign shipped (2026-06-18): self-hosted Fraunces display + design-token system (`src/styles/tokens.css`), warm palette, `/lab/` demos gallery, 7-item nav. Deeper visual identity beyond this baseline isn't a current slot.
 
 Open content issue: [`brandon-behring.dev#1`](https://github.com/brandon-behring/brandon-behring.dev/issues/1) (synthesis-map integration) — tracked on the board.
 
