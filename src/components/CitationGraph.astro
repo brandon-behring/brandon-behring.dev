@@ -257,6 +257,40 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
         selector: 'edge.dim',
         style: { opacity: 0.08 } as any,
       },
+      // On-demand connectivity: tapping a node emphasizes the node, its incident
+      // edges, and its neighbors' labels in the accent (>=3:1 both schemes). These
+      // come AFTER the .dim rules so emphasis overrides dim. Ambient edges stay
+      // faint by design — the high-contrast info is surfaced on selection (#23).
+      {
+        selector: 'node.sel',
+        style: {
+          'border-color': p.highlight,
+          'border-width': 3,
+          'border-opacity': 1,
+          'background-opacity': 1,
+          'text-opacity': 1,
+        } as any,
+      },
+      {
+        selector: 'node.neighbor',
+        style: {
+          // Reveal the neighbor as it normally appears (respecting the
+          // not-ingested 0.45 cue) + show its label — overriding node.dim so a
+          // filtered-then-tapped neighbor isn't a label floating on a ghost dot.
+          'text-opacity': 1,
+          'background-opacity': (ele: any) => (ele.data('_ingested') ? 1 : 0.45),
+          'border-opacity': 1,
+        } as any,
+      },
+      {
+        selector: 'edge.incident',
+        style: {
+          'line-color': p.highlight,
+          'target-arrow-color': p.highlight,
+          opacity: 1,
+          width: 2,
+        } as any,
+      },
     ];
 
     const darkMQ = window.matchMedia('(prefers-color-scheme: dark)');
@@ -335,15 +369,41 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
         .replace(/'/g, '&#39;');
     }
 
-    cy.on('tap', 'node', (evt: any) => renderDetail(evt.target));
+    // -------- Selection emphasis (on-demand edge connectivity, #23) --------
+    function clearEmphasis() {
+      cy.nodes().removeClass('sel neighbor');
+      cy.edges().removeClass('incident');
+    }
+    function emphasizeNode(node: any) {
+      clearEmphasis();
+      node.addClass('sel');
+      node.connectedEdges().addClass('incident');
+      node.neighborhood('node').addClass('neighbor');
+    }
+
+    // Pointer-triggered: Cytoscape renders one <canvas> (role=application) with no
+    // per-node tab stops, so keyboard users can't invoke this path — search remains
+    // their route to find nodes. Full keyboard graph traversal is tracked in #25
+    // (WCAG 2.1.1 scope, beyond this 1.4.11 contrast fix).
+    cy.on('tap', 'node', (evt: any) => {
+      renderDetail(evt.target);
+      emphasizeNode(evt.target);
+    });
     cy.on('tap', (evt: any) => {
-      if (evt.target === cy) panel.hidden = true;
+      if (evt.target === cy) {
+        panel.hidden = true;
+        clearEmphasis();
+      }
     });
     closeBtn.addEventListener('click', () => {
       panel.hidden = true;
+      clearEmphasis();
     });
     document.addEventListener('keydown', (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && !panel.hidden) panel.hidden = true;
+      if (e.key === 'Escape' && !panel.hidden) {
+        panel.hidden = true;
+        clearEmphasis();
+      }
     });
 
     // -------- Section pills --------
@@ -353,6 +413,7 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
         const sec = btn.dataset.section!;
         pillBtns.forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
+        clearEmphasis();
         if (sec === '__all__') {
           cy.nodes().removeClass('dim').removeClass('highlight');
           cy.edges().removeClass('dim');
@@ -381,6 +442,7 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
         const q = searchInput.value.trim().toLowerCase();
         cy.nodes().removeClass('highlight').removeClass('dim');
         cy.edges().removeClass('dim');
+        clearEmphasis();
         if (!q) return;
         const matches = cy.nodes().filter((n: any) => {
           const label = String(n.data('label') || '').toLowerCase();
