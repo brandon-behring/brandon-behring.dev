@@ -101,8 +101,8 @@ const siteLd = {
   <link rel="preload" href="/fonts/fraunces-vf.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="alternate" type="application/rss+xml" title="Brandon Behring — new work" href="/rss.xml" />
 
-  <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
-  <script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(personLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(siteLd)} />
 
   <!--
     Cloudflare Web Analytics is auto-injected at the edge for the

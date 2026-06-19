@@ -1,6 +1,6 @@
 # CURRENT_WORK.md — 30-Second Context Switch
 
-**Last Updated**: 2026-06-19 | **Session**: citation-graph a11y (#22/#23/#25) + docs reconcile
+**Last Updated**: 2026-06-19 | **Session**: citation-graph a11y (#22/#23/#25) + docs reconcile + TS foundation
 
 ---
 
@@ -17,6 +17,11 @@ selection via search-box Enter) — all merged, deployed, and prod-verified. Bef
 (2026-06-18): the **A7 editorial redesign** (new hero/narrative, self-hosted Fraunces +
 design tokens, `/lab/` demos-gallery index, A6 content-collections, 7-item nav). Detail
 → [`CHANGELOG.md`](CHANGELOG.md) → session logs.
+
+Also 2026-06-19: a **TypeScript foundation** — the repo's first `tsconfig.json` (strict)
+with `astro check` folded into the build, so type errors now fail CI. Enables type-safe
+interactive demos; bundled with the docs reconciliation in
+[PR #28](https://github.com/brandon-behring/brandon-behring.dev/pull/28).
 
 **Next**: site work from [`docs/roadmap.md`](docs/roadmap.md). The former Next-1–3 top
 two (`/lab/` index, A6 content-collections) both shipped inside A7, so the live

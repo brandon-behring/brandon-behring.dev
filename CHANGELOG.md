@@ -12,6 +12,7 @@ why it's split this way → [`docs/DOC-CONVENTIONS.md`](docs/DOC-CONVENTIONS.md)
 
 ## 2026
 
+- **2026-06-19** — TypeScript foundation: added the repo's first `tsconfig.json` (`astro/tsconfigs/strict`) + folded `astro check` into `npm run build` so type errors fail CI; fixed the surfaced issues to 0 errors (content-collection parser type, Zod `url()` migration, `is:inline` on JSON-LD / the graph data island). Type-safety for the interactive demos → [session](docs/sessions/2026-06-19--typescript-foundation-review.md)
 - **2026-06-19** — Lab citation-graph keyboard access ([#25](https://github.com/brandon-behring/brandon-behring.dev/issues/25)): search-box **Enter** selects a node → same detail panel + incident-edge highlight as a tap; `aria-live` status; closes the canvas WCAG 2.1.1 gap (+ a 2.4.7 focus-ring fix) → [session](docs/sessions/2026-06-19--citation-graph-keyboard-selection-review.md)
 - **2026-06-18** — Lab citation-graph edge connectivity ([#23](https://github.com/brandon-behring/brandon-behring.dev/issues/23)): on-demand incident-edge highlight on selection, faint ambient kept (WCAG 1.4.11 *intent*, light byte-identical) → [session](docs/sessions/2026-06-18--citation-graph-edge-connectivity-review.md)
 - **2026-06-18** — Lab citation-graph dark-mode contrast ([#22](https://github.com/brandon-behring/brandon-behring.dev/issues/22)): scheme-aware Cytoscape palette + fixed an innerHTML detail-panel styling bug → [session](docs/sessions/2026-06-18--citation-graph-dark-contrast-review.md)

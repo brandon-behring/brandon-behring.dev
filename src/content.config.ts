@@ -46,8 +46,8 @@ const projects = defineCollection({
     description_long: z.string(),
     whats_next: z.string().optional(),
     stack: z.array(z.string()).optional(),
-    repo_url: z.string().url().optional(),
-    site_url: z.string().url().optional(),
+    repo_url: z.url().optional(),
+    site_url: z.url().optional(),
     external_context: z.array(externalContext).optional(),
     metrics: z.array(z.string()).optional(),
     visual: z.string().nullable().optional(),
@@ -84,7 +84,9 @@ const demos = defineCollection({
 
 // Peer-reviewed publications — no natural slug, so key by array index.
 const byIndex = (text: string) =>
-  Object.fromEntries((JSON.parse(text) as unknown[]).map((e, i) => [String(i), e]));
+  Object.fromEntries(
+    (JSON.parse(text) as Array<Record<string, unknown>>).map((e, i) => [String(i), e]),
+  );
 
 const publications = defineCollection({
   loader: file('src/data/publications.json', { parser: byIndex }),
