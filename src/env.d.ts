@@ -1,4 +1,4 @@
-/// <reference path="../.astro/types.d.ts" />
+/// <reference types="astro/client" />
 
 // cytoscape-fcose ships no bundled types. We don't pull @types/cytoscape-fcose
 // (a type-only dep we'd never consume — the import is only handed to

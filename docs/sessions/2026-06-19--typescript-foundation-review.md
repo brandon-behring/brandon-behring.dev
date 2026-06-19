@@ -57,6 +57,21 @@ type. A pre-review measurement step ran `astro check` at base/strict/strictest t
 `/lab/research-graph/` shows 119 nodes, keyboard-select (Atari → 31 incident edges) works, 0 console
 errors; CitationGraph bundle hash byte-identical to the #25 build (runtime unchanged by the tsconfig).
 
+## Adversarial review (post, on PR #28)
+
+A `/adversarial-review` pass (2-voice — Claude + Codex; **Gemini down**, `IneligibleTierError`) over the
+full PR diff, tool-grounded. Outcome: **no blockers.**
+
+- **Refuted by grounding:** "build gate breaks CI" (the reusable workflow runs plain `npm ci` → devDeps,
+  incl. `@astrojs/check`, *are* installed; Codex independently refuted too) · `z.url()` regression (26
+  real project URLs, **0** `z.url()` vs `z.string().url()` mismatches).
+- **Inert / mitigated (not introduced here):** `</script>` not escaped in the data island's
+  `set:html` JSON — but the data has **0** `<` chars, prod CSP is `script-src 'self'`, and `set:html`
+  predates this diff (`is:inline` is escaping-neutral). Logged as optional future hardening.
+- **Applied (the one actionable finding):** `src/env.d.ts` reference `../.astro/types.d.ts` →
+  `astro/client` (the former is redundant with the tsconfig `include` and dangles on a fresh clone
+  before `astro sync`). `astro check` re-confirmed 0/0/0. Run saved under `~/.cache/adversarial-review/`.
+
 ## Reference
 
 - Folded into PR #28 (combined: TS foundation + `is:inline` + docs reconciliation). Books are separate
