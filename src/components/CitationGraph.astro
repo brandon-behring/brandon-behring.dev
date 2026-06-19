@@ -107,6 +107,7 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
   </aside>
 
   <script
+    is:inline
     type="application/json"
     id="citation-graph-data"
     set:html={JSON.stringify(graphData)}

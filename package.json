@@ -9,7 +9,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
+    "check": "astro check",
     "preview": "astro preview",
     "dev:cf": "wrangler dev",
     "deploy": "wrangler deploy"
@@ -23,6 +24,7 @@
     "cytoscape-fcose": "^2.2.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.9",
     "@types/node": "^22.10.0",
     "katex": "^0.17.0",
     "rehype-katex": "^7.0.1",
