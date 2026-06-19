@@ -146,6 +146,22 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
     return hslToHex(hue, 60, 55);
   }
 
+  /**
+   * Scheme-aware canvas palette. Cytoscape sets colors in JS and can't read CSS
+   * vars, so these literals are hand-synced to tokens.css (light values are the
+   * exact pre-existing hex — light mode is unchanged). Re-applied on scheme flip,
+   * mirroring EigenSlider. Keep in sync when the token palette changes:
+   *   label     = --color-text     · highlight = --color-accent
+   *   nodeBorder = the bg in each scheme (a "moat" separating overlapping nodes)
+   *   edge      = a quiet grey; the dark value is held at >=3:1 against the dark
+   *               bg (WCAG 1.4.11 graphical contrast) — don't dim it further.
+   */
+  type Palette = { label: string; highlight: string; nodeBorder: string; edge: string };
+  const paletteFor = (dark: boolean): Palette =>
+    dark
+      ? { label: '#f1efe9', highlight: '#7fb0dd', nodeBorder: '#15140f', edge: '#9b9690' }
+      : { label: '#1a1a1a', highlight: '#3b6fa0', nodeBorder: '#ffffff', edge: '#bbbbbb' };
+
   function init() {
     const dataElem = document.getElementById('citation-graph-data');
     if (!dataElem) return;
@@ -181,70 +197,74 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
     const prefersReducedMotion =
       window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // Stylesheet as a function of the scheme palette, so it can be rebuilt when
+    // the color scheme flips (Cytoscape can't read CSS vars — see paletteFor).
+    const buildStyle = (p: Palette) => [
+      {
+        selector: 'node',
+        style: {
+          'background-color': (ele: any) => {
+            const sec = ele.data('_section') as string;
+            return sec && sectionColor.has(sec) ? sectionColor.get(sec)! : fallbackColor;
+          },
+          'background-opacity': (ele: any) => (ele.data('_ingested') ? 1 : 0.45),
+          'border-width': 1,
+          'border-style': (ele: any) => (ele.data('_ingested') ? 'solid' : 'dashed'),
+          'border-color': p.nodeBorder,
+          width: 18,
+          height: 18,
+          label: 'data(label)',
+          'font-family': 'system-ui, -apple-system, sans-serif',
+          'font-size': 10,
+          'text-valign': 'center',
+          'text-halign': 'right',
+          'text-margin-x': 4,
+          color: p.label,
+          'text-opacity': 0,
+          'min-zoomed-font-size': 12,
+        } as any,
+      },
+      {
+        selector: 'node.dim',
+        style: {
+          'background-opacity': 0.1,
+          'border-opacity': 0.1,
+          'text-opacity': 0,
+        } as any,
+      },
+      {
+        selector: 'node.highlight',
+        style: {
+          'border-color': p.highlight,
+          'border-width': 3,
+          'background-opacity': 1,
+          'text-opacity': 1,
+        } as any,
+      },
+      {
+        selector: 'edge',
+        style: {
+          width: 1,
+          'line-color': p.edge,
+          'curve-style': 'bezier',
+          'target-arrow-shape': 'triangle',
+          'target-arrow-color': p.edge,
+          'arrow-scale': 0.7,
+          opacity: 0.6,
+        } as any,
+      },
+      {
+        selector: 'edge.dim',
+        style: { opacity: 0.08 } as any,
+      },
+    ];
+
+    const darkMQ = window.matchMedia('(prefers-color-scheme: dark)');
+
     const cy = cytoscape({
       container: document.getElementById('cy'),
       elements: cyEls,
-      style: [
-        {
-          selector: 'node',
-          style: {
-            'background-color': (ele: any) => {
-              const sec = ele.data('_section') as string;
-              return sec && sectionColor.has(sec) ? sectionColor.get(sec)! : fallbackColor;
-            },
-            'background-opacity': (ele: any) => (ele.data('_ingested') ? 1 : 0.45),
-            'border-width': 1,
-            'border-style': (ele: any) => (ele.data('_ingested') ? 'solid' : 'dashed'),
-            'border-color': '#fff',
-            width: 18,
-            height: 18,
-            label: 'data(label)',
-            'font-family': 'system-ui, -apple-system, sans-serif',
-            'font-size': 10,
-            'text-valign': 'center',
-            'text-halign': 'right',
-            'text-margin-x': 4,
-            color: '#1a1a1a',
-            'text-opacity': 0,
-            'min-zoomed-font-size': 12,
-          } as any,
-        },
-        {
-          selector: 'node.dim',
-          style: {
-            'background-opacity': 0.1,
-            'border-opacity': 0.1,
-            'text-opacity': 0,
-          } as any,
-        },
-        {
-          selector: 'node.highlight',
-          style: {
-            // Hand-synced to the site accent (tokens.css --color-accent). Cytoscape
-            // can't read CSS vars, so this hex must be updated when the accent changes.
-            'border-color': '#3B6FA0',
-            'border-width': 3,
-            'background-opacity': 1,
-            'text-opacity': 1,
-          } as any,
-        },
-        {
-          selector: 'edge',
-          style: {
-            width: 1,
-            'line-color': '#bbb',
-            'curve-style': 'bezier',
-            'target-arrow-shape': 'triangle',
-            'target-arrow-color': '#bbb',
-            'arrow-scale': 0.7,
-            opacity: 0.6,
-          } as any,
-        },
-        {
-          selector: 'edge.dim',
-          style: { opacity: 0.08 } as any,
-        },
-      ],
+      style: buildStyle(paletteFor(darkMQ.matches)),
       layout: {
         name: 'fcose',
         animate: !prefersReducedMotion,
@@ -255,6 +275,12 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
       wheelSensitivity: 0.2,
       minZoom: 0.2,
       maxZoom: 4,
+    });
+
+    // Re-theme the canvas when the OS color scheme flips. Node .dim/.highlight
+    // classes live on the elements, so rebuilding the stylesheet preserves them.
+    darkMQ.addEventListener('change', (e) => {
+      cy.style().fromJson(buildStyle(paletteFor(e.matches))).update();
     });
 
     // -------- Click → detail panel --------
@@ -546,30 +572,34 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
   #detail-panel[hidden] {
     display: none;
   }
-  #detail-panel h2 {
+  /* The panel's content (title/meta/authors/finding/link + badges below) is
+     injected via innerHTML, so it never carries Astro's scope attribute. Anchor
+     these rules on the scoped #detail-panel and mark the injected descendants
+     :global() so they actually match — otherwise the panel renders unstyled. */
+  #detail-panel :global(h2) {
     margin: 0 0 0.4rem 0;
     font-size: 1.05rem;
     line-height: 1.3;
     font-family: var(--font-sans);
   }
-  #detail-panel .meta {
+  #detail-panel :global(.meta) {
     margin: 0 0 0.75rem 0;
     color: var(--color-text-muted);
     font-size: 0.8rem;
   }
-  #detail-panel .authors {
+  #detail-panel :global(.authors) {
     margin: 0 0 0.75rem 0;
     font-size: 0.85rem;
     color: var(--color-text-muted);
   }
-  #detail-panel .finding {
+  #detail-panel :global(.finding) {
     margin: 0 0 0.75rem 0;
     font-size: 0.9rem;
     line-height: 1.5;
     color: var(--color-text);
     font-family: var(--font-prose);
   }
-  #detail-panel .link {
+  #detail-panel :global(.link) {
     margin: 0;
     font-size: 0.9rem;
   }
@@ -588,7 +618,10 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
   .detail-close:hover {
     color: var(--color-accent);
   }
-  .badge {
+  /* Badges are injected too (see note above) AND consume the shared --status-*
+     tokens, which carry dark variants — so the panel reads correctly in both
+     schemes. Light values are unchanged from the prior hardcoded hex. */
+  #detail-panel :global(.badge) {
     display: inline-block;
     padding: 0.1rem 0.4rem;
     border-radius: 999px;
@@ -596,26 +629,26 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
     text-transform: lowercase;
     letter-spacing: 0.03em;
   }
-  .badge-ingested {
-    background: rgba(50, 150, 80, 0.15);
-    color: #1f6433;
-    border: 1px solid rgba(50, 150, 80, 0.4);
+  #detail-panel :global(.badge-ingested) {
+    background: var(--status-released-bg);
+    color: var(--status-released-fg);
+    border: 1px solid var(--status-released-border);
   }
-  .badge-pending {
-    background: rgba(180, 130, 30, 0.15);
-    color: #7a5a18;
-    border: 1px solid rgba(180, 130, 30, 0.4);
+  #detail-panel :global(.badge-pending) {
+    background: var(--status-progress-bg);
+    color: var(--status-progress-fg);
+    border: 1px solid var(--status-progress-border);
   }
-  .badge-book {
-    background: rgba(80, 110, 160, 0.15);
-    color: #2a4570;
-    border: 1px solid rgba(80, 110, 160, 0.4);
+  #detail-panel :global(.badge-book) {
+    background: var(--status-prototype-bg);
+    color: var(--status-prototype-fg);
+    border: 1px solid var(--status-prototype-border);
     margin-left: 0.25rem;
   }
-  .badge-thesis {
-    background: rgba(140, 90, 160, 0.15);
-    color: #5a2a70;
-    border: 1px solid rgba(140, 90, 160, 0.4);
+  #detail-panel :global(.badge-thesis) {
+    background: var(--status-thesis-bg);
+    color: var(--status-thesis-fg);
+    border: 1px solid var(--status-thesis-border);
     margin-left: 0.25rem;
   }
 
