@@ -34,6 +34,11 @@ CHANGELOG/CURRENT_WORK links resolve; no new rot-prone snapshot introduced.
   session via Playwright** (screenshots in `assets/2026-06-20-audit/`).
 - A few cross-repo issue URLs inside the *dated* 2026-06-19 CHANGELOG line not re-fetched
   (low priority; dated historical entry, exempt from the rot rule).
+- **Cross-file enumeration/attribution was a blind spot.** These verification shards confirmed
+  each issue *exists* but did not check that the recon-cluster grouping/count was right. A
+  follow-up 3-voice `/adversarial-review` caught a real error (CHANGELOG listed #29–#33 = 10 and
+  omitted claude-books#27; #33 mislabeled a recon issue → should be #31) — fixed in the follow-up
+  commit; recorded in `2026-06-20--cross-repo-health-audit-adversarial-review.md`.
 
 ## Reference
 - Audit: `docs/sessions/2026-06-20--cross-repo-health-audit.md`

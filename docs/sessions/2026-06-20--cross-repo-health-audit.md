@@ -52,7 +52,7 @@ post-fix · ssm).
 - `src/data/projects.json:41` — `temporalcv v1.0.0` → **v2.3.0** (PyPI latest; was stale by a major+).
 - `CHANGELOG.md` — indexed the previously-unlisted 2026-06-19 cross-property recon + this audit.
 - `CURRENT_WORK.md` — header refreshed; #13 note → "closed"; Next-candidates now point at the
-  cross-property recon cluster (#29/#30/#33) + the hub↔scaffold split.
+  cross-property recon cluster (#29/#30/#31) + the hub↔scaffold split.
 
 ### Issue filed
 - **#34** — `projects.json` status accuracy: `research-agent` is `in-progress` but the repo is
