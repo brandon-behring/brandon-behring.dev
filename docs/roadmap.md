@@ -20,7 +20,7 @@ The live, ordered backlog is **[`../CURRENT_WORK.md`](../CURRENT_WORK.md) "Next"
 issue-by-issue sequence (as of 2026-06-22 the lead is #29, main-site polish). This section
 names only **strategic / standing** site work that isn't a single tracked issue:
 
-- **`/research` hub** (NEW — decided 2026-06-22) — a thin section tying the research threads
+- **`/research` hub** — **live** (shipped 2026-06-22) — a thin lens tying the research threads
   together (sequence models & numerical foundations · causal/temporal inference · AI evaluation)
   and linking out to the artifacts. Resolves **A2**. See Track A → A8.
 - **SSM visualizer** — **dated check: 2026-07-01.** The explainer
@@ -71,7 +71,7 @@ to the decision map.
 - [x] **A5. Route structure** — `/work/{slug}` cluster pages.
 - [x] **A6. Content-collections migration** — shipped in A7 (2026-06-18): `src/content.config.ts` Zod schemas validate `src/data/*.json` at build time; `portfolio.ts` reads via `getCollection()`, same export surface.
 - [x] **A7. Visual approach** — editorial redesign shipped (2026-06-18): self-hosted Fraunces display + design-token system (`src/styles/tokens.css`), warm palette, `/lab/` demos gallery, 7-item nav. Deeper visual identity beyond this baseline isn't a current slot.
-- [~] **A8. `/research` hub** — thin lens page (decided 2026-06-22; building this session): research statement + 3 threads (sequence models & numerical foundations · causal/temporal inference · AI evaluation) + "how it's backed" + links out; nav entry + homepage "Research →" link.
+- [x] **A8. `/research` hub** — shipped 2026-06-22, live at `/research`: a research-threads lens (sequence models & numerical foundations · causal/temporal inference · AI evaluation) + "how it's backed" + links out; nav entry + homepage "Research →" link (PR #42; independent-reviewed).
 
 Open content issue: [`brandon-behring.dev#1`](https://github.com/brandon-behring/brandon-behring.dev/issues/1) (synthesis-map integration) — tracked on the board.
 
