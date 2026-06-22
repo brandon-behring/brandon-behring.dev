@@ -487,8 +487,9 @@ fallback, keyboard support, responsive layout, and a reduced-motion path.
   research-direction section?
 - How much of the homepage should be future-facing versus proof-of-work?
 - Which demo deserves to be built first?
-- Should the site eventually add `/work`, `/research`, `/notes`, or `/lab`
-  routes?
+- ~~Should the site eventually add `/work`, `/research`, `/notes`, or `/lab` routes?~~
+  **Resolved 2026-06-22:** `/work` + `/lab` + `/publications` shipped; **add a thin `/research`**
+  hub (a research-threads lens); **not** `/notes` (books/guides reach via the corpus index, #30).
 - Should project content live in Astro content collections rather than
   `src/data/projects.json`?
 - Which visual approach best fits the chosen lead story?
