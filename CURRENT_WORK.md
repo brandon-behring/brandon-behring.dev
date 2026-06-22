@@ -1,21 +1,25 @@
 # CURRENT_WORK.md — 30-Second Context Switch
 
-**Last Updated**: 2026-06-22 | **Session**: #17 surface the guides link (home About CTA → hub)
+**Last Updated**: 2026-06-22 | **Session**: #30(a) identity spine — corpus index + hub cross-links
 
 ---
 
 ## Right Now
 
 **Nothing active on the site** — it's live and current. Recommended next pickup:
-[#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) (identity spine — start with
-cross-links / orphan-rescue); see the forward sequence under **Next**.
+[#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33) (style SSOT — single-source the
+Warm-Tol palette; unblocks #30(b)); see the forward sequence under **Next**.
 
-**Last shipped** (2026-06-22): **[#17](https://github.com/brandon-behring/brandon-behring.dev/issues/17)
-guides surfaced (bb.dev half)** — a home About-section CTA now links the live guides hub
-(`guides.brandon-behring.dev`): *practitioner guides for data, ML & AI engineering*, a "secondary CTA"
-per the decision map (a nav item, a flagship card, and a `/guides` route were all explored and ruled
-out — the route contradicts the locked `:493` decision, that's #30's job). The hub-Worker path-proxy
-half stays infra/board. Before it (2026-06-22):
+**Last shipped** (2026-06-22): **[#30(a)](https://github.com/brandon-behring/brandon-behring.dev/issues/30)
+identity spine (bb.dev slice)** — `/work/books-and-guides/` now opens with a scannable **"full corpus"**
+index of the 5 live book/guide properties (incl. ssm-foundations & dml, which live in other clusters —
+each tagged with its home cluster and reciprocally back-linked), and the hub's one-way nav gaps close
+(`/publications/`, `/work/`, `/lab/`, and the discretization explainer now link into the research/lab
+spine). No new route (per `:493`); **#30 stays open** for (b) shared wordmark/favicon/OG (blocked on
+#33) + the scaffold-side book→hub affordance. Before it (2026-06-22):
+**[#17](https://github.com/brandon-behring/brandon-behring.dev/issues/17) guides surfaced (bb.dev half)** —
+a home About-section CTA links the live guides hub (`guides.brandon-behring.dev`), a "secondary CTA" per
+`decision-map:398` (nav item / flagship / `/guides` route ruled out). Before it (2026-06-22):
 **[#29](https://github.com/brandon-behring/brandon-behring.dev/issues/29)
 main-site polish** — inline-code chips → a defined token-based warm chip (bordered, scheme-correct via
 `--color-code-*`; AA-verified both schemes, ~15:1 / ~13:1; drops the hardcoded rgba dark hack) + work
@@ -42,11 +46,11 @@ interactive demos; bundled with the docs reconciliation in
 **Next** — refined 2026-06-22 (forward sequence, lens = *quick-wins → identity*; per-item
 rationale lives in the organize-pass comment on each issue):
 
-1. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine:
-   **(a)** cross-links / orphan-rescue first (independent, highest-value), then **(b)** shared
-   wordmark/favicon/OG after #33. *(verify ssm `favicon.svg` 404 at pickup.)* **Next pickup.**
-2. [#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33) — style SSOT:
-   single-source the Warm-Tol palette + share `--fig-*` (site → scaffold → books); foundational for #30b.
+1. [#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33) — style SSOT:
+   single-source the Warm-Tol palette + share `--fig-*` (site → scaffold → books); unblocks #30(b). **Next pickup.**
+2. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
+   wordmark / glyph favicon / OG template (after #33). *(verify ssm `favicon.svg` 404 at pickup.)*
+   **(a)** cross-links + corpus index **shipped** 2026-06-22.
 3. [#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) — reusable Playwright
    eval harness · [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene (batch).
 

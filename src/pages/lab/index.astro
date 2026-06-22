@@ -49,6 +49,10 @@ const items = await Promise.all(
       </article>
     ))}
   </section>
+
+  <p class="lab-foot prose">
+    These demos are evidence for the <a href="/research/">research threads →</a>
+  </p>
 </Base>
 
 <style>
@@ -85,4 +89,11 @@ const items = await Promise.all(
   .demo-from { font-family: var(--font-sans); font-size: 0.82rem; color: var(--color-accent); text-decoration: none; }
   .demo-from:hover, .demo-from:focus-visible { text-decoration: underline; }
   .demo-from--plain { color: var(--color-text-muted); }
+
+  .lab-foot {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0 auto 3rem;
+  }
 </style>

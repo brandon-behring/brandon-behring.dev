@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import ClusterNav from '../../components/ClusterNav.astro';
 import ProjectSection from '../../components/ProjectSection.astro';
+import CorpusIndex from '../../components/CorpusIndex.astro';
 import { visibleClusters, projectsForCluster } from '../../data/portfolio';
 
 export function getStaticPaths() {
@@ -34,6 +35,9 @@ const projects = projectsForCluster(cluster.slug);
       <h1>{cluster.name}</h1>
       <p class="cluster-intro">{cluster.description}</p>
     </div>
+
+    {/* The corpus index is the books-and-guides page's one cross-cluster view (#30a). */}
+    {cluster.slug === 'books-and-guides' && <CorpusIndex />}
 
     {projects.map((project) => (
       <ProjectSection project={project} />
