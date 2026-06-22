@@ -255,6 +255,10 @@
       .addEventListener('change', draw);
     draw();
     updateStatus();
+
+    // Test/automation seam (#36): signal that a slider has drawn, so the headless
+    // verify-suite can assert the canvas actually rendered (not merely exists).
+    (window as any).__esReady = true;
   }
 
   function initAll() {
