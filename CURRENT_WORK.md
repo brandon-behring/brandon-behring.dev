@@ -6,12 +6,15 @@
 
 ## Right Now
 
-**Active (2026-06-22):** refining `docs/roadmap.md` (strategic-layer restructure + resolved
-decisions) and building the new **`/research`** hub (the resolved hub-structure decision; see
-*Resolved* below). After it ships, the next pickup is
-[#29](https://github.com/brandon-behring/brandon-behring.dev/issues/29) (main-site polish) — see **Next**.
+**Nothing active on the site** — it's live and current. Recommended next pickup:
+[#29](https://github.com/brandon-behring/brandon-behring.dev/issues/29) (main-site polish); see the
+forward sequence under **Next**.
 
-**Last shipped** (2026-06-19): the **lab citation-graph accessibility trilogy** —
+**Last shipped** (2026-06-22): the **`/research` hub** (a research-threads lens; resolves A2) + a
+**roadmap refactor** into a strategic layer + **3 strategic decisions resolved** (hub → /research ·
+account split → consolidate onto `brandon-behring` · SSM-viz → 2026-07-01 dated check) — merged +
+deployed ([`CHANGELOG.md`](CHANGELOG.md) → session logs). Before it (2026-06-19): the **lab
+citation-graph accessibility trilogy** —
 [#22](https://github.com/brandon-behring/brandon-behring.dev/issues/22) (dark-mode
 contrast), [#23](https://github.com/brandon-behring/brandon-behring.dev/issues/23)
 (on-demand edge connectivity), and
