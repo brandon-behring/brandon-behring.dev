@@ -1,12 +1,15 @@
 # CURRENT_WORK.md — 30-Second Context Switch
 
-**Last Updated**: 2026-06-20 | **Session**: cross-repo health/consistency audit + live verification
+**Last Updated**: 2026-06-22 | **Session**: organize & refine remaining tasks (post scaffold-v4.25.3)
 
 ---
 
 ## Right Now
 
-**Nothing active.** The site is live and current.
+**Nothing active on the site** — it's live and current. Recommended next pickup is
+[#29](https://github.com/brandon-behring/brandon-behring.dev/issues/29) (main-site polish); see
+the refined forward sequence under **Next**. (The scaffold **v4.25.3** thread shipped + closed —
+its review logs are this session's `docs/sessions/2026-06-21/06-22` files.)
 
 **Last shipped** (2026-06-19): the **lab citation-graph accessibility trilogy** —
 [#22](https://github.com/brandon-behring/brandon-behring.dev/issues/22) (dark-mode
@@ -23,18 +26,31 @@ with `astro check` folded into the build, so type errors now fail CI. Enables ty
 interactive demos; bundled with the docs reconciliation in
 [PR #28](https://github.com/brandon-behring/brandon-behring.dev/pull/28).
 
-**Next**: site work from [`docs/roadmap.md`](docs/roadmap.md). The former Next-1–3 top
-two (`/lab/` index, A6 content-collections) both shipped inside A7, so the live
-candidates are the **SSM visualizer** (gated → 2026-07-01 dated check), the
-`/research`-vs-`/notes` hub-structure decision (roadmap Open decision #1), and the
-freshest actionable cluster — the 2026-06-19 recon's issues
-([#29](https://github.com/brandon-behring/brandon-behring.dev/issues/29) main-site polish ·
-[#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) identity spine:
-wordmark/favicon/OG, e.g. ssm `favicon.svg` 404s ·
-[#31](https://github.com/brandon-behring/brandon-behring.dev/issues/31) inline demos), plus the
-related style-SSOT [#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33) —
-which bind the hub↔scaffold brand split this audit re-confirmed — or other cross-repo work from
-the [board](https://github.com/users/brandon-behring/projects/1).
+**Next** — refined 2026-06-22 (forward sequence, lens = *quick-wins → identity*; per-item
+rationale lives in the organize-pass comment on each issue):
+
+1. [#29](https://github.com/brandon-behring/brandon-behring.dev/issues/29) — main-site polish
+   (CTA intent · inline-code chips · work-page gutter). Front door + thread root. **Next pickup.**
+2. [#17](https://github.com/brandon-behring/brandon-behring.dev/issues/17) — link
+   guides.brandon-behring.dev from the portfolio (the bb.dev half; the path-proxy half is infra → board).
+3. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine:
+   **(a)** cross-links / orphan-rescue first (independent, highest-value), then **(b)** shared
+   wordmark/favicon/OG after #33. *(verify ssm `favicon.svg` 404 at pickup.)*
+4. [#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33) — style SSOT:
+   single-source the Warm-Tol palette + share `--fig-*` (site → scaffold → books); foundational for #30b.
+5. [#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) — reusable Playwright
+   eval harness · [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene (batch).
+
+*Brandon-driven / cross-repo:* [#32](https://github.com/brandon-behring/brandon-behring.dev/issues/32)
+DLAI launch (P2; on the v4.26 + wave1 branches) ·
+[#31](https://github.com/brandon-behring/brandon-behring.dev/issues/31) inline demos in guides.
+*Parked:* [#5](https://github.com/brandon-behring/brandon-behring.dev/issues/5) account-split decision
+(roadmap Open-decision #3) · [#1](https://github.com/brandon-behring/brandon-behring.dev/issues/1)
+synthesis-map (blocked on `synthesis-kb` scaffold).
+
+**Standing** (separate from the issue backlog, from [`docs/roadmap.md`](docs/roadmap.md)): the
+**SSM visualizer** (gated → 2026-07-01 dated check) and the `/research`-vs-`/notes` hub-structure
+decision (roadmap Open decision #1). Live cross-repo backlog → the [board](https://github.com/users/brandon-behring/projects/1).
 
 **Note**: [#13](https://github.com/brandon-behring/brandon-behring.dev/issues/13)
 (board cron reconciler) — **closed 2026-06-20**: the cross-repo health audit verified the
