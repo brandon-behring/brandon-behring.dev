@@ -8,54 +8,56 @@
 > - **What shipped, when** → [`../CHANGELOG.md`](../CHANGELOG.md)
 > - **Identity / strategy** → [`website-decision-map.md`](website-decision-map.md)
 > - **Why docs are split this way** → [`DOC-CONVENTIONS.md`](DOC-CONVENTIONS.md)
+>
+> This doc is the **strategic** layer — themes, decisions, gates. The tactical,
+> issue-by-issue sequence is **not** duplicated here (it rots); it lives in
+> [`../CURRENT_WORK.md`](../CURRENT_WORK.md) "Next" + the board.
 
-## Next 1–3 (site work — pick one)
+## Current focus
 
-Ranking lens: craft-signal + what the 2026-06-11 work-so-far review surfaced
-([session](sessions/2026-06-11--work-so-far-adversarial-review.md)). Skip, mix,
-or replace — not a forced sequence.
+The live, ordered backlog is **[`../CURRENT_WORK.md`](../CURRENT_WORK.md) "Next" + the
+[board](https://github.com/users/brandon-behring/projects/1)** — the single source for the
+issue-by-issue sequence (as of 2026-06-22 the lead is #29, main-site polish). This section
+names only **strategic / standing** site work that isn't a single tracked issue:
 
-> The previous top two — the `/lab/` index and A6 content-collections — **both shipped
-> in the A7 redesign** (2026-06-18); see Track A below + [`../CHANGELOG.md`](../CHANGELOG.md).
+- **`/research` hub** (NEW — decided 2026-06-22) — a thin section tying the research threads
+  together (sequence models & numerical foundations · causal/temporal inference · AI evaluation)
+  and linking out to the artifacts. Resolves **A2**. See Track A → A8.
+- **SSM visualizer** — **dated check: 2026-07-01.** The explainer
+  (`/lab/why-discretization-matters/`) shipped 2026-06-10 but was not distributed, so the
+  "2 weeks after distribution" trigger never started; revisit on the date. Style = the one
+  remaining open decision below.
+- **A4 graph-refresh loop** (standing) — corpus growth is **board work**
+  (`research-kb#8/#10/#23` + `[needed]` rows in `rl_and_control/references/paper_index.md`); the
+  site's job is to **re-verify the rendered graph** on `/lab/research-graph/` after each corpus
+  update (re-export → curate `graph_overrides.json` → verify). The upstream override-persistence
+  fix ([`rl_and_control#4`](https://github.com/brandon-behring/rl_and_control/issues/4))
+  *improves* this loop but does **not** block site re-verification.
 
-1. **SSM visualizer** — gated on the explainer's reception: re-trigger **2 weeks
-   after the explainer is first distributed** (LinkedIn/newsletter/etc.; signal =
-   Cloudflare Web Analytics referrers + views). If not distributed by **2026-07-01**,
-   this converts to a pure dated check. Style question is Open decision #2 below.
-2. **`/research`-vs-`/notes` hub structure** — Open decision #1 below; the shipped
-   `/lab/` index is a partial answer that keeps the broader hub taxonomy open.
+**Parked (user calls):** deeper visual identity beyond A7's baseline · per-project OG images
+(see [`ASSETS-NEEDED.md`](ASSETS-NEEDED.md)) · demo thumbnails.
 
-**Standing (not a slot):** A4 graph-refresh loop — rerun (re-export → curate
-`graph_overrides.json` → verify rendered on `/lab/research-graph/`) whenever the
-corpus advances **and** after the override-persistence bug is fixed upstream
-([`rl_and_control#4`](https://github.com/brandon-behring/rl_and_control/issues/4):
-the 06-10 re-export clobbered a 06-01 manual citation correction). Corpus growth
-itself is board work (`research-kb#8/#10/#23` + the remaining `[needed]` rows in
-`rl_and_control/references/paper_index.md`); recipe in
-`rl_and_control/scripts/README.md` (private repo).
+## Resolved decisions (2026-06-22)
 
-**Also (parked):** deeper visual identity beyond A7's shipped editorial baseline ·
-per-project OG images (see [`ASSETS-NEEDED.md`](ASSETS-NEEDED.md)) · demo thumbnails.
+- **Hub structure** (open since 2026-05-28) → **add a thin `/research` hub**; keep `/work` +
+  `/lab` + `/publications`, and reach books/guides via the corpus index (#30). **Not** `/notes`.
+  Rationale: the decision-map's bridge-narrative / anti-silo lock + a solo-maintainer's route
+  budget. Closes **A2** (post_transformers's public surface = `ssm-foundations`, now homed on `/research`).
+- **Account split** (issue #5) → **consolidate onto `brandon-behring`** as the single public
+  identity. `temporalcv` is already there (PyPI 2.3.0 + canonical repo + `CITATION.cff` all point
+  to brandon-behring, verified 2026-06-22); the remaining work is sweeping the stale public
+  duplicates on `brandonmbehring-dev` (first: the stale `temporalcv` mirror) — **board work
+  ([#5](https://github.com/brandon-behring/brandon-behring.dev/issues/5)); does not delete the dev account.**
 
 ## Open decisions (site)
 
-1. **Long-term hub structure** — `/research`, `/lab`, `/notes`, or hybrid? The `/lab/`
-   index shipped in A7 (2026-06-18) as a partial answer; the broader taxonomy
-   (`/research` vs `/notes`) stays open — see Next-1–3 #2. (Deferred 2026-05-28;
-   partially addressed 2026-06-18.)
-2. **SSM visualizer style** (stability-region vs symplectic) — decide when the
-   visualizer's gate fires (2 weeks after the explainer is first distributed, or
-   2026-07-01, whichever comes first — see Next-1–3 #1).
-3. **Account split** (`brandon-behring` vs `brandonmbehring-dev`) — decides which org
-   the site's repo links, PyPI provenance, and CITATION.cff anchors point at. Tracked:
-   [`brandon-behring.dev#5`](https://github.com/brandon-behring/brandon-behring.dev/issues/5).
-   Resolve before any repo consolidation or transfer.
+1. **SSM visualizer style** (stability-region vs symplectic) — deferred to the visualizer's
+   **2026-07-01 dated check** (see Current focus); decide if/when it's built.
 
-Resolved site decisions live in the dated session logs (e.g.
+Earlier resolved decisions live in the dated session logs (e.g.
 [`sessions/2026-05-28--ambiguity-resolution.md`](sessions/2026-05-28--ambiguity-resolution.md):
-identity = build-to-learn; homepage cluster shape; `mathematical-guides` placement;
-insurance positioning; SSM explainer framing) and in `website-decision-map.md` — not
-re-tabulated here.
+identity = build-to-learn; homepage cluster shape; insurance positioning) and in
+`website-decision-map.md` — not re-tabulated here.
 
 ## Track A — Identity & Content (the site)
 
@@ -63,12 +65,13 @@ Per `website-decision-map.md` §"Open Decisions For Later". Site-facing; strateg
 to the decision map.
 
 - [x] **A1. Lead identity** — Framing 4, *build-to-learn engineer*, 3 visible clusters.
-- [~] **A2. `post_transformers` positioning** — surfaces in the homepage "where this is going"; a dedicated `/research` page is part of the open hub-structure question.
+- [~] **A2. `post_transformers` positioning** — resolved 2026-06-22: its public surface is `ssm-foundations`, now homed on the new `/research` hub (the dedicated page the hub-structure decision settled). `post_transformers` itself stays GitHub-only.
 - [~] **A3. Homepage balance** — Now-clusters lead, future section follows, past off the homepage.
 - [x] **A4. First demo** — live at `/lab/research-graph/`, KB-sourced + densified (2026-06-10). Ongoing growth = the standing graph-refresh loop (above) → the board's corpus queue.
 - [x] **A5. Route structure** — `/work/{slug}` cluster pages.
 - [x] **A6. Content-collections migration** — shipped in A7 (2026-06-18): `src/content.config.ts` Zod schemas validate `src/data/*.json` at build time; `portfolio.ts` reads via `getCollection()`, same export surface.
 - [x] **A7. Visual approach** — editorial redesign shipped (2026-06-18): self-hosted Fraunces display + design-token system (`src/styles/tokens.css`), warm palette, `/lab/` demos gallery, 7-item nav. Deeper visual identity beyond this baseline isn't a current slot.
+- [~] **A8. `/research` hub** — thin lens page (decided 2026-06-22; building this session): research statement + 3 threads (sequence models & numerical foundations · causal/temporal inference · AI evaluation) + "how it's backed" + links out; nav entry + homepage "Research →" link.
 
 Open content issue: [`brandon-behring.dev#1`](https://github.com/brandon-behring/brandon-behring.dev/issues/1) (synthesis-map integration) — tracked on the board.
 

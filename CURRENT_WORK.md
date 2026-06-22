@@ -6,10 +6,10 @@
 
 ## Right Now
 
-**Nothing active on the site** — it's live and current. Recommended next pickup is
-[#29](https://github.com/brandon-behring/brandon-behring.dev/issues/29) (main-site polish); see
-the refined forward sequence under **Next**. (The scaffold **v4.25.3** thread shipped + closed —
-its review logs are this session's `docs/sessions/2026-06-21/06-22` files.)
+**Active (2026-06-22):** refining `docs/roadmap.md` (strategic-layer restructure + resolved
+decisions) and building the new **`/research`** hub (the resolved hub-structure decision; see
+*Resolved* below). After it ships, the next pickup is
+[#29](https://github.com/brandon-behring/brandon-behring.dev/issues/29) (main-site polish) — see **Next**.
 
 **Last shipped** (2026-06-19): the **lab citation-graph accessibility trilogy** —
 [#22](https://github.com/brandon-behring/brandon-behring.dev/issues/22) (dark-mode
@@ -44,13 +44,16 @@ rationale lives in the organize-pass comment on each issue):
 *Brandon-driven / cross-repo:* [#32](https://github.com/brandon-behring/brandon-behring.dev/issues/32)
 DLAI launch (P2; on the v4.26 + wave1 branches) ·
 [#31](https://github.com/brandon-behring/brandon-behring.dev/issues/31) inline demos in guides.
-*Parked:* [#5](https://github.com/brandon-behring/brandon-behring.dev/issues/5) account-split decision
-(roadmap Open-decision #3) · [#1](https://github.com/brandon-behring/brandon-behring.dev/issues/1)
-synthesis-map (blocked on `synthesis-kb` scaffold).
+*Board / parked:* [#5](https://github.com/brandon-behring/brandon-behring.dev/issues/5) account-split —
+**direction decided 2026-06-22** (consolidate onto brandon-behring); remaining = dev-account dupe sweep (board) ·
+[#1](https://github.com/brandon-behring/brandon-behring.dev/issues/1) synthesis-map (blocked on `synthesis-kb` scaffold).
 
-**Standing** (separate from the issue backlog, from [`docs/roadmap.md`](docs/roadmap.md)): the
-**SSM visualizer** (gated → 2026-07-01 dated check) and the `/research`-vs-`/notes` hub-structure
-decision (roadmap Open decision #1). Live cross-repo backlog → the [board](https://github.com/users/brandon-behring/projects/1).
+**Resolved 2026-06-22** (→ [`docs/roadmap.md`](docs/roadmap.md) "Resolved decisions"): hub structure →
+**add a thin `/research` hub** (building this session; resolves A2) · account split → **consolidate onto
+`brandon-behring`** (temporalcv done; dev-account dupe sweep = board #5).
+
+**Standing** (from [`docs/roadmap.md`](docs/roadmap.md)): the **SSM visualizer** (→ 2026-07-01 dated
+check; explainer not distributed). Live cross-repo backlog → the [board](https://github.com/users/brandon-behring/projects/1).
 
 **Note**: [#13](https://github.com/brandon-behring/brandon-behring.dev/issues/13)
 (board cron reconciler) — **closed 2026-06-20**: the cross-repo health audit verified the
