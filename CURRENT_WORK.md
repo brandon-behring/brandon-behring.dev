@@ -11,8 +11,8 @@
 forward sequence under **Next**.
 
 **Last shipped** (2026-06-22): the **`/research` hub** (a research-threads lens; resolves A2) + a
-**roadmap refactor** into a strategic layer + **3 strategic decisions resolved** (hub → /research ·
-account split → consolidate onto `brandon-behring` · SSM-viz → 2026-07-01 dated check) — merged +
+**roadmap refactor** into a strategic layer + **2 strategic decisions resolved** (hub → /research ·
+account split → consolidate onto `brandon-behring`) + SSM-viz **deferred** to a 2026-07-01 dated check — merged +
 deployed ([`CHANGELOG.md`](CHANGELOG.md) → session logs). Before it (2026-06-19): the **lab
 citation-graph accessibility trilogy** —
 [#22](https://github.com/brandon-behring/brandon-behring.dev/issues/22) (dark-mode
@@ -52,8 +52,8 @@ DLAI launch (P2; on the v4.26 + wave1 branches) ·
 [#1](https://github.com/brandon-behring/brandon-behring.dev/issues/1) synthesis-map (blocked on `synthesis-kb` scaffold).
 
 **Resolved 2026-06-22** (→ [`docs/roadmap.md`](docs/roadmap.md) "Resolved decisions"): hub structure →
-**add a thin `/research` hub** (building this session; resolves A2) · account split → **consolidate onto
-`brandon-behring`** (temporalcv done; dev-account dupe sweep = board #5).
+**a thin `/research` hub** (live; resolves A2) · account split → **consolidate onto `brandon-behring`**
+(temporalcv done; dev-account dupe sweep = board #5). SSM-viz **deferred** to a 2026-07-01 dated check.
 
 **Standing** (from [`docs/roadmap.md`](docs/roadmap.md)): the **SSM visualizer** (→ 2026-07-01 dated
 check; explainer not distributed). Live cross-repo backlog → the [board](https://github.com/users/brandon-behring/projects/1).

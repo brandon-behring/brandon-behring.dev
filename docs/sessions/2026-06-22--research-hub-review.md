@@ -40,3 +40,11 @@ dml in-progress qualifier (optional); nav reorder (kept approved order — judgm
 ## Reference
 Reviewed: `feat/research-hub` — `src/pages/research/index.astro` (new) + `Header.astro` nav +
 `index.astro` homepage link. Tasks #39 (Shard A), #40 (Shard B).
+
+## Post-review updates (2026-06-22)
+- **Nav reorder** (PR #43): Research now precedes Publications — the "Open follow-ups" item above, applied.
+- **Second adversarial review** of the full shipped state (PRs #41/#42/#43) caught a **misplaced link** —
+  `/lab/research-graph/` sat under the "Sequence models" thread but is RL/control papers → moved to a new
+  **"Reinforcement learning & control"** thread. Plus doc corrections (decision count 3→2; dropped PyPI
+  version snapshots per DOC-CONVENTIONS; named the full **8-repo** account-split sweep). The high-stakes
+  temporalcv-consolidation claim **verified TRUE** (PyPI + repo + CFF all → brandon-behring).

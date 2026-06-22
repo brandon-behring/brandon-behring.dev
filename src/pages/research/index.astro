@@ -12,7 +12,6 @@ const threads = [
     links: [
       { label: 'Why discretization matters — interactive explainer', href: '/lab/why-discretization-matters/' },
       { label: 'SSM Foundations — the book (in progress)', href: 'https://ssm-foundations.brandon-behring.dev' },
-      { label: 'RL + control — live citation graph', href: '/lab/research-graph/' },
     ],
   },
   {
@@ -33,6 +32,15 @@ const threads = [
       { label: 'AI evaluation work', href: '/work/ai-evaluation/' },
     ],
   },
+  {
+    title: 'Reinforcement learning & control',
+    blurb:
+      'Bridging classical optimal control (Bellman, dynamic programming, LQR/MPC) and modern reinforcement learning (policy gradient, actor-critic, model-based) — a structured guide, in progress, with a live citation graph over the literature.',
+    links: [
+      { label: 'RL + control — live citation graph', href: '/lab/research-graph/' },
+      { label: 'Reinforcement learning & control (in progress)', href: '/work/future/' },
+    ],
+  },
 ];
 ---
 
@@ -45,7 +53,7 @@ const threads = [
     <p>
       I bring applied-math rigor — numerical analysis, dynamical systems, probability — to
       modern AI: how sequence models actually work, how to evaluate them honestly, and how to
-      keep the claims auditable. Three threads run through the work, with causal inference and
+      keep the claims auditable. These threads run through the work, with causal inference and
       evaluation as the methodology spine.
     </p>
   </section>
@@ -60,7 +68,7 @@ const threads = [
         <ul class="thread-links">
           {t.links.map((l) => (
             <li>
-              <a href={l.href} rel={l.href.startsWith('http') ? 'noopener' : undefined}>{l.label} →</a>
+              <a href={l.href} rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{l.label} →</a>
             </li>
           ))}
         </ul>

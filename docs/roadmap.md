@@ -44,9 +44,11 @@ names only **strategic / standing** site work that isn't a single tracked issue:
   Rationale: the decision-map's bridge-narrative / anti-silo lock + a solo-maintainer's route
   budget. Closes **A2** (post_transformers's public surface = `ssm-foundations`, now homed on `/research`).
 - **Account split** (issue #5) → **consolidate onto `brandon-behring`** as the single public
-  identity. `temporalcv` is already there (PyPI 2.3.0 + canonical repo + `CITATION.cff` all point
-  to brandon-behring, verified 2026-06-22); the remaining work is sweeping the stale public
-  duplicates on `brandonmbehring-dev` (first: the stale `temporalcv` mirror) — **board work
+  identity. `temporalcv` is already consolidated (canonical repo + `CITATION.cff` verified point to
+  brandon-behring; current package state → [temporalcv on PyPI](https://pypi.org/project/temporalcv/)).
+  Remaining = sweep the public duplicates still on `brandonmbehring-dev` — **8 overlapping repos**
+  (annuity-pricing, causal_inference_mastery, insurance-ai-toolkit, ir-eval, llm-eval, research-agent,
+  research-kb, temporalcv) — **board work
   ([#5](https://github.com/brandon-behring/brandon-behring.dev/issues/5)); does not delete the dev account.**
 
 ## Open decisions (site)
@@ -71,7 +73,7 @@ to the decision map.
 - [x] **A5. Route structure** — `/work/{slug}` cluster pages.
 - [x] **A6. Content-collections migration** — shipped in A7 (2026-06-18): `src/content.config.ts` Zod schemas validate `src/data/*.json` at build time; `portfolio.ts` reads via `getCollection()`, same export surface.
 - [x] **A7. Visual approach** — editorial redesign shipped (2026-06-18): self-hosted Fraunces display + design-token system (`src/styles/tokens.css`), warm palette, `/lab/` demos gallery, 7-item nav. Deeper visual identity beyond this baseline isn't a current slot.
-- [x] **A8. `/research` hub** — shipped 2026-06-22, live at `/research`: a research-threads lens (sequence models & numerical foundations · causal/temporal inference · AI evaluation) + "how it's backed" + links out; nav entry + homepage "Research →" link (PR #42; independent-reviewed).
+- [x] **A8. `/research` hub** — shipped 2026-06-22, live at `/research`: a research-threads lens (sequence models & numerical foundations · causal/temporal inference · AI evaluation) + "how it's backed" + links out; nav entry + homepage "Research →" link (PR #42 + #43; independent-reviewed).
 
 Open content issue: [`brandon-behring.dev#1`](https://github.com/brandon-behring/brandon-behring.dev/issues/1) (synthesis-map integration) — tracked on the board.
 

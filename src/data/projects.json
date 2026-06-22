@@ -38,7 +38,7 @@
     "status": "released",
     "summary": "Temporal validation utilities and methodology lineage. Walk-forward splits, purging, embargo windows, and leakage prevention.",
     "description_long": "Utilities for temporally-aware cross-validation: walk-forward splits with explicit gaps, purging adjacent observations, embargo windows, and other leakage-prevention patterns. The methodology lineage notes connect classical temporal CV practice to modern uses in causal and ML pipelines.",
-    "whats_next": "Published to PyPI as temporalcv v2.3.0. Future: a Julia companion module with a consistent API.",
+    "whats_next": "Published to PyPI as temporalcv. Future: a Julia companion module with a consistent API.",
     "stack": ["Julia", "Python"],
     "repo_url": "https://github.com/brandon-behring/temporalcv",
     "external_context": [],
