@@ -1,6 +1,6 @@
 ---
 import StatusBadge from './StatusBadge.astro';
-import { type Project } from '../data/portfolio';
+import { type Project, corpusBackHref } from '../data/portfolio';
 
 interface Props {
   project: Project;
@@ -9,6 +9,8 @@ interface Props {
 const { project } = Astro.props;
 const stackText = project.stack && project.stack.length > 0 ? project.stack.join(' · ') : null;
 const hasExternal = project.external_context && project.external_context.length > 0;
+// Non-null only for corpus members shown outside books-and-guides (ssm-foundations, dml).
+const corpusBack = corpusBackHref(project);
 ---
 
 <section class="project-section" id={project.slug}>
@@ -34,6 +36,10 @@ const hasExternal = project.external_context && project.external_context.length 
         <a href={project.site_url} class="project-link" rel="noopener">Live site →</a>
       )}
     </div>
+
+    {corpusBack && (
+      <p class="corpus-back"><a href={corpusBack}>Part of the Books &amp; Guides corpus →</a></p>
+    )}
 
     {project.whats_next && (
       <div class="whats-next">
@@ -127,6 +133,22 @@ const hasExternal = project.external_context && project.external_context.length 
   .project-link:hover,
   .project-link:focus-visible {
     border-bottom-color: var(--color-accent);
+  }
+
+  .corpus-back {
+    margin: 0.75rem 0 0;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+  }
+
+  .corpus-back a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .corpus-back a:hover,
+  .corpus-back a:focus-visible {
+    text-decoration: underline;
   }
 
   .whats-next,

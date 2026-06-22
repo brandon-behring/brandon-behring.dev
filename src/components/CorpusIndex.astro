@@ -1,0 +1,78 @@
+---
+// The "full corpus" strip atop /work/books-and-guides/ (#30a): one scannable
+// row per LIVE book/guide, including the two that live in other clusters
+// (tagged "in: <cluster>" with a link to their home page). Data + curation in
+// portfolio.ts; external links follow the site convention (same tab,
+// rel="noopener", no offsite icon).
+import { corpusIndex } from '../data/portfolio';
+---
+
+<section class="corpus-index" aria-labelledby="corpus-heading">
+  <h2 id="corpus-heading" class="corpus-heading">The full corpus</h2>
+  <ul class="corpus-list">
+    {corpusIndex.map((entry) => (
+      <li class="corpus-item">
+        <a class="corpus-link" href={entry.href} rel="noopener">{entry.title} →</a>
+        <span class="corpus-blurb"> — {entry.blurb}</span>
+        {!entry.isHome && (
+          <span class="corpus-home">
+            {' '}· in <a href={`/work/${entry.homeClusterSlug}/`}>{entry.homeClusterName}</a>
+          </span>
+        )}
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .corpus-index {
+    margin: 0 0 2.5rem;
+    padding: 1.25rem 1.4rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: var(--elevation-card);
+  }
+  .corpus-heading {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin: 0 0 0.9rem;
+  }
+  .corpus-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .corpus-item {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .corpus-item:last-child {
+    border-bottom: none;
+  }
+  .corpus-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .corpus-link:hover,
+  .corpus-link:focus-visible {
+    text-decoration: underline;
+  }
+  .corpus-blurb {
+    color: var(--color-text-muted);
+  }
+  .corpus-home {
+    color: var(--color-text-muted);
+  }
+  .corpus-home a {
+    color: var(--color-text-muted);
+  }
+</style>

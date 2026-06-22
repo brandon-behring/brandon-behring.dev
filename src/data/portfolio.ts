@@ -163,3 +163,86 @@ export const landingFlagships: Flagship[] = [
     };
   }),
 ];
+
+// --- "The full corpus" index (#30a) -------------------------------------------
+// A scannable, cross-cluster list of the LIVE book/guide properties, surfaced on
+// the existing /work/books-and-guides/ page (no new route, per decision-map:493).
+// Curated like landingFlagships: explicit slugs + short, vanity-free copy. Two of
+// these live in other clusters (ssm-foundations → course-notes, double-ml-time-series
+// → causal-methods), so that cluster page can't enumerate them; this index binds
+// them in, and corpusBackHref() adds the reciprocal link from their cluster pages.
+
+export interface CorpusEntry {
+  slug: string;
+  title: string;
+  /** Live deployed site (never a repo fallback — the corpus is reachable properties). */
+  href: string;
+  blurb: string;
+  homeClusterName: string;
+  homeClusterSlug: string;
+  /** True when the home cluster is books-and-guides (then no "in: …" tag is shown). */
+  isHome: boolean;
+}
+
+const CORPUS_HOME_CLUSTER = 'books-and-guides';
+const CORPUS_HOME_HREF = '/work/books-and-guides/';
+
+// Ordered released-first. Display title + one-liner override the repo-slug-ish raw
+// project titles; copy is deliberately count-free (anti-vanity-metrics).
+const CORPUS_ENTRIES: { slug: string; title: string; blurb: string }[] = [
+  {
+    slug: 'guides-ai-engineering',
+    title: 'AI Engineering guide',
+    blurb: 'Evaluation, LLM application engineering, and production systems.',
+  },
+  {
+    slug: 'guides',
+    title: 'Guides hub',
+    blurb: 'Practitioner interview-prep guides for data, ML, and AI engineering.',
+  },
+  {
+    slug: 'claude-books',
+    title: 'claude-books',
+    blurb: 'A series on Claude Code and agentic coding — architecture, design, practice.',
+  },
+  {
+    slug: 'ssm-foundations',
+    title: 'ssm-foundations',
+    blurb: 'Numerical analysis and dynamical systems behind modern sequence models.',
+  },
+  {
+    slug: 'double-ml-time-series',
+    title: 'Double ML (time series)',
+    blurb: 'Double machine learning for time series — cross-fitting that respects time order.',
+  },
+];
+
+function clusterName(slug: string): string {
+  return allClusters.find((c) => c.slug === slug)?.name ?? slug;
+}
+
+export const corpusIndex: CorpusEntry[] = CORPUS_ENTRIES.map((entry) => {
+  const p = projectBySlug(entry.slug);
+  if (!p) throw new Error(`corpusIndex: unknown or draft project slug "${entry.slug}"`);
+  if (!p.site_url) throw new Error(`corpusIndex: project "${entry.slug}" has no live site_url`);
+  return {
+    slug: entry.slug,
+    title: entry.title,
+    href: p.site_url,
+    blurb: entry.blurb,
+    homeClusterName: clusterName(p.cluster),
+    homeClusterSlug: p.cluster,
+    isHome: p.cluster === CORPUS_HOME_CLUSTER,
+  };
+});
+
+const corpusSlugSet = new Set(CORPUS_ENTRIES.map((e) => e.slug));
+
+/**
+ * Reciprocal back-link for a corpus member rendered on a NON-home cluster page
+ * (ssm-foundations, double-ml-time-series); null otherwise, so ProjectSection
+ * shows the link only where it binds back to the corpus index.
+ */
+export function corpusBackHref(p: Project): string | null {
+  return corpusSlugSet.has(p.slug) && p.cluster !== CORPUS_HOME_CLUSTER ? CORPUS_HOME_HREF : null;
+}

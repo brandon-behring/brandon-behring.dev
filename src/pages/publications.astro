@@ -70,6 +70,10 @@ const dissertations = publications.filter((p) => p.type === 'dissertation');
     <p class="pub-foot">
       Full list on <a href={SCHOLAR} rel="noopener">Google Scholar →</a>
     </p>
+
+    <p class="page-nav">
+      See also: <a href="/research/">Research</a> · <a href="/work/">Work</a>
+    </p>
   </article>
 </Base>
 
@@ -116,5 +120,13 @@ const dissertations = publications.filter((p) => p.type === 'dissertation');
     font-size: 0.9rem;
     color: var(--color-text-muted);
     margin-top: 1.5rem;
+  }
+  .page-nav {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.25rem;
   }
 </style>
