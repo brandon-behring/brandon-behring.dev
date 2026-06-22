@@ -1,17 +1,23 @@
 # CURRENT_WORK.md — 30-Second Context Switch
 
-**Last Updated**: 2026-06-22 | **Session**: #36 pilot — Playwright verify-suite (bb.dev)
+**Last Updated**: 2026-06-22 | **Session**: #2 portfolio hygiene — repo-metadata batch (cross-repo)
 
 ---
 
 ## Right Now
 
-**Nothing active on the site** — it's live and current. Recommended next pickup:
-[#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) (portfolio hygiene, bb.dev-only);
-#30(b) is blocked on cross-repo deps and #36's cross-property harness is a dedicated lever session —
-see the forward sequence under **Next**.
+**Nothing active on the site, and the near-term bb.dev-*code* backlog is exhausted** — #33/#36/#2 all
+turned out cross-repo despite their "bb.dev-only" labels. Remaining tracked work is cross-repo (#2's
+CITATION.cff/OG, #36 step-2 lever harness), blocked (#30b, #1), or Brandon-driven (#5/#31/#32). Next is
+a deliberate cross-repo / lever session or new direction — see **Next**.
 
-**Last shipped** (2026-06-22): **[#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36)
+**Last shipped** (2026-06-22): **[#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2)
+portfolio hygiene — repo-metadata batch** — cross-repo GitHub settings via `gh repo edit` (no site change):
+homepage URLs on the live-site repos (ssm-foundations, dml, claude-books, brandon-behring.dev) + fixed
+guides-ai-engineering's wrong preview URL; topics on 11 portfolio repos (was 0); filled claude-books'
+description + a claim-safety fix on dlai-study-notes (dropped a non-resolving "live" URL). **#2 stays open**
+for CITATION.cff + OG + remaining-repo topics. Before it (2026-06-22):
+**[#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36)
 pilot — Playwright verify-suite** — the repo's first automated tests (`@playwright/test`, chromium
 light+dark, 42 passing): smoke (every route 200 + console/response-clean + render; routes mirror
 `portfolio.ts`'s `visibleClusters`, read from `clusters.json`+`projects.json`), the two interactive
@@ -63,13 +69,18 @@ interactive demos; bundled with the docs reconciliation in
 **Next** — refined 2026-06-22 (forward sequence, lens = *quick-wins → identity*; per-item
 rationale lives in the organize-pass comment on each issue):
 
-1. [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene (batch; bb.dev-only). **Next pickup.**
-2. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
+**The bb.dev-code backlog is exhausted** — remaining tracked items are cross-repo, blocked, or
+Brandon-driven (no clean bb.dev-code "next pickup"; await direction):
+
+1. [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene: **metadata
+   batch shipped** 2026-06-22; **stays open** for CITATION.cff (research-kb + academic repos) + OG images
+   (dml/ssm) + remaining-repo topics — per-repo file work (leaves bb.dev).
+2. [#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) **step 2** — the cross-property
+   Playwright harness in **lever** (`scripts/`, sibling to `adversarial_review.py`), reusing the pilot's
+   proven snippets; a dedicated lever session.
+3. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
    wordmark / glyph favicon / OG — **blocked** on the cross-repo token package + book-scaffold-astro#164 +
-   the handbook index flip; revisit when those land. *(verify ssm `favicon.svg` 404 at pickup.)* **(a)** shipped 2026-06-22.
-3. [#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) **step 2** — the cross-property
-   Playwright harness in **lever** (`scripts/`, sibling to `adversarial_review.py`); a dedicated lever
-   session (not bb.dev). The bb.dev **pilot shipped** 2026-06-22 and proves the capture to reuse.
+   the handbook index flip. *(verify ssm `favicon.svg` 404 at pickup.)* **(a)** shipped 2026-06-22.
 
 *Brandon-driven / cross-repo:* [#32](https://github.com/brandon-behring/brandon-behring.dev/issues/32)
 DLAI launch (P2; on the v4.26 + wave1 branches) ·
