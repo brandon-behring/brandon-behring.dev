@@ -42,7 +42,8 @@ The current site is a small Astro static portfolio:
 - Demo posture: interactive demos are worth considering, but project pages
   should be the first home for demos.
 - `post_transformers` positioning: future-facing research signal, especially the
-  math-to-AI bridge.
+  math-to-AI bridge. **Resolved 2026-06-22:** its public surface is `ssm-foundations` (homed on the
+  `/research` hub); `post_transformers` itself stays GitHub-only. See roadmap A2.
 
 ## Time Horizons
 
