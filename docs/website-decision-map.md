@@ -491,6 +491,12 @@ fallback, keyboard support, responsive layout, and a reduced-motion path.
 - ~~Should the site eventually add `/work`, `/research`, `/notes`, or `/lab` routes?~~
   **Resolved 2026-06-22:** `/work` + `/lab` + `/publications` shipped; **add a thin `/research`**
   hub (a research-threads lens); **not** `/notes` (books/guides reach via the corpus index, #30).
+- ~~How should design tokens be single-sourced across the property family (#33)?~~
+  **Resolved 2026-06-22:** the LaTeX `.sty` is the canonical Warm-Tol source; this site keeps
+  *controlled duplication* of the one shared hue (it's standalone, not a scaffold consumer), with
+  per-property freedom otherwise. A cross-repo shared-tokens package is the eventual SSOT but is
+  premature now (one shared hue, solo maintainer) → deferred (tracked in #33). See
+  [`docs/design-tokens.md`](design-tokens.md).
 - Should project content live in Astro content collections rather than
   `src/data/projects.json`?
 - Which visual approach best fits the chosen lead story?

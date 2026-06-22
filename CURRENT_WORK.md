@@ -1,16 +1,25 @@
 # CURRENT_WORK.md — 30-Second Context Switch
 
-**Last Updated**: 2026-06-22 | **Session**: #30(a) identity spine — corpus index + hub cross-links
+**Last Updated**: 2026-06-22 | **Session**: #33 token SSOT — document + decide (bb.dev slice)
 
 ---
 
 ## Right Now
 
 **Nothing active on the site** — it's live and current. Recommended next pickup:
-[#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33) (style SSOT — single-source the
-Warm-Tol palette; unblocks #30(b)); see the forward sequence under **Next**.
+[#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) (reusable Playwright eval harness)
+or [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) (portfolio hygiene) — both bb.dev-only
+(#30(b) is blocked on cross-repo deps); see the forward sequence under **Next**.
 
-**Last shipped** (2026-06-22): **[#30(a)](https://github.com/brandon-behring/brandon-behring.dev/issues/30)
+**Last shipped** (2026-06-22): **[#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33)
+token SSOT (bb.dev doc/decision slice)** — documented the design-token source-of-truth: the canonical
+Warm-Tol palette lives in the LaTeX `.sty`; this standalone site keeps *controlled duplication* of the one
+shared hue (`#3B6FA0`) with per-property freedom otherwise. New [`docs/design-tokens.md`](docs/design-tokens.md)
+(provenance + cross-property map + accent hand-sync registry + the deferred shared-package path), a
+decision-map resolved entry, `--radius-sm` documented as an intentional divergence, and the dead
+`--text-*`/`--space-*` scaffolding pruned (zero visual diff). The cross-repo shared-tokens package stays
+**deferred** (premature for one hue + a solo maintainer; Rule of Three); **#33 stays open** for it. Before
+it (2026-06-22): **[#30(a)](https://github.com/brandon-behring/brandon-behring.dev/issues/30)
 identity spine (bb.dev slice)** — `/work/books-and-guides/` now opens with a scannable **"full corpus"**
 index of the 5 live book/guide properties (incl. ssm-foundations & dml, which live in other clusters —
 each tagged with its home cluster and reciprocally back-linked), and the hub's one-way nav gaps close
@@ -46,13 +55,12 @@ interactive demos; bundled with the docs reconciliation in
 **Next** — refined 2026-06-22 (forward sequence, lens = *quick-wins → identity*; per-item
 rationale lives in the organize-pass comment on each issue):
 
-1. [#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33) — style SSOT:
-   single-source the Warm-Tol palette + share `--fig-*` (site → scaffold → books); unblocks #30(b). **Next pickup.**
-2. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
-   wordmark / glyph favicon / OG template (after #33). *(verify ssm `favicon.svg` 404 at pickup.)*
-   **(a)** cross-links + corpus index **shipped** 2026-06-22.
-3. [#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) — reusable Playwright
-   eval harness · [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene (batch).
+1. [#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) — reusable Playwright
+   eval harness (bb.dev-only). **Next pickup.**
+2. [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene (batch; bb.dev-only).
+3. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
+   wordmark / glyph favicon / OG — **blocked** on the cross-repo token package + book-scaffold-astro#164 +
+   the handbook index flip; revisit when those land. *(verify ssm `favicon.svg` 404 at pickup.)* **(a)** shipped 2026-06-22.
 
 *Brandon-driven / cross-repo:* [#32](https://github.com/brandon-behring/brandon-behring.dev/issues/32)
 DLAI launch (P2; on the v4.26 + wave1 branches) ·
@@ -64,6 +72,8 @@ DLAI launch (P2; on the v4.26 + wave1 branches) ·
 **Resolved 2026-06-22** (→ [`docs/roadmap.md`](docs/roadmap.md) "Resolved decisions"): hub structure →
 **a thin `/research` hub** (live; resolves A2) · account split → **consolidate onto `brandon-behring`**
 (temporalcv done; dev-account dupe sweep = board #5). SSM-viz **deferred** to a 2026-07-01 dated check.
+Token SSOT (#33) → **canonical = the LaTeX `.sty`**; this site keeps controlled duplication of the one
+shared hue, cross-repo shared-tokens package **deferred** (tracked in #33) → [`docs/design-tokens.md`](docs/design-tokens.md).
 
 **Standing** (from [`docs/roadmap.md`](docs/roadmap.md)): the **SSM visualizer** (→ 2026-07-01 dated
 check; explainer not distributed). Live cross-repo backlog → the [board](https://github.com/users/brandon-behring/projects/1).
