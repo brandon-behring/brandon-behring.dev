@@ -30,6 +30,8 @@
   --color-on-accent-warm: #ffffff;
   --color-on-accent: #ffffff;      /* text on a --color-accent fill (skip-link, active pill) */
   --color-border: #e6e2da;
+  --color-code-bg: #f4f1ea;        /* inline-code chip — warm fill, defined boundary (#29) */
+  --color-code-border: #e2dcd0;
 
   /* Semantic status — single source for StatusBadge + CitationGraph badges */
   --status-released-bg: rgba(50, 150, 80, 0.15);
@@ -81,6 +83,7 @@
 
   /* Layout */
   --max-width-prose: 65ch;
+  --max-width-content: 50rem;      /* between prose and wide — structured detail pages (#29) */
   --max-width-wide: 1200px;
   --header-height: 4.5rem;
 }
@@ -92,6 +95,8 @@
     --color-bg: #15140f;
     --color-surface: #232019;        /* lifted ~7% L above bg so dark cards read as cards (audit P1) */
     --color-border: #3d372c;         /* stronger border to define cards in dark */
+    --color-code-bg: #2b2720;        /* inline-code chip (dark) — lifted above bg */
+    --color-code-border: #3d372c;
     --color-accent: #7fb0dd;
     --color-accent-strong: #9cc4e6;
     --color-accent-warm: #d8a657;

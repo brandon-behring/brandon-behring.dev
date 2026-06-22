@@ -1,19 +1,23 @@
 # CURRENT_WORK.md — 30-Second Context Switch
 
-**Last Updated**: 2026-06-22 | **Session**: organize & refine remaining tasks (post scaffold-v4.25.3)
+**Last Updated**: 2026-06-22 | **Session**: #29 main-site polish (inline-code chips + work-page width)
 
 ---
 
 ## Right Now
 
 **Nothing active on the site** — it's live and current. Recommended next pickup:
-[#29](https://github.com/brandon-behring/brandon-behring.dev/issues/29) (main-site polish); see the
-forward sequence under **Next**.
+[#17](https://github.com/brandon-behring/brandon-behring.dev/issues/17) (link guides.brandon-behring.dev
+from the portfolio); see the forward sequence under **Next**.
 
-**Last shipped** (2026-06-22): the **`/research` hub** (a research-threads lens; resolves A2) + a
-**roadmap refactor** into a strategic layer + **2 strategic decisions resolved** (hub → /research ·
-account split → consolidate onto `brandon-behring`) + SSM-viz **deferred** to a 2026-07-01 dated check — merged +
-deployed ([`CHANGELOG.md`](CHANGELOG.md) → session logs). Before it (2026-06-19): the **lab
+**Last shipped** (2026-06-22): **[#29](https://github.com/brandon-behring/brandon-behring.dev/issues/29)
+main-site polish** — inline-code chips → a defined token-based warm chip (bordered, scheme-correct via
+`--color-code-*`; AA-verified both schemes, ~15:1 / ~13:1; drops the hardcoded rgba dark hack) + work
+cluster detail pages widened from the 65ch reading column to an ~800px content column (new
+`--max-width-content`); dark-mode gold CTA confirmed **intentional** (kept). Before it (2026-06-22): the
+**`/research` hub** (a research-threads lens; resolves A2) + a **roadmap refactor** into a strategic layer
++ **2 strategic decisions resolved** (hub → /research · account split → consolidate onto `brandon-behring`)
++ SSM-viz **deferred** to a 2026-07-01 dated check. Before it (2026-06-19): the **lab
 citation-graph accessibility trilogy** —
 [#22](https://github.com/brandon-behring/brandon-behring.dev/issues/22) (dark-mode
 contrast), [#23](https://github.com/brandon-behring/brandon-behring.dev/issues/23)
@@ -32,16 +36,15 @@ interactive demos; bundled with the docs reconciliation in
 **Next** — refined 2026-06-22 (forward sequence, lens = *quick-wins → identity*; per-item
 rationale lives in the organize-pass comment on each issue):
 
-1. [#29](https://github.com/brandon-behring/brandon-behring.dev/issues/29) — main-site polish
-   (CTA intent · inline-code chips · work-page gutter). Front door + thread root. **Next pickup.**
-2. [#17](https://github.com/brandon-behring/brandon-behring.dev/issues/17) — link
+1. [#17](https://github.com/brandon-behring/brandon-behring.dev/issues/17) — link
    guides.brandon-behring.dev from the portfolio (the bb.dev half; the path-proxy half is infra → board).
-3. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine:
+   **Next pickup.**
+2. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine:
    **(a)** cross-links / orphan-rescue first (independent, highest-value), then **(b)** shared
    wordmark/favicon/OG after #33. *(verify ssm `favicon.svg` 404 at pickup.)*
-4. [#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33) — style SSOT:
+3. [#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33) — style SSOT:
    single-source the Warm-Tol palette + share `--fig-*` (site → scaffold → books); foundational for #30b.
-5. [#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) — reusable Playwright
+4. [#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) — reusable Playwright
    eval harness · [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene (batch).
 
 *Brandon-driven / cross-repo:* [#32](https://github.com/brandon-behring/brandon-behring.dev/issues/32)
