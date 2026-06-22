@@ -1,5 +1,13 @@
 /*
- * Design tokens — single source of truth (roadmap A7).
+ * Design tokens — the site's source of truth (roadmap A7).
+ *
+ * Provenance: the Warm-Tol palette originates in the LaTeX book
+ * (claude-best-practices.sty) — --color-accent #3b6fa0 is its "WarmBlue". The
+ * book-scaffold-astro package re-encodes the same palette as a named --warm-*
+ * layer; this site is standalone (NOT a scaffold consumer) and deliberately
+ * keeps controlled duplication of the shared accent, with per-property freedom
+ * for everything else. Cross-property map, the hand-sync registry, and the
+ * deferred shared-package path live in docs/design-tokens.md (#33).
  *
  * Phase C ships these at TODAY's exact values: extracting them here is a
  * zero-visual-diff refactor (computed styles are unchanged). Phase D then flips
@@ -56,26 +64,12 @@
   --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
 
-  /* Type scale (1.200 minor third) — scaffolding; applied in Phase D */
-  --text-sm: 0.833rem;
-  --text-base: 1rem;
-  --text-lg: 1.2rem;
-  --text-xl: 1.44rem;
-  --text-2xl: 1.728rem;
-  --text-3xl: 2.074rem;
-  --text-4xl: 2.488rem;
-
-  /* Spacing (4px base) */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-
-  /* Radii / elevation */
+  /* Radii / elevation.
+     --radius-sm is an intentional site divergence — 4px here vs the
+     book-scaffold's 2px (per-property freedom; see docs/design-tokens.md).
+     The --text-* type scale and --space-* spacing scale were unused
+     scaffolding (Phase D shipped without wiring them) and were pruned (#33);
+     re-derive from docs/design-tokens.md if a scale is ever wired in. */
   --radius-sm: 4px;
   --radius: 8px;
   --radius-lg: 12px;
