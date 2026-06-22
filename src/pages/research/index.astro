@@ -1,0 +1,144 @@
+---
+import Base from '../../layouts/Base.astro';
+
+// A thin "lens" page: framing prose + curated links into the deeper work. It does NOT
+// re-describe projects — every item links to its home on /work, /lab, the live books,
+// or /publications. (Hub-structure decision 2026-06-22; roadmap Track A → A8.)
+const threads = [
+  {
+    title: 'Sequence models & numerical foundations',
+    blurb:
+      'Why do state-space models (Mamba, S4, and kin) behave the way they do? I trace it back to the numerics — discretization, stability, dynamical systems — and write it up as a lens-led foundations book, in progress.',
+    links: [
+      { label: 'Why discretization matters — interactive explainer', href: '/lab/why-discretization-matters/' },
+      { label: 'SSM Foundations — the book (in progress)', href: 'https://ssm-foundations.brandon-behring.dev' },
+      { label: 'RL + control — live citation graph', href: '/lab/research-graph/' },
+    ],
+  },
+  {
+    title: 'Causal & temporal inference',
+    blurb:
+      'The methodology spine: double machine learning for time series, leakage-safe temporal cross-validation, and causal implementations in Julia and Python built toward reference quality.',
+    links: [
+      { label: 'Double ML for time series — book + code', href: 'https://dml.brandon-behring.dev' },
+      { label: 'Causal & temporal methods', href: '/work/causal-methods/' },
+    ],
+  },
+  {
+    title: 'AI evaluation & robustness',
+    blurb:
+      'Do detectors hold up out of distribution? Honest evaluation — baseline ladders, bootstrap confidence intervals, calibration, and stop-gates. These are methodology proofs-of-concept, not production security claims.',
+    links: [
+      { label: 'Out-of-distribution generalization study', href: 'https://brandon-behring.github.io/prompt-injection-detection-prototype/' },
+      { label: 'AI evaluation work', href: '/work/ai-evaluation/' },
+    ],
+  },
+];
+---
+
+<Base
+  title="Research — Brandon Behring"
+  description="Applied-math rigor turned toward modern AI: sequence-model foundations, causal & temporal inference, and honest AI evaluation — with auditable claims."
+>
+  <section class="research-intro prose">
+    <h1>Research</h1>
+    <p>
+      I bring applied-math rigor — numerical analysis, dynamical systems, probability — to
+      modern AI: how sequence models actually work, how to evaluate them honestly, and how to
+      keep the claims auditable. Three threads run through the work, with causal inference and
+      evaluation as the methodology spine.
+    </p>
+  </section>
+
+  <div class="fulcrum-rule" role="presentation"></div>
+
+  <section class="threads" aria-label="Research threads">
+    {threads.map((t) => (
+      <article class="thread-card">
+        <h2 class="thread-title">{t.title}</h2>
+        <p class="thread-blurb">{t.blurb}</p>
+        <ul class="thread-links">
+          {t.links.map((l) => (
+            <li>
+              <a href={l.href} rel={l.href.startsWith('http') ? 'noopener' : undefined}>{l.label} →</a>
+            </li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </section>
+
+  <div class="fulcrum-rule" role="presentation"></div>
+
+  <section class="backed prose" aria-labelledby="backed-heading">
+    <h2 id="backed-heading">How the work is backed</h2>
+    <p>
+      Every substantive claim is meant to be checkable. A local knowledge base
+      (<code>research-kb</code>) and research workflows (<code>research_toolkit</code>, in
+      development) back the citations, and substantive projects carry a decision log and an
+      independent audit where the work warrants it.
+    </p>
+    <p class="inline-links">
+      <a href="/how-this-was-made/">How this was made →</a>
+      <a href="/work/research-infrastructure/">Research infrastructure →</a>
+    </p>
+  </section>
+
+  <section class="research-more prose" aria-label="More">
+    <p class="inline-links">
+      <a href="/publications/">Publications →</a>
+      <a href="/work/">All work →</a>
+      <a href="/lab/">Lab →</a>
+    </p>
+  </section>
+</Base>
+
+<style>
+  .research-intro { margin: 2rem auto 0; }
+  .research-intro h1 { margin-bottom: 0.5rem; }
+  .research-intro p { color: var(--color-text); max-width: 62ch; }
+
+  .threads {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 0 auto 1rem;
+  }
+  @media (min-width: 720px) {
+    .threads { grid-template-columns: repeat(2, 1fr); }
+  }
+  .thread-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: var(--elevation-card);
+    padding: 1.25rem 1.4rem;
+  }
+  .thread-title { font-family: var(--font-sans); font-size: 1.1rem; margin: 0 0 0.5rem; }
+  .thread-blurb {
+    font-family: var(--font-prose);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-text);
+    margin: 0 0 0.9rem;
+  }
+  .thread-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.45rem; }
+  .thread-links a {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .thread-links a:hover, .thread-links a:focus-visible { text-decoration: underline; }
+
+  .backed { margin: 1.5rem auto 0; }
+  .inline-links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+  .inline-links a {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .inline-links a:hover, .inline-links a:focus-visible { text-decoration: underline; }
+  .research-more { margin: 1.5rem auto 3rem; }
+</style>
