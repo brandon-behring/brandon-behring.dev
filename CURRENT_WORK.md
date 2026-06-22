@@ -1,17 +1,25 @@
 # CURRENT_WORK.md — 30-Second Context Switch
 
-**Last Updated**: 2026-06-22 | **Session**: #33 token SSOT — document + decide (bb.dev slice)
+**Last Updated**: 2026-06-22 | **Session**: #36 pilot — Playwright verify-suite (bb.dev)
 
 ---
 
 ## Right Now
 
 **Nothing active on the site** — it's live and current. Recommended next pickup:
-[#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) (reusable Playwright eval harness)
-or [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) (portfolio hygiene) — both bb.dev-only
-(#30(b) is blocked on cross-repo deps); see the forward sequence under **Next**.
+[#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) (portfolio hygiene, bb.dev-only);
+#30(b) is blocked on cross-repo deps and #36's cross-property harness is a dedicated lever session —
+see the forward sequence under **Next**.
 
-**Last shipped** (2026-06-22): **[#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33)
+**Last shipped** (2026-06-22): **[#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36)
+pilot — Playwright verify-suite** — the repo's first automated tests (`@playwright/test`, chromium
+light+dark, 42 passing): smoke (every route 200 + console/response-clean + render; routes mirror
+`portfolio.ts`'s `visibleClusters`, read from `clusters.json`+`projects.json`), the two interactive
+demos (Cytoscape model via a `window.__cyGraph` seam — blank
+headless canvas, intact model — + EigenSlider canvas non-blank), WCAG contrast (hand-rolled ratio
+helper, AA both schemes); wired to CI (`test.yml`, on PRs). Regression safety + proves the capture for
+the cross-property lever harness (**#36 step 2**, stays open). Before it (2026-06-22):
+**[#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33)
 token SSOT (bb.dev doc/decision slice)** — documented the design-token source-of-truth: the canonical
 Warm-Tol palette lives in the LaTeX `.sty`; this standalone site keeps *controlled duplication* of the one
 shared hue (`#3B6FA0`) with per-property freedom otherwise. New [`docs/design-tokens.md`](docs/design-tokens.md)
@@ -55,12 +63,13 @@ interactive demos; bundled with the docs reconciliation in
 **Next** — refined 2026-06-22 (forward sequence, lens = *quick-wins → identity*; per-item
 rationale lives in the organize-pass comment on each issue):
 
-1. [#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) — reusable Playwright
-   eval harness (bb.dev-only). **Next pickup.**
-2. [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene (batch; bb.dev-only).
-3. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
+1. [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene (batch; bb.dev-only). **Next pickup.**
+2. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
    wordmark / glyph favicon / OG — **blocked** on the cross-repo token package + book-scaffold-astro#164 +
    the handbook index flip; revisit when those land. *(verify ssm `favicon.svg` 404 at pickup.)* **(a)** shipped 2026-06-22.
+3. [#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) **step 2** — the cross-property
+   Playwright harness in **lever** (`scripts/`, sibling to `adversarial_review.py`); a dedicated lever
+   session (not bb.dev). The bb.dev **pilot shipped** 2026-06-22 and proves the capture to reuse.
 
 *Brandon-driven / cross-repo:* [#32](https://github.com/brandon-behring/brandon-behring.dev/issues/32)
 DLAI launch (P2; on the v4.26 + wave1 branches) ·

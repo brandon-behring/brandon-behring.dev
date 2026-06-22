@@ -11,6 +11,12 @@ dist/
 .playwright-mcp/
 .claude/.last-review
 
+# Playwright verify-suite (#36)
+test-results/
+playwright-report/
+/blob-report/
+/playwright/.cache/
+
 # Audit input artifacts (kept locally; reference inputs, not site deliverables)
 /brandon_behring_dev_audit_2026-06-01/
 /brandon_behring_dev_audit_2026-06-01.tar.gz

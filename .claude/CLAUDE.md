@@ -44,6 +44,8 @@ these docs (see [`docs/DOC-CONVENTIONS.md`](../docs/DOC-CONVENTIONS.md)).
 - `npm run dev` — Astro dev server (Vite, HMR)
 - `npm run build` — production build to `dist/`
 - `npm run preview` — preview built site locally (Vite preview)
+- `npm run test:e2e` — Playwright verify-suite (smoke + demos + contrast,
+  light + dark; #36 pilot — builds + previews, then runs the specs in `e2e/`)
 - `npm run dev:cf` — local preview using the actual Cloudflare Workers
   runtime (`wrangler dev`)
 - `npm run deploy` — manual one-off deploy (needs `CLOUDFLARE_API_TOKEN`

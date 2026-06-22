@@ -318,6 +318,11 @@ const sections: string[] = Array.isArray(graphData.metadata?.sections)
       maxZoom: 4,
     });
 
+    // Test/automation seam (#36): expose the built cy instance so the headless
+    // verify-suite (and the cross-property harness) can read the graph model —
+    // the canvas renders blank headless, but the model is intact. Harmless ref.
+    (window as any).__cyGraph = cy;
+
     // Re-theme the canvas when the OS color scheme flips. Node .dim/.highlight
     // classes live on the elements, so rebuilding the stylesheet preserves them.
     darkMQ.addEventListener('change', (e) => {
