@@ -53,6 +53,18 @@ in a separate PR off `main` after #52 merges, with its own `independent-review` 
   e2e non-blank `getImageData` + the behavioural UNSTABLE verdict assertion). Confirm on the
   deploy preview.
 
+## Pre-merge sweep (post-review, before merging PR #56)
+Driver: Brandon's "any more reviews before we merge?" gate → swept the **canvas-text-AA bug
+class across its unscoped sibling path**: label text drawn *inside* the red unstable band
+(not over the page bg, which the earlier contrast fix measured against).
+- **Found + FIXED:** the light-mode DeltaNet label + the "unstable: ρ > 1" label sit inside the
+  band; over the band composite (`#f4e9e9`) the ink `#b04a5b` = **4.44:1 < AA 4.5**. Darkened the
+  **light** `--sr-deltanet-ink` → `#a23a4b` (**5.45:1** over band, 6.15:1 over bg). Dark unchanged
+  (`#ee8899`, 6.08:1); curve/dot keep `#bb5566` (3.84:1, clears the 3:1 graphical bar).
+- **Swept clean:** KaTeX 0 render errors; `projects.json` text renders with no stale "being
+  written"; axis/tick/Longhorn labels (over page bg) + curve-over-band all pass their thresholds.
+- Re-verified: `npm run build` clean, `npm run test:e2e` 44/44 (colour-only change).
+
 ## Reference
 Plan `~/.claude/plans/52-build-clever-feigenbaum.md`; adversarial run artifact (above);
 ground truth `ssm-foundations/companions/ch12/jax/stability.py` (+ `tests/test_stability.py`,

@@ -45,10 +45,12 @@
        a real color. DeltaNet = the explicit/can-go-unstable alert red (= --es-euler);
        Longhorn = the always-stable accent blue (= --es-zoh / --color-accent). */
     --sr-deltanet: #bb5566;
-    /* darker red for the DeltaNet TEXT label only: #bb5566 is 4.33:1 on the light
-       bg (<AA 4.5 for 13px text); the curve/dot keep #bb5566 (passes the 3:1
-       graphical-object bar). Dark #ee8899 already clears AA, so it reuses it. */
-    --sr-deltanet-ink: #b04a5b;
+    /* darker red for the DeltaNet TEXT label only — the two red labels sit INSIDE
+       the unstable band, whose composite bg (#f4e9e9) drops #bb5566 to 4.33:1 and
+       even #b04a5b to 4.44:1 (<AA 4.5 for 13px text). #a23a4b clears it at 5.45:1
+       over the band (6.15:1 over plain bg). The curve/dot keep #bb5566 (3:1
+       graphical bar); dark #ee8899 already clears AA over the dark band (6.08:1). */
+    --sr-deltanet-ink: #a23a4b;
     --sr-longhorn: #3b6fa0;
     --sr-grid: #cccccc;
     --sr-text: #555555;
