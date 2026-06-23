@@ -11,10 +11,13 @@
 // Math ground truth: ssm-foundations companions/ch12/jax/stability.py
 // (analytic == Rayleigh quotient of the materialised iteration matrix, < 1e-12).
 // Deliberately one mechanic: vary ||k||^2, hold beta = alpha = 1.
+// Per-instance id suffix so multiple widgets on one page can't collide on ids
+// (the client script looks elements up structurally; ids are for a11y only).
+const uid = crypto.randomUUID().slice(0, 8);
 ---
 
 <div class="stability-region">
-  <canvas id="sr-canvas" width="560" height="560">
+  <canvas id={`sr-canvas-${uid}`} width="560" height="560">
     Interactive plot: the per-step spectral radius rho of DeltaNet (explicit,
     red dashed) and Longhorn (implicit, blue solid) as the write strength
     ||k||^2 varies, with beta = alpha = 1. DeltaNet crosses rho = 1 into the
@@ -31,9 +34,10 @@
     Drag ‖k‖² past 2 — which operator blows up?
   </p>
   <div class="sr-controls">
-    <label for="sr-k2">Write strength ‖k‖²</label>
-    <input type="range" id="sr-k2" min="0" max="3" step="0.05" value="0.5" />
-    <output id="sr-status" for="sr-k2" aria-live="polite"></output>
+    <label for={`sr-k2-${uid}`}>Write strength ‖k‖²</label>
+    <input type="range" id={`sr-k2-${uid}`} min="0" max="3" step="0.05" value="0.5" />
+    <output id={`sr-status-${uid}`} for={`sr-k2-${uid}`} aria-live="off"></output>
+    <span id={`sr-announce-${uid}`} class="sr-only" aria-live="polite"></span>
   </div>
 </div>
 
@@ -121,6 +125,19 @@
     color: var(--color-text-muted);
     width: 100%;
   }
+  /* Visually hidden but screen-reader available (copied from ClusterCard.astro);
+     hosts the polite live region that announces the settled verdict on release. */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 </style>
 
 <script>
@@ -132,6 +149,7 @@
       'input[type="range"]'
     ) as HTMLInputElement | null;
     const status = wrapper.querySelector('output');
+    const liveRegion = wrapper.querySelector('.sr-only');
     if (!canvas || !slider || !status) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
@@ -162,6 +180,19 @@
 
     const cssVar = (name: string) =>
       getComputedStyle(wrapper).getPropertyValue(name).trim();
+    // Read the canvas palette once (getComputedStyle is not free, and draw()
+    // runs on every input event during a drag); refresh only on a scheme flip.
+    const readPalette = () => ({
+      deltanet: cssVar('--sr-deltanet'),
+      deltanetInk: cssVar('--sr-deltanet-ink'),
+      longhorn: cssVar('--sr-longhorn'),
+      grid: cssVar('--sr-grid'),
+      text: cssVar('--sr-text'),
+      threshold: cssVar('--sr-threshold'),
+      band: cssVar('--sr-band'),
+      marker: cssVar('--sr-marker'),
+    });
+    let palette = readPalette();
 
     // rho < 1 stable; rho == 1 marginal (the boundary, where the deviation
     // neither grows nor decays); rho > 1 unstable. Longhorn only ever reaches
@@ -185,16 +216,7 @@
     function draw() {
       if (!ctx || !slider) return;
       const k2 = parseFloat(slider.value);
-      const c = {
-        deltanet: cssVar('--sr-deltanet'),
-        deltanetInk: cssVar('--sr-deltanet-ink'),
-        longhorn: cssVar('--sr-longhorn'),
-        grid: cssVar('--sr-grid'),
-        text: cssVar('--sr-text'),
-        threshold: cssVar('--sr-threshold'),
-        band: cssVar('--sr-band'),
-        marker: cssVar('--sr-marker'),
-      };
+      const c = palette;
       const rDN = rhoDeltaNet(k2);
       const rLH = rhoLonghorn(k2);
       const unstable = rDN > 1;
@@ -315,31 +337,64 @@
       ctx.fillText('ρ', px(0) + 6, py(Y_MAX) - 6);
     }
 
-    function updateStatus() {
-      if (!slider || !status) return;
+    function statusText() {
+      if (!slider) return '';
       const k2 = parseFloat(slider.value);
       const rDN = rhoDeltaNet(k2);
       const rLH = rhoLonghorn(k2);
-      status.textContent =
+      return (
         `‖k‖² = ${k2.toFixed(2)} — ` +
         `DeltaNet ρ = ${rDN.toFixed(2)}${verdict(rDN)} · ` +
-        `Longhorn ρ = ${rLH.toFixed(2)}${verdict(rLH)}`;
+        `Longhorn ρ = ${rLH.toFixed(2)}${verdict(rLH)}`
+      );
+    }
+    // Visible output tracks the drag live (aria-live="off"); the polite region
+    // announces only the settled verdict on release.
+    function updateStatus() {
+      if (status) status.textContent = statusText();
+    }
+    function announce() {
+      if (liveRegion) liveRegion.textContent = statusText();
     }
 
-    // Redraw continuously while dragging; announce to assistive tech only on
-    // release (a live region updated per input event reads as spam).
-    slider.addEventListener('input', draw);
-    slider.addEventListener('change', updateStatus);
-    // Re-read palette when the color scheme flips.
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', draw);
+    // Redraw continuously while dragging and keep the visible status in step;
+    // the polite region announces only the settled verdict on release (a live
+    // region updated per input event reads as spam).
+    slider.addEventListener('input', () => {
+      draw();
+      updateStatus();
+    });
+    // On commit, re-sync the visible model BEFORE announcing, so a `change` that
+    // arrives without a preceding `input` (e.g. a programmatic commit) can't leave
+    // the visible output / canvas stale while the announcer reports the new verdict.
+    slider.addEventListener('change', () => {
+      draw();
+      updateStatus();
+      announce();
+    });
     draw();
     updateStatus();
 
     // Test/automation seam (#36): signal that the canvas has drawn, so the
     // headless verify-suite can assert it actually rendered (not merely exists).
     (window as any).__srReady = true;
+    // Palette seam (#55): lets the verify-suite confirm a scheme flip actually
+    // refreshed the cached palette (not just that the canvas stayed non-blank).
+    (window as any).__srPalette = () => palette;
+
+    // Re-read the palette when the color scheme flips. Registered AFTER the first
+    // draw + the ready seam, and FULLY feature-detected — matchMedia itself plus
+    // the listener API — so a stripped webview can't throw and blank the canvas
+    // (old Safari/WebView expose only addListener).
+    if (typeof window.matchMedia === 'function') {
+      const mq = window.matchMedia('(prefers-color-scheme: dark)');
+      const onScheme = () => {
+        palette = readPalette();
+        draw();
+      };
+      if (mq.addEventListener) mq.addEventListener('change', onScheme);
+      else if ((mq as any).addListener) (mq as any).addListener(onScheme);
+    }
   }
 
   function initAll() {
