@@ -1,17 +1,23 @@
 # CURRENT_WORK.md — 30-Second Context Switch
 
-**Last Updated**: 2026-06-22 | **Session**: #2 portfolio hygiene — repo-metadata batch (cross-repo)
+**Last Updated**: 2026-06-23 | **Session**: #36 closed — property-recon harness shipped in lever
 
 ---
 
 ## Right Now
 
 **Nothing active on the site, and the near-term bb.dev-*code* backlog is exhausted** — #33/#36/#2 all
-turned out cross-repo despite their "bb.dev-only" labels. Remaining tracked work is cross-repo (#2's
-CITATION.cff/OG, #36 step-2 lever harness), blocked (#30b, #1), or Brandon-driven (#5/#31/#32). Next is
-a deliberate cross-repo / lever session or new direction — see **Next**.
+turned out cross-repo despite their "bb.dev-only" labels. **#36 is now closed** — the cross-property
+recon harness shipped in lever (see *Last shipped*). Remaining tracked work is cross-repo (#2's
+CITATION.cff/OG), blocked (#30b, #1), or Brandon-driven (#5/#31/#32). Next is a deliberate cross-repo
+session or new direction — see **Next**.
 
-**Last shipped** (2026-06-22): **[#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2)
+**Last shipped** (2026-06-23): **[#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36)
+closed** — the cross-property recon harness shipped in **lever** (`scripts/property_recon.py`): the
+capture engine + a run-over-run **diff** (CI-gateable on regressions) + 4-round-review hardening (61 tests
++ [audit doc](https://github.com/brandon-behring/lever_of_archimedes/blob/master/docs/audits/property-recon-deep-review-2026-06-23.md));
+completes the capture→diff arc the bb.dev pilot proved out. Before it (2026-06-22):
+**[#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2)
 portfolio hygiene — repo-metadata batch** — cross-repo GitHub settings via `gh repo edit` (no site change):
 homepage URLs on the live-site repos (ssm-foundations, dml, claude-books, brandon-behring.dev) + fixed
 guides-ai-engineering's wrong preview URL; topics on 11 portfolio repos (was 0); filled claude-books'
@@ -24,7 +30,7 @@ light+dark, 42 passing): smoke (every route 200 + console/response-clean + rende
 demos (Cytoscape model via a `window.__cyGraph` seam — blank
 headless canvas, intact model — + EigenSlider canvas non-blank), WCAG contrast (hand-rolled ratio
 helper, AA both schemes); wired to CI (`test.yml`, on PRs). Regression safety + proves the capture for
-the cross-property lever harness (**#36 step 2**, stays open). Before it (2026-06-22):
+the cross-property lever harness (**#36 step 2** — shipped 2026-06-23; #36 closed). Before it (2026-06-22):
 **[#33](https://github.com/brandon-behring/brandon-behring.dev/issues/33)
 token SSOT (bb.dev doc/decision slice)** — documented the design-token source-of-truth: the canonical
 Warm-Tol palette lives in the LaTeX `.sty`; this standalone site keeps *controlled duplication* of the one
@@ -75,10 +81,7 @@ Brandon-driven (no clean bb.dev-code "next pickup"; await direction):
 1. [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene: **metadata
    batch shipped** 2026-06-22; **stays open** for CITATION.cff (research-kb + academic repos) + OG images
    (dml/ssm) + remaining-repo topics — per-repo file work (leaves bb.dev).
-2. [#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36) **step 2** — the cross-property
-   Playwright harness in **lever** (`scripts/`, sibling to `adversarial_review.py`), reusing the pilot's
-   proven snippets; a dedicated lever session.
-3. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
+2. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
    wordmark / glyph favicon / OG — **blocked** on the cross-repo token package + book-scaffold-astro#164 +
    the handbook index flip. *(verify ssm `favicon.svg` 404 at pickup.)* **(a)** shipped 2026-06-22.
 
