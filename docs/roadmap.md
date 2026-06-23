@@ -65,7 +65,7 @@ names only **strategic / standing** site work that isn't a single tracked issue:
 
 Earlier resolved decisions live in the dated session logs (e.g.
 [`sessions/2026-05-28--ambiguity-resolution.md`](sessions/2026-05-28--ambiguity-resolution.md):
-identity = build-to-learn; homepage cluster shape; insurance positioning) and in
+identity = build-to-learn (since superseded — see A1); homepage cluster shape; insurance positioning) and in
 `website-decision-map.md` — not re-tabulated here.
 
 ## Track A — Identity & Content (the site)

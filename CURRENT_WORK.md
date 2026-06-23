@@ -105,12 +105,12 @@ DLAI launch (P2; on the v4.26 + wave1 branches) ·
 
 **Resolved 2026-06-22** (→ [`docs/roadmap.md`](docs/roadmap.md) "Resolved decisions"): hub structure →
 **a thin `/research` hub** (live; resolves A2) · account split → **consolidate onto `brandon-behring`**
-(temporalcv done; dev-account dupe sweep = board #5). SSM-viz **deferred** to a 2026-07-01 dated check.
+(temporalcv done; dev-account dupe sweep = board #5). SSM-viz **decided 2026-06-23**: build it (stability-region) → [#52](https://github.com/brandon-behring/brandon-behring.dev/issues/52).
 Token SSOT (#33) → **canonical = the LaTeX `.sty`**; this site keeps controlled duplication of the one
 shared hue, cross-repo shared-tokens package **deferred** (tracked in #33) → [`docs/design-tokens.md`](docs/design-tokens.md).
 
-**Standing** (from [`docs/roadmap.md`](docs/roadmap.md)): the **SSM visualizer** (→ 2026-07-01 dated
-check; explainer not distributed). Live cross-repo backlog → the [board](https://github.com/users/brandon-behring/projects/1).
+**Standing** (from [`docs/roadmap.md`](docs/roadmap.md)): the **A4 graph-refresh loop** — re-verify
+`/lab/research-graph/` after each corpus update. Live cross-repo backlog → the [board](https://github.com/users/brandon-behring/projects/1).
 
 **Note**: [#13](https://github.com/brandon-behring/brandon-behring.dev/issues/13)
 (board cron reconciler) — **closed 2026-06-20**: the cross-repo health audit verified the
