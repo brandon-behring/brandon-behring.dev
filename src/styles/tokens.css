@@ -14,10 +14,11 @@
  * the VALUES to the chosen "T3 — Hybrid Dossier" treatment (Fraunces display,
  * warmer surfaces, categorical status palette) in one place.
  *
- * Two canvas components read color OUTSIDE the CSS cascade and must be
+ * Three canvas components read color OUTSIDE the CSS cascade and must be
  * hand-synced whenever the palette here changes:
- *   - CitationGraph.astro (hex hardcoded in JS — Cytoscape can't read vars)
- *   - EigenSlider.astro   (reads --es-* via getComputedStyle at draw time)
+ *   - CitationGraph.astro   (hex hardcoded in JS — Cytoscape can't read vars)
+ *   - EigenSlider.astro     (reads --es-* via getComputedStyle at draw time)
+ *   - StabilityRegion.astro (reads --sr-* via getComputedStyle at draw time)
  */
 @font-face {
   font-family: 'Fraunces';

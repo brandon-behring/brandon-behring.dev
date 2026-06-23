@@ -1,0 +1,356 @@
+---
+// Interactive ||k||^2 slider: the explicit/implicit stability dichotomy, one
+// level in from EigenSlider — inside the recurrence's own update rule. Both
+// DeltaNet (explicit, beta^eff = beta) and Longhorn (implicit,
+// beta^eff = 1/(alpha + ||k||^2)) iterate the same affine map on the memory
+// state; the deviation contracts by a k-direction spectral radius
+//   rho_k = |1 - beta^eff ||k||^2|.
+// Fixing beta = alpha = 1 puts both radii on one axis, the write strength
+// ||k||^2: DeltaNet rho = |1 - ||k||^2| crosses 1 at ||k||^2 = 2 and goes
+// unstable; Longhorn rho = 1/(1 + ||k||^2) stays below 1 for every write.
+// Math ground truth: ssm-foundations companions/ch12/jax/stability.py
+// (analytic == Rayleigh quotient of the materialised iteration matrix, < 1e-12).
+// Deliberately one mechanic: vary ||k||^2, hold beta = alpha = 1.
+---
+
+<div class="stability-region">
+  <canvas id="sr-canvas" width="560" height="560">
+    Interactive plot: the per-step spectral radius rho of DeltaNet (explicit,
+    red dashed) and Longhorn (implicit, blue solid) as the write strength
+    ||k||^2 varies, with beta = alpha = 1. DeltaNet crosses rho = 1 into the
+    shaded unstable band at ||k||^2 = 2; Longhorn stays below 1 for every write.
+  </canvas>
+  <noscript>
+    <p class="sr-noscript">
+      The interactive version needs JavaScript — the two ρ equations above state
+      the result, and the full two-panel figure is in
+      <a href="https://ssm-foundations.brandon-behring.dev/chapters/ch12-delta-rule-lineage/">ch. 12</a>.
+    </p>
+  </noscript>
+  <p class="sr-prompt">
+    Drag ‖k‖² past 2 — which operator blows up?
+  </p>
+  <div class="sr-controls">
+    <label for="sr-k2">Write strength ‖k‖²</label>
+    <input type="range" id="sr-k2" min="0" max="3" step="0.05" value="0.5" />
+    <output id="sr-status" for="sr-k2" aria-live="polite"></output>
+  </div>
+</div>
+
+<style>
+  .stability-region {
+    /* Canvas colors hand-synced to the site accent (tokens.css). Kept as literal
+       hex/rgba, not var(--color-accent): getComputedStyle() on an unregistered
+       custom property won't reliably resolve a nested var(), and the canvas needs
+       a real color. DeltaNet = the explicit/can-go-unstable alert red (= --es-euler);
+       Longhorn = the always-stable accent blue (= --es-zoh / --color-accent). */
+    --sr-deltanet: #bb5566;
+    /* darker red for the DeltaNet TEXT label only — the two red labels sit INSIDE
+       the unstable band, whose composite bg (#f4e9e9) drops #bb5566 to 4.33:1 and
+       even #b04a5b to 4.44:1 (<AA 4.5 for 13px text). #a23a4b clears it at 5.45:1
+       over the band (6.15:1 over plain bg). The curve/dot keep #bb5566 (3:1
+       graphical bar); dark #ee8899 already clears AA over the dark band (6.08:1). */
+    --sr-deltanet-ink: #a23a4b;
+    --sr-longhorn: #3b6fa0;
+    --sr-grid: #cccccc;
+    --sr-text: #555555;
+    --sr-threshold: #888888;
+    --sr-band: rgba(187, 85, 102, 0.1);
+    --sr-marker: #1a1a1a;
+    margin: 2rem 0;
+    font-family: var(--font-sans);
+  }
+  @media (prefers-color-scheme: dark) {
+    .stability-region {
+      --sr-deltanet: #ee8899;
+      --sr-deltanet-ink: #ee8899;
+      --sr-longhorn: #7fb0dd;
+      --sr-grid: #555555;
+      --sr-text: #aaaaaa;
+      --sr-threshold: #888888;
+      --sr-band: rgba(238, 136, 153, 0.14);
+      --sr-marker: #f1efe9;
+    }
+  }
+  canvas {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+  }
+  .sr-noscript {
+    max-width: 560px;
+    margin: 0.5rem auto 0 auto;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+  .sr-prompt {
+    max-width: 560px;
+    margin: 0.75rem auto 0 auto;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .sr-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    max-width: 560px;
+    margin: 0.4rem auto 0 auto;
+    font-size: 0.9rem;
+  }
+  .sr-controls label {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .sr-controls input[type='range'] {
+    flex: 1;
+    min-width: 10rem;
+    accent-color: var(--color-accent);
+  }
+  .sr-controls input[type='range']:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  .sr-controls output {
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-muted);
+    width: 100%;
+  }
+</style>
+
+<script>
+  function initStabilityRegion(wrapper: HTMLElement) {
+    // Lookups scoped to the component root; ids retained only for the
+    // label[for]/output[for] associations.
+    const canvas = wrapper.querySelector('canvas') as HTMLCanvasElement | null;
+    const slider = wrapper.querySelector(
+      'input[type="range"]'
+    ) as HTMLInputElement | null;
+    const status = wrapper.querySelector('output');
+    if (!canvas || !slider || !status) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Logical drawing size; the backing buffer is scaled by devicePixelRatio so
+    // lines and text stay crisp on HiDPI displays.
+    const SIZE = 560;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = SIZE * dpr;
+    canvas.height = SIZE * dpr;
+    ctx.scale(dpr, dpr);
+
+    // Plot frame: asymmetric margins leave room for the rho ticks (left) and the
+    // ||k||^2 axis title (bottom).
+    const M = { left: 56, right: 24, top: 24, bottom: 44 };
+    const PLOT_W = SIZE - M.left - M.right; // 480
+    const PLOT_H = SIZE - M.top - M.bottom; // 492
+    const X_MAX = 3; // ||k||^2 in [0, 3]
+    const Y_MAX = 2.2; // rho in [0, 2.2]  (matches ch12 figure Panel A ylim)
+    const BOUNDARY = 2; // DeltaNet stability boundary: beta*||k||^2 = 2
+
+    const px = (x: number) => M.left + (x / X_MAX) * PLOT_W;
+    const py = (rho: number) => M.top + (1 - rho / Y_MAX) * PLOT_H;
+
+    // Closed forms (beta = alpha = 1), ground truth = companions/ch12/jax/stability.py.
+    const rhoDeltaNet = (k2: number) => Math.abs(1 - k2);
+    const rhoLonghorn = (k2: number) => 1 / (1 + k2);
+
+    const cssVar = (name: string) =>
+      getComputedStyle(wrapper).getPropertyValue(name).trim();
+
+    // rho < 1 stable; rho == 1 marginal (the boundary, where the deviation
+    // neither grows nor decays); rho > 1 unstable. Longhorn only ever reaches
+    // the first two (rho == 1 exactly at the zero-write endpoint ||k||^2 = 0).
+    const verdict = (rho: number) =>
+      rho < 1 ? ' (stable)' : rho === 1 ? ' (marginal)' : ' — UNSTABLE';
+
+    function curve(fn: (k2: number) => number) {
+      const N = 120;
+      ctx!.beginPath();
+      for (let i = 0; i <= N; i++) {
+        const x = (X_MAX * i) / N;
+        const X = px(x);
+        const Y = py(fn(x));
+        if (i === 0) ctx!.moveTo(X, Y);
+        else ctx!.lineTo(X, Y);
+      }
+      ctx!.stroke();
+    }
+
+    function draw() {
+      if (!ctx || !slider) return;
+      const k2 = parseFloat(slider.value);
+      const c = {
+        deltanet: cssVar('--sr-deltanet'),
+        deltanetInk: cssVar('--sr-deltanet-ink'),
+        longhorn: cssVar('--sr-longhorn'),
+        grid: cssVar('--sr-grid'),
+        text: cssVar('--sr-text'),
+        threshold: cssVar('--sr-threshold'),
+        band: cssVar('--sr-band'),
+        marker: cssVar('--sr-marker'),
+      };
+      const rDN = rhoDeltaNet(k2);
+      const rLH = rhoLonghorn(k2);
+      const unstable = rDN > 1;
+
+      ctx.clearRect(0, 0, SIZE, SIZE);
+
+      // 1. Unstable band (rho > 1): the region only DeltaNet ever enters.
+      ctx.fillStyle = c.band;
+      ctx.fillRect(px(0), py(Y_MAX), PLOT_W, py(1) - py(Y_MAX));
+
+      // 2. Grid frame + axes.
+      ctx.strokeStyle = c.grid;
+      ctx.lineWidth = 0.75;
+      ctx.strokeRect(px(0), py(Y_MAX), PLOT_W, py(0) - py(Y_MAX));
+      ctx.fillStyle = c.text;
+      ctx.font = '13px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'alphabetic';
+      for (const xt of [0, 1, 2, 3]) {
+        ctx.beginPath();
+        ctx.moveTo(px(xt), py(0));
+        ctx.lineTo(px(xt), py(0) + 5);
+        ctx.stroke();
+        ctx.fillText(String(xt), px(xt), py(0) + 19);
+      }
+      ctx.textAlign = 'right';
+      for (const yt of [0, 1, 2]) {
+        ctx.fillText(yt.toFixed(0), px(0) - 9, py(yt) + 4);
+      }
+
+      // 3. rho = 1 stability threshold (dashed) + boundary tick (dotted) at ||k||^2 = 2.
+      ctx.strokeStyle = c.threshold;
+      ctx.lineWidth = 1;
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath();
+      ctx.moveTo(px(0), py(1));
+      ctx.lineTo(px(X_MAX), py(1));
+      ctx.stroke();
+      ctx.setLineDash([2, 3]);
+      ctx.beginPath();
+      ctx.moveTo(px(BOUNDARY), py(0));
+      ctx.lineTo(px(BOUNDARY), py(1));
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // 4. DeltaNet curve (red, dashed). When the marker is unstable, the in-band
+      //    arm (||k||^2 > 2) lights up solid + thick — Mayer signaling.
+      ctx.strokeStyle = c.deltanet;
+      ctx.lineWidth = 1.8;
+      ctx.setLineDash([6, 4]);
+      curve(rhoDeltaNet);
+      ctx.setLineDash([]);
+      if (unstable) {
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(px(BOUNDARY), py(rhoDeltaNet(BOUNDARY)));
+        ctx.lineTo(px(X_MAX), py(rhoDeltaNet(X_MAX)));
+        ctx.stroke();
+      }
+
+      // 5. Longhorn curve (blue, solid) — always below the threshold.
+      ctx.strokeStyle = c.longhorn;
+      ctx.lineWidth = 1.8;
+      curve(rhoLonghorn);
+
+      // 6. Moving marker at the current write strength.
+      ctx.save();
+      ctx.globalAlpha = 0.85;
+      ctx.strokeStyle = c.marker;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(px(k2), py(0));
+      ctx.lineTo(px(k2), py(Y_MAX));
+      ctx.stroke();
+      ctx.restore();
+
+      // 7. Dots: Longhorn always filled; DeltaNet a hollow ring while stable,
+      //    solid + halo once it crosses into the band.
+      const dot = (x: number, rho: number, color: string, solid: boolean) => {
+        const X = px(x);
+        const Y = py(rho);
+        if (solid) {
+          ctx.fillStyle = color;
+          ctx.globalAlpha = 0.25;
+          ctx.beginPath();
+          ctx.arc(X, Y, 11, 0, 2 * Math.PI);
+          ctx.fill();
+          ctx.globalAlpha = 1;
+          ctx.beginPath();
+          ctx.arc(X, Y, 6, 0, 2 * Math.PI);
+          ctx.fill();
+        } else {
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(X, Y, 5.5, 0, 2 * Math.PI);
+          ctx.stroke();
+        }
+      };
+      dot(k2, rLH, c.longhorn, true);
+      dot(k2, rDN, c.deltanet, unstable);
+
+      // 8. Direct labels (no separate legend) + axis titles.
+      ctx.fillStyle = c.deltanetInk;
+      ctx.textAlign = 'right';
+      ctx.fillText('DeltaNet (explicit)', px(X_MAX) - 4, py(2.05));
+      ctx.fillStyle = c.longhorn;
+      ctx.textAlign = 'left';
+      ctx.fillText('Longhorn (implicit)', px(1.55), py(0.32) + 16);
+      ctx.fillStyle = c.deltanetInk;
+      ctx.font = '12px sans-serif';
+      ctx.fillText('unstable: ρ > 1', px(0) + 8, py(Y_MAX) + 16);
+      ctx.fillStyle = c.text;
+      ctx.font = '13px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('‖k‖²  (β = α = 1)', px(1.5), SIZE - 8);
+      ctx.textAlign = 'left';
+      ctx.fillText('ρ', px(0) + 6, py(Y_MAX) - 6);
+    }
+
+    function updateStatus() {
+      if (!slider || !status) return;
+      const k2 = parseFloat(slider.value);
+      const rDN = rhoDeltaNet(k2);
+      const rLH = rhoLonghorn(k2);
+      status.textContent =
+        `‖k‖² = ${k2.toFixed(2)} — ` +
+        `DeltaNet ρ = ${rDN.toFixed(2)}${verdict(rDN)} · ` +
+        `Longhorn ρ = ${rLH.toFixed(2)}${verdict(rLH)}`;
+    }
+
+    // Redraw continuously while dragging; announce to assistive tech only on
+    // release (a live region updated per input event reads as spam).
+    slider.addEventListener('input', draw);
+    slider.addEventListener('change', updateStatus);
+    // Re-read palette when the color scheme flips.
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', draw);
+    draw();
+    updateStatus();
+
+    // Test/automation seam (#36): signal that the canvas has drawn, so the
+    // headless verify-suite can assert it actually rendered (not merely exists).
+    (window as any).__srReady = true;
+  }
+
+  function initAll() {
+    document
+      .querySelectorAll<HTMLElement>('.stability-region')
+      .forEach(initStabilityRegion);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
+</script>

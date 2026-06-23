@@ -3,13 +3,14 @@ layout: ../../layouts/ProseArticle.astro
 title: "Why discretization matters — Brandon Behring"
 heading: "Why discretization matters"
 subtitle: "Zero-order hold, stability regions, and why Mamba-3 swapped its integrator: the numerical analysis inside modern sequence models."
-description: "How discretization choices — zero-order hold, bilinear, trapezoidal — decide the stability and accuracy of state-space sequence models like S4 and Mamba. A short explainer connecting classical numerical analysis to modern architecture design."
-dateLabel: "June 2026 · 8 minute read"
+description: "How discretization choices — zero-order hold, bilinear, trapezoidal — decide the stability and accuracy of state-space sequence models like S4 and Mamba, and how the same explicit-versus-implicit stability split reappears inside modern operators like DeltaNet and Longhorn. A short explainer connecting classical numerical analysis to modern architecture design."
+dateLabel: "June 2026 · 10 minute read"
 ogImage: "/figures/ssm-explainer/eigenvalue-migration-light.png"
 pubDate: "2026-06-10"
 ---
 
 import EigenSlider from '../../components/EigenSlider.astro';
+import StabilityRegion from '../../components/StabilityRegion.astro';
 
 Mamba-3 landed this spring ([Lahoti et al., ICLR 2026](https://openreview.net/forum?id=HwCvaJOiCj)),
 from a team that includes the original Mamba authors. Its abstract lists three
@@ -119,6 +120,54 @@ is built to place $A$'s eigenvalues in the left half-plane, and an A-stable rule
 the disk. That
 stability is a theorem, not a lucky hyperparameter
 ([ch. 4](https://ssm-foundations.brandon-behring.dev/chapters/ch04-discretization/#43-zero-order-hold-zoh)).
+
+## Operator stability is the same dichotomy
+
+The slider above moved the *time-step* $\Delta$ and watched the discretization
+itself fail. The very same explicit-versus-implicit split lives one level in —
+inside the recurrence's own update rule, on the *learning* step. Two modern
+sequence-model operators, **DeltaNet** and **Longhorn**, both run an online
+associative memory on a state $S$: each token nudges $S$ toward writing value $v$
+at key $k$, one step of regression on a recall loss. The deviation from that fixed
+point contracts by a per-step factor $\rho_k$ in the key direction, and the two
+operators differ in exactly one place — whether that write step is taken
+*explicitly* or *implicitly*: forward Euler versus backward Euler again, now on the
+learning step instead of the time step.
+
+DeltaNet writes with an explicit rate $\beta$, so it *is* forward Euler on the
+online-learning flow — safe for gentle writes, unstable once the write is too large:
+
+$$
+\rho_k^{\mathrm{DeltaNet}} = \bigl|\,1 - \beta\,\|k\|^2\,\bigr|,
+\qquad \text{stable} \iff \beta\|k\|^2 \in (0, 2).
+$$
+
+Longhorn writes *implicitly* — it solves for the step instead of extrapolating it —
+which makes the effective rate $\beta^{\mathrm{eff}} = 1/(\alpha + \|k\|^2)$ shrink to
+meet the key. That is backward Euler's A-stability guarantee, replayed:
+
+$$
+\rho_k^{\mathrm{Longhorn}} = \frac{\alpha}{\alpha + \|k\|^2} < 1
+\quad\text{for every } \alpha > 0 \text{ and every nonzero key.}
+$$
+
+Fix $\beta = \alpha = 1$ and both radii live on one axis — the write strength
+$\|k\|^2$. Drag it past $\|k\|^2 = 2$ and watch only the explicit operator leave the
+stable band:
+
+<StabilityRegion />
+
+The harder the write, the harder Longhorn contracts it ($\rho_k \to 0$ as
+$\|k\|^2 \to \infty$), so there is no boundary to cross. The two radii even obey a
+conservation law, $\rho_k^{\mathrm{Longhorn}} + \beta^{\mathrm{eff}}\|k\|^2 = 1$:
+whatever contraction Longhorn gives up, it spends on a *self-limiting* write, so the
+effective $\beta^{\mathrm{eff}}\|k\|^2 = 1 - \rho_k$ approaches but never reaches $1$ —
+not even half the explicit boundary of $2$, no matter how large the key. The closed
+forms, the Rayleigh-quotient
+drift guard that pins them to the materialized iteration matrix, and the
+chunkwise-parallel implementations are in
+[ch. 12 of the book](https://ssm-foundations.brandon-behring.dev/chapters/ch12-delta-rule-lineage/)
+(runnable [companion code](https://github.com/brandon-behring/ssm-foundations/tree/main/companions/ch12)).
 
 ## Accuracy is a ladder
 
@@ -243,10 +292,11 @@ whole span, with derivations, exercises, and runnable companions.
   *Mamba-3: Improved Sequence Modeling using State Space Principles*, ICLR 2026
   ([OpenReview](https://openreview.net/forum?id=HwCvaJOiCj) ·
   [arXiv:2603.15569](https://arxiv.org/abs/2603.15569)).
-- **The derivations**, in my in-progress foundations book (chapters 1–11
-  authored): [ch. 4 — discretization theory](https://ssm-foundations.brandon-behring.dev/chapters/ch04-discretization/)
+- **The derivations**, in my in-progress foundations book:
+  [ch. 4 — discretization theory](https://ssm-foundations.brandon-behring.dev/chapters/ch04-discretization/)
   · [ch. 5 — stability regions](https://ssm-foundations.brandon-behring.dev/chapters/ch05-stability-regions/)
-  · [ch. 10 — Mamba-3's integrator](https://ssm-foundations.brandon-behring.dev/chapters/ch10-mamba-3/).
+  · [ch. 10 — Mamba-3's integrator](https://ssm-foundations.brandon-behring.dev/chapters/ch10-mamba-3/)
+  · [ch. 12 — the delta-rule lineage (DeltaNet, Longhorn)](https://ssm-foundations.brandon-behring.dev/chapters/ch12-delta-rule-lineage/).
 - **The architectural context**: [ch. 7 — HiPPO](https://ssm-foundations.brandon-behring.dev/chapters/ch07-hippo-theory/)
   · [ch. 8 — S4/S4D/S5](https://ssm-foundations.brandon-behring.dev/chapters/ch08-lti-ssms/)
   · [ch. 9 — selective SSMs](https://ssm-foundations.brandon-behring.dev/chapters/ch09-selective-ssms/).
