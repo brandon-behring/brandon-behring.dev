@@ -21,7 +21,7 @@ npm run preview  # serves dist/
 
 ## Content updates
 
-Projects live in `src/data/projects.json`, grouped by `cluster` (visibility logic in `src/data/portfolio.ts`). Set `draft: true` to hide an entry until it's ready; the homepage shows the `now`-section clusters. See [`docs/DOC-CONVENTIONS.md`](docs/DOC-CONVENTIONS.md).
+Projects live in `src/data/projects.json`, grouped by `cluster` (visibility logic in `src/data/portfolio.ts`). Set `draft: true` to hide an entry until it's ready — **but if it's a flagship** (its slug is in `FLAGSHIP_PROJECT_SLUGS` in `portfolio.ts`), remove it there too, or the build throws (`landingFlagships: unknown project slug`). The homepage shows a curated flagship roster (`landingFlagships`), while `/work` renders the clusters. See [`docs/DOC-CONVENTIONS.md`](docs/DOC-CONVENTIONS.md).
 
 The hero / bio / contact sections are in `src/pages/index.astro`. Update those directly when bio language changes.
 
