@@ -50,8 +50,8 @@ small core, allow local expression.
 
 ## Accent hand-sync registry
 
-`--color-accent` (`#3b6fa0` light / `#7fb0dd` dark) is duplicated in **three** places that
-can't all read the CSS cascade. **When the accent changes, update all three:**
+`--color-accent` (`#3b6fa0` light / `#7fb0dd` dark) is duplicated in **four** places that
+can't all read the CSS cascade. **When the accent changes, update all four:**
 
 1. `src/styles/tokens.css` — `--color-accent` + its dark-scheme override.
 2. `src/components/CitationGraph.astro` — `paletteFor()` returns hardcoded hex (the Cytoscape
@@ -59,6 +59,9 @@ can't all read the CSS cascade. **When the accent changes, update all three:**
 3. `src/components/EigenSlider.astro` — component-local `--es-zoh` (the canvas reads it via
    `getComputedStyle`; an *unregistered* custom property won't reliably resolve a nested
    `var()`, so the hex is held locally and documented as synced).
+4. `src/components/StabilityRegion.astro` — component-local `--sr-longhorn` (= the accent) and
+   `--sr-deltanet` (= the alert red, also EigenSlider's `--es-euler`), same `getComputedStyle`
+   constraint as EigenSlider.
 
 De-duplicating these into one shared JS constant is possible but **deferred** — the copies have
 genuine per-context rendering reasons (canvas vs. cascade), so it's arguably necessary
