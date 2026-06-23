@@ -33,8 +33,9 @@ checklist. Keep it to **1–4 reviewers**. Typical shards:
   it — a claim that conflicts with another doc, a section that violates its own stated rule, a
   number / label / decision that disagrees with a sibling section or file. Default skeptical; cite
   both sides."* The closed checklists above only confirm what they name, so they structurally miss
-  unanticipated cross-doc drift — this imports the `§4b` refute stance into the always-on layer.
-  For substantive / strategic / public PRs, still escalate to the full `/adversarial-review` (3-voice).
+  unanticipated cross-doc drift — a lightweight single-reviewer variant of `§4b`'s refute stance
+  in the always-on layer (not the full §4b multi-voice/hostile-lens protocol). For substantive /
+  strategic / public PRs, still **also** run the full `/adversarial-review` (3-voice) before merge.
 
 ## 2. Create durable task records FIRST (mandatory)
 
