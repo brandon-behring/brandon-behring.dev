@@ -107,9 +107,10 @@ Timeless positioning guidance (relocated from roadmap Track C, 2026-06-04). Thes
 ## Portfolio Cluster Audit
 
 > **⚠ Frozen scoring artifact — do not read the counts below as current.** This cluster
-> audit was the *input* to the identity-scoring decision, now **closed** (Framing 4 /
+> audit was the *input* to the identity-scoring decision, then **closed** (Framing 4 /
 > build-to-learn locked; see
-> [`sessions/2026-05-28--ambiguity-resolution.md`](sessions/2026-05-28--ambiguity-resolution.md)).
+> [`sessions/2026-05-28--ambiguity-resolution.md`](sessions/2026-05-28--ambiguity-resolution.md)) —
+> **since superseded 2026-06-23** → *Applied-math rigor for auditable AI* (see "Decisions Locked" above).
 > Every evidence count, version, and status below is **frozen at scoring time and not
 > maintained** — treat this like a dated session log, not live context. For current state,
 > go to the repos + the [board](https://github.com/users/brandon-behring/projects/1). Per

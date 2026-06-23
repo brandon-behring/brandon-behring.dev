@@ -169,3 +169,23 @@ diff's hunk-context header.
 **Minor (Claude) → 2 applied:** CURRENT_WORK double-"1." lists → bullets; website_thoughts "8 items"
 snapshot → "grown past those four". Left as-is: two dated Resolved-decisions sections (fine); doc emoji;
 CHANGELOG out-of-repo-archive wording (transparent + acknowledged in not_reviewed).
+
+## Pre-merge cold sweeps (Brandon's "anything before we merge?" gate)
+
+The gate fired twice more and earned it both times — each found drift the diff-scoped reviews couldn't:
+
+- **Whole-file consistency sweep** (the adversarial pass was diff-scoped, so it never saw *unchanged*
+  lines): caught 2 SSM-viz contradictions in `CURRENT_WORK.md`'s tail ("Resolved 2026-06-22" + "Standing"
+  still read deferred/2026-07-01 while the Forward program said decided→#52) + a `roadmap` "identity =
+  build-to-learn" pointer → fixed.
+- **Cold cumulative-diff refute pass** (the post-adversarial *fixes* had only been self-swept): caught the
+  `website-decision-map.md` "Portfolio Cluster Audit" frozen banner still reading "now **closed** (Framing 4
+  / build-to-learn locked)" — a present-tense residual contradicting the ratified "Decisions Locked" 75
+  lines above (the earlier adversarial gemini had hand-waved it "frozen = fine"). → fixed; the §"Debunked"
+  "no residual build-to-learn" claim is now accurate.
+- **Cold review of PR #54** (no prior independent eyes): caught a footgun ("escalate **to**
+  /adversarial-review" read as *instead of* independent-review, but adversarial-review doesn't write the
+  pre-commit marker → gate stays blocked) + a dangling "that session log" reference → fixed in #54.
+
+Lesson reinforced: the layer that reviews the *fixes* (and the *unchanged* siblings) is where
+self-introduced drift hides — six layers in, the cold cumulative read still found one.
