@@ -156,7 +156,7 @@
     "status": "released",
     "summary": "Astro template for long-form technical books, published to npm as @brandon_m_behring/book-scaffold-astro — MDX, Paged.js print, Tufte typography, Pagefind search, KaTeX. The scaffold under every book and guide here.",
     "description_long": "Reusable scaffold for searchable, math-rendered long-form books: Astro + MDX content, Paged.js print output, Tufte-style typography, and a Koller–Friedman chapter structure. Published to npm (as @brandon_m_behring/book-scaffold-astro) and consumed as a versioned dependency, so consumer books (double_ml_time_series, ssm-foundations, the guides) inherit upgrades by bumping a version. Maintained through a dogfooding loop — each consumer surfaces scaffold gaps that feed back as fixes.",
-    "whats_next": "A reusable Provenance + audit component (Phase 6a) that surfaces the process-as-artifact trail on every consumer chapter.",
+    "whats_next": "The Phase 6a Provenance/audit component shipped (v4.8.0), surfacing the process-as-artifact trail on consumer chapters. Next: version reconciliation across the book family and broader backfill as consumers bump.",
     "stack": ["Astro", "MDX", "Paged.js", "KaTeX", "Pagefind", "TypeScript", "npm"],
     "repo_url": "https://github.com/brandon-behring/book-scaffold-astro",
     "external_context": [],

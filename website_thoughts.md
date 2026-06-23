@@ -1,5 +1,12 @@
 # Designing brandon-behring.dev as a research publication system
 
+> **⚠ Original brainstorm (2026-05-26) — superseded; kept for provenance.** This is the raw
+> pre-redesign braindump. The decisions it explores are now settled in
+> [`docs/website-decision-map.md`](docs/website-decision-map.md) (strategy) +
+> [`docs/roadmap.md`](docs/roadmap.md) (forward plan); live state →
+> [`CURRENT_WORK.md`](CURRENT_WORK.md). Not live guidance. (Its "Home, Work, About, Contact"
+> nav snapshot is long obsolete — the live nav is 8 items; `src/components/Header.astro` is the SSOT.)
+
 ## Executive summary
 
 The public version of **brandon-behring.dev** already communicates strong thematic pillars—applied causal methods, AI evaluation, and course-derived study notes—but its visible top-level navigation is still portfolio-like rather than artifact-like, exposing only **Home, Work, About, and Contact**. Your public GitHub profile already contains a stronger artifact inventory than the site does, with pinned repositories such as **research-kb**, **prompt-injection-detection-prototype**, **eval-toolkit**, **research_toolkit**, **runpod-deploy**, and **temporalcv**. The core opportunity is therefore not “add more content,” but **re-frame the site as the canonical home for research artifacts, tutorials, notebooks, and releases** so that each repository and manuscript becomes easier to discover, evaluate, cite, and share. citeturn18view0turn21view0

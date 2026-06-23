@@ -1,16 +1,18 @@
 # CURRENT_WORK.md — 30-Second Context Switch
 
-**Last Updated**: 2026-06-23 | **Session**: #36 closed — property-recon harness shipped in lever
+**Last Updated**: 2026-06-23 | **Session**: long-term-plan audit (🟢) + forward program defined
 
 ---
 
 ## Right Now
 
-**Nothing active on the site, and the near-term bb.dev-*code* backlog is exhausted** — #33/#36/#2 all
-turned out cross-repo despite their "bb.dev-only" labels. **#36 is now closed** — the cross-property
-recon harness shipped in lever (see *Last shipped*). Remaining tracked work is cross-repo (#2's
-CITATION.cff/OG), blocked (#30b, #1), or Brandon-driven (#5/#31/#32). Next is a deliberate cross-repo
-session or new direction — see **Next**.
+**Long-term-plan audit complete (2026-06-23, 🟢).** The site + in-repo docs verify TRUE end-to-end
+(routes, demos, GitHub, cross-repo, claim-safety all clean; the sibling books *exceed* their
+snapshots). One real fix: the documented identity had drifted from the live hero → **ratified**
+*"Applied-math rigor for auditable AI"* (roadmap A1 + decision-map; no site change). The earlier
+"bb.dev-code backlog exhausted / await direction" is superseded by a **forward program** — see
+**Next**. Audit detail →
+[`docs/sessions/2026-06-23--longterm-plan-audit.md`](docs/sessions/2026-06-23--longterm-plan-audit.md).
 
 **Last shipped** (2026-06-23): **[#36](https://github.com/brandon-behring/brandon-behring.dev/issues/36)
 closed** — the cross-property recon harness shipped in **lever** (`scripts/property_recon.py`): the
@@ -75,8 +77,17 @@ interactive demos; bundled with the docs reconciliation in
 **Next** — refined 2026-06-22 (forward sequence, lens = *quick-wins → identity*; per-item
 rationale lives in the organize-pass comment on each issue):
 
-**The bb.dev-code backlog is exhausted** — remaining tracked items are cross-repo, blocked, or
-Brandon-driven (no clean bb.dev-code "next pickup"; await direction):
+**Forward program (defined 2026-06-23 audit + review):**
+
+1. [#52](https://github.com/brandon-behring/brandon-behring.dev/issues/52) — build the **SSM
+   stability-region visualizer** (lab demo; DeltaNet vs Longhorn, `ssm-foundations` ch12-grounded,
+   adversarial-reviewed). Resolves the deferred SSM-viz decision.
+2. [#32](https://github.com/brandon-behring/brandon-behring.dev/issues/32) — **dlai / study-notes
+   launch**: collapses to a deploy task (repo already public; `deploy-workflows@v2` ready) + a
+   CF-dashboard domain bind (Brandon) + a bb.dev `projects.json` entry.
+3. *Identity:* **ratified** *"Applied-math rigor for auditable AI"* (docs updated; hero already shipped).
+
+Other tracked items (cross-repo, blocked, or Brandon-driven):
 
 1. [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene: **metadata
    batch shipped** 2026-06-22; **stays open** for CITATION.cff (research-kb + academic repos) + OG images

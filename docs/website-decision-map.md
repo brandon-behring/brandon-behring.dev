@@ -34,10 +34,12 @@ The current site is a small Astro static portfolio:
 - Writing voice: technical memo, evidence-heavy but readable.
 - Primary near-term goal: technical hiring.
 - Long-term goal: expandable research and public hub.
-- Lead identity: locked 2026-05-28 — Framing 4, *build-to-learn engineer*, 3
-  visible clusters (decided in
+- Lead identity: **ratified 2026-06-23 — *Applied-math rigor for auditable AI*** (a
+  rigor/auditability-led bridge; the live hero — see the 2026-06-23 audit re-score in
+  [`sessions/2026-06-23--longterm-plan-audit.md`](sessions/2026-06-23--longterm-plan-audit.md)).
+  This **supersedes** the 2026-05-28 *Framing 4 / build-to-learn* lock (decided in
   [`sessions/2026-05-28--ambiguity-resolution.md`](sessions/2026-05-28--ambiguity-resolution.md);
-  supersedes the original "intentionally undecided").
+  itself superseding the original "intentionally undecided"), which the site outgrew at the A7 redesign.
 - Portfolio organization: narrative clusters, not a repo-by-repo catalog.
 - Demo posture: interactive demos are worth considering, but project pages
   should be the first home for demos.

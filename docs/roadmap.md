@@ -17,16 +17,16 @@
 
 The live, ordered backlog is **[`../CURRENT_WORK.md`](../CURRENT_WORK.md) "Next" + the
 [board](https://github.com/users/brandon-behring/projects/1)** — the single source for the
-issue-by-issue sequence (as of 2026-06-22 the lead is #29, main-site polish). This section
+issue-by-issue sequence. This section
 names only **strategic / standing** site work that isn't a single tracked issue:
 
 - **`/research` hub** — **live** (shipped 2026-06-22) — a thin lens tying the research threads
   together (sequence models & numerical foundations · causal/temporal inference · AI evaluation)
   and linking out to the artifacts. Resolves **A2**. See Track A → A8.
-- **SSM visualizer** — **dated check: 2026-07-01.** The explainer
-  (`/lab/why-discretization-matters/`) shipped 2026-06-10 but was not distributed, so the
-  "2 weeks after distribution" trigger never started; revisit on the date. Style = the one
-  remaining open decision below.
+- **SSM visualizer** — **decided 2026-06-23: build it, stability-region style** (was deferred to a
+  2026-07-01 dated check; resolved in the long-term-plan review). A `StabilityRegion.astro` section in
+  the `/lab/why-discretization-matters/` explainer (DeltaNet vs Longhorn), `ssm-foundations`
+  ch12-grounded + adversarial-reviewed. Tracked as [#52](https://github.com/brandon-behring/brandon-behring.dev/issues/52).
 - **A4 graph-refresh loop** (standing) — corpus growth is **board work**
   (`research-kb#8/#10/#23` + `[needed]` rows in `rl_and_control/references/paper_index.md`); the
   site's job is to **re-verify the rendered graph** on `/lab/research-graph/` after each corpus
@@ -46,15 +46,26 @@ names only **strategic / standing** site work that isn't a single tracked issue:
 - **Account split** (issue #5) → **consolidate onto `brandon-behring`** as the single public
   identity. `temporalcv` is already consolidated (canonical repo + `CITATION.cff` verified point to
   brandon-behring; current package state → [temporalcv on PyPI](https://pypi.org/project/temporalcv/)).
-  Remaining = sweep the public duplicates still on `brandonmbehring-dev` — **8 overlapping repos**
-  (annuity-pricing, causal_inference_mastery, insurance-ai-toolkit, ir-eval, llm-eval, research-agent,
-  research-kb, temporalcv) — **board work
+  Remaining = sweep the public duplicates still on `brandonmbehring-dev` (**8 as of 2026-06-22**;
+  live list → #5: annuity-pricing, causal_inference_mastery, insurance-ai-toolkit, ir-eval, llm-eval,
+  research-agent, research-kb, temporalcv) — **board work
   ([#5](https://github.com/brandon-behring/brandon-behring.dev/issues/5)); does not delete the dev account.**
+- **Token SSOT** (issue #33) → the canonical Warm-Tol palette lives in the LaTeX `.sty`; this
+  standalone site keeps *controlled duplication* of the one shared hue (`#3B6FA0`), per-property
+  freedom otherwise. A cross-repo shared-tokens package is the eventual SSOT but is premature now
+  (one hue, solo maintainer) → deferred (tracked in #33). See [`design-tokens.md`](design-tokens.md).
+
+## Resolved decisions (2026-06-23, the long-term-plan audit)
+
+- **SSM visualizer** → **build it, stability-region** (vs symplectic) — the deferred 2026-07-01 dated
+  check is resolved → [#52](https://github.com/brandon-behring/brandon-behring.dev/issues/52).
+- **Lead identity** → **ratified** *Applied-math rigor for auditable AI* (see A1; the live hero,
+  superseding the 2026-05-28 Framing-4 lock) → [audit log](sessions/2026-06-23--longterm-plan-audit.md).
 
 ## Open decisions (site)
 
-1. **SSM visualizer style** (stability-region vs symplectic) — deferred to the visualizer's
-   **2026-07-01 dated check** (see Current focus); decide if/when it's built.
+*None open as of 2026-06-23* — the SSM-visualizer style (the last one) is resolved
+(stability-region → [#52](https://github.com/brandon-behring/brandon-behring.dev/issues/52)).
 
 Earlier resolved decisions live in the dated session logs (e.g.
 [`sessions/2026-05-28--ambiguity-resolution.md`](sessions/2026-05-28--ambiguity-resolution.md):
@@ -66,7 +77,7 @@ identity = build-to-learn; homepage cluster shape; insurance positioning) and in
 Per `website-decision-map.md` §"Open Decisions For Later". Site-facing; strategy defers
 to the decision map.
 
-- [x] **A1. Lead identity** — Framing 4, *build-to-learn engineer*, 3 visible clusters.
+- [x] **A1. Lead identity** — *Applied-math rigor for auditable AI* — a rigor/auditability-led bridge narrative (the live hero; **ratified 2026-06-23** after the re-score, superseding the 2026-05-28 *Framing 4 / build-to-learn* lock, which the site outgrew at the A7 redesign). The homepage leads with a curated flagship roster (`landingFlagships` — selected projects + demos); the narrative clusters live under `/work` and the threads under `/research`.
 - [~] **A2. `post_transformers` positioning** — resolved 2026-06-22: its public surface is `ssm-foundations`, now homed on the new `/research` hub (the dedicated page the hub-structure decision settled). `post_transformers` itself stays GitHub-only.
 - [~] **A3. Homepage balance** — Now-clusters lead, future section follows, past off the homepage.
 - [x] **A4. First demo** — live at `/lab/research-graph/`, KB-sourced + densified (2026-06-10). Ongoing growth = the standing graph-refresh loop (above) → the board's corpus queue.
