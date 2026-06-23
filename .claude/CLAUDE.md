@@ -89,6 +89,16 @@ with `secrets: inherit`. That workflow runs `npm ci` + `npm run build` +
   `git commit` is blocked once if no fresh review marker (`.claude/.last-review`)
   exists. Running the skill writes the marker and clears the gate. You never
   invoke a reviewer by name — the skill + hook make it ambient.
+- **Tier by stakes.** The skill's default shards now include an **open-ended
+  consistency (refute) shard** — it hunts for any intra-/cross-doc contradiction
+  rather than verifying a closed checklist. For **substantive / strategic /
+  public-facing** PRs, **also** run the full **`/adversarial-review`** (3-voice:
+  Claude + codex + gemini, refute-mode) before merge — *in addition to* `independent-review`,
+  not instead of it (only `independent-review` writes the `.last-review` marker the commit
+  hook needs). Closed-checklist verify-mode structurally misses unanticipated **cross-doc
+  consistency** breaks (on the 2026-06-23 long-term-plan PR #53 the adversarial pass caught 5
+  such issues two verify-mode layers had cleared →
+  [`docs/sessions/2026-06-23--longterm-plan-audit.md`](../docs/sessions/2026-06-23--longterm-plan-audit.md), ships with #53).
 - The skill records each run as `docs/sessions/<date>--<topic>-review.md`
   (process-as-artifact). See `~/.claude/plans/i-want-to-improve-functional-owl.md`
   for the full design.

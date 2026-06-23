@@ -28,6 +28,14 @@ checklist. Keep it to **1–4 reviewers**. Typical shards:
 - **Diff review** — the `git diff`. Checklist: correctness, false claims,
   broken links/refs introduced, overclaim in copy.
 - **Claim/link review** — external claims in changed `projects.json` entries.
+- **Consistency (refute) shard** *(include on any multi-file / doc / strategy diff)* —
+  open-ended, **not a closed checklist**: *"Assume this diff introduced a contradiction. Hunt for
+  it — a claim that conflicts with another doc, a section that violates its own stated rule, a
+  number / label / decision that disagrees with a sibling section or file. Default skeptical; cite
+  both sides."* The closed checklists above only confirm what they name, so they structurally miss
+  unanticipated cross-doc drift — a lightweight single-reviewer variant of `§4b`'s refute stance
+  in the always-on layer (not the full §4b multi-voice/hostile-lens protocol). For substantive /
+  strategic / public PRs, still **also** run the full `/adversarial-review` (3-voice) before merge.
 
 ## 2. Create durable task records FIRST (mandatory)
 
