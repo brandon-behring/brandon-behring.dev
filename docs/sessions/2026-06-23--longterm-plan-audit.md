@@ -26,7 +26,7 @@ and the deeper re-score caught: the documented **identity** had drifted from the
 
 | Claim (doc) | Ground truth | ✔ |
 |---|---|---|
-| All main routes 200 + render | `/`,`/work/`,`/work/<slug>`,`/work/books-and-guides/`,`/lab/`,`/lab/research-graph/`,`/lab/why-discretization-matters/`,`/research`,`/publications/`,`/how-this-was-made/` | ✔ |
+| All main routes 200 + render | `/`,`/work/`,`/work/<slug>`,`/work/books-and-guides/`,`/lab/`,`/lab/research-graph/`,`/lab/why-discretization-matters/`,`/research/`,`/publications/`,`/how-this-was-made/` | ✔ |
 | research-graph "119 / 460" | live `__cyGraph` = 119/460; committed `rl_citation_graph.json` = 119/460 (exact, both ends) | ✔ |
 | `/research` = threads + RL (PR #44) | 4 thread cards incl. "Reinforcement learning & control" + "how it's backed" | ✔ |
 | corpus index = 5 properties | exactly 5 (incl. ssm-foundations + dml tagged) | ✔ |
@@ -57,7 +57,9 @@ and the deeper re-score caught: the documented **identity** had drifted from the
   `Site | Portfolio | State` and the Phase-2 collision is explained.
 - **"CRITICAL: docs say 7-item nav, reality 8"** — OVER-STATED → NOTE: the "7-item" mentions are
   historical A7-milestone records; A8 records the +Research entry (7→8); `Header.astro` is the
-  8-item SSOT. The "4-item nav" was mis-attributed (agent memory, not a repo doc).
+  8-item SSOT. (The shards' "Work·Lab·Research·Publications" 4-item phrasing came from agent memory;
+  separately `website_thoughts.md` *did* carry an obsolete "Home, Work, About, Contact" nav snapshot —
+  the pre-redesign state, now marked superseded via R4. So no *current* repo doc misstates the nav.)
 
 ## Findings acted on
 
@@ -139,3 +141,31 @@ Two cold `independent-reviewer` shards over the remediation diff + this log (con
   confirm it); the out-of-repo coordinated-plan archive header (R1, outside `git diff`); sibling
   chapter-counts. These were covered earlier in the audit (live-site + GitHub shards) or are R1's
   direct out-of-repo edit.
+
+## Adversarial review (PR #53 — 3-voice: Claude + codex + gemini)
+
+Refute-mode review of the #53 diff, run because verify-mode (the independent-review above) structurally
+misses cross-doc consistency issues. Voices OK: codex (gpt-5.5 @ xhigh, 5 findings) + gemini (3.1 Pro,
+2) + blind Claude (5). Every finding **tool-grounded** by reading the source of truth. It caught **5
+real issues the prior two layers missed** — the strongest argument for the extra pass.
+
+**Verified → fixed (5):**
+- *[codex warning] README draft+flagship footgun* — `draft: true` on a `FLAGSHIP_PROJECT_SLUGS` slug
+  throws `landingFlagships: unknown project slug` at build (`portfolio.ts:143`). Added the invariant to README.
+- *[codex warning] roadmap Current-focus cited #52* — violated the section's own "not a single tracked
+  issue" rule. Removed the SSM-viz bullet from Current-focus (decision lives in Resolved-decisions + #52).
+- *[codex warning] A1 vs A3 contradiction* — A1 said "curated flagship roster", A3 still said
+  "Now-clusters lead". Reconciled A3.
+- *[gemini warning] Debunked nav mis-attribution* — this log claimed the 4-item nav was "agent memory,
+  not a repo doc", but `website_thoughts.md` carried "Home, Work, About, Contact" (now superseded via R4).
+  Corrected the wording above.
+- *[codex+Claude suggestion] `/research` is 307→`/research/`* — the routes row said plain 200; switched
+  to the canonical trailing-slash URL.
+
+**False-positive → dropped (1):** *[gemini warning] "token-SSOT added to standing work, not Resolved
+decisions"* — REFUTED: `roadmap.md:53` is under "Resolved decisions (2026-06-22)"; gemini misread the
+diff's hunk-context header.
+
+**Minor (Claude) → 2 applied:** CURRENT_WORK double-"1." lists → bullets; website_thoughts "8 items"
+snapshot → "grown past those four". Left as-is: two dated Resolved-decisions sections (fine); doc emoji;
+CHANGELOG out-of-repo-archive wording (transparent + acknowledged in not_reviewed).

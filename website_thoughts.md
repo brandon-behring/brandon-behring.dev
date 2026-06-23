@@ -5,7 +5,7 @@
 > [`docs/website-decision-map.md`](docs/website-decision-map.md) (strategy) +
 > [`docs/roadmap.md`](docs/roadmap.md) (forward plan); live state →
 > [`CURRENT_WORK.md`](CURRENT_WORK.md). Not live guidance. (Its "Home, Work, About, Contact"
-> nav snapshot is long obsolete — the live nav is 8 items; `src/components/Header.astro` is the SSOT.)
+> nav snapshot is long obsolete — the nav has since grown well past those four; `src/components/Header.astro` is the SSOT.)
 
 ## Executive summary
 

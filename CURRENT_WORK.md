@@ -89,10 +89,10 @@ rationale lives in the organize-pass comment on each issue):
 
 Other tracked items (cross-repo, blocked, or Brandon-driven):
 
-1. [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene: **metadata
+- [#2](https://github.com/brandon-behring/brandon-behring.dev/issues/2) — portfolio hygiene: **metadata
    batch shipped** 2026-06-22; **stays open** for CITATION.cff (research-kb + academic repos) + OG images
    (dml/ssm) + remaining-repo topics — per-repo file work (leaves bb.dev).
-2. [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
+- [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
    wordmark / glyph favicon / OG — **blocked** on the cross-repo token package + book-scaffold-astro#164 +
    the handbook index flip. *(verify ssm `favicon.svg` 404 at pickup.)* **(a)** shipped 2026-06-22.
 

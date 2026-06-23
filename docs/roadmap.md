@@ -23,10 +23,6 @@ names only **strategic / standing** site work that isn't a single tracked issue:
 - **`/research` hub** — **live** (shipped 2026-06-22) — a thin lens tying the research threads
   together (sequence models & numerical foundations · causal/temporal inference · AI evaluation)
   and linking out to the artifacts. Resolves **A2**. See Track A → A8.
-- **SSM visualizer** — **decided 2026-06-23: build it, stability-region style** (was deferred to a
-  2026-07-01 dated check; resolved in the long-term-plan review). A `StabilityRegion.astro` section in
-  the `/lab/why-discretization-matters/` explainer (DeltaNet vs Longhorn), `ssm-foundations`
-  ch12-grounded + adversarial-reviewed. Tracked as [#52](https://github.com/brandon-behring/brandon-behring.dev/issues/52).
 - **A4 graph-refresh loop** (standing) — corpus growth is **board work**
   (`research-kb#8/#10/#23` + `[needed]` rows in `rl_and_control/references/paper_index.md`); the
   site's job is to **re-verify the rendered graph** on `/lab/research-graph/` after each corpus
@@ -79,7 +75,7 @@ to the decision map.
 
 - [x] **A1. Lead identity** — *Applied-math rigor for auditable AI* — a rigor/auditability-led bridge narrative (the live hero; **ratified 2026-06-23** after the re-score, superseding the 2026-05-28 *Framing 4 / build-to-learn* lock, which the site outgrew at the A7 redesign). The homepage leads with a curated flagship roster (`landingFlagships` — selected projects + demos); the narrative clusters live under `/work` and the threads under `/research`.
 - [~] **A2. `post_transformers` positioning** — resolved 2026-06-22: its public surface is `ssm-foundations`, now homed on the new `/research` hub (the dedicated page the hub-structure decision settled). `post_transformers` itself stays GitHub-only.
-- [~] **A3. Homepage balance** — Now-clusters lead, future section follows, past off the homepage.
+- [~] **A3. Homepage balance** — the curated flagship roster leads (selected now-work projects + demos), a forward "where it's going" section follows, past off the homepage.
 - [x] **A4. First demo** — live at `/lab/research-graph/`, KB-sourced + densified (2026-06-10). Ongoing growth = the standing graph-refresh loop (above) → the board's corpus queue.
 - [x] **A5. Route structure** — `/work/{slug}` cluster pages.
 - [x] **A6. Content-collections migration** — shipped in A7 (2026-06-18): `src/content.config.ts` Zod schemas validate `src/data/*.json` at build time; `portfolio.ts` reads via `getCollection()`, same export surface.
