@@ -403,7 +403,7 @@ and cross-linked from the homepage.
 | Artifact family | Treatment |
 |---|---|
 | `book-scaffold-astro` | Infrastructure that makes research publishing repeatable. |
-| DLAI notes | Example of the publishing system; do not let it read as the main identity. |
+| DLAI notes | ~~Example of the publishing system; do not let it read as the main identity.~~ → **Superseded 2026-06-24 (#32):** promoted to the homepage Selected-work roster (one of four flagships) — now live at `study-notes.brandon-behring.dev`, a public proof of the publishing system; compliance boundaries (no answers/quizzes/transcripts; CC-BY-NC) still apply. This tier's original "support, not lead" call no longer holds. |
 | `research-kb` / `research-agent` | Research-infrastructure proof; explain through workflows, not tool count. |
 | `temporalcv` | Applied rigor and leakage-prevention proof. |
 | Bayesian cold-start | Selective applied-science case study. |

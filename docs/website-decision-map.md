@@ -378,7 +378,7 @@ Claim-safety notes:
 | Editorial evidence dossier | Technical hiring and serious project review | Clear, credible, strong for case studies | Can feel text-heavy | Needs excellent information design | Strong candidate for v1 redesign |
 | Research lab / technical notebook | post-transformers, research-kb, long-form artifacts | Matches research identity and future direction | Can look unfinished if maturity varies | Needs status labels | Good for project pages |
 | Evidence dashboard / signal board | prompt-injection evaluation and metrics-heavy work | Makes metrics scannable | Can over-index on numbers | Requires visual caveats | Good section pattern, not whole site |
-| Case-study magazine | polished project stories | Memorable and visual | Higher design overhead | Needs screenshots/diagrams | Good for 3 flagship pages |
+| Case-study magazine | polished project stories | Memorable and visual | Higher design overhead | Needs screenshots/diagrams | Good for ~4 flagship pages |
 | Academic minimal | math, writing, citations, low maintenance | Fast, credible, durable | Can undersell engineering craft | Needs visual assets to avoid plainness | Safe baseline |
 | Dark technical portfolio | AI/security atmosphere | Distinctive if executed well | Common, contrast risk, can feel performative | Requires accessibility review | Use sparingly, not as default assumption |
 | Interactive demo lab | hands-on proof of ideas | Visitors experience the ideas directly | More maintenance and QA | Performance, accessibility, demo data | Long-term layer after project pages |
