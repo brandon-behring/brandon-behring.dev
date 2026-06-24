@@ -113,11 +113,12 @@ export function clustersInSection(section: string): Cluster[] {
 
 // --- Homepage "Selected work" curation (Phase B consumes this) ----------------
 // Explicit, ordered roster — deliberately decoupled from the `featured` flag
-// (which still drives /work): 3 live works + the 2 interactive demos.
+// (which still drives /work): 4 live works + the 2 interactive demos.
 const FLAGSHIP_PROJECT_SLUGS = [
   'ssm-foundations',
   'double-ml-time-series',
   'prompt-injection-detection-prototype',
+  'dlai-study-notes',
 ];
 const FLAGSHIP_DEMO_SLUGS = ['research-graph', 'why-discretization-matters'];
 
@@ -130,6 +131,8 @@ const FLAGSHIP_BLURBS: Record<string, string> = {
     'A foundations book bridging numerical analysis and dynamical systems to modern sequence models — live and in progress.',
   'prompt-injection-detection-prototype':
     'A research study: do prompt-injection detectors generalize to attack families they were never trained on?',
+  'dlai-study-notes':
+    'A searchable, math-rendered corpus of study notes synthesized from DeepLearning.AI short courses — with original practice questions and spaced-recall flashcards.',
 };
 
 function projectBySlug(slug: string): Project | null {
@@ -204,6 +207,11 @@ const CORPUS_ENTRIES: { slug: string; title: string; blurb: string }[] = [
     slug: 'claude-books',
     title: 'claude-books',
     blurb: 'A series on Claude Code and agentic coding — architecture, design, practice.',
+  },
+  {
+    slug: 'dlai-study-notes',
+    title: 'DeepLearning.AI Study Notes',
+    blurb: 'Study notes synthesized from DeepLearning.AI short courses — searchable, math-rendered, flashcard-backed.',
   },
   {
     slug: 'ssm-foundations',

@@ -1,10 +1,16 @@
 # CURRENT_WORK.md — 30-Second Context Switch
 
-**Last Updated**: 2026-06-23 | **Session**: long-term-plan audit (🟢) + forward program defined
+**Last Updated**: 2026-06-24 | **Session**: #32 dlai/study-notes launch (live) + hub surfacing
 
 ---
 
 ## Right Now
+
+**dlai / study-notes LAUNCHED (2026-06-24, #32).** The DeepLearning.AI study-notes corpus is **live** at
+[`study-notes.brandon-behring.dev`](https://study-notes.brandon-behring.dev) — Cloudflare **Workers Builds**
+(Git-connected), custom domain bound, deep routes 200 → closed `dlai-study-notes#1`. Scaffold
+`@brandon_m_behring/book-scaffold-astro@4.26.0` published to npm (OIDC) en route; dlai bumped `^4.26.0` (PR #2).
+This PR surfaces it on bb.dev: a **4th homepage flagship** + a `/work/books-and-guides/` corpus member. Before it (2026-06-23):
 
 **Long-term-plan audit complete (2026-06-23, 🟢).** The site + in-repo docs verify TRUE end-to-end
 (routes, demos, GitHub, cross-repo, claim-safety all clean; the sibling books *exceed* their
@@ -83,8 +89,9 @@ rationale lives in the organize-pass comment on each issue):
    stability-region visualizer** (lab demo; DeltaNet vs Longhorn, `ssm-foundations` ch12-grounded,
    adversarial-reviewed). Resolves the deferred SSM-viz decision.
 2. [#32](https://github.com/brandon-behring/brandon-behring.dev/issues/32) — **dlai / study-notes
-   launch**: collapses to a deploy task (repo already public; `deploy-workflows@v2` ready) + a
-   CF-dashboard domain bind (Brandon) + a bb.dev `projects.json` entry.
+   launch ✅ DONE (2026-06-24)**: live at `study-notes.brandon-behring.dev` (Cloudflare **Workers Builds**
+   + domain bind); scaffold `4.26.0` published; hub surfacing (4th flagship + corpus) shipped this PR;
+   `dlai-study-notes#1` closed.
 3. *Identity:* **ratified** *"Applied-math rigor for auditable AI"* (docs updated; hero already shipped).
 
 Other tracked items (cross-repo, blocked, or Brandon-driven):
@@ -96,8 +103,7 @@ Other tracked items (cross-repo, blocked, or Brandon-driven):
    wordmark / glyph favicon / OG — **blocked** on the cross-repo token package + book-scaffold-astro#164 +
    the handbook index flip. *(verify ssm `favicon.svg` 404 at pickup.)* **(a)** shipped 2026-06-22.
 
-*Brandon-driven / cross-repo:* [#32](https://github.com/brandon-behring/brandon-behring.dev/issues/32)
-DLAI launch (P2; on the v4.26 + wave1 branches) ·
+*Brandon-driven / cross-repo:*
 [#31](https://github.com/brandon-behring/brandon-behring.dev/issues/31) inline demos in guides.
 *Board / parked:* [#5](https://github.com/brandon-behring/brandon-behring.dev/issues/5) account-split —
 **direction decided 2026-06-22** (consolidate onto brandon-behring); remaining = dev-account dupe sweep (board) ·

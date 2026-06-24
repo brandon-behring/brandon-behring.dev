@@ -86,7 +86,7 @@ Open content issue: [`brandon-behring.dev#1`](https://github.com/brandon-behring
 
 ## Infrastructure & cross-repo work → board
 
-Deploy-pattern migrations (`post_transformers`, `dlai-study-notes`, `claude-books`),
+Deploy-pattern migrations (`post_transformers`, `claude-books`; `dlai-study-notes` **shipped** 2026-06-24),
 the reusable-workflow backlog, the tiered cross-repo backlog, and all other cross-repo
 coordination live on the
 [Work Tracker board #1](https://github.com/users/brandon-behring/projects/1) +
@@ -103,7 +103,7 @@ assume the numbers match.
 |---|---|---|
 | Phase 1 — site live + deploy workflow | Phase 1a–1e + 1.5 | shipped |
 | **Phase 2 — identity lock + homepage** | *no equivalent* (portfolio Phase 2 = DEPRECATED) | ⚠ collision |
-| Phase 3 — dlai deploy | Phase 3 | cross-repo → board |
+| Phase 3 — dlai deploy | Phase 3 | **shipped 2026-06-24** |
 | Phase 4 — guides migration | Phase 4 | cross-repo → board |
 | Phase 5 — tier clusters | Phase 5 | shipped |
 | Phase 6a — Provenance component | Phase 6a | shipped |
