@@ -20,3 +20,4 @@ playwright-report/
 # Audit input artifacts (kept locally; reference inputs, not site deliverables)
 /brandon_behring_dev_audit_2026-06-01/
 /brandon_behring_dev_audit_2026-06-01.tar.gz
+/Analytics*Cloudflare.pdf

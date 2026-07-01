@@ -486,11 +486,24 @@ fallback, keyboard support, responsive layout, and a reduced-motion path.
 
 ## Open Decisions For Later
 
-- Which identity framing wins the lead-story scoring rubric?
-- Does `post_transformers` become the lead story, a flagship project, or a
-  research-direction section?
-- How much of the homepage should be future-facing versus proof-of-work?
-- Which demo deserves to be built first?
+*None open as of 2026-07-01 — all resolved (struck below with dates). Matches
+`roadmap.md`'s zero-open-decisions state (its "None open" dates to 2026-06-23, when the
+last site decision resolved; nothing new has opened since).*
+
+- ~~Which identity framing wins the lead-story scoring rubric?~~
+  **Resolved 2026-06-23:** **ratified** *"Applied-math rigor for auditable AI"* after the
+  long-term-plan audit re-score (supersedes the 2026-05-28 Framing-4 lock; see "Decisions
+  Locked" above + `roadmap.md` A1).
+- ~~Does `post_transformers` become the lead story, a flagship, or a research-direction section?~~
+  **Resolved 2026-06-22:** none of the three — its public surface is `ssm-foundations`,
+  homed on the `/research` hub; `post_transformers` itself stays GitHub-only (`roadmap.md` A2).
+- ~~How much of the homepage should be future-facing versus proof-of-work?~~
+  **Resolved 2026-06-18 (A7, refined A3):** the curated flagship roster (proof-of-work) leads;
+  a forward "where it's going" section follows; the past moves off the homepage (`roadmap.md` A3).
+- ~~Which demo deserves to be built first?~~
+  **Resolved 2026-06-10 (A4):** the research citation graph — live at `/lab/research-graph/`,
+  KB-sourced + densified; the lab surface has since grown (EigenSlider + the stability-region
+  visualizer #52, both embedded in `/lab/why-discretization-matters/`).
 - ~~Should the site eventually add `/work`, `/research`, `/notes`, or `/lab` routes?~~
   **Resolved 2026-06-22:** `/work` + `/lab` + `/publications` shipped; **add a thin `/research`**
   hub (a research-threads lens); **not** `/notes` (books/guides reach via the corpus index, #30).
@@ -500,6 +513,11 @@ fallback, keyboard support, responsive layout, and a reduced-motion path.
   per-property freedom otherwise. A cross-repo shared-tokens package is the eventual SSOT but is
   premature now (one shared hue, solo maintainer) → deferred (tracked in #33). See
   [`docs/design-tokens.md`](design-tokens.md).
-- Should project content live in Astro content collections rather than
-  `src/data/projects.json`?
-- Which visual approach best fits the chosen lead story?
+- ~~Should project content live in Astro content collections rather than `src/data/projects.json`?~~
+  **Resolved 2026-06-18 (A6):** yes, structurally — `src/content.config.ts` Zod schemas validate
+  the JSON at build time via content collections; the data stays in `src/data/*.json`, read
+  through `getCollection()` (shipped with A7).
+- ~~Which visual approach best fits the chosen lead story?~~
+  **Resolved 2026-06-18 (A7):** the editorial redesign — self-hosted Fraunces display, warm
+  palette, design-token system, `/lab` demos gallery (`roadmap.md` A7; deeper visual identity
+  parked as a user call).
