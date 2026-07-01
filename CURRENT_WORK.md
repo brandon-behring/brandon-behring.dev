@@ -1,16 +1,32 @@
 # CURRENT_WORK.md — 30-Second Context Switch
 
-**Last Updated**: 2026-06-24 | **Session**: #32 dlai/study-notes launch (live) + hub surfacing
+**Last Updated**: 2026-07-01 | **Session**: constellation audit (hub + upstream + downstream)
 
 ---
 
 ## Right Now
 
-**dlai / study-notes LAUNCHED (2026-06-24, #32).** The DeepLearning.AI study-notes corpus is **live** at
-[`study-notes.brandon-behring.dev`](https://study-notes.brandon-behring.dev) — Cloudflare **Workers Builds**
-(Git-connected), custom domain bound, deep routes 200 → closed `dlai-study-notes#1`. Scaffold
+**Constellation audit complete (2026-07-01, 🟡 operationally green / paper-trail drift — fixed in this PR).**
+Deep-adversarial audit of the hub + `deploy-workflows` + `book-scaffold-astro` + all 9 live surfaces +
+board #1 + the second account: every deploy green on `@v2.0.2`, 14/14 live URLs 200, e2e **46/46**,
+property-recon **0 regressions / 16 contrast improvements** since 06-22, board invariant exact (96=96),
+analytics beacon browser-verified fleet-wide, both 2026 citations verified (ICLR Oral). Headline findings:
+**`rl-and-control-guide.brandon-behring.dev` is live but the hub still said "Local-only"** (surfacing →
+[#59](https://github.com/brandon-behring/brandon-behring.dev/issues/59)), **scaffold sidebar CLS 0.274**
+(RUM-confirmed, mechanics located → scaffold#187), and **research-kb's second-account copy is actively
+re-diverging** (sweep order → #5 comment). 10 issues filed (#59–#63 here · scaffold#187/#188 ·
+deploy-workflows#5 · ssm#50 · rl#6) + 4 enriched (deploy-workflows#4, #5, dml#46, #30). Doc drift
+fixed here (this file, CHANGELOG, decision-map, .gitignore). Detail →
+[`docs/sessions/2026-07-01--constellation-audit.md`](docs/sessions/2026-07-01--constellation-audit.md).
+
+**Before it — dlai / study-notes LAUNCHED (2026-06-24, #32).** The DeepLearning.AI study-notes corpus is **live** at
+[`study-notes.brandon-behring.dev`](https://study-notes.brandon-behring.dev) — launched on Cloudflare
+Workers Builds, then **migrated same day to GitHub Actions** (`deploy-workflows@v2.0.2`, worker renamed
+`brandon-behring-study-notes`; [deploy-workflows#4](https://github.com/brandon-behring/deploy-workflows/issues/4)
+Phase 1a), custom domain bound, deep routes 200 → closed `dlai-study-notes#1`. Scaffold
 `@brandon_m_behring/book-scaffold-astro@4.26.0` published to npm (OIDC) en route; dlai bumped `^4.26.0` (PR #2).
-This PR surfaces it on bb.dev: a **4th homepage flagship** + a `/work/books-and-guides/` corpus member. Before it (2026-06-23):
+PR #58 (merged 2026-06-24, `d6d9eeb`) surfaced it on bb.dev: a **4th homepage flagship** + a
+`/work/books-and-guides/` corpus member. Before it (2026-06-23):
 
 **Long-term-plan audit complete (2026-06-23, 🟢).** The site + in-repo docs verify TRUE end-to-end
 (routes, demos, GitHub, cross-repo, claim-safety all clean; the sibling books *exceed* their
@@ -85,13 +101,15 @@ rationale lives in the organize-pass comment on each issue):
 
 **Forward program (defined 2026-06-23 audit + review):**
 
-1. [#52](https://github.com/brandon-behring/brandon-behring.dev/issues/52) — build the **SSM
-   stability-region visualizer** (lab demo; DeltaNet vs Longhorn, `ssm-foundations` ch12-grounded,
-   adversarial-reviewed). Resolves the deferred SSM-viz decision.
+1. [#52](https://github.com/brandon-behring/brandon-behring.dev/issues/52) — **SSM stability-region
+   visualizer ✅ DONE (2026-06-23)**: shipped in PR #56 (`d2f4d96`, `StabilityRegion.astro`, embedded in
+   the discretization explainer; #52 closed), hardened with the other canvas demos in #57, e2e specs
+   added (46-spec suite). Resolves the deferred SSM-viz decision — the 2026-07-01 dated check is moot
+   (shipped early).
 2. [#32](https://github.com/brandon-behring/brandon-behring.dev/issues/32) — **dlai / study-notes
-   launch ✅ DONE (2026-06-24)**: live at `study-notes.brandon-behring.dev` (Cloudflare **Workers Builds**
-   + domain bind); scaffold `4.26.0` published; hub surfacing (4th flagship + corpus) shipped this PR;
-   `dlai-study-notes#1` closed.
+   launch ✅ DONE (2026-06-24)**: live at `study-notes.brandon-behring.dev` (GitHub Actions `@v2.0.2`,
+   worker `brandon-behring-study-notes` — launched on Workers Builds, migrated same day); scaffold
+   `4.26.0` published; hub surfacing (4th flagship + corpus) shipped in PR #58; `dlai-study-notes#1` closed.
 3. *Identity:* **ratified** *"Applied-math rigor for auditable AI"* (docs updated; hero already shipped).
 
 Other tracked items (cross-repo, blocked, or Brandon-driven):
@@ -101,12 +119,15 @@ Other tracked items (cross-repo, blocked, or Brandon-driven):
    (dml/ssm) + remaining-repo topics — per-repo file work (leaves bb.dev).
 - [#30](https://github.com/brandon-behring/brandon-behring.dev/issues/30) — identity spine **(b)**: shared
    wordmark / glyph favicon / OG — **blocked** on the cross-repo token package + book-scaffold-astro#164 +
-   the handbook index flip. *(verify ssm `favicon.svg` 404 at pickup.)* **(a)** shipped 2026-06-22.
+   the handbook index flip. *(ssm `favicon.svg` confirmed still 404 at the 2026-07-01 audit —
+   per-repo quick fixes split out to ssm-foundations + rl_and_control issues so they stop waiting
+   on this blocked issue.)* **(a)** shipped 2026-06-22.
 
 *Brandon-driven / cross-repo:*
 [#31](https://github.com/brandon-behring/brandon-behring.dev/issues/31) inline demos in guides.
 *Board / parked:* [#5](https://github.com/brandon-behring/brandon-behring.dev/issues/5) account-split —
-**direction decided 2026-06-22** (consolidate onto brandon-behring); remaining = dev-account dupe sweep (board) ·
+**direction decided 2026-06-22** (consolidate onto brandon-behring); remaining = dev-account dupe sweep
+(full divergence table + sweep order → the 2026-07-01 audit comment on #5) ·
 [#1](https://github.com/brandon-behring/brandon-behring.dev/issues/1) synthesis-map (blocked on `synthesis-kb` scaffold).
 
 **Resolved 2026-06-22** (→ [`docs/roadmap.md`](docs/roadmap.md) "Resolved decisions"): hub structure →
