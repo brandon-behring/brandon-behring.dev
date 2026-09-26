@@ -286,7 +286,6 @@
     "description_long": "A Python library for pricing and valuing annuity products: the bond-math foundation, Black–Scholes option Greeks, and Monte Carlo simulation for embedded guarantees. A companion Julia stack (AnnuityCore.jl, AnnuityProducts.jl, AnnuityData.jl) reimplements the core engine for performance and multiple dispatch. This reflects earlier domain work and is deliberately not the site's lead.",
     "whats_next": "Reference implementation; the Python package is configured (pyproject, tests, docs) and being readied for PyPI publication, with the companion Julia stack to follow.",
     "stack": ["Python", "NumPy", "SciPy"],
-    "repo_url": "https://github.com/brandon-behring/annuity-pricing",
     "external_context": [],
     "visual": null,
     "featured": false
@@ -316,7 +315,6 @@
     "description_long": "A hybrid-search knowledge base I built to accelerate my own research: BM25 full-text, vector embeddings, and a citation and concept graph over a large multi-domain corpus spanning causal inference, RL and control, and sequence models. It's exposed as MCP tools so an assistant can search and traverse it directly, and it's the data source behind the /lab/research-graph demo on this site. Infrastructure for my own learning, not a product.",
     "whats_next": "Densifying the citation graph and hardening corpus metadata quality across domains.",
     "stack": ["Python", "BM25", "vector search", "knowledge graph", "MCP"],
-    "repo_url": "https://github.com/brandon-behring/research-kb",
     "external_context": [
       { "label": "Live demo: RL + Control citation graph", "url": "/lab/research-graph/" }
     ],
@@ -330,7 +328,7 @@
     "order": 2,
     "status": "prototype",
     "summary": "A prototype LangGraph research agent on top of research-kb — structured synthesis with citation validation.",
-    "description_long": "An early prototype of a multi-agent research pipeline built on research-kb: it decomposed a question, retrieved evidence, synthesized a structured answer, and validated citations against the sources — the querying layer of that enabling system. The repo is now archived.",
+    "description_long": "An early prototype of a LangGraph research workflow (a fixed seven-node pipeline) built on research-kb: it decomposed a question, retrieved evidence, synthesized a structured answer, and validated citations against the sources — the querying layer of that enabling system. The repo is now archived.",
     "whats_next": "An earlier prototype of the querying layer, now archived — its approach is folded into the active research tooling.",
     "stack": ["Python", "LangGraph", "MCP", "research-kb"],
     "repo_url": "https://github.com/brandon-behring/research-agent",
