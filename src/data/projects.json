@@ -284,7 +284,7 @@
     "status": "in-progress",
     "summary": "Python library for annuity pricing and valuation — bond math, option Greeks, and Monte Carlo for fixed and variable annuity products.",
     "description_long": "A Python library for pricing and valuing annuity products: the bond-math foundation, Black–Scholes option Greeks, and Monte Carlo simulation for embedded guarantees. A companion Julia stack (AnnuityCore.jl, AnnuityProducts.jl, AnnuityData.jl) reimplements the core engine for performance and multiple dispatch. This reflects earlier domain work and is deliberately not the site's lead.",
-    "whats_next": "Reference implementation; the Python package is configured (pyproject, tests, docs) and being readied for PyPI publication, with the companion Julia stack to follow.",
+    "whats_next": "Reference implementation, kept private for now.",
     "stack": ["Python", "NumPy", "SciPy"],
     "external_context": [],
     "visual": null,
