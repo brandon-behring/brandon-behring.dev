@@ -116,7 +116,7 @@
   },
   {
     "slug": "rl-and-control",
-    "title": "rl_and_control — RL + Control Theory guide",
+    "title": "rl_and_control: RL + Control Theory guide",
     "cluster": "future",
     "order": 2,
     "status": "in-progress",

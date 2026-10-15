@@ -126,13 +126,13 @@ const FLAGSHIP_DEMO_SLUGS = ['research-graph', 'why-discretization-matters'];
 // vanity-metric-free, kept separate from the longer /work summaries.
 const FLAGSHIP_BLURBS: Record<string, string> = {
   'double-ml-time-series':
-    'Double machine learning extended to time series — cross-fitting that respects time ordering, with a live web edition.',
+    'Double machine learning extended to time series: cross-fitting that respects time ordering, with a live web edition.',
   'ssm-foundations':
-    'A foundations book bridging numerical analysis and dynamical systems to modern sequence models — live and in progress.',
+    'A foundations book bridging numerical analysis and dynamical systems to modern sequence models, live and in progress.',
   'prompt-injection-detection-prototype':
     'A research study: do prompt-injection detectors generalize to attack families they were never trained on?',
   'dlai-study-notes':
-    'A searchable, math-rendered corpus of study notes synthesized from DeepLearning.AI short courses — with original practice questions and spaced-recall flashcards.',
+    'A searchable, math-rendered corpus of study notes synthesized from DeepLearning.AI short courses, with original practice questions and spaced-recall flashcards.',
 };
 
 function projectBySlug(slug: string): Project | null {
@@ -211,7 +211,7 @@ const CORPUS_ENTRIES: { slug: string; title: string; blurb: string }[] = [
   {
     slug: 'dlai-study-notes',
     title: 'DeepLearning.AI Study Notes',
-    blurb: 'Study notes synthesized from DeepLearning.AI short courses — searchable, math-rendered, flashcard-backed.',
+    blurb: 'Study notes synthesized from DeepLearning.AI short courses: searchable, math-rendered, flashcard-backed.',
   },
   {
     slug: 'ssm-foundations',
